@@ -19,14 +19,58 @@
     <META NAME="ShareDoc" CONTENT="false">
     <STYLE TYPE="text/css">
         <!--
-        @page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.49in }
-        P { margin-bottom: 0.08in; direction: ltr; line-height: 100%; widows: 2; orphans: 2 }
-        P.western { font-family: "Times New Roman", serif; font-size: 14pt }
-        P.cjk { font-family: "Times New Roman"; font-size: 14pt; so-language: ru-RU }
-        P.ctl { font-family: "Times New Roman"; font-size: 12pt }
-        H3 { text-indent: 0.49in; margin-top: 0in; margin-bottom: 0in; direction: ltr; line-height: 150%; text-align: justify; widows: 2; orphans: 2 }
-        H3.cjk { font-family: "Times New Roman"; so-language: ru-RU }
-        H3.ctl { font-family: "Times New Roman"; font-size: 12pt }
+        @page {
+            margin-left: 1.18in;
+            margin-right: 0.59in;
+            margin-top: 0.79in;
+            margin-bottom: 0.49in
+        }
+
+        P {
+            margin-bottom: 0.08in;
+            direction: ltr;
+            line-height: 100%;
+            widows: 2;
+            orphans: 2
+        }
+
+        P.western {
+            font-family: "Times New Roman", serif;
+            font-size: 14pt
+        }
+
+        P.cjk {
+            font-family: "Times New Roman";
+            font-size: 14pt;
+            so-language: ru-RU
+        }
+
+        P.ctl {
+            font-family: "Times New Roman";
+            font-size: 12pt
+        }
+
+        H3 {
+            text-indent: 0.49in;
+            margin-top: 0in;
+            margin-bottom: 0in;
+            direction: ltr;
+            line-height: 150%;
+            text-align: justify;
+            widows: 2;
+            orphans: 2
+        }
+
+        H3.cjk {
+            font-family: "Times New Roman";
+            so-language: ru-RU
+        }
+
+        H3.ctl {
+            font-family: "Times New Roman";
+            font-size: 12pt
+        }
+
         -->
     </STYLE>
 </HEAD>
@@ -64,7 +108,7 @@
     При нерегулярных одиночных обращениях
     к БД <I>адресация по содержанию</I> имеет
     явные преимущества по сравнению с
-    <I>последовательным поиском   </I>(например,
+    <I>последовательным поиском </I>(например,
     при оформлении банковских операций,
     поиске архивных документов и т.д.).</P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 145%">
@@ -72,7 +116,7 @@
     поиска информации в них, рассмотрим
     основные подходы к организации некоторых
     стандартных методов поиска информации
-    по многим ключевым словам   (многоключевой
+    по многим ключевым словам (многоключевой
     поиск) и их реализации с помощью методов
     хеширования.</P>
 <H3 CLASS="western"><FONT SIZE=4></FONT>12.1.2. Списки и
@@ -114,16 +158,17 @@
 </P>
 
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
-    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_d5dbdcb.png" NAME="Рисунок 402" ALIGN=BOTTOM WIDTH=624 HEIGHT=373 BORDER=0></P>
+    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_d5dbdcb.png" NAME="Рисунок 402" ALIGN=BOTTOM WIDTH=624 HEIGHT=373
+         BORDER=0></P>
 
-    В списочной структуре, в некоторых ее
-    элементах, называемых <I>вершинами</I>,
-    имеется не менее чем по два указателя.
-    Если списочная структура начинает
-    ветвиться из вершины, именуемой в этом
-    случае <I>корнем</I>, и в ней отсутствуют
-    циклические цепочки элементов, ее
-    называют <I>деревом.</I></P>
+В списочной структуре, в некоторых ее
+элементах, называемых <I>вершинами</I>,
+имеется не менее чем по два указателя.
+Если списочная структура начинает
+ветвиться из вершины, именуемой в этом
+случае <I>корнем</I>, и в ней отсутствуют
+циклические цепочки элементов, ее
+называют <I>деревом.</I></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
     Списочная структура с циклическими
     участками представляет собой <I>граф</I>.
@@ -135,7 +180,8 @@
     исходят по две ветви.
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
-    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m60ae854a.png" NAME="Рисунок 547" ALIGN=BOTTOM WIDTH=580 HEIGHT=322 BORDER=0></P>
+    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m60ae854a.png" NAME="Рисунок 547" ALIGN=BOTTOM WIDTH=580 HEIGHT=322
+         BORDER=0></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 125%">
     <BR>
 </P>
@@ -154,7 +200,8 @@
     заголовков соответствующих частных
     списков (рис. 12.3).</P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
-    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m73382d28.png" NAME="Рисунок 548" ALIGN=BOTTOM WIDTH=457 HEIGHT=212 BORDER=0></P>
+    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m73382d28.png" NAME="Рисунок 548" ALIGN=BOTTOM WIDTH=457 HEIGHT=212
+         BORDER=0></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
     <BR>
 </P>
@@ -164,7 +211,8 @@
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
     На рис. 12.4 приведена структура типового
     мультисписка.
-    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_7fb7686e.png" NAME="Рисунок 549" ALIGN=BOTTOM WIDTH=569 HEIGHT=524 BORDER=0></P>
+    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_7fb7686e.png" NAME="Рисунок 549" ALIGN=BOTTOM WIDTH=569 HEIGHT=524
+         BORDER=0></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 120%">
     В справочнике мультисписка хранятся
     все ключевые слова, указатели первых
@@ -238,7 +286,8 @@
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 120%">
     клетки и др.), рис. 7.12.
-    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m6393e24a.png" NAME="Рисунок 550" ALIGN=BOTTOM WIDTH=548 HEIGHT=449 BORDER=0></P>
+    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m6393e24a.png" NAME="Рисунок 550" ALIGN=BOTTOM WIDTH=548 HEIGHT=449
+         BORDER=0></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
     <IMG SRC="Тема 7.2.files/image12.6.png" NAME="Рисунок 551" ALIGN=BOTTOM WIDTH=558 HEIGHT=506 BORDER=0></P>
 <p style="text-align: center">Рис. 12.6. Блочный мультисписок</p>
@@ -354,7 +403,9 @@
     высокое быстродействие. Так, если в
     запись входит <SPAN LANG="en-US"><I>n</I></SPAN> ключевых
     слов, то существует
-    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m177ee264.gif" ALIGN=BOTTOM><IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m177ee264.gif" ALIGN=BOTTOM><IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_4fdb0433.gif" style="width: 60px; height: 69px" ALIGN=BOTTOM>
+    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m177ee264.gif" ALIGN=BOTTOM><IMG
+        SRC="Тема 7.2.files/i_6936822e08b74235_html_m177ee264.gif" ALIGN=BOTTOM><IMG
+        SRC="Тема 7.2.files/i_6936822e08b74235_html_4fdb0433.gif" style="width: 60px; height: 69px" ALIGN=BOTTOM>
     различных комбинаций, для каждой из
     которых в хеш-таблице должна храниться
     копия записи.
@@ -366,7 +417,8 @@
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
     Пусть по ключевым словам <SPAN LANG="en-US"><I>k</I></SPAN><SUB><I>1</I></SUB><I>,
-</I><SPAN LANG="en-US"><I>k</I></SPAN><SUB><I>2</I></SUB><I>, …,</I><SPAN LANG="en-US"><I>k</I></SPAN><SUB><SPAN LANG="en-US"><I>k</I></SPAN></SUB>
+</I><SPAN LANG="en-US"><I>k</I></SPAN><SUB><I>2</I></SUB><I>, …,</I><SPAN LANG="en-US"><I>k</I></SPAN><SUB><SPAN
+        LANG="en-US"><I>k</I></SPAN></SUB>
     при помощи одного и того же алгоритма
     хешированияполученысоответствующие
     битовые строки<SPAN LANG="en-US"><I>B</I></SPAN>(<SPAN LANG="en-US"><I>k</I></SPAN><SUB><I>1
@@ -399,7 +451,8 @@
     (например, “<I>национальность</I>”,
     “<I>возрастная группа</I>” и “<I>местожительство</I>”
     граждан) имеют соответственно значения
-    <SPAN LANG="en-US"><I>x</I></SPAN><SUB><I>1</I></SUB><I>, </I><SPAN LANG="en-US"><I>x</I></SPAN><SUB><I>2</I></SUB><I>,
+    <SPAN LANG="en-US"><I>x</I></SPAN><SUB><I>1</I></SUB><I>, </I><SPAN
+        LANG="en-US"><I>x</I></SPAN><SUB><I>2</I></SUB><I>,
 </I><SPAN LANG="en-US"><I>x</I></SPAN><SUB><I>3</I></SUB>. Тогда
     уже по виду заданного <SPAN LANG="en-US"><I>x</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>
     можно установить значение <SPAN LANG="en-US"><I>i</I></SPAN>
@@ -716,7 +769,8 @@
     Рассмотренная структура приведена на
     рис. 12.9.</P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
-    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m2a862f3f.png" NAME="Рисунок 553" ALIGN=BOTTOM WIDTH=613 HEIGHT=600 BORDER=0></P>
+    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_m2a862f3f.png" NAME="Рисунок 553" ALIGN=BOTTOM WIDTH=613 HEIGHT=600
+         BORDER=0></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
     <BR>
 </P>
@@ -870,7 +924,8 @@
     либо ближайший к нему.</P>
 <p>Таблица 12.1. Относительное количество успешных операций поиска</p>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%"><A NAME="_GoBack"></A>
-    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_6e22fcc.png" NAME="Рисунок 554" ALIGN=BOTTOM WIDTH=624 HEIGHT=458 BORDER=0></P>
+    <IMG SRC="Тема 7.2.files/i_6936822e08b74235_html_6e22fcc.png" NAME="Рисунок 554" ALIGN=BOTTOM WIDTH=624 HEIGHT=458
+         BORDER=0></P>
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
 <DIV TYPE=FOOTER>

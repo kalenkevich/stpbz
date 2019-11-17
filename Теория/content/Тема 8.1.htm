@@ -2,7 +2,8 @@
 <HTML>
 <HEAD>
     <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
-    <TITLE>13. Логические основы организации ассоциативных запоминающих устройств (АЗУ). Структура и основные функции АЗУ.</TITLE>
+    <TITLE>13. Логические основы организации ассоциативных запоминающих устройств (АЗУ). Структура и основные функции
+        АЗУ.</TITLE>
     <p><a href="Тема 7.2.htm">Предыдущая </a>
         <a href="Тема 8.2.htm"> Следующая</a></p>
     <META NAME="GENERATOR" CONTENT="LibreOffice 4.0.5.2 (Linux)">
@@ -12,28 +13,150 @@
     <META NAME="CHANGED" CONTENT="20150304;22090000">
     <STYLE TYPE="text/css">
         <!--
-        @page { margin-right: 0.81in; margin-top: 0.49in; margin-bottom: 0.59in }
-        P { margin-bottom: 0in; direction: ltr; color: #000000; widows: 2; orphans: 2 }
-        P.western { font-family: "Times New Roman", serif; font-size: 11pt; so-language: ru-RU; font-style: italic }
-        P.cjk { font-family: "Times New Roman", serif; font-size: 11pt; font-style: italic }
-        P.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA; font-style: italic }
-        H1 { text-indent: 0.49in; margin-top: 0in; margin-bottom: 0in; direction: ltr; color: #000000; line-height: 150%; text-align: justify; widows: 2; orphans: 2; text-decoration: underline }
-        H1.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ru-RU; font-weight: normal }
-        H1.cjk { font-family: "Times New Roman", serif; font-size: 12pt; font-weight: normal }
-        H1.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA; font-weight: normal }
-        H3 { margin-top: 0in; margin-bottom: 0in; direction: ltr; color: #000000; text-align: center; widows: 2; orphans: 2 }
-        H3.western { font-size: 12pt; so-language: ru-RU; font-style: italic }
-        H3.cjk { font-family: "Times New Roman", serif; font-size: 12pt; font-style: italic }
-        H3.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA; font-style: italic }
-        H4 { margin-top: 0in; margin-bottom: 0in; direction: ltr; color: #000000; widows: 2; orphans: 2 }
-        H4.western { so-language: ru-RU; font-style: italic; font-weight: normal }
-        H4.cjk { font-family: "Times New Roman", serif; font-style: italic; font-weight: normal }
-        H4.ctl { font-family: "Times New Roman", serif; so-language: ar-SA; font-style: italic; font-weight: normal }
-        A:link { color: #0000ff }
-        A:visited { color: #800080 }
-        A.western:visited { so-language: en-US }
-        A.cjk:visited { so-language: zh-CN }
-        A.ctl:visited { so-language: hi-IN }
+        @page {
+            margin-right: 0.81in;
+            margin-top: 0.49in;
+            margin-bottom: 0.59in
+        }
+
+        P {
+            margin-bottom: 0in;
+            direction: ltr;
+            color: #000000;
+            widows: 2;
+            orphans: 2
+        }
+
+        P.western {
+            font-family: "Times New Roman", serif;
+            font-size: 11pt;
+            so-language: ru-RU;
+            font-style: italic
+        }
+
+        P.cjk {
+            font-family: "Times New Roman", serif;
+            font-size: 11pt;
+            font-style: italic
+        }
+
+        P.ctl {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            so-language: ar-SA;
+            font-style: italic
+        }
+
+        H1 {
+            text-indent: 0.49in;
+            margin-top: 0in;
+            margin-bottom: 0in;
+            direction: ltr;
+            color: #000000;
+            line-height: 150%;
+            text-align: justify;
+            widows: 2;
+            orphans: 2;
+            text-decoration: underline
+        }
+
+        H1.western {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            so-language: ru-RU;
+            font-weight: normal
+        }
+
+        H1.cjk {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            font-weight: normal
+        }
+
+        H1.ctl {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            so-language: ar-SA;
+            font-weight: normal
+        }
+
+        H3 {
+            margin-top: 0in;
+            margin-bottom: 0in;
+            direction: ltr;
+            color: #000000;
+            text-align: center;
+            widows: 2;
+            orphans: 2
+        }
+
+        H3.western {
+            font-size: 12pt;
+            so-language: ru-RU;
+            font-style: italic
+        }
+
+        H3.cjk {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            font-style: italic
+        }
+
+        H3.ctl {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            so-language: ar-SA;
+            font-style: italic
+        }
+
+        H4 {
+            margin-top: 0in;
+            margin-bottom: 0in;
+            direction: ltr;
+            color: #000000;
+            widows: 2;
+            orphans: 2
+        }
+
+        H4.western {
+            so-language: ru-RU;
+            font-style: italic;
+            font-weight: normal
+        }
+
+        H4.cjk {
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+            font-weight: normal
+        }
+
+        H4.ctl {
+            font-family: "Times New Roman", serif;
+            so-language: ar-SA;
+            font-style: italic;
+            font-weight: normal
+        }
+
+        A:link {
+            color: #0000ff
+        }
+
+        A:visited {
+            color: #800080
+        }
+
+        A.western:visited {
+            so-language: en-US
+        }
+
+        A.cjk:visited {
+            so-language: zh-CN
+        }
+
+        A.ctl:visited {
+            so-language: hi-IN
+        }
+
         -->
     </STYLE>
 </HEAD>
@@ -41,915 +164,1116 @@
 <DIV TYPE=HEADER>
     <P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
         <FONT SIZE=3><FONT SIZE=4><B>Раздел 8. Логические принципы организации ассоциативных запоминающих устройств</B></FONT></FONT>
-<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><B>Тема 13. Логические основы
-        организации ассоциативных запоминающих устройств(АЗУ).
-        Структура и основные функции АЗУ.</B></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><B>13.1. Основы организации
-        ассоциативных запоминающих устройств (АЗУ)</B></FONT></P>
-<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><B>13.1.1. Общие замечания</B></FONT></FONT></P>
-<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Обстоятельства,
-        способствующие развитию ассоциативных
-        средств хранения и обработки информации,
-        рассмотрены в разд. 6. </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>В разд. 7 рассматривался
-        программный подход к реализации методов
-        адресации по содержанию, рассчитанный
-        на применение ЭВМ универсального типа.
-        Предполагалось, что информация хранится
-        в запоминающих устройствах произвольного
-        доступа со стандартной системой
-        адресации.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>В данном разделе будет
-        рассмотрен аппаратный подход, в котором
-        для хранения и обработки информации
-        используется ассоциативное запоминающее
-        устройство (память с адресацией по
-        содержанию). Само понятие такой памяти
-        подчеркивает аспект быстрого поиска
-        всех информационных объектов,
-        удовлетворяющих заданному критерию
-        поиска. В таком контексте механизм
-        хранения и выборки ассоциаций должен
-        удовлетворять следующим требованиям
-        [11]:</FONT></FONT></P>
-<OL>
-    <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 130%">
-        <FONT SIZE=3><FONT SIZE=4>покомпонентное представление
-            и распределенное хранение информационных
-            объектов в ассоциативной памяти;</FONT></FONT></P>
-    <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 130%">
-        <FONT SIZE=4>доступ аргументов поиска
-            (поисковых объектов) одновременно ко
-            всем объектам в памяти;</FONT></P>
-</OL>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>3) обеспечение выполнения
-        требуемой операции покомпонентного
-        сравнения;</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>4) индивидуальное
-        покомпонентное сравнение аргументов
-        поиска с каждым объектом в памяти на
-        основе выбранной меры сходства;</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>5) сбор и обработка
-        результатов совпадения поисковых
-        объектов с объектами в памяти;</FONT></FONT></P>
-<OL START=6>
-    <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 130%">
-        <FONT SIZE=4>выборка поисковой информации.</FONT></P>
-</OL>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5in; font-style: normal; line-height: 130%">
-    <BR>
-</P>
-<H3 LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; line-height: 135%">
-    <FONT SIZE=4><SPAN STYLE="font-style: normal">13.1.2. Логические
-основы организации АЗУ</SPAN></FONT></H3>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>Для описания логики
-        функционирования вычислительных
-        устройств чаще всего используется
-        аппарат </FONT><FONT SIZE=4><I>булевой алгебры.</I></FONT><FONT SIZE=4>
-        Базовой операцией, выполняемой на уровне
-        ячейки памяти с адресацией по содержанию,
-        является </FONT><FONT SIZE=4><I>сравнение битов.
-    </I></FONT><FONT SIZE=4>Применяется сравнение по
-        критериям</FONT><FONT SIZE=4><I> «равно», «больше»
-    </I></FONT><FONT SIZE=4>и</FONT><FONT SIZE=4><I> «меньше».</I></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 130%">
-    <BR>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 130%">
-    <FONT SIZE=4><I>Сравнение по критерию «равно»</I></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Обозначим булевы значения
-        двух логических переменных соответственно
-        как </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>x</I></SPAN></FONT><FONT SIZE=4>
-        и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>y</I></SPAN></FONT><FONT SIZE=4><I>.</I></FONT><FONT SIZE=4>
-        Булева функция, которая при совпадении
-    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>x</I></SPAN></FONT><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>y</I></SPAN></FONT><FONT SIZE=4>
-        принимает значение </FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>
-        (истина)</I></FONT><FONT SIZE=4>, а в противном
-        случае – </FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I> (ложь)</I></FONT><FONT SIZE=4>,
-        называется </FONT><FONT SIZE=4><I>логической
-        эквивалентностью </I></FONT><FONT SIZE=4>и
-    </FONT><FONT SIZE=4>описывается выражением:</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="font-style: normal; line-height: 130%">
-
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m153c4696.gif" NAME="Object1" ALIGN=ABSMIDDLE WIDTH=157 HEIGHT=20><FONT SIZE=3><FONT SIZE=4>.
-    (13.1)</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Обратная по отношению к
-        (13.1) функция </FONT><FONT FACE="Symbol, serif"><FONT SIZE=4>&#8853;</FONT></FONT><FONT SIZE=4>
-        – </FONT><FONT SIZE=4><I>Исключающее “ИЛИ”</I></FONT><FONT SIZE=4>
-        описывается выражением</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m356922f4.gif" NAME="Object2" ALIGN=ABSMIDDLE WIDTH=152 HEIGHT=20><FONT SIZE=3><FONT SIZE=4>.
-    (13.2)</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Логико-запоминающая среда
-        обычной ассоциативной памяти состоит
-        из ячеек, расположенных в узлах решетки,
-        в </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>m</I></SPAN></FONT><FONT SIZE=4>
-        строках которой размещаются хранимые
-        слова, а в </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>столбцах – соответствующие
-        разряды этих слов. Каждая ячейка должна
-        иметь логическую схему для реализации
-        функций (13.1) и (13.2). </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>При </FONT><FONT SIZE=4><I>маскированном
-        поиске</I></FONT><FONT SIZE=4> лишь часть разрядов
-        поискового аргумента сравнивается с
-        соответствующими разрядами всех слов
-        памяти. Остальные разряды маскируются
-        (блокируются). Считываются только те
-        слова, у которых значения незамаскированных
-        разрядов совпадают с заданными разрядами
-        аргумента. Чтобы обеспечить выполнение
-        маскирования, в каждой ячейке памяти
-        также должны быть предусмотрены
-        соответствующие средства. </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Пусть </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT><FONT SIZE=4>-е
-        слово памяти имеет вид </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>,
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-2</I></FONT></SUB><FONT SIZE=4><I>,
-        …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4><I>
-        , </I></FONT><FONT SIZE=4>где </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4>
-        – булево значение </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT SIZE=4>-го
-        разряда, а поисковый аргумент – вид </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>,
-        …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4><I>.</I></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Если в слове маски </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>C</I></SPAN></FONT><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>C</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>C</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>,
-        …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>C</I></SPAN></FONT><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4>
-        блокируемым разрядам присвоить булево
-        значение </FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>,</I></FONT><FONT SIZE=4>
-        а остальным разрядам – </FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>,</I></FONT><FONT SIZE=4>
-        то в качестве функции, характеризующей
-        совпадение содержимого ассоциативной
-        ячейки с маскированным битом поискового
-        аргумента, можно взять</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_629de859.gif" NAME="Object3" ALIGN=ABSMIDDLE WIDTH=126 HEIGHT=24><FONT SIZE=3><FONT SIZE=4>.
-    (13.3)</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Если </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT><FONT SIZE=4>-й
-        разряд слова </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        замаскирован, значение </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>m</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT COLOR="#000000"><FONT SIZE=4>
-        = </FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>1</FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>,
-        так как </FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><SPAN LANG="en-US"><I>C</I></SPAN></FONT></FONT><FONT COLOR="#000000"><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB></FONT><FONT COLOR="#000000"><FONT SIZE=4><I>
-        = </I></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>1</FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><I>.</I></FONT></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT COLOR="#000000"><FONT SIZE=4><I>Ф</I></FONT></FONT><FONT SIZE=4>ункция,
-        характеризующая несовпадение,</FONT><FONT COLOR="#000000"><FONT SIZE=4>
-        имеет вид</FONT></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT COLOR="#000000">
-        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m6a0da11f.gif" NAME="Object4" ALIGN=ABSMIDDLE WIDTH=129 HEIGHT=24><FONT SIZE=3><FONT SIZE=4>.
-        (13.4)</FONT></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        согласуется с </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4>
-        во всех незамаскированных разрядах,
-        если для всех разрядов выполняется
-        условие совпадения (13.3), т.е.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_6eb823bc.gif" NAME="Object5" ALIGN=ABSMIDDLE WIDTH=81 HEIGHT=36><FONT SIZE=3><FONT SIZE=4>.
-    (13.5)</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        не согласуется с </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4>
-        при несовпадении разрядов хотя бы в
-        одной позиции</FONT><FONT SIZE=4><I>:</I></FONT><FONT SIZE=4>
-    </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m6543a5c4.gif" NAME="Object6" ALIGN=ABSMIDDLE WIDTH=81 HEIGHT=36><FONT SIZE=3><FONT SIZE=4>.
-    (13.6)</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>При рекуррентной процедуре
-        проверки на совпадение (например, для
-        АЗУ с ассоциативным сравнением параллельно
-        по словам и последовательно по разрядам)
-        результат может быть представлен в
-        виде: </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_7f87e2ff.gif" NAME="Object7" ALIGN=ABSMIDDLE WIDTH=117 HEIGHT=21>
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_1181d2b4.gif" NAME="Object8" ALIGN=ABSMIDDLE WIDTH=44 HEIGHT=21><FONT SIZE=3><FONT SIZE=4>,
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m24d491cd.gif" NAME="Object9" ALIGN=ABSMIDDLE WIDTH=59 HEIGHT=21></FONT><FONT COLOR="#000000"><FONT SIZE=4>.
-</FONT></FONT><FONT SIZE=4>(13.7) </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Мо</FONT><FONT COLOR="#000000"><FONT SIZE=4>жно
-        использовать и другую рекуррентную
-        схему, основанную на формуле (3.6): </FONT></FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT COLOR="#000000">
-        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m1009ad96.gif" NAME="Object10" ALIGN=ABSMIDDLE WIDTH=117 HEIGHT=21>
-        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_2669ca79.gif" NAME="Object11" ALIGN=ABSMIDDLE WIDTH=92 HEIGHT=18>
-        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m6c4b5819.gif" NAME="Object12" ALIGN=ABSMIDDLE WIDTH=49 HEIGHT=21>
-    </FONT>
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_6be4008d.gif" NAME="Object13" ALIGN=ABSMIDDLE WIDTH=75 HEIGHT=37><FONT SIZE=3><FONT SIZE=4>.
-</FONT><FONT COLOR="#000000"><FONT SIZE=4>(13.8)</FONT></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 125%">
-    <FONT SIZE=4><I>Сравнение по критерию «больше»
-        и «меньше»</I></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=4>Другой базовой операцией в АЗУ
-        является поиск всех слов, численные
-        значения которых больше (меньше) величины
-        заданного аргумента. </FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT COLOR="#000000"><FONT SIZE=4>Как правило,
-        в АЗУ </FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><B>сравнение
-        величин</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>
-        чаще всего выполняется в несколько
-        этапов последовательно по разрядам.
-        Промежуточные результаты запоминаются,
-        чтобы их можно было использовать на
-        следующих этапах.</FONT></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT COLOR="#000000"><FONT SIZE=4>Пусть анализ
-        двоичных чисел начинается </FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><B>со
-        старших</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>
-        (левых) разрядов. Кроме поискового
-        аргумента </FONT></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>,
-        …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4>
-        и содержимого слова памяти </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>&nbsp;</I></FONT></SUB><FONT SIZE=4><I>=
-    </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>,
-        …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4><I>,</I></FONT><FONT SIZE=4>
-        в алгоритме участвуют </FONT><FONT SIZE=4><I>две
-        вспомогательные последовательности
-    </I></FONT><FONT SIZE=4>двоичных чисел – промежуточные
-        результаты сравнений по критериям
-        соответственно «больше» и «меньше»:</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>G</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+1</I></FONT></SUB><FONT SIZE=4><I>,
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
-        …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4>
-        и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>L</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+1</I></FONT></SUB><FONT SIZE=4><I>,
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,…,
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4><I>.</I></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>В ЭВМ наборы </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>L</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>G</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        целиком можно не хранить, а представить
-        их </FONT><FONT SIZE=4><B>всего двумя</B></FONT><FONT SIZE=4>
-        машинными переменными </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>соответственно, значения
-        которых вычисляются при помощи следующих
-        рекуррентных соотношений:</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="font-style: normal; line-height: 130%">
-
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_278ccc6a.gif" NAME="Object14" ALIGN=ABSMIDDLE WIDTH=241 HEIGHT=71>
-    <FONT SIZE=3><FONT SIZE=4>(13.9)</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>В качестве начальных
-        значений задаются </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+1</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+1</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>.</I></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=4>Тогда в результате всего цикла
-        сравнения получим:</FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    – <FONT SIZE=3><FONT SIZE=4>для </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>jn</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4>будет</FONT><FONT SIZE=4><I>
-</I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    &gt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>,</I></FONT><FONT SIZE=4>
-    а из формул (13.9) следует, что для всех </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i&nbsp;</I></SPAN></FONT><FONT SIZE=4><I>&lt;
-</I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>n g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4>; </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 125%">
-    – <FONT SIZE=3><FONT SIZE=4>для </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>jn</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4>будет
-</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    &lt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4>
-    и для всех </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT SIZE=4><I>
-    &lt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT><FONT SIZE=4><I>
-</I></FONT><FONT SIZE=4>выполняется условие
-</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>&nbsp;=&nbsp;</I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>,
-</I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>;</I></FONT><FONT SIZE=4>
-</FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 120%">
-    – <FONT SIZE=3><FONT SIZE=4>для </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>jn</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-</I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4> сравнение
-    величин </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-</I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>
-</I></FONT><FONT SIZE=4>необходимо продолжить,
-    анализируя содержимое разрядов с
-    меньшими номерами.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>Рассмотренные выше
-        действия повторяются с разрядами </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4>
-        и т.д. до тех пор, пока в результате
-        сравнения самых младших разрядов не
-        будут вычислены значения </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4>
-        и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>.</I></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>Если </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4>то
-    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-        &gt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4>;
-        при </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4>наоборот,
-    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-        &lt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4>.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>Из условия</FONT><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4>следует,
-        что </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>Комбинация </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4> принципиально
-    </FONT><FONT SIZE=4><B>невозможна</B></FONT><FONT SIZE=4>.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>Можно использовать и
-        другой алгоритм, когда рекуррентная
-        процедура сравнения начинается </FONT><FONT SIZE=4><B>с
-        младших</B></FONT><FONT SIZE=4> разрядов. Это
-        позволяет сократить количество
-        просматриваемых разрядов, если оба
-        сравниваемые числа начинаются с нулей.
-    </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-    <FONT SIZE=4>Алгоритм описывается двумя
-        рекуррентными формулами:</FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="font-style: normal; line-height: 130%">
-
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_3c103770.gif" NAME="Object15" ALIGN=ABSMIDDLE WIDTH=265 HEIGHT=71><IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m53d4ecad.gif" NAME="Object16" ALIGN=ABSMIDDLE WIDTH=8 HEIGHT=18>
-    <FONT SIZE=3><FONT SIZE=4>(13.10)</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>В качестве начальных
-        значений задаются </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
-        = 0.</I></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>Соотношения между
-        сравниваемыми величинами определяются
-        последними значениями</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4>
-        и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>.</I></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>Рекуррентные соотношения
-        (13.9) можно реализовать при помощи так
-        называемых </FONT><FONT SIZE=4><I>итеративных
-        цепей</I></FONT><FONT SIZE=4> (рисунок 13.1).</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>В каждом из однотипных
-        логических блоков, показанных в виде
-        прямоугольника (в центре рисунка),
-        вычисляется значение функций (13.9).
-        Результаты вычислений последовательно
-        передаются на разряды с меньшими
-        номерами. </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4>Окончательный результат
-        определяется комбинацией сигналов,
-        снимаемых с выходов последнего логического
-        блока. </FONT><SPAN LANG="en-US"><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-        <BR>
-<p style="text-align: center"><IMG SRC="Тема 8.1.files/image13.1.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=547 HEIGHT=291 BORDER=0 style="text-align: center"></SPAN></FONT></P></p>
-    <p style="text-align: center">Рисунок 13.1. Блок-схема итеративной логической цепи для параллельного сравнения величин</p>
-
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Для реализации отношений
-        (13.9), (13.10) можно применить способ сравнения,
-        основанный на использовании </FONT><FONT SIZE=4><I>последовательных
-        вычитающих схем</I></FONT><FONT SIZE=4>. Одна из
-        таких схем приведена на рисунке 13.2.</FONT></FONT></P>
-<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="text-align: center; margin-left: 0.49in; text-indent: 0in; font-style: normal; line-height: 150%">
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_mfa30ae2.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=636 HEIGHT=303 BORDER=0></P>
-    <p style="text-align: center">Рисунок 13.2. Устройство сравнения с использованием блока вычитания последовательного типа</p>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
-    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US">C</SPAN></FONT><FONT SIZE=4>одержимое
-        младших разрядов сдвиговых регистров
-        синхронно сдвигается</FONT><FONT SIZE=4> на
-        входы старших разрядов, а н</FONT><FONT SIZE=4>а
-        выходе логического блока вычитания в
-        каждом такте генерируются сигналы
-        поразрядной разности </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>d</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">i</SPAN></FONT></SUB><FONT SIZE=4>
-        и переноса </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>b</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+</I></FONT></SUB><SUB><FONT SIZE=4>1</FONT></SUB><FONT SIZE=4>.
-        Пройдя через триггер задержки на 1 такт,
-        перенос поступает на вход блока вычитания.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Результат сравнения
-        определяется значением последнего
-        сигнала переноса </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>b</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4>.
-        Если </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>b</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4>
-        = 1, то это означает, что </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>
-        &lt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Работу блока вычитания
-        можно описать при помощи </FONT><FONT SIZE=4><I>таблицы
-        истинности</I></FONT><FONT SIZE=4> (таблица 13.1). </FONT></FONT>
-</P>
-<H3 LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; line-height: 130%">
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m226249ba.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=627 HEIGHT=283 BORDER=0></H3>
-<H3 LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; line-height: 130%">
-    <FONT SIZE=4><SPAN STYLE="font-style: normal">13.1.3. Логическая
-структура одноразрядной ячейки АЗУ </SPAN></FONT>
-</H3>
-<H3 LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.01in; line-height: 130%">
-    <FONT SIZE=4><SPAN STYLE="font-style: normal">параллельного
-действия</SPAN></FONT></H3>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Рассмотрим структуру
-        памяти (АЗУ), рассчитанную на непосредственную
-        схемную реализацию выражений (13.3) –
-        (13.6). Одноразрядная ячейка такой памяти
-        представлена на рисунке 13.3.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Ячейка АЗУ включает в
-        себя узел записи (И</FONT><SUB><FONT SIZE=4>1</FONT></SUB><FONT SIZE=4>,
-        И</FONT><SUB><FONT SIZE=4>2</FONT></SUB><FONT SIZE=4>), запоминающий
-        элемент (И</FONT><SUB><FONT SIZE=4>3</FONT></SUB><FONT SIZE=4>,
-        И</FONT><SUB><FONT SIZE=4>4</FONT></SUB><FONT SIZE=4>), узел
-        считывания (И</FONT><SUB><FONT SIZE=4>5</FONT></SUB><FONT SIZE=4>)
-        и узел ассоциативного сравнения по
-        критерию «равно», реализующий функцию
-        «Исключающее ИЛИ» (И</FONT><SUB><FONT SIZE=4>6</FONT></SUB><FONT SIZE=4>,
-        И</FONT><SUB><FONT SIZE=4>7</FONT></SUB><FONT SIZE=4>), а также
-        схемы для реализации функции « </FONT><FONT SIZE=4>Встроенное
-        И» </FONT><FONT SIZE=4>(например, </FONT><FONT SIZE=4><I>схемы
-        с разомкнутым коллектором</I></FONT><FONT SIZE=4>,
-        если используются биполярные транзисторы).</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=4>Кроме логики, предназначенной
-        для выполнения операции сравнения, в
-        каждой ячейке имеются адресные линии
-        для считывания и записи информации. </FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
-    <FONT SIZE=3><FONT SIZE=4>Обозначения на рисунке
-        13.3: </FONT><FONT SIZE=4><I>А</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        – адресный сигнал </FONT><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT><FONT SIZE=4>-го
-        слова; </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>(1)</FONT><FONT SIZE=4> – запись “1”
-        в разряд </FONT><FONT SIZE=4><SPAN LANG="en-US">i</SPAN></FONT><FONT SIZE=4>;
-    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>(0)</FONT><FONT SIZE=4> – запись “0”
-        в разряд </FONT><FONT SIZE=4><SPAN LANG="en-US">i</SPAN></FONT><FONT SIZE=4>;
-    </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(1)</FONT><FONT SIZE=4>
-        – сравнение с “1” </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT SIZE=4><I>-</I></FONT><FONT SIZE=4>го
-        разряда;</FONT><FONT SIZE=4><I> С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4>
-        – сравнение с “0” </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT SIZE=4>-го
-        разряда; </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-        – </I></FONT><FONT SIZE=4>сигнал совпадения </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT><FONT SIZE=4>-го
-        слова;
-        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_7c7e426d.gif" NAME="Object17" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21>–
-        выход информации (разряда </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT SIZE=4>).</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
-    <BR>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
-    <BR>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
-    <BR>
-</P>
-<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="text-align: center; text-indent: 0.49in; font-style: normal; line-height: 150%">
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m2d745612.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=631 HEIGHT=503 BORDER=0></P>
-    <p style="text-align: center">Рисунок 13.3 Схема одноразрядной ассоциативной ячейки</p>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 125%">
-    <BR>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 125%">
-    <FONT SIZE=4>Рассмотрим выполнение операций
-        записи / чтения в АЗУ.</FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 125%">
-    <FONT SIZE=4><I>Запись</I></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>Запоминающий элемент
-        (триггер) предназначен для хранения
-        одного бита информации. Этот триггер
-        устанавливается и сбрасывается сигналами
-    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>(1)</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4>и
-    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>(0)</FONT><FONT SIZE=4>, поступающими
-        с вентилей И</FONT><SUB><FONT SIZE=4>1</FONT></SUB><FONT SIZE=4>
-        и И</FONT><SUB><FONT SIZE=4>2</FONT></SUB><FONT SIZE=4>, при
-        условии, что на адресную линию </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        подан сигнал с логическим уровнем “1”.
-    </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>Значением  записанного
-        бита  является  выход  И</FONT><SUB><FONT SIZE=4>3</FONT></SUB><FONT SIZE=4>.
-        Оно  равно  1,  если </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
-    </I></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4><I>&nbsp;</I></FONT><FONT SIZE=4>=
-        0, </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
-    </I></FONT></SUB><FONT SIZE=4>(1)</FONT><FONT SIZE=4> = 1 и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        = 1, а при </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>(0)</FONT><FONT SIZE=4> = 1, </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>(1)</FONT><FONT SIZE=4> = 0 и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        = 1– равно 0.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>Чтобы содержимое данного
-        разряда в ходе записи не изменялось,
-        запись маскируется путем задания </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>(1)</FONT><FONT SIZE=4><I> = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>(0)</FONT><FONT SIZE=4><I> = </I></FONT><FONT SIZE=4>0.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 125%">
-    <FONT SIZE=4><I>Считывание</I></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>Считывание информации
-        из разрядной ячейки в режиме обычной
-        адресации производится путем подачи
-        на линию </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        сигнала с логическим уровнем “1”, в
-        результате инвертированное значение
-        бита с выхода И</FONT><SUB><FONT SIZE=4>5</FONT></SUB><FONT SIZE=4>
-        непосредственно поступает на общую для
-        всех слов памяти линию<IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_7c7e426d.gif" NAME="Object18" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21>.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>Считывание в режиме
-        адресации по содержанию (сравнение бита
-        поискового аргумента с содержимым
-        ассоциативной ячейки) с учетом маскирования
-        производится при помощи линий </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>и</FONT><FONT SIZE=4><I> С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(1)</FONT><FONT SIZE=4>,
-        проходящих через </FONT><FONT SIZE=4><SPAN LANG="en-US">i</SPAN></FONT><FONT SIZE=4>-й
-        разряд всех слов памяти.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>При сравнении с единицей
-        подаются сигналы </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>0, </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(1)</FONT><FONT SIZE=4><I>
-        =</I></FONT><FONT SIZE=4>1, при сравнении с нулем –
-    </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4>, </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(1)
-    </FONT><FONT SIZE=4><I>=0, </I></FONT><FONT SIZE=4>чтобы разряд
-        не участвовал в операции сравнения при
-        маскировании, на линии </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4>
-        и </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(1)</FONT><FONT SIZE=4>
-        подается “0”. При совпадении сравниваемых
-        значений потенциалы на выходах схем </FONT><FONT SIZE=4><I>И</I></FONT><SUB><FONT SIZE=4>6</FONT></SUB><FONT SIZE=4>
-        и</FONT><FONT SIZE=4><I> И</I></FONT><SUB><FONT SIZE=4>7</FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>отличны от 0 (оба ключа
-        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m53d4ecad.gif" NAME="Object19" ALIGN=ABSMIDDLE WIDTH=8 HEIGHT=18>разомкнуты)
-        и на линии </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        появляется сигнал “1”; при несовпадении
-        – выход одного из вентилей </FONT><FONT SIZE=4><I>И</I></FONT><SUB><FONT SIZE=4>6</FONT></SUB><FONT SIZE=4>
-        или</FONT><FONT SIZE=4><I> И</I></FONT><SUB><FONT SIZE=4>7</FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>замыкается на “землю” и
-        потенциал линии </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        становится равным 0; при маскировании
-        – выходы </FONT><FONT SIZE=4><I>И</I></FONT><SUB><FONT SIZE=4>6</FONT></SUB><FONT SIZE=4>
-        и</FONT><FONT SIZE=4><I> И</I></FONT><SUB><FONT SIZE=4>7</FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>размыкаются независимо
-        от записанного бита.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <BR>
-</P>
-<H4 LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; line-height: 125%">
-    <FONT SIZE=4><SPAN STYLE="font-style: normal"><B>13.1.4. Анализатор
-        многократных совпадений</B></SPAN></FONT></H4>
-<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>В АЗУ может храниться
-        несколько слов, ассоциативные признаки
-        которых по незамаскированным разрядам
-        совпадают с поисковым аргументом.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 125%">
-    <FONT SIZE=4>Задача анализатора заключается
-        в выявлении таких слов и их приоритетной
-        выборке.</FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>При </FONT><FONT SIZE=4>поступлении
-        аргумента в этом случае одновременно
-        возбуждается несколько линий </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
-    </I></FONT></SUB><FONT SIZE=4>(см. рисунок 13.3). Далее
-        необходимо поочередно считать из памяти
-        содержимое слов, соответствующих
-        управляющим сигналам на линиях </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4>
-        и </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(1)</FONT><FONT SIZE=4>.
-        Именно для этого в ячейках АЗУ предусмотрены
-    </FONT><FONT SIZE=4><I>цепи адресного считывания</I></FONT><FONT SIZE=4>.
-        Но необходим какой-то </FONT><FONT SIZE=4><I>механизм
-        обслуживания очереди</I></FONT><FONT SIZE=4>, при
-        помощи которого можно было бы производить
-        последовательный перебор активных
-        линий </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        (обычно в порядке возрастания номеров)
-        и подачу управляющих сигналов на адресные
-        линии соответствующих ячеек памяти. </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>Для этого </FONT><FONT SIZE=4><I>анализатор
-        многократного совпадения </I></FONT><FONT SIZE=4>имеет
-    </FONT><FONT SIZE=4>на </FONT><FONT SIZE=4>каждую линию
-    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        массива АЗУ </FONT><FONT SIZE=4><I>буферный триггер
-        фиксации реакции на запрос</I></FONT><FONT SIZE=4>,
-        а также</FONT><FONT SIZE=4> </FONT><FONT SIZE=4><I>приоритетный
-        искатель</I></FONT><FONT SIZE=4> для выделения
-        одной из активных линий. </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=4>Рассмотрим некоторые способы
-        реализации анализаторов многократного
-        совпадения.</FONT></P>
-<H1 LANG="ru-RU" CLASS="western" STYLE="line-height: 125%; text-decoration: none">
-    <FONT SIZE=4><I>Приоритетные анализаторы
-        последовательного типа</I></FONT></H1>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>Один из вариантов такого
-        анализатора показан на рисунке 13.4а. В
-        нем логическая цепь, позволяющая выделять
-        среди своих входов, установленных в 1,
-        линию с наименьшим номером (</FONT><FONT SIZE=4><SPAN LANG="en-US">N</SPAN></FONT><FONT SIZE=4>),
-        построена по принципу </FONT><FONT SIZE=4><I>последовательного
-        соединения разрядов</I></FONT><FONT SIZE=4>, когда</FONT><FONT SIZE=4>
-        каждый единичный вход </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        этой цепи блокирует действие линий с
-        большими номерами, в результате чего в
-        “1” устанавливается только выход,
-        соответствующий первой активной линии.
-    </FONT><SPAN LANG="en-US">
-<p style="text-align: center"><IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m56207839.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=634 HEIGHT=485 BORDER=0></SPAN></FONT></P></P>
-    <p style="text-align: center">Рисунок 13.4а. Схема приоритетного анализатора с последовательным соединением разрядов</p>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>На рисунке 13.4а применены
-        следующие обозначения: </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
-    </I></FONT></SUB><FONT SIZE=4>– сигнал совпадения;
-    </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4><I>j</I></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>– </FONT><FONT SIZE=4>сигнал запрета</FONT><I>;
-    </I><FONT SIZE=4><SPAN LANG="en-US"><I>O</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
-        – выходной сигнал; </FONT><FONT SIZE=6 STYLE="font-size: 22pt">○
-        – </FONT><FONT SIZE=4>операция “НЕ”.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Чтобы установка в “0”
-        триггера одной активной линии не повлекла
-        за собой сброс триггера следующей линии,
-        используются триггеры, имеющие </FONT><FONT SIZE=4><I>вход
-        синхронизации.</I></FONT><FONT SIZE=4> Управляющий
-        сигнал «Поиск следующей линии» не
-        нарушает информации, записанной на
-        других триггерах </FONT><FONT SIZE=4><SPAN LANG="en-US">J</SPAN></FONT><FONT SIZE=4>-</FONT><FONT SIZE=4><SPAN LANG="en-US">K</SPAN></FONT><FONT SIZE=4>.
-        Единичный сигнал, соответствующий
-        первой активной линии, автоматически
-        идет на выход, а функцией управляющего
-        сигнала «</FONT><FONT SIZE=4><I>Поиск следующей
-        линии</I></FONT><FONT SIZE=4>» является лишь сброс
-        первого из «ответивших» триггеров.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Более экономичная схема
-        показана на рисунке 13.4б, так как в ней
-        применяются простейшие триггеры, что
-        позволяет допустить некоторое снижение
-        быстродействия, связанное с повторным
-        выполнением операции ассоциативного
-        считывания, тем более что они занимают
-        не намного больше времени, чем сброс
-        буферных триггеров. </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <BR>
-</P>
-<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="text-align: center; text-indent: 0.49in; font-style: normal; line-height: 150%">
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m753ca1a1.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=627 HEIGHT=540 BORDER=0></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <p style="text-align: center">Рисунок 13.4б. Схема анализатора многократного совпадения с повторением процедуры ассоциативного доступа</p>
-    <BR>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Сигнал управления «Поиск
-        первой линии» подается только после
-        того, как произойдет считывание в режиме
-        адресации по содержанию. По нему
-        осуществляется выделение первой из
-        ответивших линий и сброс триггеров для
-        линий с большими номерами. Для выборки
-        следующих совпавших слов процедура
-        ассоциативного доступа производится
-        повторно. Уже обработанные ячейки
-        помечаются, например установкой в
-        единицу специального разряда. </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Недостатком рассмотренных
-        анализаторов последовательного типа
-        является то, что время срабатывания
-        анализатора при этом пропорционально</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 130%">
-    <FONT SIZE=4>числу слов в ассоциативном
-        накопителе.</FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Имеются технические
-        решения для сокращения продолжительности
-        приоритетного анализа, использующие
-        модульную организация приоритетных
-        анализаторов и стандартные интегральные
-        модули памяти.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Рассмотрим логический
-        блок, представленный на рисунке 13.5а, для
-        формирования вектора запрета. </FONT></FONT>
-</P>
-<P LANG="en-US" CLASS="western" ALIGN=CENTER STYLE="text-align: center; text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_6f9c1c5f.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=622 HEIGHT=463 BORDER=0></P>
-    <p style="text-align: center">Рисунок 13.5а. Отдельной модуль схемы генерации вектора запрета</p>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Вектор запрета генерируется
-        на выходе блока при подаче на его вход
-        сигнала </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4><I>A</I></FONT></SUB><FONT SIZE=4>,
-        при этом все выходы </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4 STYLE="font-size: 16pt"><I>i</I></FONT></SUB><SUB><FONT SIZE=4><I>
-    </I></FONT></SUB><FONT SIZE=4>устанавливаются в “1”
-        (блок «закрывается»). </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4>Поскольку количество
-        входов на схемах ИЛИ линейно растет с
-        увеличением номера ячейки, блок не
-        применяют в АЗУ большой емкости, но он
-        вполне подходит для небольших АЗУ
-        (например буферной памяти).</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
-    <FONT SIZE=3><FONT SIZE=4>Соединяя последовательно
-        блоки в виде древовидной структуры (как
-        показано на рисунок 13.5б), можно получить
-        приоритетный анализатор с достаточно
-        большим количеством входов. Сигнал </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4><I>A</I></FONT></SUB><FONT SIZE=4>
-        используется для установки всех выходов
-    </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4><I>i</I></FONT></SUB><SUB><FONT SIZE=4>
-    </FONT></SUB><FONT SIZE=4>заданного блока</FONT><SUB><FONT SIZE=4>
-    </FONT></SUB><FONT SIZE=4>в “1” (при этом сигнал
-        сброса проходит на все буферные триггеры,
-        подключенные к блоку). </FONT></FONT>
-</P>
-
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
-    <FONT SIZE=3><FONT SIZE=4>Предположим, что все
-        выходные линии, за исключением линии
-    </FONT><FONT SIZE=4><I>«Сигнал ОТВЕТА» </I></FONT><FONT SIZE=4>расположены
-        с левой стороны (см. рисунок 13.5а).</FONT></FONT></P>
-<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%; text-align: center">
-    <IMG SRC="Тема 8.1.files/image13.5b.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=646 HEIGHT=390 BORDER=0></P>
-    <p style="text-align: center">Рисунок 13.5б. Древовидная структура анализатора</p>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 150%">
-    <BR>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
-    <FONT SIZE=3><FONT SIZE=4><I>Сигнал ОТВЕТА</I></FONT><FONT SIZE=4>
-        (который появляется при совпадении
-        одноименных разрядов в поисковом
-        аргументе и в словах памяти) передается
-        от низших уровней структуры к высшим,
-        появление его на входе любого из блоков
-        приводит к тому, что все его выходы </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4 STYLE="font-size: 16pt"><I>i</I></FONT></SUB><SUB><FONT SIZE=4 STYLE="font-size: 16pt">
-    </FONT></SUB><FONT SIZE=4>устанавливаются в “1”.
-        Так как эти выходы действуют на блоки
-        более низкого уровня аналогично входу
-    </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4><I>A</I></FONT></SUB><FONT SIZE=4>,
-        они последовательно закрывают все
-        блоки, расположенные левее блока с
-        активным входом, а на выходе блоков
-        первого уровня генерируется вектор
-        сигналов запрета, при помощи которого
-        сбрасываются буферные триггеры. </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 135%">
-    <FONT SIZE=3><FONT SIZE=4>При любых сочетаниях
-        сигналов на линиях </FONT><FONT SIZE=4><I>M</I></FONT><SUB><FONT SIZE=4><I>j</I></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>всегда вырабатывается
-        правильный вектор запрета. Если имеется
-        хотя бы одна активная линия на выходе
-        последнего уровня структуры (корня
-        дерева), появляется единичный сигнал
-        ответа.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 135%">
-    <FONT SIZE=3><FONT SIZE=4><B>13.1.5. Формирование адреса
-        первой ответившей ячейки АП</B></FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: -0.06in; text-indent: 0.49in; font-style: normal; line-height: 135%">
-    <FONT SIZE=3><FONT SIZE=4>Анализатор можно построить
-        таким образом, чтобы он сам генерировал
-        адрес первой по счету ответившей ячейки
-        памяти. Для этого достаточно схему,
-        показанную на рисунке 13.5б, дополнить
-        несколькими логическими элементами,
-        реализующими логическую функцию
-        “Встроенное ИЛИ” (см. рисунок 13.3) </FONT></FONT>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: -0.06in; font-style: normal; line-height: 135%">
-    <FONT SIZE=3><FONT SIZE=4>и соединить блоки, как
-        показано на рисунке 13.6</FONT>.</FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 135%">
-    <FONT SIZE=3><FONT SIZE=4>Можно также для генерации
-        адреса первой ответившей ячейки
-        использовать схему, показанную на
-        рисунке 13.7.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 135%">
-    <FONT SIZE=3><FONT SIZE=4>Эта схема отличается
-        простотой, но не обладает высоким
-        быстродействием.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 135%">
-    <FONT SIZE=3><FONT SIZE=4>Вначале выходные сигналы
-        всех линий </FONT><FONT SIZE=4><SPAN LANG="en-GB"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-GB"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
-    </I></FONT></SUB><FONT SIZE=4>от памяти фиксации
-        результатов сравнения устанавливают
-        соответствующие разряды </FONT><FONT SIZE=4><I>закольцованного</I></FONT><FONT SIZE=4>
-    </FONT><FONT SIZE=4><I>регистра сдвига</I></FONT><FONT SIZE=4>.
-        После этого на регистр сдвига и на
-    </FONT><FONT SIZE=4><I>счетчик адреса (сдвигов)</I></FONT><FONT SIZE=4>
-        подается последовательность тактовых
-        импульсов, содержимое регистра сдвигается
-        в сторону верхних разрядов до появления
-        в первом из них логической “1”, в
-        результате чего подача тактового сигнала
-        автоматически блокируется. Содержимое
-        счетчика непосредственно указывает
-        адрес первого совпавшего слова (в
-        исходном состоянии в счетчике были
-        записаны нули), заносится в адресный
-        регистр и производится считывание
-        слова. Далее первый разряд регистра
-        устанавливается в</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4>0
-        и автоматически возобновляется подача
-        тактовых сигналов на регистр сдвига и
-        счетчик до появления “1” в первом
-        разряде счетчика, после этого считывается
-        следующее совпавшее слово и т.д. до тех
-        пор, пока не будет обслужена вся очередь.</FONT></FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 135%">
-    <FONT SIZE=4>В данном варианте роль буферных
-        триггеров выполняет регистр сдвига.</FONT></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 135%">
-    <FONT SIZE=4>Заметим еще, что в анализаторах,
-        как правило, предусматривается выход,
-        указывающий на наличие одновременно
-        нескольких совпадений (количество
-        которых точно определить достаточно
-        сложно), что бывает необходимо для
-        эффективной реализации сложных видов
-        ассоциативного поиска.</FONT></P>
-
-<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%; text-align: center">
-    <IMG SRC="Тема 8.1.files/image13.6.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=528 HEIGHT=489 BORDER=0></P>
-<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%; text-align: center">
-    <IMG SRC="Тема 8.1.files/image13.7.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=638 HEIGHT=389 BORDER=0></P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 130%">
-    <BR>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 130%">
-    <BR>
-</P>
-<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 135%">
-    <BR>
-</P>
-<DIV TYPE=FOOTER>
-
-	</SPAN><BR>
+    <P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4><B>Тема 13. Логические основы
+            организации ассоциативных запоминающих устройств(АЗУ).
+            Структура и основные функции АЗУ.</B></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4><B>13.1. Основы организации
+            ассоциативных запоминающих устройств (АЗУ)</B></FONT></P>
+    <P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4><B>13.1.1. Общие замечания</B></FONT></FONT></P>
+    <P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Обстоятельства,
+            способствующие развитию ассоциативных
+            средств хранения и обработки информации,
+            рассмотрены в разд. 6. </FONT></FONT>
     </P>
-</DIV>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>В разд. 7 рассматривался
+            программный подход к реализации методов
+            адресации по содержанию, рассчитанный
+            на применение ЭВМ универсального типа.
+            Предполагалось, что информация хранится
+            в запоминающих устройствах произвольного
+            доступа со стандартной системой
+            адресации.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>В данном разделе будет
+            рассмотрен аппаратный подход, в котором
+            для хранения и обработки информации
+            используется ассоциативное запоминающее
+            устройство (память с адресацией по
+            содержанию). Само понятие такой памяти
+            подчеркивает аспект быстрого поиска
+            всех информационных объектов,
+            удовлетворяющих заданному критерию
+            поиска. В таком контексте механизм
+            хранения и выборки ассоциаций должен
+            удовлетворять следующим требованиям
+            [11]:</FONT></FONT></P>
+    <OL>
+        <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 130%">
+            <FONT SIZE=3><FONT SIZE=4>покомпонентное представление
+                и распределенное хранение информационных
+                объектов в ассоциативной памяти;</FONT></FONT></P>
+        <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 130%">
+            <FONT SIZE=4>доступ аргументов поиска
+                (поисковых объектов) одновременно ко
+                всем объектам в памяти;</FONT></P>
+    </OL>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>3) обеспечение выполнения
+            требуемой операции покомпонентного
+            сравнения;</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>4) индивидуальное
+            покомпонентное сравнение аргументов
+            поиска с каждым объектом в памяти на
+            основе выбранной меры сходства;</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>5) сбор и обработка
+            результатов совпадения поисковых
+            объектов с объектами в памяти;</FONT></FONT></P>
+    <OL START=6>
+        <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 130%">
+            <FONT SIZE=4>выборка поисковой информации.</FONT></P>
+    </OL>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5in; font-style: normal; line-height: 130%">
+        <BR>
+    </P>
+    <H3 LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; line-height: 135%">
+        <FONT SIZE=4><SPAN STYLE="font-style: normal">13.1.2. Логические
+основы организации АЗУ</SPAN></FONT></H3>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>Для описания логики
+            функционирования вычислительных
+            устройств чаще всего используется
+            аппарат </FONT><FONT SIZE=4><I>булевой алгебры.</I></FONT><FONT SIZE=4>
+            Базовой операцией, выполняемой на уровне
+            ячейки памяти с адресацией по содержанию,
+            является </FONT><FONT SIZE=4><I>сравнение битов.
+        </I></FONT><FONT SIZE=4>Применяется сравнение по
+            критериям</FONT><FONT SIZE=4><I> «равно», «больше»
+        </I></FONT><FONT SIZE=4>и</FONT><FONT SIZE=4><I> «меньше».</I></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 130%">
+        <BR>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 130%">
+        <FONT SIZE=4><I>Сравнение по критерию «равно»</I></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Обозначим булевы значения
+            двух логических переменных соответственно
+            как </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>x</I></SPAN></FONT><FONT SIZE=4>
+            и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>y</I></SPAN></FONT><FONT SIZE=4><I>.</I></FONT><FONT SIZE=4>
+            Булева функция, которая при совпадении
+        </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>x</I></SPAN></FONT><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>y</I></SPAN></FONT><FONT SIZE=4>
+            принимает значение </FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>
+            (истина)</I></FONT><FONT SIZE=4>, а в противном
+            случае – </FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I> (ложь)</I></FONT><FONT SIZE=4>,
+            называется </FONT><FONT SIZE=4><I>логической
+            эквивалентностью </I></FONT><FONT SIZE=4>и
+        </FONT><FONT SIZE=4>описывается выражением:</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="font-style: normal; line-height: 130%">
+
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m153c4696.gif" NAME="Object1" ALIGN=ABSMIDDLE WIDTH=157
+             HEIGHT=20><FONT SIZE=3><FONT SIZE=4>.
+        (13.1)</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Обратная по отношению к
+            (13.1) функция </FONT><FONT FACE="Symbol, serif"><FONT SIZE=4>&#8853;</FONT></FONT><FONT SIZE=4>
+            – </FONT><FONT SIZE=4><I>Исключающее “ИЛИ”</I></FONT><FONT SIZE=4>
+            описывается выражением</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m356922f4.gif" NAME="Object2" ALIGN=ABSMIDDLE WIDTH=152
+             HEIGHT=20><FONT SIZE=3><FONT SIZE=4>.
+        (13.2)</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Логико-запоминающая среда
+            обычной ассоциативной памяти состоит
+            из ячеек, расположенных в узлах решетки,
+            в </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>m</I></SPAN></FONT><FONT SIZE=4>
+            строках которой размещаются хранимые
+            слова, а в </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>столбцах – соответствующие
+            разряды этих слов. Каждая ячейка должна
+            иметь логическую схему для реализации
+            функций (13.1) и (13.2). </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>При </FONT><FONT SIZE=4><I>маскированном
+            поиске</I></FONT><FONT SIZE=4> лишь часть разрядов
+            поискового аргумента сравнивается с
+            соответствующими разрядами всех слов
+            памяти. Остальные разряды маскируются
+            (блокируются). Считываются только те
+            слова, у которых значения незамаскированных
+            разрядов совпадают с заданными разрядами
+            аргумента. Чтобы обеспечить выполнение
+            маскирования, в каждой ячейке памяти
+            также должны быть предусмотрены
+            соответствующие средства. </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Пусть </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT><FONT SIZE=4>-е
+            слово памяти имеет вид </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
+        </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>,
+        </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-2</I></FONT></SUB><FONT SIZE=4><I>,
+            …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT
+                SIZE=4><I>,0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4><I>
+            , </I></FONT><FONT SIZE=4>где </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4>
+            – булево значение </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT SIZE=4>-го
+            разряда, а поисковый аргумент – вид </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT
+                SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
+        </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>,
+            …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT
+                SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4><I>.</I></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Если в слове маски </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>C</I></SPAN></FONT><FONT
+                SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>C</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
+        </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>C</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>,
+            …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>C</I></SPAN></FONT><SUB><FONT
+                SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4>
+            блокируемым разрядам присвоить булево
+            значение </FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>,</I></FONT><FONT SIZE=4>
+            а остальным разрядам – </FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>,</I></FONT><FONT SIZE=4>
+            то в качестве функции, характеризующей
+            совпадение содержимого ассоциативной
+            ячейки с маскированным битом поискового
+            аргумента, можно взять</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_629de859.gif" NAME="Object3" ALIGN=ABSMIDDLE WIDTH=126
+             HEIGHT=24><FONT SIZE=3><FONT SIZE=4>.
+        (13.3)</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Если </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT><FONT SIZE=4>-й
+            разряд слова </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            замаскирован, значение </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>m</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT COLOR="#000000"><FONT SIZE=4>
+            = </FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>1</FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>,
+            так как </FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><SPAN
+                LANG="en-US"><I>C</I></SPAN></FONT></FONT><FONT COLOR="#000000"><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB></FONT><FONT
+                COLOR="#000000"><FONT SIZE=4><I>
+            = </I></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>1</FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><I>.</I></FONT></FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT COLOR="#000000"><FONT SIZE=4><I>Ф</I></FONT></FONT><FONT SIZE=4>ункция,
+            характеризующая несовпадение,</FONT><FONT COLOR="#000000"><FONT SIZE=4>
+            имеет вид</FONT></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT COLOR="#000000">
+            <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m6a0da11f.gif" NAME="Object4" ALIGN=ABSMIDDLE WIDTH=129
+                 HEIGHT=24><FONT SIZE=3><FONT SIZE=4>.
+            (13.4)</FONT></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT
+                SIZE=4>
+            согласуется с </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4>
+            во всех незамаскированных разрядах,
+            если для всех разрядов выполняется
+            условие совпадения (13.3), т.е.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_6eb823bc.gif" NAME="Object5" ALIGN=ABSMIDDLE WIDTH=81
+             HEIGHT=36><FONT SIZE=3><FONT SIZE=4>.
+        (13.5)</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT
+                SIZE=4>
+            не согласуется с </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4>
+            при несовпадении разрядов хотя бы в
+            одной позиции</FONT><FONT SIZE=4><I>:</I></FONT><FONT SIZE=4>
+        </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m6543a5c4.gif" NAME="Object6" ALIGN=ABSMIDDLE WIDTH=81
+             HEIGHT=36><FONT SIZE=3><FONT SIZE=4>.
+        (13.6)</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>При рекуррентной процедуре
+            проверки на совпадение (например, для
+            АЗУ с ассоциативным сравнением параллельно
+            по словам и последовательно по разрядам)
+            результат может быть представлен в
+            виде: </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_7f87e2ff.gif" NAME="Object7" ALIGN=ABSMIDDLE WIDTH=117
+             HEIGHT=21>
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_1181d2b4.gif" NAME="Object8" ALIGN=ABSMIDDLE WIDTH=44
+             HEIGHT=21><FONT SIZE=3><FONT SIZE=4>,
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m24d491cd.gif" NAME="Object9" ALIGN=ABSMIDDLE WIDTH=59
+             HEIGHT=21></FONT><FONT COLOR="#000000"><FONT SIZE=4>.
+    </FONT></FONT><FONT SIZE=4>(13.7) </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Мо</FONT><FONT COLOR="#000000"><FONT SIZE=4>жно
+            использовать и другую рекуррентную
+            схему, основанную на формуле (3.6): </FONT></FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT COLOR="#000000">
+            <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m1009ad96.gif" NAME="Object10" ALIGN=ABSMIDDLE WIDTH=117
+                 HEIGHT=21>
+            <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_2669ca79.gif" NAME="Object11" ALIGN=ABSMIDDLE WIDTH=92
+                 HEIGHT=18>
+            <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m6c4b5819.gif" NAME="Object12" ALIGN=ABSMIDDLE WIDTH=49
+                 HEIGHT=21>
+        </FONT>
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_6be4008d.gif" NAME="Object13" ALIGN=ABSMIDDLE WIDTH=75
+             HEIGHT=37><FONT SIZE=3><FONT SIZE=4>.
+    </FONT><FONT COLOR="#000000"><FONT SIZE=4>(13.8)</FONT></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 125%">
+        <FONT SIZE=4><I>Сравнение по критерию «больше»
+            и «меньше»</I></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=4>Другой базовой операцией в АЗУ
+            является поиск всех слов, численные
+            значения которых больше (меньше) величины
+            заданного аргумента. </FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT COLOR="#000000"><FONT SIZE=4>Как правило,
+            в АЗУ </FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><B>сравнение
+            величин</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>
+            чаще всего выполняется в несколько
+            этапов последовательно по разрядам.
+            Промежуточные результаты запоминаются,
+            чтобы их можно было использовать на
+            следующих этапах.</FONT></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT COLOR="#000000"><FONT SIZE=4>Пусть анализ
+            двоичных чисел начинается </FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4><B>со
+            старших</B></FONT></FONT><FONT COLOR="#000000"><FONT SIZE=4>
+            (левых) разрядов. Кроме поискового
+            аргумента </FONT></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
+        </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>,
+            …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT
+                SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4>
+            и содержимого слова памяти </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>&nbsp;</I></FONT></SUB><FONT
+                SIZE=4><I>=
+        </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
+        </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4><I>,
+            …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT
+                SIZE=4><I>,0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4><I>,</I></FONT><FONT SIZE=4>
+            в алгоритме участвуют </FONT><FONT SIZE=4><I>две
+            вспомогательные последовательности
+        </I></FONT><FONT SIZE=4>двоичных чисел – промежуточные
+            результаты сравнений по критериям
+            соответственно «больше» и «меньше»:</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>G</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT
+                SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+1</I></FONT></SUB><FONT
+                SIZE=4><I>,
+        </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,
+            …, </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT
+                SIZE=4><I>,0</I></FONT></SUB><FONT SIZE=4>)</FONT><FONT SIZE=4>
+            и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>L</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT
+                SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+1</I></FONT></SUB><FONT
+                SIZE=4><I>,
+        </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4><I>,…,
+        </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,0</I></FONT></SUB><FONT
+                SIZE=4>)</FONT><FONT SIZE=4><I>.</I></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>В ЭВМ наборы </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>L</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>G</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            целиком можно не хранить, а представить
+            их </FONT><FONT SIZE=4><B>всего двумя</B></FONT><FONT SIZE=4>
+            машинными переменными </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>соответственно, значения
+            которых вычисляются при помощи следующих
+            рекуррентных соотношений:</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="font-style: normal; line-height: 130%">
+
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_278ccc6a.gif" NAME="Object14" ALIGN=ABSMIDDLE WIDTH=241
+             HEIGHT=71>
+        <FONT SIZE=3><FONT SIZE=4>(13.9)</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>В качестве начальных
+            значений задаются </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+1</I></FONT></SUB><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+1</I></FONT></SUB><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>.</I></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=4>Тогда в результате всего цикла
+            сравнения получим:</FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        – <FONT SIZE=3><FONT SIZE=4>для </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT
+            SIZE=4><SPAN LANG="en-US"><I>jn</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN
+            LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT
+            SIZE=4><I>
+        = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4>будет</FONT><FONT SIZE=4><I>
+    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        &gt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>,</I></FONT><FONT SIZE=4>
+        а из формул (13.9) следует, что для всех </FONT><FONT SIZE=4><SPAN
+            LANG="en-US"><I>i&nbsp;</I></SPAN></FONT><FONT SIZE=4><I>&lt;
+    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>n g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN
+            LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT
+            SIZE=4><I>
+        = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4>; </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 125%">
+        – <FONT SIZE=3><FONT SIZE=4>для </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT
+            SIZE=4><SPAN LANG="en-US"><I>jn</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN
+            LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT
+            SIZE=4><I>
+        = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4>будет
+    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        &lt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4>
+        и для всех </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT SIZE=4><I>
+        &lt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT><FONT SIZE=4><I>
+    </I></FONT><FONT SIZE=4>выполняется условие
+    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>&nbsp;=&nbsp;</I></FONT><FONT SIZE=4>0</FONT><FONT
+            SIZE=4><I>,
+    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>;</I></FONT><FONT SIZE=4>
+    </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 120%">
+        – <FONT SIZE=3><FONT SIZE=4>для </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT
+            SIZE=4><SPAN LANG="en-US"><I>jn</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT
+            SIZE=4><I>
+    </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4> сравнение
+        величин </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+    </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>
+    </I></FONT><FONT SIZE=4>необходимо продолжить,
+        анализируя содержимое разрядов с
+        меньшими номерами.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>Рассмотренные выше
+            действия повторяются с разрядами </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT
+                SIZE=4><I>
+        </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>-1</I></FONT></SUB><FONT SIZE=4>
+            и т.д. до тех пор, пока в результате
+            сравнения самых младших разрядов не
+            будут вычислены значения </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT
+                SIZE=4>
+            и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT
+                SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>.</I></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>Если </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT
+                SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN
+                LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4>то
+        </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+            &gt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4>;
+            при </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN
+                LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4>наоборот,
+        </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+            &lt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4>.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>Из условия</FONT><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4>следует,
+            что </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>Комбинация </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT
+                SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4><SPAN
+                LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4> принципиально
+        </FONT><FONT SIZE=4><B>невозможна</B></FONT><FONT SIZE=4>.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>Можно использовать и
+            другой алгоритм, когда рекуррентная
+            процедура сравнения начинается </FONT><FONT SIZE=4><B>с
+            младших</B></FONT><FONT SIZE=4> разрядов. Это
+            позволяет сократить количество
+            просматриваемых разрядов, если оба
+            сравниваемые числа начинаются с нулей.
+        </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <FONT SIZE=4>Алгоритм описывается двумя
+            рекуррентными формулами:</FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="font-style: normal; line-height: 130%">
+
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_3c103770.gif" NAME="Object15" ALIGN=ABSMIDDLE WIDTH=265
+             HEIGHT=71><IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m53d4ecad.gif" NAME="Object16" ALIGN=ABSMIDDLE
+                            WIDTH=8 HEIGHT=18>
+        <FONT SIZE=3><FONT SIZE=4>(13.10)</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>В качестве начальных
+            значений задаются </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
+            = 0.</I></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>Соотношения между
+            сравниваемыми величинами определяются
+            последними значениями</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4><SPAN
+                LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4>
+            и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>ji</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>.</I></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>Рекуррентные соотношения
+            (13.9) можно реализовать при помощи так
+            называемых </FONT><FONT SIZE=4><I>итеративных
+            цепей</I></FONT><FONT SIZE=4> (рисунок 13.1).</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>В каждом из однотипных
+            логических блоков, показанных в виде
+            прямоугольника (в центре рисунка),
+            вычисляется значение функций (13.9).
+            Результаты вычислений последовательно
+            передаются на разряды с меньшими
+            номерами. </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4>Окончательный результат
+            определяется комбинацией сигналов,
+            снимаемых с выходов последнего логического
+            блока. </FONT><SPAN LANG="en-US">
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <BR>
+    <p style="text-align: center"><IMG SRC="Тема 8.1.files/image13.1.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=547
+                                       HEIGHT=291 BORDER=0 style="text-align: center"></SPAN></FONT></P></p>
+    <p style="text-align: center">Рисунок 13.1. Блок-схема итеративной логической цепи для параллельного сравнения
+        величин</p>
+
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Для реализации отношений
+            (13.9), (13.10) можно применить способ сравнения,
+            основанный на использовании </FONT><FONT SIZE=4><I>последовательных
+            вычитающих схем</I></FONT><FONT SIZE=4>. Одна из
+            таких схем приведена на рисунке 13.2.</FONT></FONT></P>
+    <P LANG="en-US" CLASS="western" ALIGN=JUSTIFY
+       STYLE="text-align: center; margin-left: 0.49in; text-indent: 0in; font-style: normal; line-height: 150%">
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_mfa30ae2.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=636
+             HEIGHT=303 BORDER=0></P>
+    <p style="text-align: center">Рисунок 13.2. Устройство сравнения с использованием блока вычитания последовательного
+        типа</p>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
+        <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US">C</SPAN></FONT><FONT SIZE=4>одержимое
+            младших разрядов сдвиговых регистров
+            синхронно сдвигается</FONT><FONT SIZE=4> на
+            входы старших разрядов, а н</FONT><FONT SIZE=4>а
+            выходе логического блока вычитания в
+            каждом такте генерируются сигналы
+            поразрядной разности </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>d</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US">i</SPAN></FONT></SUB><FONT SIZE=4>
+            и переноса </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>b</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+</I></FONT></SUB><SUB><FONT
+                SIZE=4>1</FONT></SUB><FONT SIZE=4>.
+            Пройдя через триггер задержки на 1 такт,
+            перенос поступает на вход блока вычитания.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Результат сравнения
+            определяется значением последнего
+            сигнала переноса </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>b</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4>.
+            Если </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>b</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>n</I></SPAN></FONT></SUB><FONT SIZE=4>
+            = 1, то это означает, что </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>
+            &lt; </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Работу блока вычитания
+            можно описать при помощи </FONT><FONT SIZE=4><I>таблицы
+            истинности</I></FONT><FONT SIZE=4> (таблица 13.1). </FONT></FONT>
+    </P>
+    <H3 LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; line-height: 130%">
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m226249ba.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=627
+             HEIGHT=283 BORDER=0></H3>
+    <H3 LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; line-height: 130%">
+        <FONT SIZE=4><SPAN STYLE="font-style: normal">13.1.3. Логическая
+структура одноразрядной ячейки АЗУ </SPAN></FONT>
+    </H3>
+    <H3 LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.01in; line-height: 130%">
+        <FONT SIZE=4><SPAN STYLE="font-style: normal">параллельного
+действия</SPAN></FONT></H3>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Рассмотрим структуру
+            памяти (АЗУ), рассчитанную на непосредственную
+            схемную реализацию выражений (13.3) –
+            (13.6). Одноразрядная ячейка такой памяти
+            представлена на рисунке 13.3.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Ячейка АЗУ включает в
+            себя узел записи (И</FONT><SUB><FONT SIZE=4>1</FONT></SUB><FONT SIZE=4>,
+            И</FONT><SUB><FONT SIZE=4>2</FONT></SUB><FONT SIZE=4>), запоминающий
+            элемент (И</FONT><SUB><FONT SIZE=4>3</FONT></SUB><FONT SIZE=4>,
+            И</FONT><SUB><FONT SIZE=4>4</FONT></SUB><FONT SIZE=4>), узел
+            считывания (И</FONT><SUB><FONT SIZE=4>5</FONT></SUB><FONT SIZE=4>)
+            и узел ассоциативного сравнения по
+            критерию «равно», реализующий функцию
+            «Исключающее ИЛИ» (И</FONT><SUB><FONT SIZE=4>6</FONT></SUB><FONT SIZE=4>,
+            И</FONT><SUB><FONT SIZE=4>7</FONT></SUB><FONT SIZE=4>), а также
+            схемы для реализации функции « </FONT><FONT SIZE=4>Встроенное
+            И» </FONT><FONT SIZE=4>(например, </FONT><FONT SIZE=4><I>схемы
+            с разомкнутым коллектором</I></FONT><FONT SIZE=4>,
+            если используются биполярные транзисторы).</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=4>Кроме логики, предназначенной
+            для выполнения операции сравнения, в
+            каждой ячейке имеются адресные линии
+            для считывания и записи информации. </FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
+        <FONT SIZE=3><FONT SIZE=4>Обозначения на рисунке
+            13.3: </FONT><FONT SIZE=4><I>А</I></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            – адресный сигнал </FONT><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT><FONT SIZE=4>-го
+            слова; </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT
+                SIZE=4><I>
+        </I></FONT><FONT SIZE=4>(1)</FONT><FONT SIZE=4> – запись “1”
+            в разряд </FONT><FONT SIZE=4><SPAN LANG="en-US">i</SPAN></FONT><FONT SIZE=4>;
+        </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>(0)</FONT><FONT SIZE=4> – запись “0”
+            в разряд </FONT><FONT SIZE=4><SPAN LANG="en-US">i</SPAN></FONT><FONT SIZE=4>;
+        </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT
+                SIZE=4>(1)</FONT><FONT SIZE=4>
+            – сравнение с “1” </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT
+                SIZE=4><I>-</I></FONT><FONT SIZE=4>го
+            разряда;</FONT><FONT SIZE=4><I> С</I></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4>
+            – сравнение с “0” </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT SIZE=4>-го
+            разряда; </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+            – </I></FONT><FONT SIZE=4>сигнал совпадения </FONT><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT><FONT SIZE=4>-го
+            слова;
+            <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_7c7e426d.gif" NAME="Object17" ALIGN=ABSMIDDLE WIDTH=24
+                 HEIGHT=21>–
+            выход информации (разряда </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT
+                SIZE=4>).</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
+        <BR>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
+        <BR>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
+        <BR>
+    </P>
+    <P LANG="en-US" CLASS="western" ALIGN=JUSTIFY
+       STYLE="text-align: center; text-indent: 0.49in; font-style: normal; line-height: 150%">
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m2d745612.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=631
+             HEIGHT=503 BORDER=0></P>
+    <p style="text-align: center">Рисунок 13.3 Схема одноразрядной ассоциативной ячейки</p>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 125%">
+        <BR>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 125%">
+        <FONT SIZE=4>Рассмотрим выполнение операций
+            записи / чтения в АЗУ.</FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 125%">
+        <FONT SIZE=4><I>Запись</I></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>Запоминающий элемент
+            (триггер) предназначен для хранения
+            одного бита информации. Этот триггер
+            устанавливается и сбрасывается сигналами
+        </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>(1)</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4>и
+        </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>(0)</FONT><FONT SIZE=4>, поступающими
+            с вентилей И</FONT><SUB><FONT SIZE=4>1</FONT></SUB><FONT SIZE=4>
+            и И</FONT><SUB><FONT SIZE=4>2</FONT></SUB><FONT SIZE=4>, при
+            условии, что на адресную линию </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            подан сигнал с логическим уровнем “1”.
+        </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>Значением записанного
+            бита является выход И</FONT><SUB><FONT SIZE=4>3</FONT></SUB><FONT SIZE=4>.
+            Оно равно 1, если </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
+        </I></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4><I>&nbsp;</I></FONT><FONT SIZE=4>=
+            0, </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
+        </I></FONT></SUB><FONT SIZE=4>(1)</FONT><FONT SIZE=4> = 1 и </FONT><FONT SIZE=4><SPAN
+                LANG="en-US"><I>A</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            = 1, а при </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>(0)</FONT><FONT SIZE=4> = 1, </FONT><FONT SIZE=4><SPAN
+                LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>(1)</FONT><FONT SIZE=4> = 0 и </FONT><FONT SIZE=4><SPAN
+                LANG="en-US"><I>A</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            = 1– равно 0.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>Чтобы содержимое данного
+            разряда в ходе записи не изменялось,
+            запись маскируется путем задания </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>(1)</FONT><FONT SIZE=4><I> = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>W</I></SPAN></FONT><SUB><FONT
+                SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>(0)</FONT><FONT SIZE=4><I> = </I></FONT><FONT SIZE=4>0.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 125%">
+        <FONT SIZE=4><I>Считывание</I></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>Считывание информации
+            из разрядной ячейки в режиме обычной
+            адресации производится путем подачи
+            на линию </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            сигнала с логическим уровнем “1”, в
+            результате инвертированное значение
+            бита с выхода И</FONT><SUB><FONT SIZE=4>5</FONT></SUB><FONT SIZE=4>
+            непосредственно поступает на общую для
+            всех слов памяти линию<IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_7c7e426d.gif" NAME="Object18"
+                                       ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21>.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>Считывание в режиме
+            адресации по содержанию (сравнение бита
+            поискового аргумента с содержимым
+            ассоциативной ячейки) с учетом маскирования
+            производится при помощи линий </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>и</FONT><FONT SIZE=4><I> С</I></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(1)</FONT><FONT SIZE=4>,
+            проходящих через </FONT><FONT SIZE=4><SPAN LANG="en-US">i</SPAN></FONT><FONT SIZE=4>-й
+            разряд всех слов памяти.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>При сравнении с единицей
+            подаются сигналы </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>0, </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(1)</FONT><FONT SIZE=4><I>
+            =</I></FONT><FONT SIZE=4>1, при сравнении с нулем –
+        </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT
+                SIZE=4>(0)</FONT><FONT SIZE=4><I>
+            = </I></FONT><FONT SIZE=4>1</FONT><FONT SIZE=4>, </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(1)
+        </FONT><FONT SIZE=4><I>=0, </I></FONT><FONT SIZE=4>чтобы разряд
+            не участвовал в операции сравнения при
+            маскировании, на линии </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4>
+            и </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT
+                SIZE=4>(1)</FONT><FONT SIZE=4>
+            подается “0”. При совпадении сравниваемых
+            значений потенциалы на выходах схем </FONT><FONT SIZE=4><I>И</I></FONT><SUB><FONT SIZE=4>6</FONT></SUB><FONT
+                SIZE=4>
+            и</FONT><FONT SIZE=4><I> И</I></FONT><SUB><FONT SIZE=4>7</FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>отличны от 0 (оба ключа
+            <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m53d4ecad.gif" NAME="Object19" ALIGN=ABSMIDDLE WIDTH=8
+                 HEIGHT=18>разомкнуты)
+            и на линии </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            появляется сигнал “1”; при несовпадении
+            – выход одного из вентилей </FONT><FONT SIZE=4><I>И</I></FONT><SUB><FONT SIZE=4>6</FONT></SUB><FONT SIZE=4>
+            или</FONT><FONT SIZE=4><I> И</I></FONT><SUB><FONT SIZE=4>7</FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>замыкается на “землю” и
+            потенциал линии </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            становится равным 0; при маскировании
+            – выходы </FONT><FONT SIZE=4><I>И</I></FONT><SUB><FONT SIZE=4>6</FONT></SUB><FONT SIZE=4>
+            и</FONT><FONT SIZE=4><I> И</I></FONT><SUB><FONT SIZE=4>7</FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>размыкаются независимо
+            от записанного бита.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <BR>
+    </P>
+    <H4 LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; line-height: 125%">
+        <FONT SIZE=4><SPAN STYLE="font-style: normal"><B>13.1.4. Анализатор
+        многократных совпадений</B></SPAN></FONT></H4>
+    <P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>В АЗУ может храниться
+            несколько слов, ассоциативные признаки
+            которых по незамаскированным разрядам
+            совпадают с поисковым аргументом.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 125%">
+        <FONT SIZE=4>Задача анализатора заключается
+            в выявлении таких слов и их приоритетной
+            выборке.</FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>При </FONT><FONT SIZE=4>поступлении
+            аргумента в этом случае одновременно
+            возбуждается несколько линий </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
+        </I></FONT></SUB><FONT SIZE=4>(см. рисунок 13.3). Далее
+            необходимо поочередно считать из памяти
+            содержимое слов, соответствующих
+            управляющим сигналам на линиях </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>(0)</FONT><FONT SIZE=4>
+            и </FONT><FONT SIZE=4><I>С</I></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT
+                SIZE=4>(1)</FONT><FONT SIZE=4>.
+            Именно для этого в ячейках АЗУ предусмотрены
+        </FONT><FONT SIZE=4><I>цепи адресного считывания</I></FONT><FONT SIZE=4>.
+            Но необходим какой-то </FONT><FONT SIZE=4><I>механизм
+            обслуживания очереди</I></FONT><FONT SIZE=4>, при
+            помощи которого можно было бы производить
+            последовательный перебор активных
+            линий </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            (обычно в порядке возрастания номеров)
+            и подачу управляющих сигналов на адресные
+            линии соответствующих ячеек памяти. </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>Для этого </FONT><FONT SIZE=4><I>анализатор
+            многократного совпадения </I></FONT><FONT SIZE=4>имеет
+        </FONT><FONT SIZE=4>на </FONT><FONT SIZE=4>каждую линию
+        </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            массива АЗУ </FONT><FONT SIZE=4><I>буферный триггер
+            фиксации реакции на запрос</I></FONT><FONT SIZE=4>,
+            а также</FONT><FONT SIZE=4> </FONT><FONT SIZE=4><I>приоритетный
+            искатель</I></FONT><FONT SIZE=4> для выделения
+            одной из активных линий. </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=4>Рассмотрим некоторые способы
+            реализации анализаторов многократного
+            совпадения.</FONT></P>
+    <H1 LANG="ru-RU" CLASS="western" STYLE="line-height: 125%; text-decoration: none">
+        <FONT SIZE=4><I>Приоритетные анализаторы
+            последовательного типа</I></FONT></H1>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 125%">
+        <FONT SIZE=3><FONT SIZE=4>Один из вариантов такого
+            анализатора показан на рисунке 13.4а. В
+            нем логическая цепь, позволяющая выделять
+            среди своих входов, установленных в 1,
+            линию с наименьшим номером (</FONT><FONT SIZE=4><SPAN LANG="en-US">N</SPAN></FONT><FONT SIZE=4>),
+            построена по принципу </FONT><FONT SIZE=4><I>последовательного
+            соединения разрядов</I></FONT><FONT SIZE=4>, когда</FONT><FONT SIZE=4>
+            каждый единичный вход </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            этой цепи блокирует действие линий с
+            большими номерами, в результате чего в
+            “1” устанавливается только выход,
+            соответствующий первой активной линии.
+        </FONT><SPAN LANG="en-US">
+    <p style="text-align: center"><IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m56207839.png" NAME="Рисунок 1"
+                                       ALIGN=BOTTOM WIDTH=634 HEIGHT=485 BORDER=0></SPAN></FONT></P></P>
+    <p style="text-align: center">Рисунок 13.4а. Схема приоритетного анализатора с последовательным соединением
+        разрядов</p>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>На рисунке 13.4а применены
+            следующие обозначения: </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
+        </I></FONT></SUB><FONT SIZE=4>– сигнал совпадения;
+        </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4><I>j</I></FONT></SUB><FONT SIZE=4><I>
+        </I></FONT><FONT SIZE=4>– </FONT><FONT SIZE=4>сигнал запрета</FONT><I>;
+        </I><FONT SIZE=4><SPAN LANG="en-US"><I>O</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>
+            – выходной сигнал; </FONT><FONT SIZE=6 STYLE="font-size: 22pt">○
+            – </FONT><FONT SIZE=4>операция “НЕ”.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Чтобы установка в “0”
+            триггера одной активной линии не повлекла
+            за собой сброс триггера следующей линии,
+            используются триггеры, имеющие </FONT><FONT SIZE=4><I>вход
+            синхронизации.</I></FONT><FONT SIZE=4> Управляющий
+            сигнал «Поиск следующей линии» не
+            нарушает информации, записанной на
+            других триггерах </FONT><FONT SIZE=4><SPAN LANG="en-US">J</SPAN></FONT><FONT SIZE=4>-</FONT><FONT
+                SIZE=4><SPAN LANG="en-US">K</SPAN></FONT><FONT SIZE=4>.
+            Единичный сигнал, соответствующий
+            первой активной линии, автоматически
+            идет на выход, а функцией управляющего
+            сигнала «</FONT><FONT SIZE=4><I>Поиск следующей
+            линии</I></FONT><FONT SIZE=4>» является лишь сброс
+            первого из «ответивших» триггеров.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Более экономичная схема
+            показана на рисунке 13.4б, так как в ней
+            применяются простейшие триггеры, что
+            позволяет допустить некоторое снижение
+            быстродействия, связанное с повторным
+            выполнением операции ассоциативного
+            считывания, тем более что они занимают
+            не намного больше времени, чем сброс
+            буферных триггеров. </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <BR>
+    </P>
+    <P LANG="en-US" CLASS="western" ALIGN=JUSTIFY
+       STYLE="text-align: center; text-indent: 0.49in; font-style: normal; line-height: 150%">
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_m753ca1a1.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=627
+             HEIGHT=540 BORDER=0></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+    <p style="text-align: center">Рисунок 13.4б. Схема анализатора многократного совпадения с повторением процедуры
+        ассоциативного доступа</p>
+    <BR>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Сигнал управления «Поиск
+            первой линии» подается только после
+            того, как произойдет считывание в режиме
+            адресации по содержанию. По нему
+            осуществляется выделение первой из
+            ответивших линий и сброс триггеров для
+            линий с большими номерами. Для выборки
+            следующих совпавших слов процедура
+            ассоциативного доступа производится
+            повторно. Уже обработанные ячейки
+            помечаются, например установкой в
+            единицу специального разряда. </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Недостатком рассмотренных
+            анализаторов последовательного типа
+            является то, что время срабатывания
+            анализатора при этом пропорционально</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 130%">
+        <FONT SIZE=4>числу слов в ассоциативном
+            накопителе.</FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Имеются технические
+            решения для сокращения продолжительности
+            приоритетного анализа, использующие
+            модульную организация приоритетных
+            анализаторов и стандартные интегральные
+            модули памяти.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Рассмотрим логический
+            блок, представленный на рисунке 13.5а, для
+            формирования вектора запрета. </FONT></FONT>
+    </P>
+    <P LANG="en-US" CLASS="western" ALIGN=CENTER
+       STYLE="text-align: center; text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <IMG SRC="Тема 8.1.files/i_323ab71ab4f220d0_html_6f9c1c5f.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=622
+             HEIGHT=463 BORDER=0></P>
+    <p style="text-align: center">Рисунок 13.5а. Отдельной модуль схемы генерации вектора запрета</p>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Вектор запрета генерируется
+            на выходе блока при подаче на его вход
+            сигнала </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4><I>A</I></FONT></SUB><FONT SIZE=4>,
+            при этом все выходы </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4
+                                                                              STYLE="font-size: 16pt"><I>i</I></FONT></SUB><SUB><FONT
+                SIZE=4><I>
+        </I></FONT></SUB><FONT SIZE=4>устанавливаются в “1”
+            (блок «закрывается»). </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Поскольку количество
+            входов на схемах ИЛИ линейно растет с
+            увеличением номера ячейки, блок не
+            применяют в АЗУ большой емкости, но он
+            вполне подходит для небольших АЗУ
+            (например буферной памяти).</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
+        <FONT SIZE=3><FONT SIZE=4>Соединяя последовательно
+            блоки в виде древовидной структуры (как
+            показано на рисунок 13.5б), можно получить
+            приоритетный анализатор с достаточно
+            большим количеством входов. Сигнал </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT
+                SIZE=4><I>A</I></FONT></SUB><FONT SIZE=4>
+            используется для установки всех выходов
+        </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4><I>i</I></FONT></SUB><SUB><FONT SIZE=4>
+        </FONT></SUB><FONT SIZE=4>заданного блока</FONT><SUB><FONT SIZE=4>
+        </FONT></SUB><FONT SIZE=4>в “1” (при этом сигнал
+            сброса проходит на все буферные триггеры,
+            подключенные к блоку). </FONT></FONT>
+    </P>
+
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%">
+        <FONT SIZE=3><FONT SIZE=4>Предположим, что все
+            выходные линии, за исключением линии
+        </FONT><FONT SIZE=4><I>«Сигнал ОТВЕТА» </I></FONT><FONT SIZE=4>расположены
+            с левой стороны (см. рисунок 13.5а).</FONT></FONT></P>
+    <P LANG="en-US" CLASS="western" ALIGN=JUSTIFY
+       STYLE="text-indent: 0.49in; font-style: normal; line-height: 150%; text-align: center">
+        <IMG SRC="Тема 8.1.files/image13.5b.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=646 HEIGHT=390 BORDER=0></P>
+    <p style="text-align: center">Рисунок 13.5б. Древовидная структура анализатора</p>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="font-style: normal; line-height: 150%">
+        <BR>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 120%">
+        <FONT SIZE=3><FONT SIZE=4><I>Сигнал ОТВЕТА</I></FONT><FONT SIZE=4>
+            (который появляется при совпадении
+            одноименных разрядов в поисковом
+            аргументе и в словах памяти) передается
+            от низших уровней структуры к высшим,
+            появление его на входе любого из блоков
+            приводит к тому, что все его выходы </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4
+                                                                                              STYLE="font-size: 16pt"><I>i</I></FONT></SUB><SUB><FONT
+                SIZE=4 STYLE="font-size: 16pt">
+        </FONT></SUB><FONT SIZE=4>устанавливаются в “1”.
+            Так как эти выходы действуют на блоки
+            более низкого уровня аналогично входу
+        </FONT><FONT SIZE=4><I>I</I></FONT><SUB><FONT SIZE=4><I>A</I></FONT></SUB><FONT SIZE=4>,
+            они последовательно закрывают все
+            блоки, расположенные левее блока с
+            активным входом, а на выходе блоков
+            первого уровня генерируется вектор
+            сигналов запрета, при помощи которого
+            сбрасываются буферные триггеры. </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 135%">
+        <FONT SIZE=3><FONT SIZE=4>При любых сочетаниях
+            сигналов на линиях </FONT><FONT SIZE=4><I>M</I></FONT><SUB><FONT SIZE=4><I>j</I></FONT></SUB><FONT
+                SIZE=4><I>
+        </I></FONT><FONT SIZE=4>всегда вырабатывается
+            правильный вектор запрета. Если имеется
+            хотя бы одна активная линия на выходе
+            последнего уровня структуры (корня
+            дерева), появляется единичный сигнал
+            ответа.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 135%">
+        <FONT SIZE=3><FONT SIZE=4><B>13.1.5. Формирование адреса
+            первой ответившей ячейки АП</B></FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY
+       STYLE="margin-right: -0.06in; text-indent: 0.49in; font-style: normal; line-height: 135%">
+        <FONT SIZE=3><FONT SIZE=4>Анализатор можно построить
+            таким образом, чтобы он сам генерировал
+            адрес первой по счету ответившей ячейки
+            памяти. Для этого достаточно схему,
+            показанную на рисунке 13.5б, дополнить
+            несколькими логическими элементами,
+            реализующими логическую функцию
+            “Встроенное ИЛИ” (см. рисунок 13.3) </FONT></FONT>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-right: -0.06in; font-style: normal; line-height: 135%">
+        <FONT SIZE=3><FONT SIZE=4>и соединить блоки, как
+            показано на рисунке 13.6</FONT>.</FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 135%">
+        <FONT SIZE=3><FONT SIZE=4>Можно также для генерации
+            адреса первой ответившей ячейки
+            использовать схему, показанную на
+            рисунке 13.7.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; font-style: normal; line-height: 135%">
+        <FONT SIZE=3><FONT SIZE=4>Эта схема отличается
+            простотой, но не обладает высоким
+            быстродействием.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 135%">
+        <FONT SIZE=3><FONT SIZE=4>Вначале выходные сигналы
+            всех линий </FONT><FONT SIZE=4><SPAN LANG="en-GB"><I>M</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+                LANG="en-GB"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
+        </I></FONT></SUB><FONT SIZE=4>от памяти фиксации
+            результатов сравнения устанавливают
+            соответствующие разряды </FONT><FONT SIZE=4><I>закольцованного</I></FONT><FONT SIZE=4>
+        </FONT><FONT SIZE=4><I>регистра сдвига</I></FONT><FONT SIZE=4>.
+            После этого на регистр сдвига и на
+        </FONT><FONT SIZE=4><I>счетчик адреса (сдвигов)</I></FONT><FONT SIZE=4>
+            подается последовательность тактовых
+            импульсов, содержимое регистра сдвигается
+            в сторону верхних разрядов до появления
+            в первом из них логической “1”, в
+            результате чего подача тактового сигнала
+            автоматически блокируется. Содержимое
+            счетчика непосредственно указывает
+            адрес первого совпавшего слова (в
+            исходном состоянии в счетчике были
+            записаны нули), заносится в адресный
+            регистр и производится считывание
+            слова. Далее первый разряд регистра
+            устанавливается в</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4>0
+            и автоматически возобновляется подача
+            тактовых сигналов на регистр сдвига и
+            счетчик до появления “1” в первом
+            разряде счетчика, после этого считывается
+            следующее совпавшее слово и т.д. до тех
+            пор, пока не будет обслужена вся очередь.</FONT></FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 135%">
+        <FONT SIZE=4>В данном варианте роль буферных
+            триггеров выполняет регистр сдвига.</FONT></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; font-style: normal; line-height: 135%">
+        <FONT SIZE=4>Заметим еще, что в анализаторах,
+            как правило, предусматривается выход,
+            указывающий на наличие одновременно
+            нескольких совпадений (количество
+            которых точно определить достаточно
+            сложно), что бывает необходимо для
+            эффективной реализации сложных видов
+            ассоциативного поиска.</FONT></P>
+
+    <P LANG="en-US" CLASS="western" ALIGN=JUSTIFY
+       STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%; text-align: center">
+        <IMG SRC="Тема 8.1.files/image13.6.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=528 HEIGHT=489 BORDER=0></P>
+    <P LANG="en-US" CLASS="western" ALIGN=JUSTIFY
+       STYLE="text-indent: 0.49in; font-style: normal; line-height: 130%; text-align: center">
+        <IMG SRC="Тема 8.1.files/image13.7.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=638 HEIGHT=389 BORDER=0></P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 130%">
+        <BR>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; line-height: 130%">
+        <BR>
+    </P>
+    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 135%">
+        <BR>
+    </P>
+    <DIV TYPE=FOOTER>
+
+        </SPAN><BR>
+        </P>
+    </DIV>
     <p><a href="Тема 7.2.htm">Предыдущая </a>
         <a href="Тема 8.2.htm"> Следующая</a></p>
 </BODY>

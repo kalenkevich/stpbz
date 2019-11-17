@@ -16,42 +16,180 @@
     <META NAME="ShareDoc" CONTENT="false">
     <STYLE TYPE="text/css">
         <!--
-        @page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
-        P { margin-bottom: 0.08in; direction: ltr; line-height: 100%; widows: 2; orphans: 2 }
-        P.western { font-family: "Times New Roman", serif; font-size: 12pt }
-        P.cjk { font-family: "Times New Roman"; font-size: 12pt; so-language: ru-RU }
-        P.ctl { font-family: "Times New Roman"; font-size: 10pt }
-        H1 { margin-bottom: 0in; direction: ltr; color: #2e74b5; line-height: 100%; page-break-inside: avoid; widows: 2; orphans: 2 }
-        H1.western { font-family: "Calibri Light", serif; font-size: 16pt; font-weight: normal }
-        H1.cjk { font-family: "Times New Roman"; font-size: 16pt; so-language: ru-RU; font-weight: normal }
-        H1.ctl { font-family: ; font-size: 16pt; font-weight: normal }
-        H3 { margin-top: 0in; margin-bottom: 0in; direction: ltr; line-height: 130%; text-align: center; widows: 2; orphans: 2 }
-        H3.western { font-weight: normal }
-        H3.cjk { font-family: "Times New Roman"; so-language: ru-RU; font-weight: normal }
-        H3.ctl { font-family: "Times New Roman"; font-size: 10pt; font-weight: normal }
-        H5 { margin-top: 0.03in; margin-bottom: 0in; direction: ltr; color: #2e74b5; line-height: 100%; page-break-inside: avoid; widows: 2; orphans: 2 }
-        H5.western { font-family: "Calibri Light", serif; font-size: 12pt; font-weight: normal }
-        H5.cjk { font-family: "Times New Roman"; font-size: 12pt; so-language: ru-RU; font-weight: normal }
-        H5.ctl { font-family: ; font-weight: normal }
-        H6 { margin-top: 0.03in; margin-bottom: 0in; direction: ltr; color: #1f4d78; line-height: 107%; page-break-inside: avoid; widows: 2; orphans: 2 }
-        H6.western { font-family: "Calibri Light", serif; font-size: 11pt; so-language: be-BY; font-weight: normal }
-        H6.cjk { font-family: "Times New Roman"; font-size: 11pt; so-language: en-US; font-weight: normal }
-        H6.ctl { font-family: ; font-size: 11pt; font-weight: normal }
-        P.frame-contents-western { font-family: "Times New Roman", serif; font-size: 12pt }
-        P.frame-contents-cjk { font-family: "Times New Roman"; font-size: 12pt; so-language: ru-RU }
-        P.frame-contents-ctl { font-family: "Times New Roman"; font-size: 10pt }
+        @page {
+            margin-left: 1.18in;
+            margin-right: 0.59in;
+            margin-top: 0.79in;
+            margin-bottom: 0.79in
+        }
+
+        P {
+            margin-bottom: 0.08in;
+            direction: ltr;
+            line-height: 100%;
+            widows: 2;
+            orphans: 2
+        }
+
+        P.western {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt
+        }
+
+        P.cjk {
+            font-family: "Times New Roman";
+            font-size: 12pt;
+            so-language: ru-RU
+        }
+
+        P.ctl {
+            font-family: "Times New Roman";
+            font-size: 10pt
+        }
+
+        H1 {
+            margin-bottom: 0in;
+            direction: ltr;
+            color: #2e74b5;
+            line-height: 100%;
+            page-break-inside: avoid;
+            widows: 2;
+            orphans: 2
+        }
+
+        H1.western {
+            font-family: "Calibri Light", serif;
+            font-size: 16pt;
+            font-weight: normal
+        }
+
+        H1.cjk {
+            font-family: "Times New Roman";
+            font-size: 16pt;
+            so-language: ru-RU;
+            font-weight: normal
+        }
+
+        H1.ctl {
+            font-family: ;
+            font-size: 16pt;
+            font-weight: normal
+        }
+
+        H3 {
+            margin-top: 0in;
+            margin-bottom: 0in;
+            direction: ltr;
+            line-height: 130%;
+            text-align: center;
+            widows: 2;
+            orphans: 2
+        }
+
+        H3.western {
+            font-weight: normal
+        }
+
+        H3.cjk {
+            font-family: "Times New Roman";
+            so-language: ru-RU;
+            font-weight: normal
+        }
+
+        H3.ctl {
+            font-family: "Times New Roman";
+            font-size: 10pt;
+            font-weight: normal
+        }
+
+        H5 {
+            margin-top: 0.03in;
+            margin-bottom: 0in;
+            direction: ltr;
+            color: #2e74b5;
+            line-height: 100%;
+            page-break-inside: avoid;
+            widows: 2;
+            orphans: 2
+        }
+
+        H5.western {
+            font-family: "Calibri Light", serif;
+            font-size: 12pt;
+            font-weight: normal
+        }
+
+        H5.cjk {
+            font-family: "Times New Roman";
+            font-size: 12pt;
+            so-language: ru-RU;
+            font-weight: normal
+        }
+
+        H5.ctl {
+            font-family: ;
+            font-weight: normal
+        }
+
+        H6 {
+            margin-top: 0.03in;
+            margin-bottom: 0in;
+            direction: ltr;
+            color: #1f4d78;
+            line-height: 107%;
+            page-break-inside: avoid;
+            widows: 2;
+            orphans: 2
+        }
+
+        H6.western {
+            font-family: "Calibri Light", serif;
+            font-size: 11pt;
+            so-language: be-BY;
+            font-weight: normal
+        }
+
+        H6.cjk {
+            font-family: "Times New Roman";
+            font-size: 11pt;
+            so-language: en-US;
+            font-weight: normal
+        }
+
+        H6.ctl {
+            font-family: ;
+            font-size: 11pt;
+            font-weight: normal
+        }
+
+        P.frame-contents-western {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt
+        }
+
+        P.frame-contents-cjk {
+            font-family: "Times New Roman";
+            font-size: 12pt;
+            so-language: ru-RU
+        }
+
+        P.frame-contents-ctl {
+            font-family: "Times New Roman";
+            font-size: 10pt
+        }
+
         -->
     </STYLE>
 </HEAD>
 <BODY LANG="ru-RU" DIR="LTR">
 
 
-    <FONT SIZE=4><B>Лабораторная работа №8</B></FONT></P>
+<FONT SIZE=4><B>Лабораторная работа №8</B></FONT></P>
 
 
-    <FONT SIZE=4><B>Тема: Моделирование ассоциативной
-        памяти с системой адресации по разрядным
-        столбцам и по словам</B></FONT></P>
+<FONT SIZE=4><B>Тема: Моделирование ассоциативной
+    памяти с системой адресации по разрядным
+    столбцам и по словам</B></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 130%">
     <FONT SIZE=4><B>Цель работы: </B></FONT><FONT SIZE=4>освоение
     навыков построения и верификации модели
@@ -132,12 +270,16 @@
     <COL WIDTH=88>
     <COL WIDTH=38>
     <TR>
-        <TD COLSPAN=4 WIDTH=242 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0.05in">
-            <P CLASS="western" ALIGN=CENTER><IMG SRC="lr8/i_023cd21467d9593c_html_15cfcf9d.gif" ALIGN=LEFT><IMG SRC="lr8/i_023cd21467d9593c_html_m361c4455.gif" ALIGN=LEFT>
-                Дешифратор<SPAN DIR="LTR" STYLE="float: left; width: 0.9in; height: 0.7in; border: 1px solid #000000; padding: 0.01in; background: #ffffff">
-				<P><FONT SIZE=4>Код адреса разряда</FONT></P>
-			</SPAN>
-			<SPAN DIR="LTR" STYLE="float: left; width: 2.1in; height: 0.5in; border: 1px solid #000000; padding: 0.01in; background: #ffffff">
+        <TD COLSPAN=4 WIDTH=242 VALIGN=TOP
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0.05in">
+            <P CLASS="western" ALIGN=CENTER><IMG SRC="lr8/i_023cd21467d9593c_html_15cfcf9d.gif" ALIGN=LEFT><IMG
+                    SRC="lr8/i_023cd21467d9593c_html_m361c4455.gif" ALIGN=LEFT>
+                Дешифратор<SPAN DIR="LTR"
+                                STYLE="float: left; width: 0.9in; height: 0.7in; border: 1px solid #000000; padding: 0.01in; background: #ffffff">
+            <P><FONT SIZE=4>Код адреса разряда</FONT></P>
+            </SPAN>
+            <SPAN DIR="LTR"
+                  STYLE="float: left; width: 2.1in; height: 0.5in; border: 1px solid #000000; padding: 0.01in; background: #ffffff">
 				<P CLASS="frame-contents-western"><FONT SIZE=4>Вывод бита
                     данных</FONT></P>
 				<P CLASS="frame-contents-western"><FONT SIZE=4>Ввод бита
@@ -147,23 +289,27 @@
         </TD>
     </TR>
     <TR VALIGN=TOP>
-        <TD WIDTH=47 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0.05in">
+        <TD WIDTH=47
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0.05in">
             <P CLASS="western" ALIGN=CENTER>0</P>
         </TD>
-        <TD WIDTH=39 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0.05in">
+        <TD WIDTH=39
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0.05in">
             <P CLASS="western" ALIGN=CENTER>1</P>
         </TD>
-        <TD WIDTH=88 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0in">
-            <P CLASS="western" ALIGN=CENTER><B>.  .  .</B></P>
+        <TD WIDTH=88
+            STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER><B>. . .</B></P>
         </TD>
-        <TD WIDTH=38 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0.05in">
+        <TD WIDTH=38
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0.05in">
             <P CLASS="western" ALIGN=CENTER><IMG SRC="lr8/i_023cd21467d9593c_html_5a4371b1.gif" ALIGN=LEFT>n</P>
         </TD>
     </TR>
 </TABLE>
 <H3 CLASS="western"><BR>
 </H3>
-<H3 CLASS="western">Рисунок 1.  Типовой модуль
+<H3 CLASS="western">Рисунок 1. Типовой модуль
     ассоциативной памяти</H3>
 <P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
 </P>
@@ -173,10 +319,10 @@
         собой массив размером 1 х <I>m</I>, где <I>m</I>
         –количество слов (в частности, можно
         использовать серийные интегральные
-        схемы памяти  1 х <I>N </I>битов).</FONT></P>
+        схемы памяти 1 х <I>N </I>битов).</FONT></P>
 <P CLASS="western" STYLE="margin-bottom: 0in">
 </P>
-<P CLASS="western" STYLE="margin-bottom: 0in">         <FONT SIZE=4>В
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=4>В
     рассматриваемом варианте массив памяти
     считается квадратным (например 16 х 16
     разрядов). Если требуется массив большего
@@ -205,163 +351,206 @@
         исходного массива данных перед записью
         в память перераспределяются следующим
         образом:</FONT></P>
-<P STYLE="margin-left: 0.2in; line-height: 130%">  – <FONT SIZE=4>разрядные
+<P STYLE="margin-left: 0.2in; line-height: 130%"> – <FONT SIZE=4>разрядные
     столбцы размещаются по диагоналям,
     образованным запоминающими ячейками;</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
     – <FONT SIZE=4>слова размещаются по
     столбцам.</FONT></P>
 
-    <FONT SIZE=4>Пример размещения массива
-        данных размером 16 х 16 разрядов приведен
-        на рисунке 2.</FONT></P>
+<FONT SIZE=4>Пример размещения массива
+    данных размером 16 х 16 разрядов приведен
+    на рисунке 2.</FONT></P>
 <P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
-<TABLE DIR="LTR" ALIGN=LEFT WIDTH=454 CELLPADDING=2 CELLSPACING=0>
-    <COL WIDTH=69>
-    <COL WIDTH=72>
-    <COL WIDTH=72>
-    <COL WIDTH=72>
-    <COL WIDTH=64>
-    <COL WIDTH=80>
-    <TR VALIGN=TOP>
-        <TD WIDTH=69 STYLE="border-top: 1px solid #00000a; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>0,0</SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">1,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">5</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">2,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">4</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: 1px dashed #00000a; border-bottom: 1px dashed #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=64 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=80 STYLE="border: 3.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>1</SUB><SUB><SPAN LANG="en-US">5,1</SPAN></SUB></P>
-        </TD>
-    </TR>
-    <TR VALIGN=TOP>
-        <TD WIDTH=69 STYLE="border: 3.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">0,1</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: 1px solid #00000a; border-bottom: none; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">1,0</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: 1px solid #00000a; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">2,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">5</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: none; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=64 STYLE="border-top: none; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=80 STYLE="border-top: none; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>1</SUB><SUB><SPAN LANG="en-US">5,2</SPAN></SUB></P>
-        </TD>
-    </TR>
-    <TR VALIGN=TOP>
-        <TD WIDTH=69 STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">0,2</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border: 3.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">1,1</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">2,0</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: 1px dashed #00000a; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=64 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=80 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>1</SUB><SUB><SPAN LANG="en-US">5,3</SPAN></SUB></P>
-        </TD>
-    </TR>
-    <TR VALIGN=TOP>
-        <TD WIDTH=69 STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=72 STYLE="border: none; padding: 0in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: 1px dashed #00000a; border-bottom: none; border-left: none; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=64 STYLE="border: none; padding: 0in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=80 STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-    </TR>
-    <TR VALIGN=TOP>
-        <TD WIDTH=69 STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: none; border-bottom: 1px dashed #00000a; border-left: none; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=64 STYLE="border: none; padding: 0in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=80 STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-    </TR>
-    <TR VALIGN=TOP>
-        <TD WIDTH=69 HEIGHT=32 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">0,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">5</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">1,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">4</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">2,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">3</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=72 STYLE="border-top: none; border-bottom: 1px dashed #00000a; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
-            <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
-            </P>
-        </TD>
-        <TD WIDTH=64 STYLE="border: 3.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>1</SUB><SUB><SPAN LANG="en-US">4,1</SPAN></SUB></P>
-        </TD>
-        <TD WIDTH=80 STYLE="border-top: 1.50pt solid #00000a; border-bottom: 1.50pt solid #00000a; border-left: none; border-right: 1.50pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.02in">
-            <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>1</SUB><SUB><SPAN LANG="en-US">5,0</SPAN></SUB></P>
-        </TD>
-    </TR>
+    <TABLE DIR="LTR" ALIGN=LEFT WIDTH=454 CELLPADDING=2 CELLSPACING=0>
+        <COL WIDTH=69>
+        <COL WIDTH=72>
+        <COL WIDTH=72>
+        <COL WIDTH=72>
+        <COL WIDTH=64>
+        <COL WIDTH=80>
+        <TR VALIGN=TOP>
+            <TD WIDTH=69
+                STYLE="border-top: 1px solid #00000a; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+<P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>0,0</SUB></P>
+</TD>
+<TD WIDTH=72
+    STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+    <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN
+            LANG="en-US">1,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">5</SPAN></SUB></P>
+</TD>
+<TD WIDTH=72
+    STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+    <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN
+            LANG="en-US">2,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">4</SPAN></SUB></P>
+</TD>
+<TD WIDTH=72
+    STYLE="border-top: 1px dashed #00000a; border-bottom: 1px dashed #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+    <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+    </P>
+</TD>
+<TD WIDTH=64
+    STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
+    <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+    </P>
+</TD>
+<TD WIDTH=80
+    STYLE="border: 3.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+    <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>1</SUB><SUB><SPAN LANG="en-US">5,1</SPAN></SUB></P>
+</TD>
+</TR>
+<TR VALIGN=TOP>
+    <TD WIDTH=69
+        STYLE="border: 3.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">0,1</SPAN></SUB></P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: 1px solid #00000a; border-bottom: none; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.02in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">1,0</SPAN></SUB></P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: 1px solid #00000a; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN
+                LANG="en-US">2,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">5</SPAN></SUB></P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: none; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=64
+        STYLE="border-top: none; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=80
+        STYLE="border-top: none; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>1</SUB><SUB><SPAN LANG="en-US">5,2</SPAN></SUB>
+        </P>
+    </TD>
+</TR>
+<TR VALIGN=TOP>
+    <TD WIDTH=69
+        STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">0,2</SPAN></SUB></P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border: 3.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">1,1</SPAN></SUB></P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">2,0</SPAN></SUB></P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: 1px dashed #00000a; border-bottom: none; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=64
+        STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=80
+        STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>1</SUB><SUB><SPAN LANG="en-US">5,3</SPAN></SUB>
+        </P>
+    </TD>
+</TR>
+<TR VALIGN=TOP>
+    <TD WIDTH=69
+        STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=72 STYLE="border: none; padding: 0in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: 1px dashed #00000a; border-bottom: none; border-left: none; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=64 STYLE="border: none; padding: 0in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=80
+        STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+</TR>
+<TR VALIGN=TOP>
+    <TD WIDTH=69
+        STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: none; padding: 0in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: none; border-bottom: 1px dashed #00000a; border-left: none; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=64 STYLE="border: none; padding: 0in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=80
+        STYLE="border-top: none; border-bottom: none; border-left: 1px dashed #00000a; border-right: 1px dashed #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+</TR>
+<TR VALIGN=TOP>
+    <TD WIDTH=69 HEIGHT=32
+        STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN
+                LANG="en-US">0,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">5</SPAN></SUB></P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN
+                LANG="en-US">1,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">4</SPAN></SUB></P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB><SPAN
+                LANG="en-US">2,</SPAN></SUB><SUB>1</SUB><SUB><SPAN LANG="en-US">3</SPAN></SUB></P>
+    </TD>
+    <TD WIDTH=72
+        STYLE="border-top: none; border-bottom: 1px dashed #00000a; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+        <P LANG="en-US" CLASS="western" ALIGN=CENTER><BR>
+        </P>
+    </TD>
+    <TD WIDTH=64
+        STYLE="border: 3.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>1</SUB><SUB><SPAN LANG="en-US">4,1</SPAN></SUB>
+        </P>
+    </TD>
+    <TD WIDTH=80
+        STYLE="border-top: 1.50pt solid #00000a; border-bottom: 1.50pt solid #00000a; border-left: none; border-right: 1.50pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.02in">
+        <P CLASS="western" ALIGN=CENTER><SPAN LANG="en-US">S</SPAN><SUB>1</SUB><SUB><SPAN LANG="en-US">5,0</SPAN></SUB>
+        </P>
+    </TD>
+</TR>
 </TABLE><BR>
 </P>
 <P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
@@ -376,7 +565,8 @@
 <P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
     <BR>
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">j</SPAN></SUB><SUB>,</SUB><SUB><SPAN LANG="en-US">i</SPAN></SUB><SUB>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><SPAN LANG="en-US">S</SPAN><SUB><SPAN LANG="en-US">j</SPAN></SUB><SUB>,</SUB><SUB><SPAN
+        LANG="en-US">i</SPAN></SUB><SUB>
 </SUB>– <SPAN LANG="en-US">i</SPAN>-й разряд</P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in">
     <SPAN LANG="en-US">j</SPAN> -го слова
@@ -388,7 +578,7 @@
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
 <H5 CLASS="western"><FONT COLOR="#00000a"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Рисунок
-    2.  Расположение данных в ассоциативной
+    2. Расположение данных в ассоциативной
     памяти с диагональной адресацией</FONT></FONT></FONT></H5>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 130%">
     <FONT SIZE=4>Рассмотрим, как в памяти с
@@ -397,7 +587,7 @@
         записи слов и разрядных столбцов на
         примере применения двоичных сумматоров.</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 130%">
-    <FONT SIZE=4>Схема  памяти  с диагональной
+    <FONT SIZE=4>Схема памяти с диагональной
         адресацией на основе сумматора приведена
         на рисунке 3.</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 130%">
@@ -407,14 +597,14 @@
 </P>
 <P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
-<P CLASS="western" STYLE="margin-bottom: 0in">         0</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"> 0</P>
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
 <P CLASS="western" STYLE="margin-bottom: 0in">
 </P>
-<P CLASS="western" STYLE="margin-bottom: 0in">          1</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"> 1</P>
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
@@ -425,13 +615,13 @@
 </P>
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
-<P CLASS="western" STYLE="margin-bottom: 0in">    15</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"> 15</P>
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
 <P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 130%">
-    <FONT SIZE=4>Рисунок 3.  Схема памяти с
+    <FONT SIZE=4>Рисунок 3. Схема памяти с
         диагональной адресацией</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 130%">
     <FONT SIZE=4>В этой памяти каждый дешифратор
@@ -483,7 +673,7 @@
         полученными на выходах соответствующих
         сумматоров. В частности, первый адресный
         столбец записывается в ячейки, выделенные
-        на рисунке 2 более  жирными линиями.</FONT></P>
+        на рисунке 2 более жирными линиями.</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 130%">
     <FONT SIZE=4><I>Считывание разрядного столбца
     </I></FONT>
@@ -504,7 +694,7 @@
         разрядов, что и при записи.</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 130%">
     <FONT SIZE=4><I>Запись слова в память</I></FONT></P>
-<P STYLE="margin-left: 0.2in; line-height: 130%"> <FONT SIZE=4>Запись
+<P STYLE="margin-left: 0.2in; line-height: 130%"><FONT SIZE=4>Запись
     слова осуществляется следующим образом:</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 130%">
     – <FONT SIZE=4>адрес слова подается на входы
@@ -522,7 +712,7 @@
     буферного регистра передаются в ячейки
     памяти, причем так, что i-е слово оказывается
     в i-м столбце массива памяти.</FONT></P>
-<H1 CLASS="western" STYLE="line-height: 130%"> <FONT COLOR="#00000a"><I>Считывание
+<H1 CLASS="western" STYLE="line-height: 130%"><FONT COLOR="#00000a"><I>Считывание
     слова из памяти</I></FONT></H1>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 130%">
     <FONT SIZE=4>Считывание слова из ассоциативной
@@ -537,11 +727,12 @@
     где производится сдвиг вверх на количество
     разрядов, задаваемое адресом слова.</FONT></P>
 
-    <FONT SIZE=4><I><B>Выполнение логических операций
-        над разрядными столбцами</B></I></FONT></P>
+<FONT SIZE=4><I><B>Выполнение логических операций
+    над разрядными столбцами</B></I></FONT></P>
 <P STYLE="margin-left: 0.2in; line-height: 135%"><FONT SIZE=4>При
     выполнение логических операций два
-    разрядных столбца (</FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4>1</FONT></SUB><FONT SIZE=4>и
+    разрядных столбца (</FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4>1</FONT></SUB><FONT
+        SIZE=4>и
 </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4>2</FONT></SUB><FONT SIZE=4>)
     подвергаются логической операции и
     результат этой операции помещается в
@@ -571,37 +762,39 @@
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 135%">
     <FONT SIZE=4>Пример выполнения операции
-    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>OR</I></SPAN></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><I>ИЛИ</I></FONT><FONT SIZE=4>)</FONT><FONT SIZE=4>
+    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>OR</I></SPAN></FONT><FONT SIZE=4>(</FONT><FONT
+        SIZE=4><I>ИЛИ</I></FONT><FONT SIZE=4>)</FONT><FONT SIZE=4>
     приведен на рисунке 4.</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
     <SPAN LANG="en-US">AM       S</SPAN><SUB><SPAN LANG="en-US">1
 </SPAN></SUB><SPAN LANG="en-US">       S</SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB><SPAN LANG="en-US">
-       D     R                                   AM                 
-S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">    
-   S</SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB><SPAN LANG="en-US"> 
+       D     R                                   AM
+S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">
+   S</SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB><SPAN LANG="en-US">
       D         R           </SPAN>
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
-    <IMG SRC="lr8/i_023cd21467d9593c_html_m793b0115.gif" ALIGN=LEFT><IMG SRC="lr8/i_023cd21467d9593c_html_m4bd8f4bb.gif" ALIGN=LEFT>
-    0         1         <SPAN LANG="en-US">x</SPAN>
+    <IMG SRC="lr8/i_023cd21467d9593c_html_m793b0115.gif" ALIGN=LEFT><IMG SRC="lr8/i_023cd21467d9593c_html_m4bd8f4bb.gif"
+                                                                         ALIGN=LEFT>
+    0 1 <SPAN LANG="en-US">x</SPAN>
     <SPAN LANG="en-US">y</SPAN>
-    0          1         1        1</P>
+    0 1 1 1</P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
-    1         0         <SPAN LANG="en-US">x</SPAN>
+    1 0 <SPAN LANG="en-US">x</SPAN>
     <SPAN LANG="en-US">y</SPAN>
-    1          0         1        1</P>
+    1 0 1 1</P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
-    1         1         <SPAN LANG="en-US">x</SPAN>
+    1 1 <SPAN LANG="en-US">x</SPAN>
     <SPAN LANG="en-US">y</SPAN>
-    1          1         1        1</P>
+    1 1 1 1</P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
-    0         0         <SPAN LANG="en-US">x</SPAN>
+    0 0 <SPAN LANG="en-US">x</SPAN>
     <SPAN LANG="en-US">y</SPAN>
-    0          0         0        0
+    0 0 0 0
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
-    1         0         х      у
-    1          0         1
+    1 0 х у
+    1 0 1
     1</P>
 <P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
     <BR>
@@ -617,7 +810,8 @@ S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">
 </P>
 <P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 130%">
     <FONT SIZE=4>Рисунок 4. Пример выполнения
-        операции </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>OR</I></SPAN></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><I>ИЛИ</I></FONT><FONT SIZE=4>)</FONT></P>
+        операции </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>OR</I></SPAN></FONT><FONT SIZE=4>(</FONT><FONT
+        SIZE=4><I>ИЛИ</I></FONT><FONT SIZE=4>)</FONT></P>
 <P CLASS="western" STYLE="margin-bottom: 0in; line-height: 130%"><FONT SIZE=4>Для
     упрощения русинка 4 на нем показано
     выполнения логической операции </FONT><FONT SIZE=4><SPAN LANG="en-US">OR</SPAN></FONT><FONT SIZE=4>(или)
@@ -626,7 +820,7 @@ S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">
     обозначения состояния позиции (адреса)
     результирующего разрядного столбца
     (</FONT><FONT SIZE=4><SPAN LANG="en-US">D</SPAN></FONT><FONT SIZE=4>)
-    символом Х  и обозначение содержимого
+    символом Х и обозначение содержимого
     буферного регистра </FONT><FONT SIZE=4><SPAN LANG="en-US">R</SPAN></FONT><FONT SIZE=4>
     символом у означает , что их состояние
     до выполнения операции может быть любым
@@ -637,8 +831,10 @@ S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">
     <FONT SIZE=4>Логические функции 2-х переменных</FONT></P>
 <P CLASS="western" STYLE="margin-bottom: 0in; line-height: 130%"><FONT SIZE=4>Таблица
     1</FONT></P>
-<P CLASS="western" STYLE="margin-bottom: 0in"><IMG SRC="lr8/i_023cd21467d9593c_html_m4d2555cb.png" NAME="Рисунок 122" ALIGN=BOTTOM WIDTH=605 HEIGHT=218 BORDER=0></P>
-<P CLASS="western" STYLE="margin-bottom: 0in"><IMG SRC="lr8/i_023cd21467d9593c_html_m3e215f6.png" NAME="Рисунок 124" ALIGN=BOTTOM WIDTH=605 HEIGHT=635 BORDER=0></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><IMG SRC="lr8/i_023cd21467d9593c_html_m4d2555cb.png" NAME="Рисунок 122"
+                                                   ALIGN=BOTTOM WIDTH=605 HEIGHT=218 BORDER=0></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><IMG SRC="lr8/i_023cd21467d9593c_html_m3e215f6.png" NAME="Рисунок 124"
+                                                   ALIGN=BOTTOM WIDTH=605 HEIGHT=635 BORDER=0></P>
 
 <P CLASS="western" STYLE="margin-bottom: 0in"><FONT SIZE=4><I><B>Выполнение
     арифметических операций над полями
@@ -648,7 +844,7 @@ S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">
     слов АП может быть организовано разными
     способами, например, следующим образом:</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 130%">
-    <FONT SIZE=4>Каждое  слово  массива ассоциативной
+    <FONT SIZE=4>Каждое слово массива ассоциативной
         памяти состоит из 4-х полей (общая длина
         слова – 16 разрядов), содержащих переменные
     </FONT><FONT SIZE=4><I>Vj, Aj, Вj</I></FONT><FONT SIZE=4> и </FONT><FONT SIZE=4><I>Sj,</I></FONT><FONT SIZE=4>
@@ -704,11 +900,11 @@ S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">
     <LI><P CLASS="western" STYLE="margin-bottom: 0in; line-height: 130%">
         <FONT SIZE=4>Приведите алгоритмы выполнения
             записи и считывания разрядных срезов
-            (столбцов)  и слов в АЗУ с диагональной
+            (столбцов) и слов в АЗУ с диагональной
             адресацией.</FONT></P>
     <LI><P CLASS="western" STYLE="margin-bottom: 0in; line-height: 130%">
         <FONT SIZE=4>Какие операции над разрядными
-            срезами  и со словами могут выполняться
+            срезами и со словами могут выполняться
             в АЗУ с диагональной адресацией?</FONT></P>
     <LI><P CLASS="western" STYLE="margin-bottom: 0in; line-height: 130%">
         <FONT SIZE=4>Приведите алгоритм выполнения
@@ -723,21 +919,26 @@ S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">
     <LI><P STYLE="margin-bottom: 0in; line-height: 125%"><FONT SIZE=4>Приведите
         логические формулы для определения
         совпадения и несовпадения аргумента
-        поиска А и слова памяти </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>с
+        поиска А и слова памяти </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>с
         учетом маскирования (с).</FONT></P>
-    <LI><P STYLE="margin-bottom: 0in; line-height: 125%"> <FONT SIZE=4>Назовите
+    <LI><P STYLE="margin-bottom: 0in; line-height: 125%"><FONT SIZE=4>Назовите
         способы реализации сравнения аргумента
-        поиска А и слова памяти </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>?</FONT></P>
-    <LI><P STYLE="margin-bottom: 0in; line-height: 125%"> <FONT SIZE=4>Какие
+        поиска А и слова памяти </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>?</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 125%"><FONT SIZE=4>Какие
         алгоритмы чаще используются при
         выполнении поисковых операций в АЗУ?</FONT></P>
-    <LI><P STYLE="margin-bottom: 0in; line-height: 125%"> <FONT SIZE=4>Назовите
+    <LI><P STYLE="margin-bottom: 0in; line-height: 125%"><FONT SIZE=4>Назовите
         основные типы поисковых операций в
         ассоциативных процессах?</FONT></P>
-    <LI><P STYLE="margin-bottom: 0in; line-height: 125%"> <FONT SIZE=4>Определите
-        соотношение между А и </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>,
-        если </FONT><FONT SIZE=4><SPAN LANG="en-US">q</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>=1,
-    </FONT><FONT SIZE=4><SPAN LANG="en-US">l</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>=0</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 125%"><FONT SIZE=4>Определите
+        соотношение между А и </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>,
+        если </FONT><FONT SIZE=4><SPAN LANG="en-US">q</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">ji</SPAN></FONT></SUB><FONT
+            SIZE=4>=1,
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">l</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>=0</FONT></P>
 </OL>
 <P CLASS="western" STYLE="margin-left: 0.39in; margin-bottom: 0in; line-height: 130%">
     <BR>
@@ -789,125 +990,166 @@ S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">
     <COL WIDTH=145>
     <COL WIDTH=116>
     <TR VALIGN=TOP>
-        <TD WIDTH=92 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=92
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
                 <FONT SIZE=3>Варианты</FONT></P>
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>заданий</FONT></P>
         </TD>
-        <TD WIDTH=98 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=98
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Запись-считывание
                 разрядных столбцов и слов</FONT></P>
         </TD>
-        <TD WIDTH=99 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=99
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Логические
                 функции над разрядными столбцами</FONT></P>
         </TD>
-        <TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=145
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Поисковые
                 операции</FONT></P>
         </TD>
-        <TD WIDTH=116 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=116
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Арифметические
                 операции над полями слов</FONT></P>
         </TD>
     </TR>
     <TR VALIGN=TOP>
-        <TD WIDTH=92 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=92
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Вариант
                 1</FONT></P>
         </TD>
-        <TD WIDTH=98 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=98
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=4>любых</FONT></P>
         </TD>
-        <TD WIDTH=99 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=99
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
-                <FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">1</FONT><FONT SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">14</FONT><FONT SIZE=2 STYLE="font-size: 9pt">,</FONT></P>
+                <FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">1</FONT><FONT SIZE=3>и</FONT><FONT
+                    SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">14</FONT><FONT SIZE=2
+                                                                                      STYLE="font-size: 9pt">,</FONT>
+            </P>
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">3
             </FONT><FONT SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">12</FONT></P>
         </TD>
-        <TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=145
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Поиск
                 значения ближайшего сверху(снизу)</FONT></P>
         </TD>
-        <TD WIDTH=116 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=116
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Сложение
-                полей </FONT><FONT SIZE=3>Aj и Bj  </FONT><FONT SIZE=3>в
+                полей </FONT><FONT SIZE=3>Aj и Bj </FONT><FONT SIZE=3>в
                 словах </FONT><FONT SIZE=3>Sj</FONT><FONT SIZE=3>, у
                 которых </FONT><FONT SIZE=3>Vj</FONT><FONT SIZE=3>
                 совпадает с заданным V= 000-111</FONT></P>
         </TD>
     </TR>
     <TR VALIGN=TOP>
-        <TD WIDTH=92 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=92
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Вариант
                 2</FONT></P>
         </TD>
-        <TD WIDTH=98 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=98
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=4>любых</FONT></P>
         </TD>
-        <TD WIDTH=99 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=99
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
-                <FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">7</FONT><FONT SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">8</FONT><FONT SIZE=2 STYLE="font-size: 9pt">,</FONT></P>
-            <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">2</FONT><FONT SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">13</FONT></P>
+                <FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">7</FONT><FONT SIZE=3>и</FONT><FONT
+                    SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">8</FONT><FONT SIZE=2
+                                                                                     STYLE="font-size: 9pt">,</FONT></P>
+            <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=4>f</FONT><FONT SIZE=2
+                                                                                     STYLE="font-size: 9pt">2</FONT><FONT
+                    SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">13</FONT></P>
         </TD>
-        <TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=145
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Поиск
                 величин, заключенных в данном интервале</FONT></P>
         </TD>
-        <TD WIDTH=116 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=116
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Сложение
-                полей </FONT><FONT SIZE=3>Aj и Bj  </FONT><FONT SIZE=3>в
+                полей </FONT><FONT SIZE=3>Aj и Bj </FONT><FONT SIZE=3>в
                 словах </FONT><FONT SIZE=3>Sj</FONT><FONT SIZE=3>, у
                 которых </FONT><FONT SIZE=3>Vj</FONT><FONT SIZE=3>
                 совпадает с заданным V= 000-111</FONT></P>
         </TD>
     </TR>
     <TR VALIGN=TOP>
-        <TD WIDTH=92 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=92
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Вариант
                 3</FONT></P>
         </TD>
-        <TD WIDTH=98 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=98
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=4>любых</FONT></P>
         </TD>
-        <TD WIDTH=99 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=99
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
-                <FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">6</FONT><FONT SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">9</FONT><FONT SIZE=2 STYLE="font-size: 9pt">,</FONT></P>
-            <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">4</FONT><FONT SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">11</FONT></P>
+                <FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">6</FONT><FONT SIZE=3>и</FONT><FONT
+                    SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">9</FONT><FONT SIZE=2
+                                                                                     STYLE="font-size: 9pt">,</FONT></P>
+            <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=4>f</FONT><FONT SIZE=2
+                                                                                     STYLE="font-size: 9pt">4</FONT><FONT
+                    SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">11</FONT></P>
         </TD>
-        <TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=145
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Упорядоченная
                 выборка(сортировка)</FONT></P>
         </TD>
-        <TD WIDTH=116 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=116
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Сложение
-                полей </FONT><FONT SIZE=3>Aj и Bj  </FONT><FONT SIZE=3>в
+                полей </FONT><FONT SIZE=3>Aj и Bj </FONT><FONT SIZE=3>в
                 словах </FONT><FONT SIZE=3>Sj</FONT><FONT SIZE=3>, у
                 которых </FONT><FONT SIZE=3>Vj</FONT><FONT SIZE=3>
                 совпадает с заданным V= 000-111</FONT></P>
         </TD>
     </TR>
     <TR VALIGN=TOP>
-        <TD WIDTH=92 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=92
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Вариант
                 4</FONT></P>
         </TD>
-        <TD WIDTH=98 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=98
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><A NAME="_GoBack"></A>
                 <FONT SIZE=4>любых</FONT></P>
         </TD>
-        <TD WIDTH=99 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=99
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in">
-                <FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">5</FONT><FONT SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">10</FONT><FONT SIZE=2 STYLE="font-size: 9pt">,</FONT></P>
-            <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">0</FONT><FONT SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">15</FONT></P>
+                <FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">5</FONT><FONT SIZE=3>и</FONT><FONT
+                    SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">10</FONT><FONT SIZE=2
+                                                                                      STYLE="font-size: 9pt">,</FONT>
+            </P>
+            <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=4>f</FONT><FONT SIZE=2
+                                                                                     STYLE="font-size: 9pt">0</FONT><FONT
+                    SIZE=3>и</FONT><FONT SIZE=4>f</FONT><FONT SIZE=2 STYLE="font-size: 9pt">15</FONT></P>
         </TD>
-        <TD WIDTH=145 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=145
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Поиск
                 по соответствию</FONT></P>
         </TD>
-        <TD WIDTH=116 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+        <TD WIDTH=116
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
             <P LANG="be-BY" CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3>Сложение
-                полей </FONT><FONT SIZE=3>Aj и Bj  </FONT><FONT SIZE=3>в
+                полей </FONT><FONT SIZE=3>Aj и Bj </FONT><FONT SIZE=3>в
                 словах </FONT><FONT SIZE=3>Sj</FONT><FONT SIZE=3>, у
                 которых </FONT><FONT SIZE=3>Vj</FONT><FONT SIZE=3>
                 совпадает с заданным V= 000-111</FONT></P>
@@ -960,7 +1202,7 @@ S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">
     <FONT SIZE=4>При выполнении данной лабораторной
         работы рекомендуется:</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
-    <FONT SIZE=4>1) вначале  построить (сформировать)
+    <FONT SIZE=4>1) вначале построить (сформировать)
         исходный двоичный массив размером не
         более 16 х 16 двоичных разрядов в обычном
         виде;</FONT></P>
@@ -982,7 +1224,7 @@ S</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">
         (рекуррентные) алгоритмы.</FONT></P>
 <P STYLE="line-height: 130%"><FONT SIZE=4>5) для выполнения
     вычислительных операций над полями Aj
-    и Bj  слова память результатов необходимо
+    и Bj слова память результатов необходимо
     дополнить (доработать) средствами,
     обеспечивающими выполнение операций
     поразрядного сложения с учетом сигналов

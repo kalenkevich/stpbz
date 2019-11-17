@@ -16,22 +16,107 @@
     <META NAME="ShareDoc" CONTENT="false">
     <STYLE TYPE="text/css">
         <!--
-        @page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
-        P { margin-bottom: 0in; direction: ltr; line-height: 130%; text-align: center; widows: 2; orphans: 2 }
-        P.western { font-family: "Times New Roman", serif; font-size: 14pt }
-        P.cjk { font-family: "Times New Roman"; font-size: 14pt; so-language: ru-RU }
-        P.ctl { font-family: "Times New Roman"; font-size: 10pt }
-        H3 { margin-top: 0in; margin-bottom: 0in; direction: ltr; line-height: 130%; text-align: center; widows: 2; orphans: 2 }
-        H3.western { font-weight: normal }
-        H3.cjk { font-family: "Times New Roman"; so-language: ru-RU; font-weight: normal }
-        H3.ctl { font-family: "Times New Roman"; font-size: 10pt; font-weight: normal }
-        H4 { text-indent: 0.39in; margin-top: 0in; margin-bottom: 0in; direction: ltr; line-height: 130%; text-align: justify; widows: 2; orphans: 2 }
-        H4.western { font-style: italic }
-        H4.cjk { font-family: "Times New Roman"; so-language: ru-RU; font-style: italic }
-        H4.ctl { font-family: "Times New Roman"; font-size: 10pt; font-weight: normal }
-        P.frame-contents-western { font-family: "Times New Roman", serif; font-size: 14pt }
-        P.frame-contents-cjk { font-family: "Times New Roman"; font-size: 14pt; so-language: ru-RU }
-        P.frame-contents-ctl { font-family: "Times New Roman"; font-size: 10pt }
+        @page {
+            margin-left: 1.18in;
+            margin-right: 0.59in;
+            margin-top: 0.79in;
+            margin-bottom: 0.79in
+        }
+
+        P {
+            margin-bottom: 0in;
+            direction: ltr;
+            line-height: 130%;
+            text-align: center;
+            widows: 2;
+            orphans: 2
+        }
+
+        P.western {
+            font-family: "Times New Roman", serif;
+            font-size: 14pt
+        }
+
+        P.cjk {
+            font-family: "Times New Roman";
+            font-size: 14pt;
+            so-language: ru-RU
+        }
+
+        P.ctl {
+            font-family: "Times New Roman";
+            font-size: 10pt
+        }
+
+        H3 {
+            margin-top: 0in;
+            margin-bottom: 0in;
+            direction: ltr;
+            line-height: 130%;
+            text-align: center;
+            widows: 2;
+            orphans: 2
+        }
+
+        H3.western {
+            font-weight: normal
+        }
+
+        H3.cjk {
+            font-family: "Times New Roman";
+            so-language: ru-RU;
+            font-weight: normal
+        }
+
+        H3.ctl {
+            font-family: "Times New Roman";
+            font-size: 10pt;
+            font-weight: normal
+        }
+
+        H4 {
+            text-indent: 0.39in;
+            margin-top: 0in;
+            margin-bottom: 0in;
+            direction: ltr;
+            line-height: 130%;
+            text-align: justify;
+            widows: 2;
+            orphans: 2
+        }
+
+        H4.western {
+            font-style: italic
+        }
+
+        H4.cjk {
+            font-family: "Times New Roman";
+            so-language: ru-RU;
+            font-style: italic
+        }
+
+        H4.ctl {
+            font-family: "Times New Roman";
+            font-size: 10pt;
+            font-weight: normal
+        }
+
+        P.frame-contents-western {
+            font-family: "Times New Roman", serif;
+            font-size: 14pt
+        }
+
+        P.frame-contents-cjk {
+            font-family: "Times New Roman";
+            font-size: 14pt;
+            so-language: ru-RU
+        }
+
+        P.frame-contents-ctl {
+            font-family: "Times New Roman";
+            font-size: 10pt
+        }
+
         -->
     </STYLE>
 </HEAD>
@@ -59,7 +144,7 @@
     <FONT SIZE=3><FONT SIZE=4><B>Цель работы: </B></FONT><FONT SIZE=4>освоение
         навыков построения и верификации
         (проверки) моделей ассоциативного
-        процессора с  применением рекуррентных
+        процессора с применением рекуррентных
         алгоритмов.</FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.48in; line-height: 130%">
     <BR>
@@ -114,70 +199,90 @@
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><BR>
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_650142ff.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_6fc90667.gif" ALIGN=LEFT><BR>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_650142ff.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_6fc90667.gif" ALIGN=LEFT><BR>
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%">
-    <FONT SIZE=3>Счетчик  разрядных
+    <FONT SIZE=3>Счетчик разрядных
         Регистр поискового</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%">
     <FONT SIZE=3>столбцов
-        аргумента и маски</FONT><SPAN DIR="LTR" STYLE="float: left; width: 0.25in; height: 1.15in; border: 1px solid #000000; padding: 0.05in 0.1in; background: #ffffff">
-	<P CLASS="frame-contents-western"><BR>
-    </P>
+        аргумента и маски</FONT><SPAN DIR="LTR"
+                                      STYLE="float: left; width: 0.25in; height: 1.15in; border: 1px solid #000000; padding: 0.05in 0.1in; background: #ffffff">
+<P CLASS="frame-contents-western"><BR>
+</P>
 </SPAN>
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_2482727a.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_2482727a.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_2482727a.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_2482727a.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_2482727a.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_2482727a.gif"
+                                                                       ALIGN=LEFT>
 
-    <FONT SIZE=3><B>. . .      .
+    <FONT SIZE=3><B>. . . .
 
 
     </B></FONT>
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m3c4c9f29.gif" ALIGN=LEFT><BR>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m3c4c9f29.gif"
+                                                                ALIGN=LEFT><BR>
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%">
 
-    <FONT SIZE=3>Мультиплексор     </FONT><SPAN DIR="LTR" STYLE="float: left; width: 0.25in; height: 2.19in; border: 1px solid #000000; padding: 0.05in 0.1in; background: #ffffff">
-	<P CLASS="frame-contents-western"><BR>
-    </P>
+    <FONT SIZE=3>Мультиплексор </FONT><SPAN DIR="LTR"
+                                            STYLE="float: left; width: 0.25in; height: 2.19in; border: 1px solid #000000; padding: 0.05in 0.1in; background: #ffffff">
+<P CLASS="frame-contents-western"><BR>
+</P>
 </SPAN>
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m755b6f98.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_4ef83599.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m3665a523.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m755b6f98.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_4ef83599.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m3665a523.gif"
+                                                                       ALIGN=LEFT>
 
 
     <FONT SIZE=3>Буферные</FONT></P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m4d8d69f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m22a8f7cb.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m4d8d69f.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_m22a8f7cb.gif" ALIGN=LEFT>
 
 
     <FONT SIZE=3>триггеры</FONT></P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_6fe0207d.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_a76472b.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_6fe0207d.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_a76472b.gif" ALIGN=LEFT>
     <FONT SIZE=3>Дешифратор
 
 
     </FONT>
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m41ddf4f8.gif" ALIGN=LEFT>
-
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m41ddf4f8.gif"
+                                                                ALIGN=LEFT>
 
 
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m4b7f6f5.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_a76472b.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m4b7f6f5.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_a76472b.gif" ALIGN=LEFT>
 
     <FONT SIZE=3>.</FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%">
     <FONT SIZE=3>Ассоциативный
-        ИСКЛ.                      .</FONT></P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m14ba0805.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_414a306f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_a76472b.gif" ALIGN=LEFT>
+        ИСКЛ. .</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m14ba0805.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_414a306f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_a76472b.gif"
+                                                                       ALIGN=LEFT>
     <FONT SIZE=3>массив
-        «ИЛИ»                      .</FONT></P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_76722579.gif" ALIGN=LEFT>
+        «ИЛИ» .</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_76722579.gif"
+                                                                ALIGN=LEFT>
     <FONT SIZE=3>(АМ)
 
     </FONT>
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_a76472b.gif" ALIGN=LEFT>
-
-
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_a76472b.gif"
+                                                                ALIGN=LEFT>
 
 
 </P>
@@ -191,7 +296,7 @@
 </H3>
 <H3 CLASS="western"><BR>
 </H3>
-<H3 CLASS="western">Рисунок 1.  Структура
+<H3 CLASS="western">Рисунок 1. Структура
     ассоциативного процессора</H3>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
     <FONT SIZE=3><FONT SIZE=4>В АЗУ, параллельных по
@@ -249,32 +354,58 @@
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%"><A NAME="_GoBack"></A>
     <FONT SIZE=3><FONT SIZE=4>Алгоритмы для варианта
         с началом сравнения, начиная со старших
-        разрядов, описывается    следующими
+        разрядов, описывается следующими
         рекуррентными соотношениями[9]:</FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="pl-PL"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>=g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>j,i+</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="pl-PL">1</SPAN></FONT></SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><SPAN LANG="en-US"><I></I></SPAN></FONT></FONT><FONT SIZE=4><SPAN LANG="pl-PL">(</SPAN></FONT><FONT SIZE=4><SPAN LANG="pl-PL"><I>ā</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>i</I></SPAN></FONT></SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT><FONT SIZE=4><SPAN LANG="pl-PL"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>ji</I></SPAN></FONT></SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT><FONT SIZE=5><SPAN LANG="en-US"><I>ī</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>j,i+1</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL">)</SPAN></FONT><FONT SIZE=4><SPAN LANG="pl-PL"><I>,
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="pl-PL"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="pl-PL"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>=g</I></SPAN></FONT><SUB><FONT
+            SIZE=4><SPAN LANG="pl-PL"><I>j,i+</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><SPAN
+            LANG="pl-PL">1</SPAN></FONT></SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><SPAN LANG="en-US"><I></I></SPAN></FONT></FONT><FONT
+            SIZE=4><SPAN LANG="pl-PL">(</SPAN></FONT><FONT SIZE=4><SPAN LANG="pl-PL"><I>ā</I></SPAN></FONT><SUB><FONT
+            SIZE=4><SPAN LANG="pl-PL"><I>i</I></SPAN></FONT></SUB><FONT FACE="Symbol, serif"><FONT
+            SIZE=4><I></I></FONT></FONT><FONT SIZE=4><SPAN LANG="pl-PL"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="pl-PL"><I>ji</I></SPAN></FONT></SUB><FONT FACE="Symbol, serif"><FONT
+            SIZE=4><I></I></FONT></FONT><FONT SIZE=5><SPAN LANG="en-US"><I>ī</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="pl-PL"><I>j,i+1</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL">)</SPAN></FONT><FONT
+            SIZE=4><SPAN LANG="pl-PL"><I>,
     </I></SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>
     </I></SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US">(1)</SPAN></FONT></FONT></P>
 <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.39in; line-height: 130%">
-    <IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif" ALIGN=LEFT><FONT SIZE=3><FONT SIZE=4><SPAN LANG="pl-PL"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>
-    = l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>j, i+</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="pl-PL">1</SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>
+    <IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif"
+                                                                        ALIGN=LEFT><FONT SIZE=3><FONT SIZE=4><SPAN
+        LANG="pl-PL"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>ji</I></SPAN></FONT></SUB><FONT
+        SIZE=4><SPAN LANG="pl-PL"><I>
+    = l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>j, i+</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><SPAN
+        LANG="pl-PL">1</SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>
 </I></SPAN></FONT><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT><FONT SIZE=4><SPAN LANG="pl-PL"><I>
-</I></SPAN></FONT><FONT SIZE=4><SPAN LANG="pl-PL">(</SPAN></FONT><FONT SIZE=4><SPAN LANG="pl-PL"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>
-</I></SPAN></FONT><FONT FACE="Symbol, serif"><FONT SIZE=4><SPAN LANG="en-US"><I></I></SPAN></FONT></FONT><FONT SIZE=4><SPAN LANG="pl-PL"><I>
-</I></SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>
-</I></SPAN></FONT><FONT FACE="Symbol, serif"><FONT SIZE=4><SPAN LANG="en-US"><I></I></SPAN></FONT></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>j,i+1</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL">)</SPAN></FONT><FONT SIZE=4><SPAN LANG="pl-PL"><I>,</I></SPAN></FONT></FONT></P>
+</I></SPAN></FONT><FONT SIZE=4><SPAN LANG="pl-PL">(</SPAN></FONT><FONT SIZE=4><SPAN
+        LANG="pl-PL"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>i</I></SPAN></FONT></SUB><FONT
+        SIZE=4><SPAN LANG="pl-PL"><I>
+</I></SPAN></FONT><FONT FACE="Symbol, serif"><FONT SIZE=4><SPAN LANG="en-US"><I></I></SPAN></FONT></FONT><FONT
+        SIZE=4><SPAN LANG="pl-PL"><I>
+</I></SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+        LANG="pl-PL"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>
+</I></SPAN></FONT><FONT FACE="Symbol, serif"><FONT SIZE=4><SPAN LANG="en-US"><I></I></SPAN></FONT></FONT><FONT
+        SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="pl-PL"><I>j,i+1</I></SPAN></FONT></SUB><FONT
+        SIZE=4><SPAN LANG="pl-PL">)</SPAN></FONT><FONT SIZE=4><SPAN LANG="pl-PL"><I>,</I></SPAN></FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><FONT SIZE=3><FONT SIZE=4>где
-</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,
-</I></FONT></SUB><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4>
+</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+        LANG="en-US"><I>ji</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,
+</I></FONT></SUB><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+        LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,</I></FONT></SUB><SUB><FONT SIZE=4><SPAN
+        LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4>
 </FONT></SUB><FONT SIZE=4>– двоичные переменные,
     вычисляемые в процессе выполнения
     поразрядного</FONT> <FONT SIZE=4>сравнения;</FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4>
-    </FONT></SUB><FONT SIZE=4>– </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT SIZE=4><I>-</I></FONT><FONT SIZE=4>й
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4>
+    </FONT></SUB><FONT SIZE=4>– </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT
+            SIZE=4><I>-</I></FONT><FONT SIZE=4>й
         разряд аргумента поиска;</FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
     </I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
     </I></FONT></SUB><FONT SIZE=4><I>– </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT><FONT SIZE=4>-й
         разряд </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT><FONT SIZE=4><I>-</I></FONT><FONT SIZE=4>го
@@ -289,10 +420,14 @@
         начиная со старшего разряда </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT><FONT SIZE=4>.
         В качестве начальных значений задаются</FONT></FONT></P>
 <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.39in; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,
-    </I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+</I></FONT></SUB><SUB><FONT SIZE=4>1</FONT></SUB><FONT SIZE=4><I>
-        = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,
-    </I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+</I></FONT></SUB><SUB><FONT SIZE=4>1</FONT></SUB><FONT SIZE=4><I>
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>,
+    </I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+</I></FONT></SUB><SUB><FONT
+            SIZE=4>1</FONT></SUB><FONT SIZE=4><I>
+        = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT
+            SIZE=4><I>,
+    </I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>+</I></FONT></SUB><SUB><FONT
+            SIZE=4>1</FONT></SUB><FONT SIZE=4><I>
         = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>.</I></FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
     <FONT SIZE=3><FONT SIZE=3>Последовательные цепи
@@ -305,50 +440,104 @@
         памяти используем наиболее простые
         триггеры с синхронизацией – </FONT><FONT SIZE=3><SPAN LANG="en-US"><I>D</I></SPAN></FONT><FONT SIZE=3>-типа
         или другого типа (рисунок 2).</FONT></FONT></P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_4e11b91c.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m1d91ad85.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_4e11b91c.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_m1d91ad85.gif" ALIGN=LEFT>
     <FONT SIZE=3><SPAN LANG="en-US"><I>ā</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB></FONT></P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m6eb3feef.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m1d91ad85.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m6eb3feef.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_m1d91ad85.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif"
+                                                                        ALIGN=LEFT>
     <FONT SIZE=3><SPAN LANG="en-US"><I>a</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB></FONT></P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_396a4a6d.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m1d91ad85.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_396a4a6d.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_m1d91ad85.gif" ALIGN=LEFT>
     <FONT SIZE=3><SPAN LANG="en-US"><I>Ŝ</I></SPAN><SUB><SPAN LANG="en-US"><I>j
         i</I></SPAN></SUB></FONT></P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m417d4f93.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m72753663.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m417d4f93.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_m72753663.gif" ALIGN=LEFT>
     <FONT SIZE=3><SPAN LANG="en-US"><I>S</I></SPAN><SUB><SPAN LANG="en-US"><I>j</I></SPAN></SUB><SUB><SPAN LANG="en-US">
 i            .</SPAN></SUB></FONT></P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_481e7197.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_4011f7cd.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m1979face.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m7fbb5b4b.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m7b66113.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_6959facf.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m6817d9a6.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m2d05cf38.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_7b1ce88.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_7111c324.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m1115d07b.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_58074235.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_58074235.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_58074235.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_25f97b68.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_25f97b68.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_7b1ce88.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m2d05cf38.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_50dd2586.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_15d0378.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_15d0378.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_58074235.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_7b1ce88.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_734089f2.gif" ALIGN=LEFT><SUB>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_481e7197.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_4011f7cd.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m1979face.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_m7fbb5b4b.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m7b66113.gif"
+                                                                        ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_6959facf.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m6817d9a6.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_m2d05cf38.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_7b1ce88.gif"
+                                                                        ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_7111c324.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m1115d07b.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_58074235.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_58074235.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_58074235.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_25f97b68.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_25f97b68.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_7b1ce88.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m2d05cf38.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_50dd2586.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_3029e05f.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_15d0378.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_15d0378.gif"
+                                                                      ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_58074235.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_7b1ce88.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_734089f2.gif" ALIGN=LEFT><SUB>
 </SUB>
     <FONT SIZE=3><SPAN LANG="en-US"><I>g</I></SPAN><SUB><SPAN LANG="en-US"><I>ji</I></SPAN></SUB><SUB><I>
 
     </I></SUB><SPAN LANG="pl-PL"><I>l</I></SPAN><SUB><SPAN LANG="pl-PL"><I>j
-        i</I></SPAN></SUB><SUB><I>  </I></SUB><FONT SIZE=5><I>
+        i</I></SPAN></SUB><SUB><I> </I></SUB><FONT SIZE=5><I>
 
     </I></FONT><FONT SIZE=4><I>И</I></FONT><FONT SIZE=5><I>
     </I></FONT><FONT SIZE=4><I>И </I></FONT><FONT SIZE=5><I>
     </I></FONT><FONT SIZE=4><I>И</I></FONT><FONT SIZE=5><I>
-    </I></FONT><SPAN LANG="en-US"><I>D</I></SPAN><I>      </I><SPAN LANG="en-US"><I>Q</I></SPAN><I>
-    </I><FONT SIZE=5><I> </I></FONT><I>                     </I><FONT SIZE=5><I>
-    </I></FONT><FONT SIZE=4><I>И           И</I></FONT><I>            </I><SPAN LANG="en-US"><I>D</I></SPAN><I>
+    </I></FONT><SPAN LANG="en-US"><I>D</I></SPAN><I> </I><SPAN LANG="en-US"><I>Q</I></SPAN><I>
+    </I><FONT SIZE=5><I> </I></FONT><I> </I><FONT SIZE=5><I>
+    </I></FONT><FONT SIZE=4><I>И И</I></FONT><I> </I><SPAN LANG="en-US"><I>D</I></SPAN><I>
     </I><SPAN LANG="en-US"><I>Q</I></SPAN><I>
-    </I><FONT SIZE=5><I>      </I></FONT><I>   </I></FONT>
+    </I><FONT SIZE=5><I> </I></FONT><I> </I></FONT>
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m3e28ce72.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_7655a278.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m45e1bdfa.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m2d05cf38.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m2d05cf38.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_5bad0d1f.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m3e28ce72.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_7655a278.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m45e1bdfa.gif"
+                                                                       ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_m2d05cf38.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m2d05cf38.gif"
+                                                                        ALIGN=LEFT>
     <FONT SIZE=3><SPAN LANG="en-US"><I>C
         Q                                                        C
-        Q</I></SPAN><SUB><SPAN LANG="en-US"><I>              </I></SPAN></SUB><SPAN LANG="en-US"><I>l</I></SPAN><SUB><SPAN LANG="en-US"><I>j
+        Q</I></SPAN><SUB><SPAN LANG="en-US"><I>              </I></SPAN></SUB><SPAN
+            LANG="en-US"><I>l</I></SPAN><SUB><SPAN LANG="en-US"><I>j
         i </I></SPAN></SUB></FONT>
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m8fd7cf1.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m5b894e1e.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m7fbb5b4b.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_m8fd7cf1.gif"
+                                                                ALIGN=LEFT><IMG
+        SRC="lr7/i_36173f36d4dda768_html_m5b894e1e.gif" ALIGN=LEFT><IMG SRC="lr7/i_36173f36d4dda768_html_m7fbb5b4b.gif"
+                                                                        ALIGN=LEFT>
     <FONT SIZE=3><I>СИ</I><SPAN LANG="pl-PL"><I>
         g</I></SPAN><SUB><SPAN LANG="pl-PL"><I>j
         i                     </I></SPAN></SUB><SPAN LANG="pl-PL"><I>
     </I></SPAN><I>СИ</I><SPAN LANG="pl-PL"><I>
     </I></SPAN></FONT>
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_51897872.gif" ALIGN=LEFT>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_51897872.gif"
+                                                                ALIGN=LEFT>
 
 
 </P>
-<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_263ecff1.gif" ALIGN=LEFT><SUB>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%"><IMG SRC="lr7/i_36173f36d4dda768_html_263ecff1.gif"
+                                                                ALIGN=LEFT><SUB>
 
 </SUB>
 
@@ -360,30 +549,39 @@ i            .</SPAN></SUB></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
     <FONT SIZE=3><FONT SIZE=4>На схеме, обслуживающей
         слово </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT><FONT SIZE=4>,
-        имеются два триггера </FONT><FONT SIZE=4><I>– </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>,
+        имеются два триггера </FONT><FONT SIZE=4><I>– </I></FONT><FONT SIZE=4><SPAN
+            LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT
+            SIZE=4><I>
+    </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4>,
         которые будем называть ячейками
         промежуточных результатов. Логические
         значения выходов этих ячеек, как и
         переменные в выражении (1), обозначим
-    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4>
-        и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4>
-        соответственно (на схеме  имеются   также
+    </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4>
+        и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4>
+        соответственно (на схеме имеются также
         вспомогательные вентили (</FONT><FONT SIZE=4><I>И</I></FONT><FONT SIZE=4>)).</FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
     <FONT SIZE=3><FONT SIZE=4>При сравнении содержимого
         заданного слова памяти с аргументом
-        поиска    значения    их   одноименных
-        разрядов   </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>
-        и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
+        поиска значения их одноименных
+        разрядов </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>
+        и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
     </I></FONT></SUB><SUB><FONT SIZE=4><SPAN LANG="en-US">i</SPAN></FONT></SUB><FONT SIZE=4>
-        последовательно  и  синхронно передаются
+        последовательно и синхронно передаются
         на входы ячеек промежуточных результатов.
         В каждом такте </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>D</I></SPAN></FONT><FONT SIZE=4>-триггеры
         переходят в новые состояния, которые
         соответствуют значениям логических
-        переменных </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><SUB><FONT SIZE=4>
+        переменных </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>ji</I></SPAN></FONT></SUB><FONT
+            SIZE=4><I>
+    </I></FONT><FONT SIZE=4>и </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>ji</I></SPAN></FONT></SUB><SUB><FONT SIZE=4>
     </FONT></SUB><FONT SIZE=4>в выражении (1).</FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
     <FONT SIZE=3><FONT SIZE=4>Окончательный результат
@@ -393,29 +591,43 @@ i            .</SPAN></SUB></FONT></P>
         поразрядного анализа содержимого слова
         памяти и поискового аргумента.</FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><I>Если  </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
-        0</I></FONT></SUB><FONT SIZE=4><I> = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT SIZE=4><I>
+    <FONT SIZE=3><FONT SIZE=4><I>Если </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT
+            SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
+        0</I></FONT></SUB><FONT SIZE=4><I> = </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><SUB><FONT
+            SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>0</I></FONT></SUB><FONT
+            SIZE=4><I>
         = </I></FONT><FONT SIZE=4>0</FONT><FONT SIZE=4><I>, </I></FONT><FONT SIZE=4>то</FONT><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
-    </I></FONT></SUB><FONT SIZE=4><I>= </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>,</I></FONT></FONT></P>
+    </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>j</I></SPAN></FONT></SUB><SUB><FONT SIZE=4><I>
+    </I></FONT></SUB><FONT SIZE=4><I>= </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>A</I></SPAN></FONT><FONT SIZE=4><I>,</I></FONT></FONT>
+</P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
     <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j
-        0</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="en-US"><I> = </I></SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US">1</SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>,
-        a l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j 0</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="en-US"><I>
+        0</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="en-US"><I> = </I></SPAN></FONT><FONT SIZE=4><SPAN
+            LANG="en-US">1</SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>,
+        a l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j 0</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>
         = 0, </I></SPAN></FONT><FONT SIZE=4>то</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>
-        S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="en-US"><I>
+        S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>
         &gt; A,</I></SPAN></FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
-    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j0</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="en-US"><I>
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>j0</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="en-US"><I>
         = </I></SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US">0</SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>,
-        a l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j 0</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="en-US"><I>
-        = 1,</I></SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US"> </SPAN></FONT><FONT SIZE=4>то</FONT><FONT SIZE=4><SPAN LANG="en-US"><I>
-        S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN LANG="en-US"><I>
+        a l</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j 0</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>
+        = 1,</I></SPAN></FONT><FONT SIZE=4><SPAN LANG="en-US"> </SPAN></FONT><FONT SIZE=4>то</FONT><FONT SIZE=4><SPAN
+            LANG="en-US"><I>
+        S</I></SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB><FONT SIZE=4><SPAN
+            LANG="en-US"><I>
         &lt; A.</I></SPAN></FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
     <FONT SIZE=3><FONT SIZE=4>Отметим, что состояние
-    </FONT><FONT SIZE=4><SPAN LANG="en-US">g</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT></SUB><SUB><FONT SIZE=4>
-        0</FONT></SUB><FONT SIZE=4> = </FONT><FONT SIZE=4><SPAN LANG="en-US">l</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT></SUB><SUB><FONT SIZE=4>
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">g</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">j</SPAN></FONT></SUB><SUB><FONT SIZE=4>
+        0</FONT></SUB><FONT SIZE=4> = </FONT><FONT SIZE=4><SPAN LANG="en-US">l</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">j</SPAN></FONT></SUB><SUB><FONT SIZE=4>
         0</FONT></SUB><FONT SIZE=4> = 1 принципиально
         невозможно.</FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 125%">
@@ -451,7 +663,8 @@ i            .</SPAN></SUB></FONT></P>
         граничного поиска в каждой логической
         цепи памяти результатов, кроме триггеров
     </FONT><FONT SIZE=4><SPAN LANG="en-US"><I>g</I></SPAN></FONT><FONT SIZE=4><I>
-    </I></FONT><FONT SIZE=4>и</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4><SPAN LANG="en-US"><I>l</I></SPAN></FONT><FONT SIZE=4><I>,</I></FONT><FONT SIZE=4>
+    </I></FONT><FONT SIZE=4>и</FONT><FONT SIZE=4><I> </I></FONT><FONT SIZE=4><SPAN
+            LANG="en-US"><I>l</I></SPAN></FONT><FONT SIZE=4><I>,</I></FONT><FONT SIZE=4>
         необходимо иметь еще один вспомогательный
         триггер. При помощи этих триггеров,
         называемых далее флажками результата,
@@ -491,7 +704,8 @@ i            .</SPAN></SUB></FONT></P>
 </P>
 <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.39in; line-height: 125%">
     <FONT SIZE=3><FONT SIZE=4><I><B>Поиск максимального
-    </B></I></FONT><FONT SIZE=4><B>(</B></FONT><FONT SIZE=4><I><B>минимального</B></I></FONT><FONT SIZE=4><B>)</B></FONT><FONT SIZE=4><I><B>
+    </B></I></FONT><FONT SIZE=4><B>(</B></FONT><FONT SIZE=4><I><B>минимального</B></I></FONT><FONT
+            SIZE=4><B>)</B></FONT><FONT SIZE=4><I><B>
         значения</B></I></FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 125%">
     <FONT SIZE=3><FONT SIZE=4>Для этого поиска внешний
@@ -501,11 +715,11 @@ i            .</SPAN></SUB></FONT></P>
         в значение «1». После установки в «1»
         очередного разряда производится операция
         маскированного поиска, в ходе которого
-        отбираются все  слова, содержащие &quot;1&quot;
+        отбираются все слова, содержащие &quot;1&quot;
         в соответствующей позиции. </FONT></FONT>
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 125%">
-    <FONT SIZE=3><FONT SIZE=4>Если на  каком-то шаге
+    <FONT SIZE=3><FONT SIZE=4>Если на каком-то шаге
         ни одного такого слова не обнаружено
         (т.е. во всех словах памяти в этом разряде
         стоят «0»), содержимое памяти результатов
@@ -605,7 +819,7 @@ i            .</SPAN></SUB></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 125%">
     <BR>
 </P>
-<H4 CLASS="western" STYLE="line-height: 125%">         <FONT SIZE=4>Вычислительные
+<H4 CLASS="western" STYLE="line-height: 125%"><FONT SIZE=4>Вычислительные
     операции ассоциативного процессора</FONT></H4>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 125%">
     <FONT SIZE=3><FONT SIZE=4>К вычислительным операциям
@@ -629,11 +843,13 @@ i            .</SPAN></SUB></FONT></P>
     <LI><P CLASS="western" ALIGN=LEFT STYLE="line-height: 125%"><FONT SIZE=3><FONT SIZE=4>Приведите
         логические формулы для определения
         совпадения и несовпадения аргумента
-        поиска А и слова памяти </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>
+        поиска А и слова памяти </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>
         с учетом маскирования (с).</FONT></FONT></P>
     <LI><P CLASS="western" ALIGN=LEFT STYLE="line-height: 125%"><FONT SIZE=3><FONT SIZE=4>Назовите
         способы реализации сравнения аргумента
-        поиска А и слова памяти </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>?</FONT></FONT></P>
+        поиска А и слова памяти </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>?</FONT></FONT></P>
     <LI><P CLASS="western" ALIGN=LEFT STYLE="line-height: 125%"><FONT SIZE=3><FONT SIZE=4>Какие
         алгоритмы чаще используются при
         выполнении поисковых операций в АЗУ?</FONT></FONT></P>
@@ -641,9 +857,12 @@ i            .</SPAN></SUB></FONT></P>
         основные типы поисковых операций в
         ассоциативных процессах?</FONT></FONT></P>
     <LI><P CLASS="western" ALIGN=LEFT STYLE="line-height: 125%"><FONT SIZE=3><FONT SIZE=4>Определите
-        соотношение между А и </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>,
-        если </FONT><FONT SIZE=4><SPAN LANG="en-US">q</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">ji</SPAN></FONT></SUB><SUB><FONT SIZE=4>
-    </FONT></SUB><FONT SIZE=4>=1, </FONT><FONT SIZE=4><SPAN LANG="en-US">l</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>=0</FONT></FONT></P>
+        соотношение между А и </FONT><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">j</SPAN></FONT></SUB><FONT SIZE=4>,
+        если </FONT><FONT SIZE=4><SPAN LANG="en-US">q</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">ji</SPAN></FONT></SUB><SUB><FONT
+            SIZE=4>
+    </FONT></SUB><FONT SIZE=4>=1, </FONT><FONT SIZE=4><SPAN LANG="en-US">l</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>=0</FONT></FONT></P>
 </OL>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 125%">
     <BR>
@@ -663,7 +882,6 @@ i            .</SPAN></SUB></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 125%">
 
 
-
 </P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0.08in; line-height: 130%">
     <FONT SIZE=3><FONT SIZE=4>Таблица 1</FONT></FONT></P>
@@ -672,81 +890,99 @@ i            .</SPAN></SUB></FONT></P>
     <COL WIDTH=291>
     <COL WIDTH=241>
     <TR VALIGN=TOP>
-        <TD WIDTH=71 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=71
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>Вариант</FONT></FONT></P>
         </TD>
-        <TD WIDTH=291 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=291
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>Поисковые
                 операции</FONT></FONT></P>
         </TD>
-        <TD WIDTH=241 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=241
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>Примечания</FONT></FONT></P>
         </TD>
     </TR>
     <TR VALIGN=TOP>
-        <TD WIDTH=71 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=71
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>1</FONT></FONT></P>
         </TD>
-        <TD WIDTH=291 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=291
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><FONT SIZE=4>Поиск
                 величин, заключенных в заданном
                 интервале</FONT></FONT></P>
         </TD>
-        <TD WIDTH=241 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=241
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=JUSTIFY>
             </P>
-            <P CLASS="western" ALIGN=JUSTIFY>                     – <FONT SIZE=3><FONT SIZE=4>&quot;
+            <P CLASS="western" ALIGN=JUSTIFY> – <FONT SIZE=3><FONT SIZE=4>&quot;
                 –</FONT></FONT></P>
         </TD>
     </TR>
     <TR VALIGN=TOP>
-        <TD WIDTH=71 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=71
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>2</FONT></FONT></P>
         </TD>
-        <TD WIDTH=291 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=291
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><FONT SIZE=4>Поиск
                 ближайшего сверху (снизу) значения</FONT></FONT></P>
         </TD>
-        <TD WIDTH=241 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=241
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=LEFT><FONT SIZE=3><FONT SIZE=4>Оба
                 варианта</FONT></FONT></P>
         </TD>
     </TR>
     <TR VALIGN=TOP>
-        <TD WIDTH=71 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=71
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>3</FONT></FONT></P>
         </TD>
-        <TD WIDTH=291 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=291
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><FONT SIZE=4>Упорядоченная
                 выборка (сортировка)</FONT></FONT></P>
         </TD>
-        <TD WIDTH=241 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=241
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=LEFT><FONT SIZE=3><FONT SIZE=4>По
                 возрастанию и убыванию</FONT></FONT></P>
         </TD>
     </TR>
     <TR VALIGN=TOP>
-        <TD WIDTH=71 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=71
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>4</FONT></FONT></P>
         </TD>
-        <TD WIDTH=291 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=291
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><FONT SIZE=4>Поиск
                 по основе булевых функций</FONT></FONT></P>
         </TD>
-        <TD WIDTH=241 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=241
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=CENTER>– <FONT SIZE=3><FONT SIZE=4>&quot;
                 –</FONT></FONT></P>
         </TD>
     </TR>
     <TR VALIGN=TOP>
-        <TD WIDTH=71 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=71
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>5</FONT></FONT></P>
         </TD>
-        <TD WIDTH=291 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=291
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=JUSTIFY><FONT SIZE=3><FONT SIZE=4>Поиск
                 по соответствию</FONT></FONT></P>
         </TD>
-        <TD WIDTH=241 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
+        <TD WIDTH=241
+            STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0.02in">
             <P CLASS="western" ALIGN=CENTER>– <FONT SIZE=3><FONT SIZE=4>&quot;
                 –</FONT></FONT></P>
         </TD>
@@ -772,8 +1008,10 @@ i            .</SPAN></SUB></FONT></P>
         следующие функции:</FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.79in; text-indent: -0.39in; line-height: 130%">
     <FONT SIZE=3><FONT SIZE=4>-вычисление значений
-        логических переменных </FONT><FONT SIZE=4><SPAN LANG="en-US">q</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>
-        и </FONT><FONT SIZE=4><SPAN LANG="en-US">l</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">ji</SPAN></FONT></SUB></FONT></P>
+        логических переменных </FONT><FONT SIZE=4><SPAN LANG="en-US">q</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>
+        и </FONT><FONT SIZE=4><SPAN LANG="en-US">l</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">ji</SPAN></FONT></SUB></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.79in; text-indent: -0.39in; line-height: 130%">
     <FONT SIZE=3><FONT SIZE=4>-формировать двоичный
         массив размером </FONT><FONT SIZE=4><SPAN LANG="en-US">m</SPAN></FONT><FONT SIZE=4>
@@ -794,8 +1032,10 @@ i            .</SPAN></SUB></FONT></P>
 <OL>
     <LI><P CLASS="western" ALIGN=LEFT STYLE="line-height: 130%"><FONT SIZE=3><FONT SIZE=4>Строится
         программа вычисления значений логических
-        функций </FONT><FONT SIZE=4><SPAN LANG="en-US">q</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>
-        и </FONT><FONT SIZE=4><SPAN LANG="en-US">l</SPAN></FONT><SUB><FONT SIZE=4><SPAN LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>.</FONT></FONT></P>
+        функций </FONT><FONT SIZE=4><SPAN LANG="en-US">q</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>
+        и </FONT><FONT SIZE=4><SPAN LANG="en-US">l</SPAN></FONT><SUB><FONT SIZE=4><SPAN
+            LANG="en-US">ji</SPAN></FONT></SUB><FONT SIZE=4>.</FONT></FONT></P>
     <LI><P CLASS="western" ALIGN=LEFT STYLE="line-height: 130%"><FONT SIZE=3><FONT SIZE=4>Производится
         формирование двоичного массива размером
     </FONT><FONT SIZE=4><SPAN LANG="en-US">m</SPAN></FONT><FONT SIZE=4>
@@ -806,7 +1046,7 @@ i            .</SPAN></SUB></FONT></P>
         программа выполнения поисковых операций,
         приведенных в таблице 1 (не менее 2-х).</FONT></FONT></P>
     <LI><P CLASS="western" ALIGN=LEFT STYLE="line-height: 130%"><FONT SIZE=3><FONT SIZE=4>Производится
-        поиск  и вывод на экран результатов
+        поиск и вывод на экран результатов
         выполнения заданных поисковых операций.</FONT></FONT></P>
 </OL>
 <P CLASS="western" ALIGN=LEFT STYLE="margin-left: 0.39in; line-height: 130%">
