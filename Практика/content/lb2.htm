@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+  <TITLE>Лабораторна работа №2</TITLE>
+  <META NAME="GENERATOR" CONTENT="LibreOffice 4.0.5.2 (Linux)">
+  <META NAME="CREATED" CONTENT="20150415;16350485">
+  <META NAME="CHANGED" CONTENT="20150415;16352718">
+  <STYLE TYPE="text/css">
+    <!--
+    @page { margin: 0.79in }
+    P { margin-bottom: 0.1in; line-height: 120% }
+    H1 { margin-top: 0.33in; margin-bottom: 0in; color: #365f91; page-break-inside: avoid }
+    H1.western { font-family: "Cambria", serif; font-size: 14pt }
+    H1.cjk { font-size: 14pt }
+    H1.ctl { font-family: "FreeSans"; font-size: 14pt }
+    A:link { color: #0000ff; so-language: zxx }
+    -->
+  </STYLE>
+</HEAD>
+<BODY LANG="ru-RU" LINK="#0000ff" DIR="LTR">
+<P><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Л.р.№2
+  Регулярные выражения. Синтаксис
+  регулярных выражений. </B></FONT></FONT>
+</P>
+<H1 CLASS="western" STYLE="margin-top: 0.14in; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Цель
+  работы:</FONT></FONT></FONT></H1>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Познакомиться
+    с синтаксисом регулярных выражений и
+    научиться их использовать для проверки
+    корректности строки, для поиска
+    необходимой подстроки и для замены
+    подстрок в строке.</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <BR><BR>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Задачи
+    работы:</FONT></FONT></FONT></P>
+<OL>
+  <LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT FACE="Times New Roman, serif"><FONT SIZE=4>Изучить
+      синтаксис регулярных выражений</FONT></FONT></P>
+  <LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT FACE="Times New Roman, serif"><FONT SIZE=4>Выполнить
+      один из вариантов заданий</FONT></FONT></P>
+</OL>
+<H1 CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.25in; margin-bottom: 0.06in; font-weight: normal">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Синтаксис
+    регулярных выражений</FONT></FONT></FONT></H1>
+<P STYLE="margin-bottom: 0in; line-height: 100%"><IMG SRC="i_e1046518d1242774_html_m2585d888.png" NAME="Picture" ALIGN=BOTTOM WIDTH=624 HEIGHT=868 BORDER=0></P>
+<H1 CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.25in; margin-bottom: 0.06in; font-weight: normal">
+  <BR><BR>
+</H1>
+<H1 CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.25in; margin-bottom: 0.06in; font-weight: normal">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Рекомендации:</FONT></FONT></FONT></H1>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Для
+    написания и проверки регулярных выражений
+    можно использовать следующие ресурсы:</FONT></FONT></FONT></P>
+<UL>
+  <LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT SIZE=3><FONT COLOR="#0000ff"><SPAN LANG="zxx"><U><A HREF="http://gskinner.com/RegExr/"><FONT COLOR="#1155cc"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>http://gskinner.com/RegExr/</FONT></FONT></FONT></A></U></SPAN></FONT></FONT></P>
+  <LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#0000ff"><SPAN LANG="zxx"><U><A HREF="http://regexpr.ru/"><FONT COLOR="#1155cc"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>http://regexpr.ru/</FONT></FONT></FONT></A></U></SPAN></FONT></P>
+</UL>
+<P><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Литературные
+  источники:</B></FONT></FONT></P>
+<OL>
+  <LI><P><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Синтаксис
+    регулярных выражений
+  </FONT></FONT><FONT COLOR="#0000ff"><SPAN LANG="zxx"><U><A HREF="http://regexpstudio.com/ru/TRegExpr/Help/regexp_syntax.html"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>http://regexpstudio.com/ru/TRegExpr/Help/regexp_syntax.html</FONT></FONT></A></U></SPAN></FONT></P>
+  <LI><P><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Регулярные
+    выражения, пособие для новичков
+  </FONT></FONT><FONT COLOR="#0000ff"><SPAN LANG="zxx"><U><A HREF="http://habrahabr.ru/post/115825/"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>http://habrahabr.ru/post/115825/</FONT></FONT></A></U></SPAN></FONT></P>
+</OL>
+<IMG SRC="i_e1046518d1242774_html_45552876.gif" ALIGN=LEFT HSPACE=12>
+<P STYLE="margin-left: 0.5in"><BR><BR>
+</P>
+<P><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Варианты
+  заданий:</B></FONT></FONT></P>
+<OL>
+  <LI><P STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Задайте
+    регулярными выражениями следующие
+    множества слов:</FONT></FONT></FONT></P>
+</OL>
+<OL TYPE=a>
+  <OL>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>слова
+      в алфавите {a, b}, такие, что на третьем
+      месте от начала слова стоит буква а, а
+      на пятом месте с конца - буква b;</FONT></FONT></FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>слова
+      в алфавите {a, b}, в которых число букв
+      четно;</FONT></FONT></FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>слова
+      в алфавите {a, b}, не содержащие подстроки
+      ab;</FONT></FONT></FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>слова
+      в алфавите {a, b}, не содержащие подстроки
+      aab;</FONT></FONT></FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>слова
+      в алфавите {a, b, c}, в которых нет двух
+      соседних букв b;</FONT></FONT></FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>слова
+      в алфавите {a, b, c}, содержащие подслово
+      вида bxa, где x &nbsp;- произвольная буква
+      алфавита;</FONT></FONT></FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>слова
+      в алфавите {a, b, c}, в которых за буквой
+      а обязательно следует буква с;</FONT></FONT></FONT></P>
+  </OL>
+  <LI><P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Проверить,
+      что строка содержит синтаксически
+      корректный IP адрес (IPv4);</FONT></FONT></FONT></P>
+</OL>
+<P><BR><BR>
+</P>
+</BODY>
+</HTML>

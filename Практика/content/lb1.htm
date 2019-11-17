@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+  <title>Лабораторная работа №1</title>
+  <META NAME="GENERATOR" CONTENT="LibreOffice 4.0.5.2 (Linux)">
+  <META NAME="CREATED" CONTENT="20150415;16283692">
+  <META NAME="CHANGED" CONTENT="20150415;16284880">
+  <STYLE TYPE="text/css">
+    <!--
+    @page { margin: 0.79in }
+    P { margin-bottom: 0.1in; line-height: 120% }
+    H2 { margin-top: 0in; margin-bottom: 0in; page-break-after: auto }
+    H2.western { font-family: "Liberation Serif", serif; font-size: 12pt; font-weight: normal }
+    H2.cjk { font-family: "Droid Sans Fallback"; font-size: 10pt; font-weight: normal }
+    H2.ctl { font-family: "FreeSans"; font-size: 12pt; font-weight: normal }
+    A:link { color: #0000ff; so-language: zxx }
+    -->
+  </STYLE>
+
+</HEAD>
+<BODY LANG="ru-RU" LINK="#0000ff" DIR="LTR">
+<P><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Л.р.№1
+  Работа в командной строке. Системы
+  контроля версий.</B></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-top: 0.14in; margin-bottom: 0in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Цель
+    работы:</B></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Освоить
+  командные оболочки shell (для OС семейства
+  Unix) и cmd (для OС семейства MS Windows):</FONT></FONT></FONT></P>
+<UL>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>изучить
+    основные встроенные команды,</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>научиться
+    писать файлы сценариев,</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>научиться
+    соотносить командные оболочки для
+    разных OS.</FONT></FONT></FONT></P>
+</UL>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Освоить
+  командное окружение для OС семейства
+  Unix(утилиты из пакета GNU Core Utilities), и
+  соответствующие им утилиты для OС
+  семейства MS Windows.</FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><FONT COLOR="#000000">Научиться
+  работать с системой контроля версий
+</FONT><FONT COLOR="#000000"><SPAN LANG="en-US">Git</SPAN></FONT><FONT COLOR="#000000">.</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western" ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Задачи
+    лабораторной работы:</FONT></FONT></FONT></H2>
+<OL>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Познакомиться
+      с консольными программными окружениями
+      OС Windows и OС Linux. Получить практические
+      навыки работы в консоли, использования
+      консольных команд.</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Познакомиться
+      с программами git и gitk, освоить их
+      программные аргументы. Создать текстовый
+      документ с использованием git. Выполнить
+      последовательность шагов</FONT></FONT></FONT></P>
+</OL>
+<P><BR><BR>
+</P>
+<P><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Варианты
+  заданий по работе с командной строкой</B></FONT></FONT></P>
+<OL>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>посмотреть
+      справку по команде (несколько способов)</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>создать
+      пустой файл с указанным именем (несколько
+      способов)</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>создать
+      файл с заданным атрибутом</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>создать
+      папку</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>скопировать
+      указанный файл с другую папку</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>скопировать
+      файлы с указанным расширением в другую
+      папку</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>переименовать
+      файл</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>переместить
+      файл</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>сравнить
+      два файла (набора файлов) и вывести
+      различия между ними</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>найти
+      текстовую строку с заданным содержимым
+      во всех файлах заданной директории с
+      учетом поддиректорий</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>вывести
+      содержимое текстового файла на печать</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>удалить
+      файл</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>удалить
+      папку</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>удалить
+      файлы, в которых есть строка с заданным
+      содержимым в заданной директории</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>вывести
+      графическую структуру каталогов диска
+      или папки</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>вывести
+      текущую дату</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>создать
+      файл в текущей директории, в который
+      записать сегодняшнюю дату</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>посчитать
+      и вывести количество символов в указанном
+      файле</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>посчитать
+      и вывести количество встречающихся
+      заданных символов в файле</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>посчитать
+      и вывести количество встречающихся
+      заданных символов во всех файлах
+      указанной директории</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>удалить
+      каталог вместе с файлами и подкаталогами</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>все
+      файлы, созданные позже определенной
+      даты скопировать в заданную папку</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>удалить
+      все файлы с заданным расширением из
+      заданной папки, созданные позже заданной
+      даты</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>создать
+      папку, затем создать в ней столько
+      текстовых файлов, сколько месяцев
+      прошло с начала текущего года</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>создать
+      ссылку на указанный исполняемый файл
+      в заданной директории и запустить ее</FONT></FONT></FONT></P>
+  <LI><P ALIGN=JUSTIFY STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+    <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>создать
+      файл сценария(.bat / .sh), выполняющий одно
+      из заданий</FONT></FONT></FONT></P>
+</OL>
+<P><BR><BR>
+</P>
+<P><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Варианты
+  заданий по работе с системой контроля
+  версий</B></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1.
+    создать локальный репозиторий в текущей
+    папке</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2.
+    посмотреть статус текущего репозитория</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3.
+    что такое ветка и какая веткая явлется
+    обычно основной? </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>4.
+    добавить файл в контекст который будет
+    коммититься</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>5.
+    создать коммит на основе текущего
+    контекста для комита и указать для него
+    комментарий </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>6.
+    создать коммит, включающий изменения
+    всех наблюдаемых файлов, и указать для
+    него комментарий </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>7.
+    посмотреть протокол коммитов </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>8.
+    просмотреть информацию о текущих
+    настройках </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>9.
+    убрать файл из контекста </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>10.
+    посмотреть изменения в файле по сравнению
+    с последним коммитом </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>11.
+    убрать изменения относительно последнего
+    коммита из файла </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>12.
+    просмотреть в графическом интерфейсе
+    историю коммитов </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>13.
+    добавить в контекст коммита все измененные
+    и созданые файлы </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>14.
+    изменить глобальные/локальные настройки
+  </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>15.
+    переписать имя пользователя </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>16.
+    просмотреть существующие ветки </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>17.
+    создать новую ветку<BR>18. переключиться
+    на другую ветку </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>19.
+    создать новую ветку и сразу же переключиться
+    на нее </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>20.
+    удалить ветку/ удалить ветку, даже если
+    она не примержена </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>21.
+    просмотреть в графическом интерфейсе
+    историю коммитов по всем веткам </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>22.
+    примержить изменения из указанной ветки
+    в текущую</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>23.
+    в каком случае могут появиться конфликты?
+    сделайте так! </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>24.
+    как посмотреть в каких файлах конфликты</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>25.
+    как устранить конфликты </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>26.
+    как переключиться на указанный коммит
+  </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>27.
+    сделать ребазирование (rebase) текущей
+    ветки </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>28.
+    устранение конфликтов во время
+    ребазирования</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>29.
+    отменить ребазирование во время
+    конфликтов </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>30
+    пропустить текущний конфликтный коммит
+    и перейти к следующему </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>31.
+    отправить изменения из локального
+    репозитория для указанной ветки в
+    удаленный (дистанционный) </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>32.
+    Забрать изменения из репозитория, для
+    которого были созданы удаленные ветки
+    по умолчанию </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>33.
+    забрать изменения удаленной ветки из
+    репозитория по умолчанию,</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>основной
+    ветки </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>34.
+    создание копии репозитория </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>35
+    удаление и переименовывание файла </FONT></FONT></FONT>
+</P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>36.
+    создание, удаление, отправка файла в
+    удаленный репозиторий, удаление файла
+    в удаленном репозитории</FONT></FONT></FONT></P>
+<P STYLE="margin-top: 0.19in; margin-bottom: 0.19in; line-height: 100%">
+  <FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>37.
+    &nbsp;отправка ветки в удаленный репозиторий,
+    удаление ветки в удаленном репозитории</FONT></FONT></FONT></P>
+<P><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Для
+  удаленного хранения использовать
+  bitbucket.org</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<OL>
+  <LI><P><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Литературные
+    источники</B></FONT></FONT></P>
+  <LI><P><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Команды
+    языка shell - </FONT></FONT><FONT COLOR="#0000ff"><SPAN LANG="zxx"><U><A HREF="http://lib.ru/unixhelp/unixshell.txt"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>http://lib.ru/unixhelp/unixshell.txt</FONT></FONT></A></U></SPAN></FONT></P>
+  <LI><P><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Общие
+    сведения о командной оболочке cmd -
+  </FONT></FONT><FONT COLOR="#0000ff"><SPAN LANG="zxx"><U><A HREF="http://cmdhelp.ru/"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>http://cmdhelp.ru/</FONT></FONT></A></U></SPAN></FONT></P>
+  <LI><P><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Курс
+    обучения Git - </FONT></FONT><FONT COLOR="#0000ff"><SPAN LANG="zxx"><U><A HREF="http://githowto.com/"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>http://githowto.com/</FONT></FONT></A></U></SPAN></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ru</FONT></FONT></P>
+</OL>
+<P STYLE="margin-left: 0.5in"><BR><BR>
+</P>
+</BODY>
+</HTML>
