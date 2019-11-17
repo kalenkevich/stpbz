@@ -1,0 +1,1423 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+    <TITLE>16. Применение ассоциативного поиска и обработки информации в интеллектуальных компьютерах.</TITLE>
+    <p><a href="Тема 9.1.htm">Предыдущая </a>
+    <META NAME="GENERATOR" CONTENT="LibreOffice 4.0.5.2 (Linux)">
+    <META NAME="AUTHOR" CONTENT="Vlad">
+    <META NAME="CREATED" CONTENT="20141121;280000">
+    <META NAME="CHANGEDBY" CONTENT="User">
+    <META NAME="CHANGED" CONTENT="20150304;22460000">
+    <META NAME="AppVersion" CONTENT="14.0000">
+    <META NAME="Company" CONTENT="SPecialiST RePack">
+    <META NAME="DocSecurity" CONTENT="0">
+    <META NAME="HyperlinksChanged" CONTENT="false">
+    <META NAME="LinksUpToDate" CONTENT="false">
+    <META NAME="ScaleCrop" CONTENT="false">
+    <META NAME="ShareDoc" CONTENT="false">
+    <STYLE TYPE="text/css">
+        <!--
+        @page { margin: 0.98in }
+        P { margin-bottom: 0.08in; direction: ltr; line-height: 100%; widows: 2; orphans: 2 }
+        P.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ru-RU }
+        P.cjk { font-family: "Times New Roman"; font-size: 12pt; so-language: ru-RU }
+        P.ctl { font-family: "Times New Roman"; font-size: 12pt }
+        H6 { text-indent: 0.49in; margin-top: 0in; margin-bottom: 0in; direction: ltr; line-height: 150%; text-align: justify; widows: 2; orphans: 2; text-decoration: underline }
+        H6.western { font-size: 12pt; so-language: ru-RU; font-weight: normal }
+        H6.cjk { font-family: "Times New Roman"; font-size: 12pt; so-language: ru-RU; font-weight: normal }
+        H6.ctl { font-family: "Times New Roman"; font-size: 12pt; font-weight: normal }
+        -->
+    </STYLE>
+</HEAD>
+<BODY LANG="be-BY" DIR="LTR">
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5in; margin-top: 0.08in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><B>Тема 16. Применение принципов
+        ассоциативного поиска </B></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5in; margin-top: 0.08in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><B>и обработки информации в
+        интеллектуальных компьютерах</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5in; margin-top: 0.08in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><B>16.1. Основные особенности
+        интеллектуальных компьютеров</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Основные особенности
+        интеллектуальных компьютеров (ИК),
+        которыми должны были стать ЭВМ пятого
+        поколения, рассмотрены в [12, 14].</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Если переходы от первого ко
+        второму, от второго к третьему и от
+        третьего к четвертому поколению ЭВМ
+        характеризовались в основном ростом
+        производительности и расширением
+        сервисных возможностей для пользователей,
+        то переход к ЭВМ пятого поколения должен
+        был означать резкий рост </FONT><FONT SIZE=4><I>«интеллектуальных»</I></FONT><FONT SIZE=4>
+    возможностей (способностей) компьютера.
+</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>В частности, интеллектуальный
+        компьютер должен непосредственно
+        «понимать» задачу, поставленную перед
+        ним человеком. Следовательно, отпадает
+        необходимость в составлении программы
+        как средства «общения» с ЭВМ при решении
+        той или иной задачи.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Предполагается, что интеллектуальные
+        компьютеры будут иметь соответствующие
+        технические и программные средства,
+        которые позволят им вести диалог с
+        непрофессиональным пользователем </FONT><FONT SIZE=4><I>на
+    естественном языке:</I></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>в речевой форме;</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>в виде графической информации
+    (чертежи, образы, текст).</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Следовательно, будет реализован
+        интеллектуальный интерфейс </FONT><FONT SIZE=4><I>«человек-машина»</I></FONT><FONT SIZE=4>,
+    под которым понимается </FONT><FONT SIZE=4>система
+    программных и аппаратных средств,
+    обеспечивающих для конечного пользователя,
+    не имеющего специальной подготовки в
+    области вычислительной техники,
+    использование ЭВМ для решения задач,
+    возникающих в сфере его профессиональной
+    деятельности, либо вообще без
+    посредников-программистов, либо с
+    незначительной их помощью</FONT><FONT SIZE=4><I>.</I></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Процесс внедрения интеллектуального
+        интерфейса в ВТ можно определить как
+    </FONT><FONT SIZE=4><I>интеллектуализацию ЭВМ.
+</I></FONT><FONT SIZE=4>При этом термины
+</FONT><FONT SIZE=4><I>«интеллектуальный»</I></FONT><FONT SIZE=4>
+    и </FONT><FONT SIZE=4><I>«интеллектуализация»</I></FONT><FONT SIZE=4>
+    не предполагают обязательного определения
+    понятия </FONT><FONT SIZE=4><I>«интеллект»</I></FONT><FONT SIZE=4>,
+    а только подчеркивают, с одной стороны,
+    нетривиальность функций, выполняемых
+    интеллектуальным интерфейсом в общей
+    системе, а с другой – то, что выполнение
+    этих функций до последнего времени
+    являлось прерогативой человека. </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Функционирование интеллектуального
+        интерфейса опирается на </FONT><FONT SIZE=4><I>методы
+    работы со</I></FONT><FONT SIZE=4> </FONT><FONT SIZE=4><I>знаниями</I></FONT><FONT SIZE=4>
+    – их представление, хранение, преобразование
+    и т.д.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Под термином </FONT><FONT SIZE=4><I>«знание»</I></FONT><FONT SIZE=4>
+    при этом понимается вся совокупность
+    информации, необходимой для решения
+    задачи, включающей в себя в том числе
+    информацию:</FONT></P>
+<OL>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>о системе понятий предметной
+            области, в которой решаются задачи;</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>о системе понятий формальных
+            моделей, на основе которых решаются
+            задачи;</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>о соответствии систем понятий,
+            указанных в пп. 1 и 2;</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>о текущем состоянии предметной
+            области;</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>о методах решения задач.</FONT></P>
+</OL>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=2 STYLE="font-size: 11pt"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">При
+этом система знаний должна быть
+организована в ЭВМ таким образом, чтобы
+обеспечить взаимодействие ВС с
+пользователем в системе понятий и
+терминов предметной области.</SPAN></SPAN></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Знания о предметной области,
+        организованные на основе тех или иных
+        методов и средств представления знаний,
+        называются </FONT><FONT SIZE=4><I>моделью предметной
+    области </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><I>МПО</I></FONT><FONT SIZE=4>)</FONT><FONT SIZE=4>.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><I>Средства поддержки </I></FONT><FONT SIZE=4>такой
+    технологии</FONT><FONT SIZE=4> должны обеспечивать
+    представление информации в естественном
+    для пользователя виде – текстов,
+    изображения, речи.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><I>Основное требование к ВС для
+        такой технологии</I></FONT><FONT SIZE=4> – это
+    превращение машины в удобного партнера
+    конечного пользователя. </FONT><FONT SIZE=4>Удобство</FONT><FONT SIZE=4><I>
+</I></FONT><FONT SIZE=4>программного продукта для
+    пользователя в общем случае является
+    более важным качеством, чем </FONT><FONT SIZE=4><I>производительность</I></FONT><FONT SIZE=4>
+    ЭВМ.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=2 STYLE="font-size: 11pt"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">Из
+неподготовленности пользователя, его
+случайного характера вытекает требование
+обеспечения работы ВС в условиях ошибок,
+допускаемых пользователем (необходимо
+в процессе общения иметь возможность
+указывать пользователю ошибки и
+непонятные места в ходе решения задач).</SPAN></SPAN></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Отметим, что средства
+        интеллектуального интерфейса образуют
+        новый уровень в ВС – </FONT><FONT SIZE=4><I>уровень
+    конечного пользователя </I></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><I>КП</I></FONT><FONT SIZE=4>)</FONT><FONT SIZE=4><I>.</I></FONT></P>
+<H6 LANG="ru-RU" CLASS="western" STYLE="line-height: 130%"><FONT SIZE=4><SPAN STYLE="text-decoration: none">Отличие
+этого уровня от предыдущих:</SPAN></FONT></H6>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=2 STYLE="font-size: 11pt"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">1)
+средства уровня КП ориентированы на
+приспособление к пользователям, имеющим
+различную  (в том числе низкую) квалификацию;
+с</SPAN></SPAN></FONT><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">редства
+предыдущих уровней направлены на
+приспособление пользователя к этим
+средствам, требующим приобретения
+специальной квалификации;</SPAN></SPAN></FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>2) средства уровня КП должны
+        обеспечивать весь процесс решения
+        задачи, начиная от постановки задачи,
+        в то время как традиционные средства
+        были направлены на обеспечение выполнения
+        программы;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>3) средства уровня КП должны
+        обеспечивать решение задач совместно
+        ЭВМ и КП.  </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Напомним еще раз основные
+        функции, которые должны быть   реализованы
+        в интеллектуальных ЭВМ:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: -0.13in; text-indent: 0.63in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>решение задач и получение
+    выводов;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: -0.13in; text-indent: 0.63in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>управление базами знаний и
+    переработка знаний;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: -0.13in; text-indent: 0.63in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>обеспечение интеллектуальных
+    интерфейсов.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Соответственно ожидается,
+        что в состав аппаратных средств
+        компьютеров пятого поколения войдут
+        три основные функциональные компоненты,
+        обеспечивающие выполнение приведенных
+        выше функций. Особого внимания заслуживает
+        компонента управления базами знаний,
+        которая включает механизмы накопления
+        и обновления информации в памяти ЭВМ,
+        являющиеся ключевыми при манипулировании
+        знаниями, а компоненты распорядителя
+        базой знаний и управления процессом
+        получения выводов составляют в
+        совокупности машину баз знаний. На эту
+        машину возлагаются следующие функции:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>накопление большого
+    объема хорошо структурированной
+    информации и обеспечение доступа к
+    любой ее части;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>поиск необходимых сведений
+    в ответ на запрос от подсистемы получения
+    выводов с последующей передачей их этой
+    подсистеме;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>накопление в базе знаний
+    сведений, поступающих от подсистемы
+    получения выводов.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Рассмотрим возможности и
+        перспективы применения принципов
+        ассоциативного поиска и обработки
+        информации для решения в интеллектуальных
+        ЭВМ основных задач обработки знаний,
+        создания интеллектуального
+        человеко-машинного интерфейса и др.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: -0.13in; text-indent: 0.63in; margin-bottom: 0in; line-height: 130%">
+    <BR>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><B>16.2. Применение принципов
+        ассоциативного поиска и обработки  </B></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.85in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><B>информации для решения задач
+        обработки знаний </B></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Напомним особенности фон-неймановской
+        логической организации ВС, которые
+        существенно затрудняют создание машин
+        обработки знаний на основе традиционных
+        ЭВМ:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>последовательная обработка,
+    ограничивающая эффективность физическими
+    возможностями элементной базы;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>низкий уровень доступа к
+    памяти, т.е. сложность и громоздкие
+    процедуры ассоциативного поиска нужного
+    фрагмента знаний. Так как в интеллектуальных
+    системах операции информационного
+    поиска носят массовый характер, то эти
+    системы, если они построены на базе
+    современных ЭВМ, затрачивают больше
+    времени (на несколько порядков) на
+    информационный поиск, чем собственно
+    на переработку знаний. Устранение этого
+    недостатка требует создания ассоциативной
+    памяти, обеспечивающей ассоциативный
+    доступ к произвольным фрагментам
+    хранимых знаний, к фрагментам, имеющим
+    произвольные размеры и произвольную
+    структуру. При этом аппаратная реализация
+    информационно-поисковых операций в
+    силу их массовости требует глубокого
+    распараллеливания; </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>линейная организация памяти
+    и простой вид конструктивных объектов,
+    непосредственно хранимых в памяти. Это
+    приводит к тому, что в интеллектуальных
+    системах, построенных на базе современных
+    ЭВМ, манипулирование знаниями
+    осуществляется с большим трудом;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>представление  информации  в
+    памяти  современных  ЭВМ  имеет уровень,
+    весьма далекий от семантического, что
+    делает переработку знаний довольно
+    громоздкой, требующей учета большого
+    количества деталей, касающихся не смысла
+    перерабатываемой информации, а способа
+    ее представления в памяти;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>в современных ЭВМ имеет место
+    весьма низкий уровень аппаратно-реализуемых
+    операций над числовыми данными и
+    полностью отсутствует аппаратная
+    поддержка логических операций над
+    фрагментами знаний, имеющих сложную
+    структуру, что делает манипулирование
+    такими фрагментами весьма сложным;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>в современных ЭВМ громоздко
+    реализуются даже простейшие процедуры
+    логического вывода.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Отметим, что бурный прогресс
+        электроники со времен появления первых
+        ЭВМ (появление транзисторов, БИС, СБИС)
+        создает большие возможности для
+        значительного развития архитектуры
+        ЭВМ, повышения уровня машинного языка,
+        ассоциативной обработки и т.д.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Дальнейшую эволюцию средств ВТ
+        применительно к созданию машин обработки
+        знаний можно разделить на три линии.
+    </FONT><FONT SIZE=4><U>Первая</U></FONT><FONT SIZE=4> связана
+    с появлением большого числа новых
+    классов ВТ, направленных на более
+    эффективное решение отдельных типов
+    задач; </FONT><FONT SIZE=4><U>вторая</U></FONT><FONT SIZE=4>
+    – с попытками создания машин переработки
+    знаний; </FONT><FONT SIZE=4><U>третья</U></FONT><FONT SIZE=4>
+    – с развитием не-фон-неймановских
+    парадигм обработки информации.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Трудности, связанные с использованием
+        универсальных ЭВМ, включая и
+        многопроцессорные системы, послужили
+        толчком к развитию теоретических
+        исследований в области параллельного
+        программирования. Возникло множество
+        подходов, связанных с отдельными
+        изменениями принципов логической
+        организации ЭВМ в зависимости от классов
+        задач и предметных областей, на которые
+        ориентируется тот или иной класс ЭВМ.
+        Эти тенденции позволили определить
+        некоторые ключевые принципы логической
+        организации машин обработки знаний.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: -0.13in; text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Среди этих тенденций основными
+        являются:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: -0.13in; text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>переход к нелинейной организации
+    памяти;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: -0.13in; text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>аппаратная реализация
+    ассоциативного доступа к информации;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>реализация параллельных
+    асинхронных процессов над памятью, в
+    частности, разработка вычислительных
+    машин, управляемых потоком данных;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>аппаратная интерпретация
+    языков высокого уровня;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>разработка аппаратных средств
+    ведения баз данных (процессоров баз
+    данных).</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>На пересечении этих тенденций
+        возникли различные классы вычислительных
+        устройств, среди которых можно отметить:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>машины с развитой ассоциативной
+    памятью;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>ассоциативные параллельные
+    матричные процессоры;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>системы, осуществляющие
+    переработку информации непосредственно
+    в памяти путем равномерного распределения
+    функциональных средств по памяти;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>вычислительные машины со
+    структурно-перенастраиваемой памятью;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>ассоциативные однородные
+    среды и др.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Применительно к проблематике
+        машин переработки знаний представляет
+        интерес рассмотрение перечисленных
+        выше устройств в эволюционном аспекте,
+        приведенное в [5]. В данном разделе пособия
+        кратко рассмотрены только ассоциативные
+        процессоры и процессоры баз данных.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Ассоциативные процессоры (АП)
+        подробнее рассмотрены в разд. 5 данного
+        пособия. Напомним, что преимущества АП
+        связаны прежде всего с простотой и
+        эффективностью реализации поисковых
+        операций в больших информационных
+        массивах. Ассоциативный характер
+        переработки информации снимает проблему
+        адресации ячеек памяти.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Использование традиционных АП
+        имеет ограничения, связанные с невысокими
+        возможностями внутренней структуризации
+        информации в АЗУ, вызванными традиционной
+        линейной организацией их памяти. Это
+        накладывает значительные ограничения
+        на вид информационных массивов, в которых
+        производится поиск. Традиционные АП
+        являются удобными средствами поиска и
+        простой переработки информации в
+        массивах регулярной структуры. В то же
+        время для работы с массивами нечисловой
+        сложноструктурированной информации
+        они оказываются неудобными. Потребности
+        же в организации эффективного поиска
+        в массивах нечисловой информации,
+        имеющей сложную нерегулярную структуру,
+        растут и связаны в основном с подходами
+        к созданию машин обработки знаний.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Появление процессоров баз данных
+        (ПБД) можно в определенной мере
+        рассматривать как переход к качественно
+        новой ступени развития АП. Общей
+        особенностью ПБД и АП является ориентация
+        на операции поиска в массивах регулярной
+        структуры. Их различие заключается в
+        том, что в ПБД реализуются гораздо более
+        сложные поисковые операции, по отношению
+        к которым операция ассоциативного
+        поиска представляет собой «строительный
+        блок». ПБД основаны на моделях данных,
+        среди которых наибольшее распространение
+        получили реляционная, сетевая и
+        иерархическая. По мере развития
+        технических средств реляционная модель
+        данных занимает доминирующее положение
+        благодаря своей внутренней простоте и
+        однородности [5].</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Функционирование процессоров
+        реляционных баз данных сводится к
+        выполнению операций реляционной алгебры
+        над реляционными таблицами. Операции
+        реляционной алгебры (выборка, объединение,
+        проекция) требуют значительного
+        информационного поиска в реляционных
+        таблицах, поэтому при создании ПБД
+        используются научные и технологические
+        результаты, связанные с разработкой
+        АП, в частности такие, как принцип
+        динамической реализации АЗУ с «логикой
+        на дорожке», набор операций специализированных
+        однородных процессоров, относящихся к
+        классу матричных АП, концепция
+        крупноблочной обработки и др. [5].</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>ПБД представляют собой важную
+        ступень в процессе развития технических
+        средств переработки информации. Данные
+        в реляционной модели уже обладают
+        определенными чертами знаний, в частности,
+        внутренней интерпретируемостью, что
+        подтверждается ориентацией реляционной
+        модели данных на довольно сложные
+        механизмы переработки и информационного
+        поиска. Усложнение структур перерабатываемых
+        данных приводит к необходимости
+        дальнейшего наращивания мощности
+        механизмов информационного поиска и
+        переработки знаний.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <BR>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4><B>16.3. Применение принципов
+        ассоциативного поиска и обработки </B></FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.88in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4><B>информации для создания
+        интеллектуального интерфейса</B></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Как уже было отмечено раньше,
+        одной из важнейших особенностей
+        интеллектуального интерфейса является
+        обеспечение возможности общения
+        пользователя с ЭВМ на естественном
+        языке. Проблема перевода естественного
+        языка на машинный оказалась достаточно
+        трудной. Было предпринято много различных
+        попыток и создано значительное количество
+        систем, которые существенно различаются
+        по уровню компетентности. </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Иногда полезно иметь даже плохой
+        перевод, если он сделан достаточно
+        быстро. Некоторые системы могут
+        обрабатывать текст, используя усеченную
+        форму языка, что облегчает перевод. А
+        другие системы могут быть нацелены на
+        решение конкретных подзадач, например,
+        просмотр словаря, или (как в случае
+        плохого перевода) полагаться на участие
+        человека (редактора) в подготовке
+        окончательной версии перевода. Следует
+        отметить, что хороший перевод можно
+        сделать только при условии понимания
+        текста машиной (или человеком). Это
+        условие стало ключевым для исследований
+        во всех сферах искусственного интеллекта.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Наряду с переводом существуют
+        и другие подходы к вопросу о том, каким
+        образом машины могут получить возможность
+        понимать естественный язык. Так, в одном
+        из подходов [14] было предложено считать,
+        что машина понимает текст, если она:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    –  <FONT SIZE=4>на вопросы дает правильные
+    ответы, вытекающие из текста;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    –  <FONT SIZE=4>на вопросы дает правильные
+    ответы, с одной стороны, вытекающие из
+    текста, с другой – из ранее полученных
+    знаний;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    – <FONT SIZE=4>правильно увязывает знания,
+    полученные из текста, со своими прежними
+    знаниями.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Некоторые системы перевода с
+        естественного языка рассмотрены в [14].</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Одним из важнейших свойств как
+        человека, так и других интеллектуальных
+        систем, имеющих решающее значение для
+        создания человеко-машинного интерфейса,
+        в компьютерных системах пятого поколения
+        является эффективное распознавание
+        образов. Необходимо не только собирать
+        и хранить информацию, но и интерпретировать
+        ее, а это значит, что во многих ситуациях
+        потребуется решать задачи распознавания
+        образов. </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Люди обладают удивительной
+        способностью распознавать образы, в то
+        время как у компьютеров эта способность
+        находится на более низком уровне. Люди
+        привлекают богатую контекстуальную
+        информацию, владеют изощренными
+        стратегиями поиска (мы выделяем
+        соответствующие сигналы и преобразуем
+        их в понятную для нашего мозга форму:
+        одни глаза могут воспринимать и передавать
+        4,3 млн битов информации в секунду). Можно
+        ожидать, что развитие инженерии знаний
+        для искусственных систем позволит
+        расширить когнитивную основу, в рамках
+        которой станут возможными различные
+        виды интеллектуальной деятельности,
+        включая эффективное распознавание
+        образов.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>ЭВМ относительно легко может
+        выявлять отдельные фигуры (например
+        буквы), если эти фигуры хорошо определены,
+        имеют четкие границы и занимают ожидаемое
+        положение. Распознавание комбинации
+        свойств может осуществляться с помощью
+        как последовательной, так и параллельной
+        обработки.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Известны программы, которые
+        могут идентифицировать точки пересечения
+        линий (вершины), что позволяет извлекать
+        информацию о сложных геометрических
+        объектах; программы, которые могут
+        распознавать линии, области и т.д.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Для распознавания символов
+        алфавита, цифр и других фигур часто
+        используются шаблоны: входные данные
+        сравниваются с представленным в памяти
+        шаблоном фигуры. Ведутся работы по
+        созданию программ, которые позволяют
+        компьютерам распознавать естественные
+        образы, такие, как электрокардиограммы,
+        изображения облаков, клетки крови,
+        отпечатки пальцев и др. [14].</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Известны системы, использующие
+        свойства ассоциативной памяти для
+        автоматизации процесса распознавания
+        образов. В этих системах связанные
+        сигналы, одновременно генерируемые
+        образом, запоминаются так, что при
+        повторении одного из них порождается
+        другой сигнал. Согласно этому подходу
+        сигнал может быть воссоздан с помощью
+        последующего сигнала, похожего на
+        оригинальный, но не идентичного ему.
+        Такой прием используется и в жизни,
+        когда необходимо распознать неясное
+        или неполное изображение. </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Этот способ распознавания может
+        послужить основой для совершенствования
+        взаимодействия человека с машиной,
+        помочь в принятии решения, автоматического
+        перевода с одного языка на другой, в
+        доступе к данным и т.д.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Большое признание получит подход,
+        согласно которому восприятие
+        рассматривается как вычислительный
+        процесс [14].</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Умение распознавать образы
+        (зрительные или иные) должно стать
+        ключевым свойством вычислительных
+        систем, «дружелюбно» настроенных к
+        пользователю. Техника распознавания
+        образов как таковая, применяется ли она
+        для обработки конструкций естественного
+        языка или в процессе восприятия реального
+        окружающего мира, приобретает все
+        большее значение для компьютеров пятого
+        поколения.</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <BR>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4><B>16.4. Применение принципов
+        ассоциативного поиска в механизмах
+        памяти интеллектуальных ЭВМ</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>В естественных биологических
+        системах и системах искусственного
+        интеллекта память имеет два уровня:
+        активная память и пассивная память
+        [14].</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Возможности памяти в искусственных
+        и биологических системах зависят от
+        того, насколько эффективны активная и
+        пассивная системы, конструкции
+        запоминающих элементов, общие принципы
+        и методы кодирования, способы поиска,
+        ассоциативная память, буферы и другие
+        подсистемы. В одной из моделей системы
+        памяти запоминающий элемент представлен
+        как набор независимых компонентов,
+        управляемых центральным обрабатывающим
+        устройством, которое вызывает информацию,
+        когда это требуется, и загружает
+        закодированную информацию в ячейки
+        памяти. Данный процесс включает </FONT><FONT SIZE=4><I>«поиск»</I></FONT><FONT SIZE=4>
+    и </FONT><FONT SIZE=4><I>«активную обработку
+    сообщения»,</I></FONT><FONT SIZE=4> причем каждый
+    элемент памяти может иметь собственные
+    вычислительные ресурсы для обработки
+    сообщений, посылаемых таким элементам
+    памяти, и каждый элемент может независимо
+    решать, какое действие ему выполнить.
+    Такая организация очень напоминает
+    структуру человеческой памяти, где
+    определенные ее элементы, будучи
+    связанными друг с другом, образуют сеть.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>В  </FONT><FONT SIZE=4><I>активной</I></FONT><FONT SIZE=4>
+    памяти, связанной в сеть, информация
+    может быть найдена множеством различных
+    способов (но простейший из них –
+</FONT><FONT SIZE=4><I>ассоциативный поиск</I></FONT><FONT SIZE=4>).</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>В </FONT><FONT SIZE=4><I>пассивной </I></FONT><FONT SIZE=4>памяти
+    осуществляется </FONT><FONT SIZE=4><I>адресная
+    выборка</I></FONT><FONT SIZE=4>.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Нет сомнения, что принципы
+        ассоциативного поиска и обработки
+        информации найдут применение в решении
+        и других задач, возникающих при создании
+        интеллектуальных ЭВМ.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4><B>16.5. Графодинамическая
+        ассоциативная  машина обработки знаний</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4><B>Основные преимущества
+        использования графодинамических
+        ассоциативных  машин</B></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Для устранения перечисленных в
+        подразд. 9.6 ограничивающих особенностей
+        фон-неймановской логической организации
+        ВС, существенно затрудняющих создание
+        машин обработки знаний на основе
+        традиционных ЭВМ, в работах [15] предлагается
+        использовать графодинамические
+        ассоциативные машины.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Преимущество использования
+        графодинамических абстрактных машин
+        в качестве инструмента для создания
+        интеллектуальных компьютеров
+        (аппаратно-программных систем, основанных
+        на знаниях) обусловлено следующими
+        обстоятельствами:</FONT></P>
+<OL>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+        <FONT SIZE=4>в них принципиально проще
+            реализуется ассоциативный метод доступа
+            к перерабатываемой информации;</FONT></P>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+        <FONT SIZE=4><FONT SIZE=4>существенно проще
+            поддерживается открытый характер как
+            самих машин, так и реализуемых на них
+            формальных моделей. В частности, на
+            графодинамических машинах существенно
+            проще реализуются семиотические модели;</FONT></FONT></P>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+        <FONT SIZE=4>графодинамические ассоциативные
+            машины являются удобной основой для
+            интеграции самых различных моделей
+            обработки информации, ибо на базе
+            графодинамических абстрактных машин
+            легко реализуются не только
+            графодинамические, но и символьные
+            формальные модели, не только параллельные,
+            но и последовательные модели, не только
+            асинхронные, но и синхронные модели,
+            не только различные модели логического
+            вывода, но и всевозможные модели
+            реализации хранимых процедурных
+            программ.</FONT></P>
+</OL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Остальные достоинства
+        графодинамических ассоциативных машин
+        обусловлены достоинствами графовых
+        информационных конструкций и графовых
+        языков. </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4><B>Структура графодинамической
+        ассоциативной памяти</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Структура памяти абстрактной
+        машины описывается специальным языком,
+        для графодинамической ассоциативной
+        машины таким языком является язык </FONT><FONT SIZE=4><SPAN LANG="en-US">SC</SPAN></FONT><FONT SIZE=4>
+    (</FONT><FONT SIZE=4><SPAN LANG="en-US">Semantic</SPAN></FONT><FONT SIZE=4>
+</FONT><FONT SIZE=4><SPAN LANG="en-US">Code</SPAN></FONT><FONT SIZE=4>),
+    который рассмотрен в работе [5]. Базис
+    этого языка составляет абстрактный тип
+    данных – графодинамические структуры,
+    основные идеи заключаются в следующем
+    (рис. 16.1):</FONT></P>
+<OL>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+        <FONT SIZE=4>элементами памяти является дуга
+            или узел;</FONT></P>
+</OL>
+<OL START=4>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+        <FONT SIZE=4>связь между элементами памяти
+            не фиксирована и может меняться;</FONT></P>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+        <FONT SIZE=4>значение элемента памяти также
+            может меняться.</FONT></P>
+</OL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>Таким образом, обработка
+        графодинамических структур сводится
+        не только к изменению значения элемента
+        памяти, но и к изменению связи между
+        ними. Различные варианты реализации
+        памяти абстрактной графодинамической
+        ассоциативной машины на традиционной
+        фон-неймановской архитектуре рассмотрены
+        в работе [5]. Основной подход к реализации
+        графодинамических структур на традиционных
+        архитектурах – это представление их в
+        виде списочных структур.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    <FONT SIZE=4>В вышеперечисленных работах
+        также рассмотрены различные варианты
+        представления графодинамических
+        структур в виде списочных структур.
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <IMG SRC="Тема 9.2.files/image1png.png" NAME="Рисунок 444" ALIGN=BOTTOM WIDTH=568 HEIGHT=787 BORDER=0></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Основные особенности этих
+        вариантов следующие:</FONT></P>
+<OL>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>вся память разбивается на блоки,
+            в которых хранится информация о первичных
+            элементах sc-конструкции (тип, идентификатор
+            и содержимое);</FONT></P>
+</OL>
+<OL START=6>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>количество информации в блоке
+            об инцидентных элементах и её
+            местонахождение варьируется в каждом
+            из методов.</FONT></P>
+</OL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Над памятью абстрактной
+        графодинамической ассоциативной машины
+        заданы следующие операции:</FONT></P>
+<OL>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>генерация элемента памяти дуги
+            или узла;</FONT></P>
+</OL>
+<OL START=7>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>удаление элемента памяти;</FONT></P>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>установка начала дуги;</FONT></P>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>установка конца дуги;</FONT></P>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>проверка, является ли элемент
+            памяти узлом или дугой;</FONT></P>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>получение множества входящих
+            дуг в узел или дугу;</FONT></P>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4>получение множества выходящих
+            дуг из узла.</FONT></P>
+</OL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>На основе рассмотренной
+        абстрактной графодинамической
+        ассоциативной машины может быть построено
+        множество абстрактных графодинамических
+        ассоциативных машин, в которых будет
+        уточняться структура памяти и набор
+        операций.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Способы представления
+        различных типов информации на языке
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">SC</SPAN></FONT><FONT SIZE=4>,
+    сведение абстрактных машин обработки
+    информации к абстрактным графодинамическим
+    ассоциативным машинам рассмотрено в
+    работе [5]. В вышеперечисленных работах
+    показано, что абстрактная графодинамическая
+    ассоциативная машина является достаточно
+    мощным  средством описания операционной
+    семантики самых различных языков, а
+    также показано соотношение между
+    различными абстрактными графодинамическими
+    ассоциативными машинами.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Рассмотрим примеры представления
+        различных видов знаний</FONT><FONT SIZE=4> в
+    графодинамической ассоциативной
+    памяти</FONT><FONT SIZE=4>.
+
+
+</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>На рисунке 16.2 приведен пример
+        записи результата измерения массы
+        физического тела, </FONT><FONT SIZE=4>который
+    означает, что масса физического тела
+    &nbsp;</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><I><B><FONT SIZE=4>p</FONT></B></I></FONT></FONT><FONT SIZE=4>
+    &nbsp;равна </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">66,5</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    кг.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <IMG SRC="Тема 9.2.files/image2.png" NAME="Рисунок 446" ALIGN=BOTTOM WIDTH=486 HEIGHT=263 BORDER=0></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>На рис. 16.3 приведён пример
+        записи результата «измерения» арности
+        отношения. Эта конструкция означает,
+        что отношение &nbsp;</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">r</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    &nbsp;является &nbsp;</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">n</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>-арным
+    отношением, т.е. представляет собой
+</FONT><U><FONT SIZE=4>семейство </FONT></U><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><U><SPAN STYLE="font-weight: normal">n</SPAN></U></SPAN></FONT></FONT></FONT><U><FONT SIZE=4>-арных
+    множеств</FONT></U><FONT SIZE=4> (множеств, мощность
+    которых равна &nbsp;</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">n</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>).
+    Заметим, что далеко не каждое отношение
+    обладает свойством иметь арность. Этим
+    свойством обладают </FONT><U><FONT SIZE=4>те и
+    только те</FONT></U><FONT SIZE=4> отношения, каждое
+    из которых представляет собой семейство
+    множеств одинаковой мощности. То есть
+    понятие «</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">арность
+отношения</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>»
+    и понятие «</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">семейство
+множеств одинаковой мощности</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>»
+    являются синонимами.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <IMG SRC="Тема 9.2.files/image3.png" NAME="Рисунок 447" ALIGN=BOTTOM WIDTH=605 HEIGHT=233 BORDER=0>
+    <FONT SIZE=4>На рис. 16.4 приведён   пример
+        записи   результата  измерения  величины
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>плоского угла в радианах.
+        Измеряемым объектом здесь можно считать
+        тернарный </FONT><U><FONT SIZE=4>кортеж</FONT></U><FONT SIZE=4>,
+    состоящий из трёх геометрических фигур,
+</FONT><U><FONT SIZE=4>лежащих на одной плоскости</FONT></U><FONT SIZE=4>.
+    При этом две из этих фигур являются либо
+    отрезками, либо прямыми, либо лучами, а
+    третья фигура трактуется как фигура,
+    лежащая </FONT><U><FONT SIZE=4>внутри</FONT></U><FONT SIZE=4>
+    измеряемого угла. Собственно, измеряемым
+    углом здесь является </FONT><U><FONT SIZE=4>один
+    из</FONT></U><FONT SIZE=4> четырех углов, образованных
+    пересекающимися прямыми, на которых
+    лежат указанные выше отрезки или лучи.
+    Конструкция на рисунке 9.17 означает, что
+    число </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><I><B><FONT SIZE=4>x</FONT></B></I></FONT></FONT><FONT SIZE=4>
+    есть результат измерения (в радианах)
+    величины плоского угла, который составлен
+    геометрическими фигурами &nbsp;</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">p1</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    &nbsp;и &nbsp;</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">p2</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    (каковыми могут быть прямые, лучи,
+    отрезки, множества точек, лежащих на
+    одной прямой точек) и внутри которого
+    находится геометрическая фигура &nbsp;</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><I><B><FONT SIZE=4>p</FONT></B></I></FONT></FONT><FONT SIZE=4>.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <IMG SRC="Тема 9.2.files/image4.png" NAME="Рисунок 448" ALIGN=BOTTOM WIDTH=596 HEIGHT=395 BORDER=0>
+    <FONT SIZE=4>На рисунке 16.5 рассмотрен
+        пример записи результата измерения
+        местоположения некоторого объекта </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><I><B><FONT SIZE=4>p</FONT></B></I></FONT></FONT><FONT SIZE=4>
+    на земной поверхности в географической
+    системе координат. Эта конструкция
+    означает то, что местоположение объекта
+</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">p</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    в географической системе координат
+    определяется широтой, которая задаётся
+    кортежем.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%">
+    <IMG SRC="Тема 9.2.files/image5.png" NAME="Рисунок 449" ALIGN=BOTTOM WIDTH=605 HEIGHT=361 BORDER=0><FONT SIZE=4>На
+    рисунке 16.6 приведен пример записи
+    результата измерения длительности во
+    времени (отрезка времени). Приведенная
+    запись означает, что некий процесс </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><I><B><FONT SIZE=4>p</FONT></B></I></FONT></FONT><FONT SIZE=4>
+    длился </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">2</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    года </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">1</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    месяц или (по другой шкале) </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">765</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    суток (напомним, что года могут быть
+    високосными, а месяцы могут иметь разное
+    количество дней).
+    <IMG SRC="Тема 9.2.files/image6.png" NAME="Рисунок 450" ALIGN=BOTTOM WIDTH=605 HEIGHT=370 BORDER=0></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>На рисунке 16.7  приведен пример,
+        показывающий, что некоторый объект
+        имеет массу, равную 30 кг. </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%">
+    <IMG SRC="Тема 9.2.files/image7.png" NAME="Рисунок 451" ALIGN=BOTTOM WIDTH=599 HEIGHT=292 BORDER=0></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4><B>Язык записи микропрограмм
+        обработки графодинамической ассоциативной
+        памяти</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0.01in; line-height: 150%">
+    <FONT SIZE=4>Язык программирования,
+        предназначенный для записи микропрограмм
+        обработки графодинамической ассоциативной
+        памяти, должен быть:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>1) языком  процедурного
+        программирования, так как микропрограммы
+        абстрактных машин носят процедурный
+        характер;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>2) языком параллельного и
+        асинхронного программирования, так как
+        реализация различных операций формальной
+        модели в общем случае носит параллельный
+        и асинхронный характер. Процесс реализации
+        каждой операции также может носить
+        параллельный и асинхронный характер,
+        что существенно повышает производительность
+        интеллектуальных систем. Необходимость
+        в этом возникает при реализации сложных
+        операций, к которым, в частности, относится
+        большинство операций логического вывода
+        в моделях обработки знаний;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>3) языком программирования,
+        хорошо  приспособленным  к   переработке
+    </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>sc&#8209;конструкций, т.е. графовых
+        конструкций, принадлежащих языку SC.
+        Такая приспособленность, в частности,
+        требует наличия средств ассоциативного
+        доступа к элементам перерабатываемой
+        графовой конструкции.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>В качестве языка процедурного
+        программирования, предназначенного
+        для эффективной интерпретации
+        графодинамических моделей различного
+        вида, используется язык SCP (Semantic Code
+        Programming). Язык SCP относится к классу
+        графовых языков программирования.
+        Особенностью этого языка является то,
+        что не только данные, но и сами программы,
+        написанные на языке SCP, представляются
+        в виде sc&#8209;конструкций. Язык SCP является
+        языком параллельного асинхронного
+        программирования. Это необходимо для
+        того, чтобы обеспечить адекватную
+        интерпретацию не только последовательных,
+        но и параллельных, не только синхронных,
+        но и асинхронных формальных моделей.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>Язык SCP относится к классу
+        процедурных языков параллельного
+        программирования, ориентированных на
+        переработку нечисловой информации.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0.01in; line-height: 150%">
+    <FONT SIZE=4>Особенностями языка SCP по
+        сравнению с другими языками указанного
+        класса являются:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>1) приспособленность  к
+        переработке нечисловых структур, имеющих
+        мощные выразительные возможности, т.е.
+        обеспечивающих описание любых
+        сложноструктурированных предметных
+        областей;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>2) использование   структурно
+        перестраиваемой графодинамической
+        ассоциативной памяти. Как тексты языка
+        SCP (scp-процедуры), так и перерабатываемые
+        данные являются графовыми конструкциями,
+        хранимыми в графовой структурно
+        перестраиваемой ассоциативной памяти
+        (это означает, что язык SCP относится к
+        классу графовых языков);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>3) ориентация  на  переработку
+        непосредственно  семантических сетей,
+        а </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>не структур (например списковых),
+        с помощью которых семантические сети
+        кодируются (это означает, что язык SCP
+        описывает переработку информации
+        непосредственно на уровне семантического
+        кодирования);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>4) возможность описания (с
+        помощью scp-процедур) механизмов решения
+        задач (логических операций, операций
+        вывода), имеющих различный уровень
+        сложности и поддерживающих самые
+        различные стратегии решения задач;</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>5) высокий  потенциал
+        распараллеливания процессов переработки
+        информации в графовой структурно
+        перестраиваемой ассоциативной памяти
+        (как на уровне реализации различных
+        логических операций, так и на уровне
+        реализации каждой из этих операций);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: 0.49in; text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>6) возможность   через  понятие
+        sc-узла   интегрировать   процедуры  над
+    </FONT>
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>sc-конструкциями с процедурами,
+        написанными на традиционных языках и
+        описывающими переработку обычных
+        информационных объектов. Это обеспечивается
+        тем, что содержимым sc-узла может быть
+        информационный объект любой природы.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0.01in; line-height: 150%">
+    <FONT SIZE=4>Операторы языка SCP
+        (scp&#8209;операторы) разбиваются на типы.
+        Множество типов scp&#8209;операторов в свою
+        очередь разбивается на семейства типов
+        scp&#8209;операторов. Перечислим идентификаторы
+        ключевых узлов, каждый из которых
+        обозначает соответствующее семейство
+        scp&#8209;операторов:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">1)
+gen </SPAN></SPAN></FONT></FONT></FONT> (семейство типов
+        scp&#8209;операторов генерации sc&#8209;конструкций);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">2)
+erase</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>  (семейство
+        типов scp&#8209;операторов удаления
+        sc&#8209;конструкций);</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">3)&nbsp;search
+</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>(семейство
+        типов scp&#8209;операторов ассоциативного
+        поиска sc&#8209;конструкций);</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.38in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">4)
+if</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>  (семейство
+        типов scp&#8209;операторов проверки условий);</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.38in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">5)&nbsp;change</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+        (семейство типов scp&#8209;операторов
+        изменения свойств sc&#8209;элементов);</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; margin-bottom: 0in; line-height: 150%">
+    &nbsp;<FONT SIZE=4><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">manage</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    (семейство типов scp&#8209;операторов
+    управления scp&#8209;процессами).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>Семейство scp&#8209;операторов
+        генерации sc&#8209;конструкций (такие
+        операторы будем также называть
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">gen</SPAN></FONT><FONT SIZE=4>&#8209;операторами)
+    разбивается на следующие типы
+    scp&#8209;операторов:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: 0.49in; text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>1) операторы  генерации sc&#8209;элемента
+        (genEl&#8209;операторы);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>2) операторы  генерации
+        sc&#8209;конструкции, состоящей из трёх
+        элементов (genStr3&#8209;операторы).</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0.01in; line-height: 150%">
+    <FONT SIZE=4>Семейство scp&#8209;операторов
+        удаления sc&#8209;конструкции (такие
+        операторы будем называть также
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">erase</SPAN></FONT><FONT SIZE=4>&#8209;операторами)
+    разбивается на следующие типы
+    scp&#8209;операторов:</FONT></P>
+<OL>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+        <FONT SIZE=4>операторы удаления указанного
+            sc&#8209;элемента (eraseEl&#8209;операторы);</FONT></P>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+        <FONT SIZE=4>операторы удаления указанных
+            элементов sc&#8209;конструкции, состоящей
+            из трех элементов (eraseElStr3&#8209;операторы);</FONT></P>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+        <FONT SIZE=4>операторы удаления нескольких
+            указанных элементов sc&#8209;конструкции,
+            состоящей из трех элементов
+            (eraseSetStr3&#8209;операторы).<FONT FACE="Times New Roman, serif"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">
+	</SPAN></SPAN></FONT></FONT></FONT>
+    </P>
+</OL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0.01in; line-height: 150%">
+    <FONT SIZE=4>Семейство scp&#8209;операторов
+        ассоциативного поиска sc&#8209;конструкций
+        (такие операторы будем называть также
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">search</SPAN></FONT><FONT SIZE=4>&#8209;операторами)
+    разбивается на следующие типы
+    scp&#8209;операторов:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>1) операторы ассоциативного
+        поиска произвольных элементов
+        sc&#8209;конструкции, состоящей из трёх
+        элементов (<SPAN LANG="en-US">search</SPAN>El<SPAN LANG="en-US">Str</SPAN>3&#8209;операторы);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>2) операторы ассоциативного
+        поиска произвольных элементов
+        sc&#8209;конструкций, удовлетворяющих
+        заданным условиям и состоящих из трех
+        элементов, и формирования из них множества
+        (<SPAN LANG="en-US">searchSet</SPAN>Str3&#8209;операторы);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>3) <FONT SIZE=4>операторы
+        ассоциативного поиска произвольных
+        элементов sc&#8209;конструкций, удовлетворяющих
+        заданным условиям и состоящих из трёх
+        элементов, и формирования из них
+        множества, элементами которого остаются
+        только sc&#8209;элементы, удовлетворяющие
+        заданным условиям (</FONT><FONT SIZE=4><SPAN LANG="en-US">selectY</SPAN></FONT><FONT SIZE=4>Str3&#8209;операторы);</FONT></FONT></P>
+<OL START=4>
+    <LI><P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <FONT SIZE=4><FONT SIZE=4>операторы ассоциативного
+            поиска произвольных элементов
+            sc&#8209;конструкций, удовлетворяющих
+            заданным условиям и состоящих из трёх
+            элементов, и формирования из них
+            множества, элементами которого остаются
+            только sc&#8209;элементы, не удовлетворяющие
+            заданным условиям (</FONT><FONT SIZE=4><SPAN LANG="en-US">selectN</SPAN></FONT><FONT SIZE=4>Str3&#8209;операторы).</FONT></FONT></P>
+</OL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0.01in; line-height: 130%">
+    <FONT SIZE=4>Семейство scp&#8209;операторов
+        проверки условий (такие операторы будем
+        называть также </FONT><FONT SIZE=4><SPAN LANG="en-US">if</SPAN></FONT><FONT SIZE=4>&#8209;операторами)
+    разбивается на следующие типы
+    scp&#8209;операторов:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: 0.49in; text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>1) операторы проверки типа
+        sc&#8209;элемента (<SPAN LANG="en-US">ifType</SPAN>&#8209;операторы);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><FONT SIZE=4>2) операторы проверки
+        равенства значений двух операндов
+        (</FONT><FONT SIZE=4><SPAN LANG="en-US">ifEq</SPAN></FONT><FONT SIZE=4>&#8209;операторы);</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><FONT SIZE=4>3) операторы  проверки
+        строгого неравенства значений двух
+        операндов (</FONT><FONT SIZE=4><SPAN LANG="en-US">ifGr</SPAN></FONT><FONT SIZE=4>&#8209;операторы);</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><FONT SIZE=4>4) операторы проверки
+        неравенства значений двух операндов
+        (</FONT><FONT SIZE=4><SPAN LANG="en-US">ifGrEq</SPAN></FONT><FONT SIZE=4>&#8209;операторы).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0.01in; line-height: 130%">
+    <FONT SIZE=4>Семейство scp&#8209;операторов
+        изменения свойств sc&#8209;элемента (такие
+        операторы будем также называть
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">change</SPAN></FONT><FONT SIZE=4>&#8209;операторами)
+    разбивается на следующие типы
+    scp&#8209;операторов:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: 0.49in; text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>1) операторы сложения содержимых
+        sc&#8209;элементов (<SPAN LANG="en-US">add</SPAN>&#8209;операторы);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: 0.49in; text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>2) операторы вычитания содержимых
+        sc&#8209;элементов (<SPAN LANG="en-US">sub</SPAN>&#8209;операторы);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>3) операторы  пересылки
+        значения программной переменной
+        (<SPAN LANG="en-US">assign</SPAN>&#8209;<BR>операторы).</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0.01in; line-height: 130%">
+    <FONT SIZE=4>Семейство scp&#8209;операторов
+        управления scp&#8209;процессами (такие
+        операторы будем также называть
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">manage</SPAN></FONT><FONT SIZE=4>&#8209;операторами)
+    разбивается на следующие типы
+    scp&#8209;операторов:</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="margin-left: 0.49in; text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>1) операторы порождения  scp&#8209;процесса
+        (<SPAN LANG="en-US">call</SPAN>&#8209;операторы);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4><FONT SIZE=4>2)&nbsp;операторы&nbsp;порождения&nbsp;параллельных&nbsp;scp&#8209;процессов&nbsp;(</FONT><FONT SIZE=4><SPAN LANG="en-US">callPar</SPAN></FONT><FONT SIZE=4>&#8209;операторы);</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>3) операторы завершения
+        scp&#8209;процесса (<SPAN LANG="en-US">return</SPAN>&#8209;операторы);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>4) операторы ожидания
+        завершения  scp&#8209;процесса
+        (<SPAN LANG="en-US">waitReturn</SPAN>&#8209;операторы).</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Рассмотрим примеры работы
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">scp</SPAN></FONT><FONT SIZE=4>-операторов.
+</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>На рис. 16.8 показан пример работы
+        оператора удаления </FONT><FONT SIZE=4><SPAN LANG="en-US">eraseSetStr</SPAN></FONT><FONT SIZE=4>3.
+</FONT><FONT SIZE=4>После успешного выполнения
+    данного оператора (</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">opi</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>)
+    будет удален sc&#8209;узел </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">v2</SPAN></SPAN></FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">,</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    который является первым элементом
+    трехэлементной конструкции, соответствующей
+    заданному шаблону и третий элемент</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">
+которого </SPAN></SPAN></FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">vj</SPAN></SPAN></FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">
+</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>входит в
+    множество</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">
+</SPAN></SPAN></FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">sv3</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>(состоит
+    из </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">vj</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    и </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">v3</SPAN></SPAN></FONT></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">).
+</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>Также будут
+    удалены  дуги, входящие и выходящие из
+    удаленного узла.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>На рисунке 16.9 приведен пример
+        работы </FONT><FONT SIZE=4><SPAN LANG="en-US">scp</SPAN></FONT><FONT SIZE=4>-оператора
+    ассоциативного поиска </FONT><FONT SIZE=4><SPAN LANG="en-US">sarchSetStr</SPAN></FONT><FONT SIZE=4>3.</FONT>
+    <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <IMG SRC="Тема 9.2.files/image8.png" NAME="Рисунок 456" ALIGN=BOTTOM WIDTH=600 HEIGHT=900 BORDER=0></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <IMG SRC="Тема 9.2.files/image9.png" NAME="Рисунок 456" ALIGN=BOTTOM WIDTH=600 HEIGHT=900 BORDER=0></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>В результате успешного выполнения
+        данного оператора (</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">opi</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>)
+    будет найдена константная  позитивная
+</FONT><FONT SIZE=4><SPAN LANG="en-US">sc</SPAN></FONT><FONT SIZE=4>&#8209;дуга
+    (</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">v1</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>)
+    и константная позитивная </FONT><FONT SIZE=4><SPAN LANG="en-US">sc</SPAN></FONT><FONT SIZE=4>&#8209;дуга
+    (</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">gi</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>),
+    соединяющая его с </FONT><FONT SIZE=4><SPAN LANG="en-US">sc</SPAN></FONT><FONT SIZE=4>&#8209;элементом
+    (</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">ei</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>),
+    являющимся значением операнда </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">x3</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>.
+    Также будут сгенерированы дуга,
+    связывающая операнд &nbsp;</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">x2</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    с sc&#8209;элементом </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">gi</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>,
+    и дуга, связывающая операнд &nbsp;</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">x1</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    с sc&#8209;элементом </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">vi</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>,
+    а также дуги принадлежности, связывающие
+    указанные выше дуги со знаком
+    соответствующего бинарного отношения
+    (</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">ri</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>).
+    Генерация этих дуг означает, что у
+    операндов</FONT><FONT SIZE=4><SPAN LANG="en-US">&nbsp;</SPAN></FONT><FONT SIZE=4>
+</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">x1</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>
+    и </FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">x2
+</SPAN></SPAN></FONT></FONT></FONT><FONT SIZE=4>сформировалось
+    (вычислилось) значение.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4><B>Структура базового программного
+        обеспечения </B></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 1.01in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4><B>графодинамических ассоциативных
+        машин</B></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>Структура базового
+        математического и программного
+        обеспечения схематически изображена
+        на рисунке 16.10.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>В структуре базового
+        программного обеспечения выделяются
+        две главные компоненты, которые включают
+        остальные, это процессорный и терминальный
+        модули. Процессорный модуль предназначен
+        для хранения и обработки графодинамических
+        структур, а терминальный модуль – для
+        взаимодействия с пользователем.
+        Традиционно в состав базового программного
+        обеспечения включают следующие
+        инструментальные средства: операционную
+        среду (или систему), базовую систему
+        программирования, средства визуализации
+        и редактирования информации. Для
+        графодинамических ассоциативных машин
+        процессорный модуль выполняет функции
+        операционной среды, а терминальный
+        модуль – это базовая система
+        программирования, средства визуализации
+        и редактирования графовых структур.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>В основе всего базового
+        математического обеспечения лежит
+        модель представления графодинамических
+        структур,  рассмотренная в работе [5]. </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>Терминальный модуль
+        основывается на методе визуализации
+        графодинамических структур, который
+        использует язык </FONT><FONT SIZE=4><SPAN LANG="en-US">SCg</SPAN></FONT><FONT SIZE=4>
+    (</FONT><FONT SIZE=4><SPAN LANG="en-US">Semantic</SPAN></FONT><FONT SIZE=4>
+</FONT><FONT SIZE=4><SPAN LANG="en-US">Code</SPAN></FONT><FONT SIZE=4>
+</FONT><FONT SIZE=4><SPAN LANG="en-US">graphic</SPAN></FONT><FONT SIZE=4>),
+    и на методе взаимодействия пользователя
+    с графодинамической ассоциативной
+    машиной. Эти методы и в целом терминальный
+    модуль рассмотрены в работе [5].</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>Рассмотренные компоненты
+        базового математического и программного
+        обеспечения графодинамических
+        ассоциативных машин позволяют создавать
+        прикладные интеллектуальные системы.</FONT></P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="margin-top: 0.17in; margin-bottom: 0in; line-height: 150%; page-break-after: auto">
+    <IMG SRC="Тема 9.2.files/i_efd284556da398cd_html_m695ca6b2.png" NAME="Рисунок 445" ALIGN=BOTTOM WIDTH=594 HEIGHT=447 BORDER=0></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%"><A NAME="_GoBack"></A>
+    <FONT SIZE=4>Рисунок 16.10. Структура базового
+        математического и программного
+        обеспечения графодинамических
+        ассоциативных машин</FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<p><a href="Тема 9.1.htm">Предыдущая </a>
+</BODY>
+</HTML>

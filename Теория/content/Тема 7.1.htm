@@ -1,0 +1,1878 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+    <TITLE>11. Основные принципы и функции хеширования. Структура таблиц хеширования.</TITLE>
+    <p><a href="Тема 6.1.htm">Предыдущая </a>
+        <a href="Тема 7.2.htm"> Следующая</a></p>
+    <META NAME="GENERATOR" CONTENT="LibreOffice 4.0.5.2 (Linux)">
+    <META NAME="AUTHOR" CONTENT="Роман Ситкевич">
+    <META NAME="CREATED" CONTENT="20141121;7480000">
+    <META NAME="CHANGEDBY" CONTENT="User">
+    <META NAME="CHANGED" CONTENT="20150304;20320000">
+    <META NAME="AppVersion" CONTENT="14.0000">
+    <META NAME="Company" CONTENT="SPecialiST RePack">
+    <META NAME="DocSecurity" CONTENT="0">
+    <META NAME="HyperlinksChanged" CONTENT="false">
+    <META NAME="LinksUpToDate" CONTENT="false">
+    <META NAME="ScaleCrop" CONTENT="false">
+    <META NAME="ShareDoc" CONTENT="false">
+    <STYLE TYPE="text/css">
+        <!--
+        @page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.49in }
+        P { margin-bottom: 0.08in; direction: ltr; widows: 2; orphans: 2 }
+        P.western { font-family: "Times New Roman", serif; font-size: 14pt }
+        P.cjk { font-family: "Times New Roman"; font-size: 14pt }
+        P.ctl { font-size: 12pt }
+        H3 { text-indent: 0.49in; margin-top: 0in; margin-bottom: 0in; direction: ltr; line-height: 150%; text-align: justify; widows: 2; orphans: 2 }
+        H3.cjk { font-family: "Times New Roman" }
+        H3.ctl { font-family: "Times New Roman"; font-size: 12pt }
+        H4 { margin-top: 0.03in; margin-bottom: 0in; direction: ltr; color: #2e74b5; page-break-inside: avoid; widows: 2; orphans: 2 }
+        H4.western { font-family: "Calibri Light", serif; font-size: 14pt; font-style: italic; font-weight: normal }
+        H4.cjk { font-family: "Times New Roman"; font-size: 14pt; font-style: italic; font-weight: normal }
+        H4.ctl { font-family: "Times New Roman"; font-style: italic; font-weight: normal }
+        H5 { margin-top: 0.03in; margin-bottom: 0in; direction: ltr; color: #2e74b5; page-break-inside: avoid; widows: 2; orphans: 2 }
+        H5.western { font-family: "Calibri Light", serif; font-size: 14pt; font-weight: normal }
+        H5.cjk { font-family: "Times New Roman"; font-size: 14pt; font-weight: normal }
+        H5.ctl { font-family: "Times New Roman"; font-size: 12pt; font-weight: normal }
+        -->
+    </STYLE>
+</HEAD>
+<BODY LANG="ru-RU" DIR="LTR">
+<H3 CLASS="western" STYLE="text-indent: 0in; margin-top: 0.08in; line-height: 130%">
+    Раздел 7. Программный подход к адресации по содержанию</H3>
+<H3 CLASS="western" STYLE="text-indent: 0in; margin-top: 0.08in; line-height: 130%">
+    Тема 11. Основные принципы и функции
+    хеширования, структура таблиц хеширования</H3>
+<H3 CLASS="western" STYLE="text-indent: 0in; margin-top: 0.08in; line-height: 130%">11.1 Общие
+    сведения.</H3>
+
+    <H3 CLASS="western" STYLE="text-indent: 0in; margin-top: 0.08in; line-height: 130%">11.1.1. Общие понятия о хешировании</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-top: 0.08in; margin-bottom: 0in; line-height: 130%">
+    В ассоциативных (или с адресацией по
+    содержанию) способах поиска информации
+    доступ к любой информационной единице
+    (записи, документу, массиву или элементу
+    данных и т.д.) осуществляется:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – либо по специальному ключу;</P>
+<P CLASS="western" STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.28in">
+    – либо по некоторому фрагменту самой
+    информационной единицы.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.33in">
+    Поиск может быть реализован как аппаратно,
+    так и программно. В данном разделе
+    пособия рассмотрен ряд методов
+    программного поиска. Эти методы рассчитаны
+    на применение ЭВМ универсального типа.
+    Предполагается, что информация хранится
+    в запоминающем устройстве произвольного
+    доступа со стандартной системой
+    адресации.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 0.31in">
+    Программные методы называют <I>методами
+    хеширования</I>. Применяются и другие
+    названия, в частности [9]:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.39in; margin-bottom: 0in; line-height: 0.31in">
+    – адресация в разброс;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.39in; margin-bottom: 0in; line-height: 0.31in">
+    – адресация с перемешиванием;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.39in; margin-bottom: 0in; line-height: 0.31in">
+    – ключевое преобразование;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.39in; margin-bottom: 0in; line-height: 0.31in">
+    – рандомизация;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.39in; margin-bottom: 0in; line-height: 0.31in">
+    – преобразование типа «ключ-адрес» и
+    др.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 150%">
+    С хешированием приходится встречаться
+    едва ли не на каждом шагу: при работе
+    с браузером (список Web-ссылок), текстовым
+    редактором и словарем, языками скриптов
+    (Perl, Python, PHP и др.), компилятором (таблица
+    символов). Упорядочение по алфавиту в
+    адресной книге, энциклопедии и др.
+    является не чем иным, как хешированием.
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>Приведем простой пример.
+        Предположим, что некоторая фирма
+        выпускает детали и кодирует их семизначными
+        цифрами. Для применения прямой индексации
+        с использованием полного семизначного
+        ключа потребовался бы массив (таблица,
+        память) из 100 млн элементов. Ясно, что
+        это привело бы к потере неприемлемо
+        большого пространства, поскольку
+        совершенно невероятно, что какая-либо
+        фирма может иметь больше тысячи
+        наименований изделий. Поэтому необходим
+        некоторый метод преобразования ключа
+        в какое-либо целое число внутри
+        ограниченного диапазона. Тогда для
+        хранения всего файла будет достаточно
+        массива из 1000 элементов. Этот массив
+        индексируется целым числом в диапазоне
+        от 0 до 999 включительно. В качестве индекса
+        записи об изделии в этом массиве пусть
+        используются три последние цифры номера
+        изделия. Отметим, что два ключа, которые
+        близки друг к другу как числа (например
+        4618396 и 4618996), могут располагаться в массиве
+        дальше друг от друга, чем два ключа,
+        которые значительно различаются как
+        числа (например 0000991 и 9846995). </FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-top: 0.02in; margin-bottom: 0.02in; line-height: 150%">
+    <FONT SIZE=3><FONT SIZE=4>В данном примере сведение
+        одного большого множества к меньшему
+        и есть х</FONT><FONT SIZE=4><I>еширование</I></FONT><FONT SIZE=4>.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-top: 0.02in; margin-bottom: 0.02in; line-height: 0.31in">
+    <FONT SIZE=3><FONT SIZE=4>Функция, которая
+        трансформирует ключ в некоторый индекс,
+        называется </FONT><FONT SIZE=4><I>хеш-функцией</I></FONT><FONT SIZE=4>.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Все допустимые ключевые слова образуют
+    так называемое <I>пространство имен</I>,
+    а все адреса памяти, в которые преобразуются
+    ключевые слова, – <I>адресное пространство.</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Получаемые из ключевых слов методом
+    хеширования адреса называются
+    <I>хеш-адресами.</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <I>Хеш-таблица, или таблица хеширования
+    </I>(<I>ТХ</I>)<I> – </I>это таблица с адресацией,
+    задаваемой хеш-функцией.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Пусть далее в рассмотренном примере
+    требуется добавить в таблицу запись с
+    ключом 0596397. Оказывается, что данная
+    позиция уже занята записью с ключом
+    4957397 (так как три последние цифры ключей
+    совпадают). Следовательно, запись с
+    ключом 0596397 должна быть вставлена в
+    таблицу в другом месте.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Ситуация, когда два или более ключа
+    ассоциируются с одной и той же позицией,
+    называется<I> коллизией </I>( конфликтом)при
+    хешировании.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Хорошей хеш-функцией считается такая
+    функция, которая минимизирует коллизии
+    и распределяет записи равномерно по
+    всей таблице. Совершенная хеш-функция
+    – это функция, которая не порождает
+    коллизий.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Проблема коллизии может быть решена
+    достаточно просто и без особых затрат
+    времени: для претендующего на уже занятую
+    ячейку элемента (данных) отводится новое
+    место, расположение которого легко
+    установить, зная адрес точки коллизии,
+    путем последовательного просмотра
+    ячеек с адресами, следующими за вычисленным
+    хеш-адресом до тех пор, пока не будет
+    найдена незанятая ячейка. Но в любом
+    случае при наличии одной или нескольких
+    резервных ячеек с одинаковым хеш-адресом
+    необходимо иметь возможность
+    идентифицировать попавшие туда элементы
+    данных по ключевым словам, так как
+    неизвестно, как эти элементы распределены
+    по ячейкам. Для этого обычно вместе с
+    данными записывается соответствующее
+    ключевое слово (или результат его
+    однозначного преобразования), и на этапе
+    выборки оно сравнивается с ключом,
+    используемым в качестве аргумента
+    поиска (рис. 11.1).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <IMG SRC="Тема 7.1.files/i_6b8f6a3afa821e1a_html_m1acc6bd6.png"></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Более подробно методы разрешения
+    коллизий будут рассмотрены ниже.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    В случае установления расположения
+    элементов данных исходя из нескольких
+    различных ключей вычисляется требуемое
+    количество хеш-адресов и по каждому из
+    них записывается независимая (отдельная)
+    копия.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Для избежания чрезмерного расхода
+    памяти на запись нескольких копий одного
+    элемента данных (ЭД) в хеш-таблице он
+    может заменяться более коротким
+    идентификатором, например, адресной
+    ссылкой в область памяти, где хранится
+    сам элемент. Такие ссылки называются
+    <I>указателями</I>. Это значительно упрощает
+    логические манипуляции с данными, не
+    прибегая к их фактической выборке.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Итак, ключ преобразуется в адрес – в
+    этом суть метода хеширования.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    Из известных методов программного
+    поиска хеширование является самым
+    быстродействующим. Это особенно важно
+    при работе с наборами данных большого
+    размера. Высокое быстродействие
+    обусловлено тем, что элементы данных
+    запоминаются, а затем выбираются из
+    ячеек памяти, адреса которых являются
+    <I>простыми арифметическими функциями
+        содержимого соответствующих ключевых
+        слов. </I>Вычисление подобных функций в
+    современных ЭВМ занимает весьма малое
+    время по сравнению с продолжительностью
+    доступа к памяти.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Методы хеширования получили наиболее
+    широкое распространение в системном
+    программировании. В настоящее время
+    практически все символьные таблицы
+    ассемблеров и компиляторов строятся
+    по принципу хеширования, поскольку эти
+    таблицы очень часто и в произвольном
+    порядке опрашиваются в процессе
+    компиляции и выполнения программы.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Эффективно применение методов хеширования
+    в <I>управлении базами данных </I>(<I>УБД</I>)<I>
+    в </I>алгоритмах выполнения операций
+    поиска по многим ключам, в системах с
+    многоуровневой памятью, при поиске
+    информации в базах данных по заданным
+    идентификаторам или <I>дескрипторам</I>
+    (поиск документов, публикаций и т.д.), а
+    также при создании языков высокого
+    уровня и при построении лингвистических
+    структур [2, 11].</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <BR>
+</P>
+<H3 CLASS="western" STYLE="line-height: 130%">11.1.2. Функции
+    хеширования</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT FACE="Times New Roman, serif"><FONT SIZE=3><FONT SIZE=4>При
+        хешировании адрес памяти, по которому
+        заносится элемент данных, олределяется
+        содержимым ключевого слова (КлСл),
+        присвоенного этому элементу. В качестве
+        КлСл могут использоваться обычные имена
+        или произвольные числовые коды. Длина
+        КлСл выбирается произвольно, хотя в
+        вычислениях участвуют обычно только
+        несколько символов. В результате набор
+        допустимых слов (т.е. пространство имен)
+        может оказаться весьма обширным.
+        Например, из шести букв алфавита можно
+        составить 256 млн слов. Однако, как уже
+        говорилось ранее, пространство имен
+        (ПрИм) реально оказывается крайне малым,
+        поэтому встает задача </FONT></FONT></FONT>подобрать
+    такую функцию преобразования пространства
+    имен в пространство адресов (ПрАдр), у
+    которой в области значений (совпадающей
+    с адресным пространством) адреса
+    распределялись бы более равномерно и
+    с большей плотностью.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Формирование хеш-функции обычно
+    проводится в два этапа:</P>
+<OL>
+    <LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        выбор способа перевода ключевых слов
+        в числовую форму;</P>
+    <LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        выбор алгоритма преобразования числовых
+        значений в хеш-адреса.</P>
+</OL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 130%">
+    Рассмотрим эти этапы.</P>
+<H4 CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; line-height: 130%">
+    <FONT COLOR="#000000">Перевод ключевых слов в
+        числовую форму</FONT></H4>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Информация, вводимая в ЭВМ, хранящаяся
+    на носителях, передаваемая между
+    устройствами, закодирована определенным
+    образом по соответствующим стандартам
+    (например, <SPAN LANG="en-US">ASCII</SPAN>, КОИ-8, ДКОИ
+    и др.)<I>.</I> Для кодирования чисел, букв,
+    других символов установлены стандартные
+    форматы. Чтобы выполнять арифметические
+    операции, числа обычно преобразуются
+    либо в двоичную, либо в двоично-десятичную
+    форму. Таким образом, так как все машинные
+    переменные так или иначе уже представлены
+    в числовой форме, то их дополнительных
+    преобразований обычно проводить уже
+    не надо, лишь в некоторых алгоритмах,
+    предназначенных для вычисления адресов,
+    требуется, чтобы все исходные числовые
+    величины располагались в пределах
+    допустимого диапазона целых чисел в
+    ЭВМ.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Ключевое слово обычно представляет
+    собой строку цифр, букв или алфавитно-цифровых
+    символов. В алфавит могут входить разные
+    символы. Наиболее удобными считаются
+    алфавиты, включающие простое число
+    символов, которое при проведении
+    арифметических преобразований выступает
+    в качестве основания системы счисления
+    [9].
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Пусть имеется алфавит, в котором каждому
+    символу <SPAN LANG="en-US"><I>i</I></SPAN> по некоторому
+    правилу поставлен в соответствие номер
+    <SPAN LANG="en-US"><I>d</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I>&#8712</I></FONT></FONT>{0,
+    1, 2<I>,…, </I><SPAN LANG="en-US"><I>W</I></SPAN><I>-</I>1}<I>.</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Тогда строка из этих символов, записанная
+    в форме <SPAN LANG="en-US"><I>k</I></SPAN>= <SPAN LANG="en-US"><I>d</I></SPAN><SUB><SPAN LANG="en-US"><I>N</I></SPAN></SUB><SUB><I>-1</I></SUB><I>
+    …</I><SPAN LANG="en-US"><I>d</I></SPAN><SUB><I>1</I></SUB><FONT FACE="Symbol, serif"><FONT SIZE=4>&#183</FONT></FONT><SPAN LANG="en-US"><I>d</I></SPAN><SUB><I>0</I></SUB><I>,
+</I>представляет собой некоторое число
+    в системе с основанием <SPAN LANG="en-US"><I>W</I></SPAN>.
+    Его значение определяется по формуле</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><IMG SRC="Тема 7.1.files/form11.1.png" ALIGN=CENTER>					(11.1)</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Например, следующим образом присвоим
+    номера буквам английского алфавита:
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>d</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><I>
+    = </I>{<SPAN LANG="en-US"><I>A</I></SPAN><I>=</I>0<I>, </I><SPAN LANG="en-US"><I>B</I></SPAN><I>=</I>1<I>,
+    …, </I><SPAN LANG="en-US"><I>Z</I></SPAN><I>=</I>25}<I>.</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Тогда слову <I>“</I><SPAN LANG="en-US"><I>ABC</I></SPAN><I>”
+</I>соответствует числовое значение
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    0 <FONT FACE="Symbol, serif"><FONT SIZE=4>&#183</FONT></FONT> 26<SUP>2</SUP>
+    + 1 <FONT FACE="Symbol, serif"><FONT SIZE=4>&#183</FONT></FONT> 26<SUP>1</SUP>
+    + 2 <FONT FACE="Symbol, serif"><FONT SIZE=4>&#183</FONT></FONT> 26<SUP>0</SUP>
+    = 28.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Данный метод перевода ключевых слов в
+    числовую форму дает хорошие результаты
+    для английских имен и слов, а также для
+    других, например русских.</P>
+<H5 CLASS="western" STYLE="line-height: 130%"><FONT COLOR="#000000"><i>Преобразование
+    числовых значений в хеш-адреса</i></FONT></H5>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Применяются различныеметоды хеширования,
+    например, следующие [9]:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <I>метод деления</I> ;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <I>метод умножения</I>;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <I>метод извлечения битов;</I>;</P>
+</UL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <I>метод квадрата</I>;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <I>метод сегментации </I>(строка делится
+    на сегменты, равные по длине хеш-адресу,
+    и далее – различные сочетания и операции
+    с сегментами);</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <I>переход к новому основанию </I>(системы
+    счисления);
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <I>алгебраическое деление</I>
+    (группирование ключевых слов, применение
+    полиномов);</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <I>оптимальные функции хеширования</I>
+    (попытки обобщить методы алгебраического
+    кодирования);</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <I>специальные методы хеширования
+</I>(для решения задачклассификации,
+    сокращенные хеш-таблицы).</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Некоторые
+        из методов хеширования рассмотрим более
+        подробно.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>Метод
+        деления</I></FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Данный
+        метод является наиболее распространенным.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Пусть
+        хеш-функция должна заполнить хеш-адресами
+        всю область памятиразмером</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>H</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>,
+    </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>располагая
+        их последовательно. Хеш-функция, с
+        помощью которой вычисляются хеш-адреса,
+        в этом методе имеет вид</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 0.31in"><FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>h</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>v</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>)</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+    = </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>v</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">mod</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>H</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+    ,</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+    (11.2)</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 0.31in"><FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>т.
+    е. в качестве значения хеш-функции
+    берется остаток от деления численного
+    значения ключа на </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>H</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>.</I></FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Метод
+        обеспечивает достаточно равномерное
+        распределение хеш-адресов в пределах
+        любой заданной области памяти, однако
+        при его реализации требуется соблюдать
+        ряд условий [9]:</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"> – <FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>длина
+        таблицы хеширования</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>H</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        должна выражаться нечетным (по мере
+        возможности простым) числом;</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"> – <FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>длина
+        таблицы не должна выражаться степенью
+        основания, по которому производится
+        перевод ключей в цифровую форму.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>Метод
+        умножения   (мультипликативный)</I></FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>При
+        этом методе размер таблицы хеширования
+        задается без каких-либо ограничений,
+        характерных для метода деления.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Для
+        мультипликативного хеширования
+        используется следующая формула:</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 0.31in"><FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>h</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>v</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>)</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+    = </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>Hcv</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">mod</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+    ,</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+    (11.3)</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 0.31in"><FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>где
+</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>v</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+    – неотрицательное целое число, полученное
+    в результате преобразования ключевого
+    слова, лежащее внутри допустимого
+    диапазона представления чисел</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 0.31in"><FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>в
+    данной ЭВМ, а </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>с
+</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>–
+    некоторая константа из интервала [0,1].</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Нормализованный
+        адрес</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>cv</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">mod</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1представляет
+        собой дробную часть</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>произведения
+    </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>cv</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>.</I></FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>В
+        данном методе допускается любая длина
+        таблицы, в том числе и равная степени
+        2.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Качество
+        хешировния по данному методу зависит
+        во многом от выбора</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+        с.</I></FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Хорошие
+        результаты отмечаются [9] для </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>с
+    </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>=
+    </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Ø</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        –1 = 0,618034, где </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Ø
+        – так называемое «золотое отношение
+        (сечение)».</FONT></FONT></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <I>Метод извлечения битов</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    Это один из старейших способов формирования
+    хеш-функции. Двоичное число, соответствующее
+    хеш-адресу, образуется просто путем
+    <I>сцепления</I> нужного количества битов,
+    извлекаемых из определенных позиций
+    внутри указанной битовой строки ключевого
+    слова. Рекомендуется биты хеш-адреса
+    извлекать из позиций ключевых слов, в
+    которых 1и0 появлялись бы с приблизительно
+    равной частотой (по результатам
+    статистического анализа).</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>Метод
+        квадрата</I></FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>В
+        этом методе числовое значение ключевого
+        слова </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>v</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        умножается на самого себя (возводится
+        в квадрат) и в качестве хеш-адреса берутся
+        биты из средней части результата.
+        Ключевые слова могут иметь разную длину,
+        что повышает степень рандомизации
+        (распределения случайным образом).</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>Метод
+        сегментации </I></FONT></FONT></FONT></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Если
+        числовое значение ключевого слова имеет
+        большую длину, оно делится на сегменты,
+        равные по длине хеш-адресу, а содержимое
+        сегментов объединяется каким-либо
+        способом в единый хеш-адрес. Из всех
+        способов предпочтительным считается
+        способ «Исключающее ИЛИ», когда биты
+        всех сегментов с одинаковыми весами
+        суммируются по модулю 2.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Описанные
+        выше методы хеширования являются
+        статическими, в которых сначала каким-то
+        образом выбирается размер </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">H</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        хеш-таблицы, а далее под ее размер
+        подбираются константы для хеш-функции.
+        К сожалению, это не подходит для задач,
+        в которых размер базы данных меняется
+        часто и значительно. По мере роста базы
+        данных в этом случае можно было бы
+        пользоваться изначальной хеш-функцией,
+        теряя производительность из-за роста
+        коллизий; можно было выбрать хеш-функцию
+        «с запасом», что повлекло бы неоправданные
+        потери дискового пространства; можно
+        было периодически менять функцию,
+        пересчитывать все адреса, что отнимает
+        очень много ресурсов и выводит из строя
+        базу на некоторое время.</FONT></FONT></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in">
+    Существуют методы, позволяющие динамически
+    менять размер хеш-структуры .Это –
+    д<I>инамическое хеширование</I>.</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Хеш-функция
+        генерирует так называемый псевдоключ
+        («pseudokey»), который используется лишь
+        частично для доступа к элементу. Другими
+        словами, генерируется достаточно длинная
+        битовая последовательность, которая
+        должна быть достаточна для адресации
+        всех потенциально возможных элементов.
+        В то время как при статическом хешировании
+        потребовалась бы очень большая таблица
+        (которая обычно хранится в оперативной
+        памяти для ускорения доступа), здесь
+        размер занятой памяти прямо пропорционален
+        количеству элементов в базе данных.
+        Каждая запись в таблице хранится не
+        отдельно, а в каком-то блоке. Эти блоки
+        совпадают с физическими блоками на
+        устройстве хранения данных. Если в блоке
+        нет больше места, чтобы вместить запись,
+        то блок делится на два, а на его место
+        ставится указатель на два новых блока.
+        Задача состоит в том, чтобы построить
+        бинарное дерево, на концах ветвей
+        которого были бы указатели на блоки, а
+        навигация осуществлялась бы на основе
+        псевдоключа. Узлы дерева могут быть
+        двух видов: узлы, которые показывают на
+        другие узлы, или узлы, которые показывают
+        на блоки. </FONT></FONT></FONT></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"> <FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Вначале
+        имеется только указатель на динамически
+        выделенный пустой блок. При добавлении
+        элемента вычисляется псевдоключ, и его
+        биты поочередно используются для
+        определения местоположения блока.
+        Например, элементы с псевдоключами 00…
+        будут помещены в блок A, а 01…– в блок B.
+        Когда А будет переполнен, он будет разбит
+        таким образом, что элементы 000…и 001…
+        будут размещены в разных блоках.</FONT></FONT></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.47in; margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4>Близко к динамическому </FONT><FONT SIZE=4><I>расширяемое
+    хеширование</I></FONT><FONT SIZE=4>. Этот метод
+    также предусматривает изменение размеров
+    блоков по мере роста базы данных, но это
+    компенсируется оптимальным использованием
+    места. Так как за один раз разбивается
+    не более одного блока, накладные расходы
+    достаточно малы. Вместо бинарного
+    дерева расширяемое хеширование
+    предусматривает список, элементы
+    которого ссылаются на блоки. Сами же
+    элементы адресуются по некоторому
+    количеству </FONT><FONT SIZE=4><I>i </I></FONT><FONT SIZE=4>битов
+    псевдоключа. При поиске берется </FONT><FONT SIZE=4><I>i
+</I></FONT><FONT SIZE=4>битов псевдоключа и через
+    список (directory) находится адрес искомого
+    блока. Добавление элементов производится
+    сложнее. Сначала выполняется процедура,
+    аналогичная поиску. Если блок неполон,
+    добавляется запись в него и в базу
+    данных. Если блок заполнен, он разбивается
+    на два, записи перераспределяются по
+    описанному выше алгоритму. В этом случае
+    возможно увеличение числа битов,
+    необходимых для адресации.</FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Размер
+        списка удваивается и каждому вновь
+        созданному элементу присваивается
+        указатель, который содержит его родитель.
+        Таким образом, возможна ситуация, когда
+        несколько элементов показывают на один
+        и тот же блок. Следует заметить, что за
+        одну операцию вставки пересчитываются
+        значения не более чем одного блока.
+        Удаление производится по такому же
+        алгоритму, только наоборот. Блоки
+        соответственно могут быть склеены, а
+        список – уменьшен в 2 раза.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Итак,
+        основным достоинством расширяемого
+        хеширования является высокая эффективность,
+        которая не падает при увеличении размера
+        базы данных. Кроме этого, разумно
+        расходуется место на устройстве хранения
+        данных, так как блоки выделяются только
+        под реально существующие данные, а
+        список указателей на блоки имеет размеры,
+        минимально необходимые для адресации
+        данного количества блоков. За эти
+        преимущества разработчик расплачивается
+        усложнением программного кода.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>Функции,
+        сохраняющие порядок ключей </I></FONT></FONT></FONT></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Существует
+        класс хеш-функций, сохраняющих порядок
+        ключей [9], т.е. выполняется</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 0.31in"><FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">K</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1
+    &lt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">K</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2
+</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>→</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+    (</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">K</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1)
+    &lt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">K</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2).</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Эти
+        функции полезны для сортировки, которая
+        не потребует никакой дополнительной
+        работы. Другими словами, не требуется
+        множества сравнений, так как для того,
+        чтобы отсортировать объекты по
+        возрастанию, достаточно просто линейно
+        просканировать хеш-таблицу. В принципе,
+        всегда можно создать такую функцию, при
+        условии, что хеш-таблица больше, чем
+        пространство ключей. Однако задача
+        поиска правильной хеш-функции нетривиальна.
+        Разумеется, она очень сильно зависит
+        от конкретной задачи. Кроме того, подобное
+        ограничение на хеш-функцию может пагубно
+        сказаться на ее производительности.
+        Поэтому часто прибегают к индексированию
+        вместо поиска подобной хеш-функции,
+        если только заранее не известно, что
+        операция последовательной выборки
+        будет частой.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in"><BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in"><B>11.1.3 Обработка
+    коллизий</B></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 150%">
+    Формирование хеш-функции – это часть
+    работы, которую выполняет программист,
+    реализующий поиск на основе хеширования.
+    Кроме этого, необходимо реализовать
+    механизм разрешения коллизий.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    Известные методы обработки коллизий
+    можно разделить на две основные категории:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    1) методы, в которых как ячейки для
+    вычисленных хеш-адресов, так и резервные
+    ячейки для хранения элементов с
+    одинаковыми хеш-адресами содержатся в
+    одной области памяти, занимаемой таблицей
+    хеширования, называемые методами
+    <I>внутренней адресации</I>;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    2) методы, в которых для резервных ячеек
+    отводится специальная <I>область
+    переполнения</I>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Процедуру, при помощи которой в
+        методах внутренней адресации отыскиваются
+        резервные (незанятые) ячейки в таблице
+        хеширования, называют </FONT><FONT SIZE=4><I>пробингом
+    – методом </I></FONT><FONT SIZE=4><I>проб иошибок</I></FONT><FONT SIZE=4>.
+    Разработано много различных
+    высокоэффективных алгоритмов пробинга,
+    о некоторых из них кратко будет изложено
+    ниже.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Как при записи, так и при считывании
+    (выборке) последовательность операций
+    доступа к ячейке с вычисленным адресом
+    или к резервной ячейке выполняется
+    всегда одним и тем же способом, кроме
+    случаев удаления записи из таблицы
+    хеширования.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Для получения информации о месте
+    нахождения искомого элемента в резервные,
+    а также в вычисленную ячейки записываются
+    копии соответствующих ключевых слов
+    (при хешировании по методу деления в
+    некоторых случаях может использоваться
+    более короткий идентификатор).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    При поиске эти копии сравниваются с
+    аргументом (поиска) до их совпадения.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    Для отметки ячеек, в которые записывается
+    информация, а также для ускорения
+    поисковых операций могут приниматься
+    различные меры, например:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – <FONT SIZE=4>один из разрядов ячейки
+    используется для отметки занятости:
+    разряду присваивается значение 1– если
+    в ячейке хранится информация, 0 – если
+    ячейка свободна или хранившийся в ней
+    элемент помечен как вычеркнутый из
+    таблицы; </FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    – для обозначения конца цепочки
+    резервных ячеек вводится еще один разряд
+    в каждой ячейке или ячейка в конце
+    цепочки, в которой должен содержаться
+    определенный<I> идентификатор</I> (например
+    запрещенное ключевое слово). В последнем
+    случае ячейка играет роль маркера.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <B>11.2. Виды пробинга. Применение различных
+        видов пробинга для решения проблем
+        группирования .</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <B>11.2.1 Основные методы пробоинга при
+        внутренней адресации .</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Имеется несколько типов пробинга:</P>
+<OL>
+    <LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        линейный<I> пробинг</I> – к хеш-адресу
+        последовательно прибавляется или
+        вычитается из него по единице до тех
+        пор, пока не обнаружится пустая ячейка;</P>
+    <LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        квадратичный<I> пробинг</I> –
+        последовательность резервных адресов
+        определяется с использованием некоторой
+        квадратичной функции;</P>
+    <LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <I>случайный </I>пробинг, в котором смещение
+        вычисляется с помощью датчика
+        псевдослучайных чисел (ДПСЧ).
+    </P>
+</OL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Пусть хеш-адрес <SPAN LANG="en-US"><I>h</I></SPAN>(<SPAN LANG="en-US"><I>k</I></SPAN>)
+    и адреса резервных ячеек, соответствующих
+    ключу <SPAN LANG="en-US"><I>k</I></SPAN><I>,</I> образуют
+    последовательность</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US">{</SPAN><SPAN LANG="en-US"><I>f</I></SPAN><SUB><SPAN LANG="en-US"><I>0</I></SPAN></SUB><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>,
+    f</I></SPAN><SUB><SPAN LANG="en-US"><I>1</I></SPAN></SUB><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>,
+    f</I></SPAN><SUB><SPAN LANG="en-US"><I>2</I></SPAN></SUB><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>,…</I></SPAN><SPAN LANG="en-US">}</SPAN><SPAN LANG="en-US"><I>,
+    f</I></SPAN><SUB><SPAN LANG="en-US"><I>0</I></SPAN></SUB><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>
+    = h</I></SPAN><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>,</I></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    где<SPAN LANG="en-US"><I>f</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>
+    = </I></SPAN><SPAN LANG="en-US">[</SPAN><SPAN LANG="en-US"><I>h</I></SPAN><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>
+    + g</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><SPAN LANG="en-US">]</SPAN><SPAN LANG="en-US"><I>modH,
+</I></SPAN>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.29in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>g</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><I>–
+</I>смещение</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.98in; text-indent: -0.67in; margin-bottom: 0in; line-height: 130%">
+    (<SPAN LANG="en-US"><I>i</I></SPAN><I> = </I>0, 1, 2<I>,…, </I><SPAN LANG="en-US"><I>g</I></SPAN><SUB><I>0</I></SUB><I>
+    = </I>0)<I>,</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.98in; text-indent: -0.67in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>H</I></SPAN><I> – </I>число ячеек в
+    таблице хеширования.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Если по какой-либо причине совпали
+    адреса двух ячеек, отвечающих двум
+    различным ключевым словам <SPAN LANG="en-US"><I>k</I></SPAN><SUB><I>1</I></SUB>
+    и<SPAN LANG="en-US"><I>k</I></SPAN><SUB><I>2</I></SUB>, т.е.</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>f</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SUB><SPAN LANG="en-US"><I>1</I></SPAN></SUB><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>
+    = f</I></SPAN><SUB><SPAN LANG="en-US"><I>j</I></SPAN></SUB><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SUB><SPAN LANG="en-US"><I>2</I></SPAN></SUB><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US">(11.4)</SPAN></P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>i ≠ j ∙ modH</I></SPAN>и<SPAN LANG="en-US"><I>k</I></SPAN><SUB><SPAN LANG="en-US"><I>1
+</I></SPAN></SUB><SPAN LANG="en-US"><I>≠ k</I></SPAN><SUB><SPAN LANG="en-US"><I>2
+    ,</I></SPAN></SUB></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    а                                                 <SPAN LANG="en-US"><I>f</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><SUB><I>+</I></SUB><SUB><SPAN LANG="en-US"><I>L</I></SPAN></SUB>(<SPAN LANG="en-US"><I>k</I></SPAN><SUB><I>1</I></SUB>)<I>
+    = </I><SPAN LANG="en-US"><I>f</I></SPAN><SUB><SPAN LANG="en-US"><I>j</I></SPAN></SUB><SUB><I>+</I></SUB><SUB><SPAN LANG="en-US"><I>L</I></SPAN></SUB>(<SPAN LANG="en-US"><I>k</I></SPAN><SUB><I>2</I></SUB>)
+    для <SPAN LANG="en-US"><I>L</I></SPAN><I> = </I>1, 2, 3,… ,
+    (11.5)</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    то говорят, что имеет место <I>первичное
+    группирование ячеек.</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 0.31in">
+    Группирование характерно для пробинга
+    <I>линейного типа</I> (<SPAN LANG="en-US"><I>g</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><SUB><I>=</I></SUB><FONT SIZE=4>1</FONT>),
+    поскольку условие (11.5) должно выполняться
+    для любых значений <SPAN LANG="en-US"><I>f</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>(<SPAN LANG="en-US"><I>k</I></SPAN><SUB><I>1</I></SUB>)и
+    <SPAN LANG="en-US"><I>f</I></SPAN><SUB><SPAN LANG="en-US"><I>j</I></SPAN></SUB>(<SPAN LANG="en-US"><I>k</I></SPAN><SUB><I>2</I></SUB>),
+    принадлежащих двум независимым
+    последовательностям резервных адресов.</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Опыты
+        показывают [9], что алгоритм линейного
+        типа хорошо работает в начале заполнения
+        таблицы, однако по мере заполнения
+        процесс замедляется, а длинные серии
+        проб становятся все более частыми. И
+        все же он достаточно прост и эффективен:
+        при заполнении таблицы на 90 % для поиска
+        элемента в среднем требуется около пяти
+        с половиной проб.</FONT></FONT></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Первичное группирование можно устранить
+    применением нелинейных методов, в
+    частности, <I>квадратичным пробингом</I>.
+    Этот метод не требует сложных вычислений,
+    дает хорошее распределение по таблице,
+    но занимает больше времени для просчета.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Процедура квадратичного пробинга может
+    быть описана в общем виде следующим
+    выражением:</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>g</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><I>
+    = </I><SPAN LANG="en-US"><I>a</I></SPAN><I>∙</I><SPAN LANG="en-US"><I>i</I></SPAN><I>
+    + </I><SPAN LANG="en-US"><I>b</I></SPAN><I>∙</I><SPAN LANG="en-US"><I>i</I></SPAN><SUP><I>2</I></SUP>
+    .                                              (11.6)</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    Для ЕС ЭВМ, например, было принято: <SPAN LANG="en-US"><I>a</I></SPAN><I>
+    = –</I>787<I>; </I><SPAN LANG="en-US"><I>b</I></SPAN><I> = </I>1.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Но это выражение (11.6) накладывает
+    определенные ограничения на длину
+    хеш-таблицы и выбор значений <SPAN LANG="en-US"><I>a</I></SPAN>
+    и<SPAN LANG="en-US"><I>b</I></SPAN>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <I>Случайный пробинг</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    В процедуре случайного пробинга
+    используется заранее сгенерированный
+    список псевдослучайных чисел <FONT SIZE=4>{</FONT><SPAN LANG="en-US"><I>d</I></SPAN><SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB><FONT SIZE=4>}</FONT><FONT SIZE=4><I>.</I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Адрес первой просматриваемой ячейки
+    определяется по формуле</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>f</I></SPAN><SUB><I>1</I></SUB><I> =   </I>(<SPAN LANG="en-US"><I>h</I></SPAN><I>
+    + </I><SPAN LANG="en-US"><I>d</I></SPAN><SUB><I>1</I></SUB>)<SPAN LANG="en-US"><I>modH</I></SPAN><I>;
+</I>(11.7)</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    адреса остальных резервных ячеек – по
+    формуле</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>f</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><SPAN LANG="en-US"><I>
+    =   </I></SPAN><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I> f</I></SPAN><SUB><SPAN LANG="en-US"><I>i-1</I></SPAN></SUB><SPAN LANG="en-US"><I>
+    + d</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>
+    mod H, i = 1, 2,….</I></SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Если все числа <SPAN LANG="en-US"><I>d</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB><I>&lt;</I><SPAN LANG="en-US"><I>H</I></SPAN>
+    и не имеют с <SPAN LANG="en-US"><I>H</I></SPAN> общих
+    множителей (кроме 1), то гарантируется
+    отсутствие повторных (двойных просмотров).
+    Например, если <SPAN LANG="en-US"><I>H</I></SPAN>является
+    степенью числа 2, то <SPAN LANG="en-US"><I>d</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>может
+    быть любым нечетным числом, меньшим <SPAN LANG="en-US"><I>H</I></SPAN>,
+    а если <SPAN LANG="en-US"><I>H</I></SPAN> – простое
+    число, то <SPAN LANG="en-US"><I>d</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>
+    может быть любым положительным числом,
+    меньшим <SPAN LANG="en-US"><I>H</I></SPAN>.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <I>Вторичное группирование. Двойное
+        хеширование</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    В методе внутренней адресации всякий
+    раз, когда двум и более ключевым словам
+    присваиваются одинаковые хеш-адреса,
+    формируется одна и та же последовательность
+    резервных ячеек. Это явление называют
+    <I>вторичным группированием.</I> Если
+    средняя длина цепочек резервных ячеек
+    достаточно велика, вторичное группирование
+    может снизить эффективное быстродействие
+    процедур квадратичного или случайного
+    пробинга.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Для устранения этого явления используется
+    адресация с двойным хешированием. Этот
+    алгоритм выбора цепочки очень похож на
+    алгоритм для линейной адресации, но он
+    проверяет таблицу несколько иначе,
+    используя две хеш-функции:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <I>h</I><SUB><I>1</I></SUB>(<I>к</I>) <I>– </I>хеш-адрес,
+    соответствующий численному значению
+    <I>к </I>ключевого слова;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <I>h</I><SUB><I>2</I></SUB>(<I>к</I>) – «хеш-смещение»,
+    соответствующее значению <I>к,</I>
+    формируемое процедурой пробинга.</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Последняя
+        функция должна порождать значения в
+        интервале от 1 до </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">H</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        –1, взаимно простые с </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">H</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Этот
+        вариант дает значительно лучшее
+        распределение и независимые друг от
+        друга цепочки. Однако он несколько
+        медленнее из-за введения дополнительной
+        функции.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Дональд
+        Кнут предлагает несколько различных
+        вариантов выбора дополнительной функции.
+        Если </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">H</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        – простое число и </FONT></FONT><FONT SIZE=4><I>h</I></FONT><SUB><FONT SIZE=4><I>1</I></FONT></SUB><FONT SIZE=4>(</FONT><FONT SIZE=4><I>к</I></FONT><FONT SIZE=4>)</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+        = к mod </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>H</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>,
+        можно положить </FONT></FONT><FONT SIZE=4><I>h</I></FONT><SUB><FONT SIZE=4><I>2</I></FONT></SUB><FONT SIZE=4>(</FONT><FONT SIZE=4><I>к</I></FONT><FONT SIZE=4>)</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>=
+    </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+        + </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>к
+        mod </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>H</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+        – </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1));
+        в общем случае, если </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">H</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        нечетно, что всегда выполняется для
+        простых чисел, предлагается лучше
+        положить </FONT></FONT><FONT SIZE=4><I>h</I></FONT><SUB><FONT SIZE=4><I>2</I></FONT></SUB><FONT SIZE=4>(</FONT><FONT SIZE=4><I>к</I></FONT><FONT SIZE=4>)</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>=</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        = 1 + (</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>к
+        mod </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>H</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+        – </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2))</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>.</I></FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Здесь
+        обе функции достаточно независимы. Гари
+        Кнотт (Gary Knott) в 1968 г. предложил при простом
+    </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">H</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        использовать следующую функцию:</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT SIZE=4><I>h</I></FONT><SUB><FONT SIZE=4><I>2</I></FONT></SUB><FONT SIZE=4>(</FONT><FONT SIZE=4><I>к</I></FONT><FONT SIZE=4>)</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>=
+        1, если </FONT></FONT><FONT SIZE=4><I>h</I></FONT><SUB><FONT SIZE=4><I>1</I></FONT></SUB><FONT SIZE=4>(</FONT><FONT SIZE=4><I>к</I></FONT><FONT SIZE=4>)</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        = 0 , </FONT></FONT></FONT></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT SIZE=4><I>h</I></FONT><SUB><FONT SIZE=4><I>2</I></FONT></SUB><FONT SIZE=4>(</FONT><FONT SIZE=4><I>к</I></FONT><FONT SIZE=4>)</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>=
+    </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>H</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+        – </I></FONT></FONT><FONT SIZE=4><I>h</I></FONT><SUB><FONT SIZE=4><I>1</I></FONT></SUB><FONT SIZE=4>(</FONT><FONT SIZE=4><I>к</I></FONT><FONT SIZE=4>)</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        – в противном случае (т.е. если </FONT></FONT><FONT SIZE=4><I>h</I></FONT><SUB><FONT SIZE=4><I>1</I></FONT></SUB><FONT SIZE=4>(</FONT><FONT SIZE=4><I>к</I></FONT><FONT SIZE=4>)</FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;
+        0).</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Этот
+        метод выполняется быстрее повторного
+        деления, но приводит к увеличению числа
+        проб из-за повышения вероятности того,
+        что два или несколько ключей пойдут по
+        одному и тому же пути. Если число занятых
+        ячеек обозначить </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>N,</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        то среднее количество проб в этом
+        алгоритме будет составлять (</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>M+1</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>)</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+        / </I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>M–N+1</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>)</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>.</I></FONT></FONT></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>При использовании алгоритма
+        вычисления хеш-смещения, обеспечивающего
+        равномерное появление любых допустимых
+        пар </FONT><FONT SIZE=4>[</FONT><FONT SIZE=4><I>h</I></FONT><SUB><FONT SIZE=4><I>1</I></FONT></SUB><FONT SIZE=4>(</FONT><FONT SIZE=4><I>к</I></FONT><FONT SIZE=4>)</FONT><FONT SIZE=4><I>,
+</I></FONT><FONT SIZE=4><I>h</I></FONT><SUB><FONT SIZE=4><I>2</I></FONT></SUB><FONT SIZE=4>(</FONT><FONT SIZE=4><I>к</I></FONT><FONT SIZE=4>)
+</FONT><FONT SIZE=4>]</FONT><FONT SIZE=4>, метод называют
+</FONT><FONT SIZE=4><I>независимым двойным
+    хешированием</I></FONT><FONT SIZE=4> (а также
+</FONT><FONT SIZE=4><I>равномерным хешированием</I></FONT><FONT SIZE=4>).</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Рассмотрим методы устранения
+        группирований.</FONT></P>
+<OL>
+    <LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <I>Квадратичный пробинг с переменным
+            коэффициентом</I></P>
+</OL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Используется для устранения вторичного
+    группирования (сам квадратичный пробинг
+    позволяет избавиться от первичного
+    группирования). Для этого используется
+    квадратичная функция, параметры которой
+    зависят от численного значения ключевого
+    слова. В этом случае алгоритм имеет вид</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>f</I></SPAN><SUB><SPAN LANG="pl-PL"><I>i</I></SPAN></SUB><SPAN LANG="pl-PL">(</SPAN><SPAN LANG="pl-PL"><I>k</I></SPAN><SPAN LANG="pl-PL">)</SPAN><SPAN LANG="pl-PL"><I>
+    = </I></SPAN><SPAN LANG="pl-PL">[</SPAN><SPAN LANG="pl-PL"><I> h  </I></SPAN><SPAN LANG="pl-PL">(</SPAN><SPAN LANG="pl-PL"><I>k</I></SPAN><SPAN LANG="pl-PL">)</SPAN><SPAN LANG="pl-PL"><I>
+    + g</I></SPAN><SUB><SPAN LANG="pl-PL"><I>i</I></SPAN></SUB><SPAN LANG="pl-PL">(</SPAN><SPAN LANG="pl-PL"><I>k</I></SPAN><SPAN LANG="pl-PL">)]</SPAN><SPAN LANG="pl-PL"><I>
+    mod H, </I></SPAN><SPAN LANG="pl-PL">(11.8)</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    где<SPAN LANG="pl-PL"><I>g</I></SPAN><SUB><SPAN LANG="pl-PL"><I>i</I></SPAN></SUB><SPAN LANG="pl-PL">(</SPAN><SPAN LANG="pl-PL"><I>k</I></SPAN><SPAN LANG="pl-PL">)</SPAN><SPAN LANG="pl-PL"><I>
+    = a∙i + b </I></SPAN><SPAN LANG="pl-PL"> (</SPAN><SPAN LANG="pl-PL"><I>k</I></SPAN><SPAN LANG="pl-PL">)</SPAN><SPAN LANG="pl-PL"><I>∙i</I></SPAN><SUP><SPAN LANG="pl-PL"><I>2</I></SPAN></SUP><SPAN LANG="pl-PL"><I>,
+</I></SPAN><SPAN LANG="en-US"><I>b</I></SPAN>(<SPAN LANG="en-US"><I>k</I></SPAN>)<I>
+    – </I>переменный коэффициент.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Для определения <SPAN LANG="en-US"><I>b</I></SPAN>(<SPAN LANG="en-US"><I>k</I></SPAN>)
+    используются различные методы (деления
+    и др.).</P>
+<OL START=2>
+    <LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+        <I>Линейный пробинг с переменным смещением</I></P>
+</OL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    С помощью этого метода удается избавиться
+    также от первичного группирования.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Для этого пробинга (применительно к
+    хешированию по методу деления) предложен
+    такой алгоритм:</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>fi</I></SPAN><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>
+    = </I></SPAN><SPAN LANG="en-US">[</SPAN><SPAN LANG="en-US"><I>f</I></SPAN><SUB><SPAN LANG="en-US"><I>i-1</I></SPAN></SUB><SPAN LANG="en-US">(</SPAN><SPAN LANG="en-US"><I>k</I></SPAN><SPAN LANG="en-US">)</SPAN><SPAN LANG="en-US"><I>
+    + Q</I></SPAN><SPAN LANG="en-US">]</SPAN><SPAN LANG="en-US"><I>modH,
+</I></SPAN><SPAN LANG="en-US">(11.9)</SPAN></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    где <SPAN LANG="en-US"><I>Q</I></SPAN><I> – </I>частное
+    от деления <SPAN LANG="en-US"><I>v</I></SPAN>(<SPAN LANG="en-US"><I>k</I></SPAN>)на<SPAN LANG="en-US"><I>H</I></SPAN><I>,
+    а </I><SPAN LANG="en-US"><I>H</I></SPAN><I> – </I>простое
+    число.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Имеются и другие алгоритмы с теми или
+    иными ограничениями на <SPAN LANG="en-US"><I>H</I></SPAN><I>.</I></P>
+<OL START=3>
+    <LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 125%"><I>Сокращение
+        числа проб в ходе выборки за счет
+        перестройки ранее сформированных
+        цепочек   </I>(<I>на этапе записи</I>)</P>
+</OL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    Идея этого метода заключается в
+    перестройке таблицы хеширования при
+    записи в нее нового ключевого слова.
+    Хранившийся ранее в проверяемой ячейке
+    элемент перемещается в другую ячейку,
+    освобождая место для новой информации,
+    а ячейка, в которую перезаписывается
+    старый элемент, находится автоматически
+    как очередная резервная ячейка в
+    последовательности, к которой относился
+    указанный элемент. Алгоритмов тоже
+    несколько.</P>
+<OL START=4>
+    <LI><P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 125%">
+        <I>Метод пересекающихся цепочек</I></P>
+</OL>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    Результаты вычислений, выполненных в
+    ходе пробинга (при первичном заполнении
+    таблицы или в процессе ее модификации),
+    можно запомнить и для ускорения поиска
+    использовать их на этапе выборки. В
+    задачах управления данными в первую
+    очередь стремятся минимизировать
+    продолжительность выборки ЭД, а на
+    запись в таблицу обычно отводят больше
+    времени.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    Для запоминания в каждой ячейке памяти
+    выделяется специальное поле, в которое,
+    начиная с ячейки, расположенной по
+    вычисленному хеш-адресу, заносится
+    адрес следующей резервной ячейки
+    (который был вычислен в момент записи
+    соответствующего элемента данных), в
+    результате чего на этапе поиска для
+    получения адреса очередной ячейки
+    никаких арифметических операций
+    производить не требуется. Резервные
+    ячейки находятся сразу, без лишних
+    проверок. Последовательность адресов
+    резервных ячеек образует цепочку или
+    связанный список. Адреса, помещаемые в
+    ячейки, называются <I>указателями.
+</I>Такуюструктуру определяют как <I>цепочку
+    с непосредственными связями.</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    Метод цепочек отличается простотой
+    добавления к связанному списку новых
+    элементов (рис. 11.2).
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    После нахождения новой резервной ячейки
+    в очередной коллизии ее адрес заносится
+    на место старого указателя в точке
+    коллизии, а старый – запоминается в
+    поле указателя новой резервной ячейки;
+    остальная часть адресной цепочки не
+    меняется, и ни один из ранее записанных
+    ЭД не переносится в другую ячейку.
+    Следует заметить, что после очередной
+    коллизии элементы данных располагаются
+    уже не в том порядке, в котором шел
+    просмотр потенциальных резервных ячеек
+    в процессе пробинга. Элементы, попавшие
+    в таблицу последними, располагаются
+    ближе остальных к вычисленному адресу,
+    их выборкапроизводится наиболее быстро,
+    что важно, так как согласно статистике
+    новые ЭД запрашиваются чаще старых.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    <IMG SRC="Тема 7.1.files/i_6b8f6a3afa821e1a_html_6c7ac969.png"></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    В этом методе цепочек не исключается
+    возможность того, что несколько цепочек,
+    начинающихся с различных вычисленных
+    адресов, пересекутся, в связи с чем метод
+    называют еще <I>методом пересекающихся
+    цепочек.</I></P>
+<OL START=5>
+    <LI><P ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 0.31in">
+        <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>Удаление
+            элементов хеш-таблицы </I></FONT></FONT></FONT></FONT></FONT>
+    </P>
+</OL>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>С
+        течением времени возникает необходимость
+        в удалении неиспользованных элементов
+        из таблицы хеширования для записи новой
+        информации и сокращения задержек,
+        связанных с обработкой элементов данных,
+        тоже не участвующих в решении задачи. </FONT></FONT></FONT></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Такие
+        ячейки нельзя просто пометить как
+        пустые, иначе они при пробинге будут
+        рассматриваться как концы цепочек
+        резервных ячеек</FONT></FONT>.<FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        Например, если удалить ключ, который
+        находится в цепочке, по которой идет
+        поиск, использующийоткрытую адресацию,
+        то все последующие элементы будут
+        потеряны, так как алгоритм производит
+        поиск до первого незанятого элемента.</FONT></FONT></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Поэтому приходится всю последовательность
+    записей, расположенных вслед за удаляемой,
+    сдвигать на одну ячейку в направлении
+    вычисленного адреса. Наиболее удобен
+    в данном отношении <I>линейный </I>пробинг.
+    <I>Случайный</I> пробинг, наоборот,
+    оказывается крайне громоздким, поскольку
+    алгоритмы получения псевдослучайных
+    чисел принципиально необратимы.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Ячейку с подлежащим удалению ЭД можно
+    пометить специальным маркером (например
+    выделенным отдельным разрядом). Для
+    записи новой информации такая ячейка
+    считается свободной. При встрече такого
+    маркера в процессе выполнения процедуры
+    пробинга поиск продолжается дальше
+    (ячейка считается занятой).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    В случае совпадения вычисленного адреса
+    с адресом ячейки, помеченной как
+    свободная, она может служить началом
+    новой цепочки, при этом резервные ячейки
+    выстраиваются вслед за старой цепочкой,
+    которая обходит эту ячейку, и сокращается
+    время операции поиска.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 0.28in">
+    Этот метод особенно удобен при применении
+    линейного пробинга.
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.28in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Такой
+        метод хорошо работает при редких
+        удалениях, поскольку однажды занятая
+        позиция больше никогда не сможет стать
+        свободной, значит, после длинной
+        последовательности вставок и удалений
+        все свободные позиции исчезнут, а при
+        неудачном поиске будет требоваться </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">H</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        проверок (где </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">H</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+        – размер хеш-таблицы). Это будет достаточно
+        долгий процесс.</FONT></FONT></FONT></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Данный
+        алгоритм позволяет перемещать некоторые
+        элементы таблицы, что может оказаться
+        нежелательным (например, если имеются
+        ссылки извне на элементы хеш-таблицы).
+    </FONT></FONT></FONT></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 0.31in">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Другой
+        подход к проблеме удаления основывается
+        на хранении количества ссылок с каждым
+        ключом, которое говорит о том, как много
+        других ключей сталкивается с ним. Тогда
+        при обнулении счетчика можно преобразовывать
+        такие ячейки в пустые. </FONT></FONT></FONT></FONT></FONT>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Для экономии памяти вместо флажкового
+    разряда можно использовать:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    – либо специальное ключевое слово;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    – либо данные, которые по какой-то
+    причине запрещено употреблять.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Содержащие подобный код ячейки играют
+    роль <I>маркера</I>. При необходимости в
+    эту ячейку может быть записана новая
+    информация и пробинг</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    будет выполняться без учета этого
+    маркера.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Значительно проще, в отличие от обычных
+    хеш-таблиц, осуществляется процедура
+    удаления ЭД из пересекающихся цепочек.
+    В ячейку, из которой удаляется запись,
+    копируется содержимое ячейки памяти
+    (ключ плюс данные), стоящей следующей в
+    цепочке и помечаемой в дальнейшем как
+    свободная. Содержимое остальных ячеек
+    не меняется.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    В поле указателя ячейки, на которой
+    заканчивается адресная цепочка, заносится
+    специальное условное число: константа
+    (например нуль), вычисленный адрес,
+    соответствующий данной цепочке, или
+    адрес ячейки.</P>
+<P ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT COLOR="#000000"><FONT FACE="Courier New, serif"><FONT SIZE=2><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Некоторые
+        методы удаления, позволяющие избежать
+        перемещения в таблице и работающие с
+        любой хеш-технологией, указаны в [9.4].</FONT></FONT></FONT></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <BR>
+</P>
+<H3 CLASS="western" STYLE="line-height: 130%">11.2.2. Методы
+    обработки коллизий при использовании
+    отдельной
+</H3>
+<H3 CLASS="western" STYLE="line-height: 130%">области
+    переполнения</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    При работе с многоуровневой памятью
+    обмен данными в ней ведется через буферы,
+    информация передается поблочно, поэтому
+    удобно, если подлежащие пересылке данные
+    располагаются в одной локальной области
+    памяти. В этом случае метод внутренней
+    адресации дает определенные преимущества.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    В ассемблерах и компиляторах для
+    формирования таблиц и символов более
+    подходящим является метод обработки
+    коллизий с использованием отдельной
+    области памяти, именуемой <I>областью
+    переполнения</I>. Из этой области по мере
+    необходимости берутся резервные ячейки
+    для размещения конфликтующих элементов.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    И так как цепочки, соответствующие
+    различным вычисленным адресам, формируются
+    независимо друг от друга, чаще всего
+    этот метод называют <I>методом
+    непересекающихся цепочек</I> (рис. 11.3).</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <IMG SRC="Тема 7.1.files/i_6b8f6a3afa821e1a_html_716fd3d2.png"></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    На этом рисунке показан случай двух
+    коллизий в первой ячейке и одной – в
+    третьей.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Адреса ячеек области переполнения не
+    зависят от вычисленных адресов, резервные
+    ячейки берутся из области переполнения
+    последовательно в порядке возрастания
+    адресов, поэтому операции пробинга для
+    их поиска не требуются.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Это позволяет ускорить обработку
+    информации (при записи и при чтении) и
+    сократить среднее количество обращений
+    к памяти, что особенно проявляется при
+    большом коэффициенте заполнения таблицы
+    хеширования.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    Каждый новый элемент, попадающий в эту
+    область, обычно связывается указателем
+    непосредственно с вычисленным адресом.
+    Поэтому при поиске недавно записанной
+    информации не требуется просматривать
+    всю цепочку адресов и, кроме того,
+    упрощается процедура записи новых
+    элементов.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Преимущества этого метода проявляются
+    и при работе с многоуровневой памятью,
+    когда область переполнения разделяется
+    на части, каждая из которых закрепляется
+    за определенной группой вычисленных
+    адресов. Тогда при выполнении операции
+    обмена в буферную зону основной памяти
+    заносится не все содержимое области
+    переполнения, а часть, которая относится
+    к данному
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    хеш-адресу.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    С использованием отдельной области
+    переполнения легче устраняются проблемы
+    загруженности таблиц хеширования. На
+    практике считается, что коэффициент
+    заполнения таблиц хеширования не должен
+    быть больше 0,8–0,9. Поэтому необходимо
+    иметь автоматическую процедуру, которая
+    помогала бы вовремя приостанавливать
+    рост коэффициента заполнения.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    Можно было бы решить эту задачу добавлением
+    новых ячеек в таблицу хеширования путем
+    расширения области значений исходной
+    хеш-функции, но так как ранее записанные
+    элементы должны оставаться на своих
+    местах, распределение занятых ячеек в
+    целом по таблице становится весьма
+    неравномерным.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 150%">
+    Для устранения этого недостатка вместо
+    старой таблицы хеширования (<I>ТХ</I>)
+    предлагается вводить новую хеш-таблицу
+    большего размера и осуществлять в ней
+    <I>рехеширование </I>(повторное размещение)
+    всех элементов, содержащихся в старой
+    <I>ТХ</I>, после того как загруженность
+    старой таблицы хеширования достигнет
+    некоторого порогового уровня, например
+    80 %. В новую таблицу перезапись информации
+    производится последовательно, элемент
+    за элементом. Для реализации этого
+    метода в ячейках таблицы хеширования
+    должны храниться не укороченные
+    идентификаторы, а полные ключевые слова,
+    так как они необходимы для вычисления
+    значений новой хеш-функции.
+</P>
+<H3 CLASS="western">11.2.3. Методы ускорения процедур
+    поиска</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    <FONT SIZE=4>Заметим, что искомый элемент
+        может отсутствовать в таблице хеширования,
+        поэтому значительная часть попыток
+        выборки окажется безуспешной. Применяется
+        несколько методов сокращения числа
+        операций поиска.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <I>Флажок коллизии</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Чтобы быстро определить, имеется ли в
+    таблице требуемый исковый элемент,
+    можно зарезервировать в каждой ячейке
+    таблицы специальный разряд, называемый
+    <I>флажком коллизии. </I>Поисковый аргумент
+    или заменяющий его идентификатор может
+    не совпадать с записанным по вычисленному
+    адресу ключевым словом (или соответствующим
+    идентификатором) по двум причинам:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 130%">
+    1) либо элемент с данным ключевым словом
+    содержится в таблице,
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    но вследствие коллизии он записан в
+    резервную ячейку;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.49in; margin-bottom: 0in; line-height: 130%">
+    2) либо его просто нет в таблице.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Пусть во флажковом разряде первоначально
+    записан “0”. После первой коллизии в
+    данной ячейке флажок переводится в “1”.
+    Тогда, если по вычисленному адресу
+    ключевое слово не совпадает с аргументом
+    поиска, а <I>флажок </I>установлен в “0”,
+    то это означает, что ни в одной из
+    резервных ячеек искомого ключа нет, и
+    поиск надо прекратить.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    В комбинации с флажком <I>“занято”</I>
+    реализуется возможность определения
+    продолжения поиска, если флажок коллизии
+    в каждой ячейке таблицы, за которой
+    следует резервная ячейка, устанавливается
+    в “1”. После удаления элемента флажок
+    <I>“занято”</I>устанавливается в “0”, и
+    это означает, что ячейка свободна.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Если <I>флажок коллизии</I> в данной ячейке
+    установлен в “1”, то это означает, что
+    цепочка резервных ячеек не закончилась
+    и поиск надо продолжать.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <I>Упорядоченные таблицы хеширования</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Если элементы, образующие цепочку,
+    упорядочить по какому-либо принципу
+    (например, по алфавиту или в порядке
+    нарастания численных значений ключа),
+    то отсутствие требуемой записи при этом
+    легко установить путем последовательной
+    сверки поискового аргумента с элементами
+    списка. Получение на очередном шаге
+    проверки результата, противоположного
+    результату предыдущего шага проверки,
+    означает, что в оставшейся части цепочки
+    искомый элемент заведомо отсутствует.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <I>Виртуальные хеш-адреса</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    При использовании принципа внутренней
+    адресации в ходе пробинга среди
+    проверяемых могут оказаться ячейки,
+    содержащие элементы, относящиеся к
+    посторонним вычисленным адресам.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Если в процессе проверки выяснится, что
+    очередной элемент не принадлежит к
+    цепочке, соответствующей требуемому
+    хеш-адресу, то дальнейший поиск не нужен.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Для их определения предлагается
+    использовать функцию хеширования,
+    которая формирует <I>виртуальный
+    хеш-адрес</I>, имеющий на несколько битов
+    больше, чем нужно для обращения к ячейкам
+    таблицы. Дополнительные старшие
+    битыслужат <I>идентификатором
+    вычисленногоадреса</I> и хранятся в
+    ячейке совместно с ключевым словом.
+    Младшие разряды виртуального хеш-адреса
+    образуют <I>истинный адрес </I>ячейки
+    внутри таблицы.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Вначале сравнивается содержимое
+    дополнительных разрядов (вместо ключевых
+    слов). При большой длине ключевых слов
+    указанная операция занимает значительно
+    меньше времени, чем сравнение самих
+    ключей. В итоге увеличивается среднее
+    быстродействие, но ценой затрат на
+    хранение дополнительных битов.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <BR>
+</P>
+<H3 CLASS="western" STYLE="line-height: 130%">11.3. Структура
+    и форматы таблиц хеширования
+</H3>
+<H3 CLASS="western">11.3.1. Непосредственная и
+    косвенная адресация</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <I>Индексные ТХ</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    Таблицы хеширования, как правило,
+    строятся исходя из максимальной длины
+    ЭД, размеры которых могут изменяться,
+    в результате чего часть памяти</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 145%">
+    будет использоваться непроизводительно.
+    Кроме того, с увеличением длины записей
+    возрастает трудоемкость (время) поиска.
+    Если разместить ЭД в специально отведенной
+    области памяти, а в основной <I>ТХ</I>
+    хранить только <B>указатели</B>, содержащие
+    адреса элементов в этой области и
+    соответствующие идентификаторы, то при
+    такой структуре в процессе поиска
+    проверке подвергаются только ключевые
+    слова (или их идентификаторы) и обращение
+    к отдельной области памяти производится
+    только после того, как будет найден
+    требуемый элемент. Таким образом,
+    допуская некоторые увеличения количества
+    обращений к памяти (что неизбежно при
+    использовании многоуровневой памяти),
+    можно повысить эффективность поиска.
+    Преимущество предлагаемой схемы состоит
+    также в том, что при необходимости
+    основную <I>ТХ</I> (которую в дальнейшем
+    будем называть <I>индексной ТХ</I>) можно
+    без особых затруднений поместить в
+    другую область.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 145%">
+    Индексные <I>ТХ</I> достаточно распространены,
+    особенно в СУБД. Однако если они
+    используются в качестве таблиц символов
+    с короткими именами , то косвенная
+    адресация описанного типа приводит
+    лишь к увеличению количества вспомогательных
+    операций.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 145%">
+    <I>Комбинированная адресация в ТХ</I><I>
+    (ступенчатое хеширование)</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 145%">
+    <FONT SIZE=4>Рассмотренный выше принцип
+        построения </FONT><FONT SIZE=4><I>ТХ</I></FONT><FONT SIZE=4>
+    можно рассматривать как простейшую
+    форму косвенной адресации. Ее можно
+    сделать более эффективной, если в одной
+    и той же таблице наряду с косвенной
+    адресацией использовать и прямую
+    (непосредственную) адресацию. Для задания
+    режима адресации в каждой ячейке таблицы
+    отводится специальный разряд, именуемый
+</FONT><FONT SIZE=4><I>флажком связи.</I></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 145%">
+    <BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 145%">
+    Напомним, как аналогичный принцип
+    реализуется в современных ЭВМ.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 145%">
+    На рис. 11.4 показана структура типовой
+    машинной команды.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 145%">
+    Можно было бы прямо в поле кода операции
+    (<I>КОП</I>) указать, является ли содержимое
+    адресного поля константой или адресом.
+    Это может быть задано специальным
+    признаком <SPAN LANG="en-US"><I>D</I></SPAN><I>/</I><SPAN LANG="en-US"><I>I</I></SPAN>(непосредственная
+    или косвенная адресация).
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    <IMG SRC="Тема 7.1.files/i_6b8f6a3afa821e1a_html_add33df.png"></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    Если <SPAN LANG="en-US"><I>D</I></SPAN><I>/</I><SPAN LANG="en-US"><I>I</I></SPAN><I>
+    = </I>0, то в указанном поле записан
+    <I>непосредственный, </I>или <I>абсолютный</I>,
+    адрес ячейки, в которой находится искомый
+    операнд.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 130%">
+    Если <SPAN LANG="en-US"><I>D</I></SPAN><I>/</I><SPAN LANG="en-US"><I>I</I></SPAN><I>
+    = </I>1<I>, </I><FONT SIZE=4>то</FONT> истинный адрес
+    извлекается из специальной таблицы
+    либо из набора регистров, номер регистра
+    или записи в таблице указывается в поле
+    адреса (это <I>методкосвенной адресации</I>).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    При построении <I>ТХ </I>может быть
+    использован многоуровневый вариант
+    косвенной адресации. Функцию флажка
+    <SPAN LANG="en-US"><I>D</I></SPAN><I>/</I><SPAN LANG="en-US"><I>I</I></SPAN>
+    в этом случае выполняет <I>флажок связи.</I>
+    Значение <FONT SIZE=4>0</FONT> этого флажка
+    означает, что искомые данные хранятся
+    в той же ячейке <I>ТХ</I>, если же <I>флажок
+    связи </I>равен1, то соответствующее
+    информационное поле нужно рассматривать
+    как <I>хеш-связь</I>, т.е. адрес второй
+    таблицы, содержащей, как правило,
+    значительно меньшее количество слов,
+    но большей разрядности. Для хранения
+    записей еще большего размера можно
+    организовать еще одну (третью) таблицу,
+    доступ к которой производится посредством
+    второй хеш-связи и т. д .</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Для обращения к данным, расположенным
+    во внешних запоминающих устройствах,
+    адреса должны содержать обычно не менее
+    20<I> разрядов</I>. Нерационально размещать
+    в ТХ указатели такой длины. Введение
+    ступенчатого хеширования в этом случае
+    решает проблему.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Метод ступенчатого хеширования успешно
+    применяется при решении ряда банковских
+    задач, в языках высокого уровня, для
+    обработки списков.</P>
+<H3 CLASS="western">11.3.2. Форматы таблиц хеширования</H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    При выборе размера ячейки <I>ТХ</I> следует
+    учитывать не только объем информации,
+    которую предполагается в ней хранить,
+    но и возможность использования
+    укороченного идентификатора вместо
+    ключевого слова (при хешировании методом
+    деления) и сокращение требуемой памяти
+    в случае применения комбинированной
+    адресации, а также принятую в ЭВМ систему
+    адресации, в соответствии с которой
+    указанные ячейки должны занимать целое
+    число байтов или машинных слов.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    Содержимое ячейки ТХ включает<I>
+    обязательно</I>:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 125%">
+    – ключевое слово (или его идентификатор);</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 125%">
+    – соответствующие данные (или указатель
+    этих данных).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    При внутренней адресация дополнительно
+    резервируется место для флажка «<I>конец
+    последовательности пробинга» </I>или
+    дополнительная ячейка в конце
+    последовательности со специальным
+    кодом. В состав ячейки <I>ТХ</I> могут также
+    входить одноразрядные маркеры (флажок
+    “<I>занято</I>”, флажок <I>коллизии,</I>
+    флажок <I>вычеркивания,</I> флажок <I>связи</I>)
+    или их комбинации (рис. 11.5).</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 125%">
+    <IMG SRC="Тема 7.1.files/image11.5.png"></P>
+<p style="text-align: center">Рисунок 11.5. Типовые форматы ячеек таблиц хеширования</p>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <U>Обозначения на рис. 11.5</U>:</P>
+<H3 CLASS="western"><SPAN LANG="en-US"><SPAN STYLE="font-weight: normal">ID</SPAN></SPAN><SPAN STYLE="font-weight: normal">
+– идентификатор ключевого слова;</SPAN></H3>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>P</I></SPAN><SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>
+    – указатель области данных (индекс);</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>P</I></SPAN><SUB><I>0</I></SUB> – указатель
+    области переполнения (или следующей
+    записи в цепочке);</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>T</I></SPAN> –терминальный
+    символ;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>U</I></SPAN><I> – </I>флажок“занято”;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>D</I></SPAN><I> – </I>флажок
+    вычеркивания;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>C</I></SPAN><I> – </I>флажок коллизии;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>L</I></SPAN><I> – </I>флажок связи.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>C</I></SPAN><I>пособы индексации
+    слов вТХ</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Пусть запись таблицы хеширования состоит
+    из <SPAN LANG="en-US"><I>k</I></SPAN> слов, следовательно,</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    их вычисленные адреса в оперативной
+    памяти с произвольным доступом, в которой
+    записи обычно занимают по <SPAN LANG="en-US"><I>k</I></SPAN>
+    последовательно расположенных слов,
+    должны быть кратны <SPAN LANG="en-US"><I>k</I></SPAN>
+    (т.е. полученный с помощью некоторого
+    алгоритма исходный хеш-адрес впоследствии
+    умножается на <SPAN LANG="en-US"><I>k</I></SPAN>).
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Например:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    (1, 1)		(2, 1)		(3, 1)		…</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    (1, 2)		(2, 2)		(3, 2)		…</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    (1, 3)		(2, 3)		(3, 3)		…</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    (1, 4)		(2, 4)		(3, 4)		…</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <SPAN LANG="en-US"><I>k</I></SPAN><I> = </I>4 – это количество
+    слов в записи.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Представим таблицу в виде <SPAN LANG="en-US"><I>k</I></SPAN>
+    секций:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    (1, 1)		(1, 2)		(1, 3)		(1, 4)</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    (2, 1)		(2, 2)		(2, 3)		(2, 4)</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    (3, 1)		(3, 2)		(3, 3)		(3, 4)</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    (4, 1)		(4, 2)		(4, 3)		(4, 4)</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    . . . .</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    . . . .</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    . . . .</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Хеш-адрес может рассматриваться в этом
+    случае как индекс любого элемента
+    записи, распределенной по <SPAN LANG="en-US"><I>k</I></SPAN>
+    секциям, благодаря чему требуется меньше
+    вычислений, что особенно важно при
+    использовании хеш-таблицы в качестве
+    таблицы символов.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <B>11.3.3. Буферизация таблиц хеширования.
+        Клеточная организация</B></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Если <I>ТХ</I> имеет большой размер, то ее
+    фрагмент, в котором находится ЭД
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    с вычисленным адресом, помещается в
+    <I>буферную </I>область быстродействующей
+    основной памяти (БП), а остальная часть
+    обычно хранится во внешнем запоминающем
+    устройстве (ВЗУ). При обработке коллизий
+    с использованием процедуры линейного
+    пробинга значительная часть резервных
+    ячеек (а иногда и все) также попадает в
+    БП. Обмен данными между основной памятью
+    (ОП) и ВЗУ производится <I>страницами
+</I>типового для каждого вида ВЗУ размера.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Если адресные смещения в процедуре
+    пробинга вычислять циклически, по
+    модулю, равному размеру страницы,
+    вероятность попадания всех резервных
+    ячеек на одну и ту же страницу можно
+    повысить.
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    Использование <I>буферизации</I> повышает
+    среднюю скорость выборки информации,
+    однако не позволяет получать равномерное
+    распределение занятых адресов.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 125%">
+    Метод построения хеш-таблиц, названный
+    <I>клеточной организацией, </I>основан на
+    объединении в группу, называемую <I>клеткой</I>,
+    нескольких последовательно</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    расположенных ячеек памяти, которым
+    присваивается общий для всех ячеек
+    хеш-адрес. Клетка делится на фиксированное
+    количество частей, в каждой из которых
+    размещается по одному конфликтующему
+    элементу. Резервные ячейки отыскиваются
+    в клетке до тех пор, пока все части такой
+    клетки не будут заняты. При заполнении
+    клетки целиком берется вторая клетка,
+    и цепочка резервных ячеек продолжает
+    формироваться уже в ней (рис. 11.6).
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <IMG SRC="Тема 7.1.files/image11.6.png"></P>
+<p style="text-align: center">Рисунок 11.6. Клеточная организация <i>TX</i></p>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <BR>
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 130%">
+    <I>Размещение в клетках записей переменной
+        длины</I></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 140%">
+    Клеточная организация применяется в
+    основном при использовании для хранения
+    данных внешних запоминающих устройств,
+    но в клетках могут помещаться и записи
+    достаточно большого размера и переменной
+    длины,
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+    непосредственно друг за другом, без
+    разбиения на части, лишь как-то отделяясь
+    друг от друга – например при помощи
+    специальных кодов.</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 140%">
+    В [9] дан анализ различных вопросов,
+    связанных со сравнительной оценкой
+    некоторых рассмотренных ранее методов
+    и алгоритмов хеширования,</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 140%">
+    в частности:</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 140%">
+    – среднего числа обращений к памяти
+    для различных процедур пробинга
+    (линейного, случайного, квадратичного
+    и др.), используемых в рамках метода
+    внутренней адресации;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 140%">
+    – среднего  числа обращений при применении
+    отдельной области переполнения;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 140%">
+    – влияния упорядочивания записей в
+    резервных ячейках;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 140%">
+    – влияния размера клетки на количество
+    обращений;</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 140%">– влияния  функции  хеширования
+            на продолжительность операции поиска
+            и др.</FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 130%">
+    <BR>
+</P>
+<DIV TYPE=FOOTER>
+    <P STYLE="margin-top: 0.26in; margin-bottom: 0in; border: none; padding: 0in">
+
+    <P STYLE="margin-right: 0.25in; text-indent: 0.25in; margin-bottom: 0in">
+        <BR>
+    </P>
+</DIV>
+<p><a href="Тема 6.1.htm">Предыдущая </a>
+    <a href="Тема 7.2.htm"> Следующая</a></p>
+</BODY>
+</HTML>

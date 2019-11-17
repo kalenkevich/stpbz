@@ -1,0 +1,705 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+    <TITLE>Лабораторная работа 6</TITLE>
+    <META NAME="GENERATOR" CONTENT="LibreOffice 4.0.5.2 (Linux)">
+    <META NAME="AUTHOR" CONTENT="RanS">
+    <META NAME="CREATED" CONTENT="20110301;10460000">
+    <META NAME="CHANGEDBY" CONTENT="Vlad">
+    <META NAME="CHANGED" CONTENT="20141004;16590000">
+    <STYLE TYPE="text/css">
+        <!--
+        @page { margin-right: 0.81in; margin-top: 0.79in; margin-bottom: 0.58in }
+        P { margin-bottom: 0in; direction: ltr; color: #000000; line-height: 130%; text-align: center; widows: 2; orphans: 2 }
+        P.western { font-family: "Times New Roman", serif; font-size: 14pt; so-language: ru-RU }
+        P.cjk { font-family: "Times New Roman", serif; font-size: 14pt }
+        P.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA }
+        H2 { text-indent: 0.39in; margin-top: 0in; margin-bottom: 0in; direction: ltr; color: #000000; line-height: 150%; text-align: justify; widows: 2; orphans: 2 }
+        H2.western { font-size: 12pt; so-language: ru-RU; font-style: italic; font-weight: normal }
+        H2.cjk { font-family: "Times New Roman", serif; font-size: 12pt; font-style: italic; font-weight: normal }
+        H2.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA; font-style: italic; font-weight: normal }
+        H3 { margin-top: 0in; margin-bottom: 0in; direction: ltr; color: #000000; line-height: 130%; text-align: center; widows: 2; orphans: 2 }
+        H3.western { so-language: ru-RU; font-weight: normal }
+        H3.cjk { font-family: "Times New Roman", serif; font-weight: normal }
+        H3.ctl { font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA; font-weight: normal }
+        -->
+    </STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" DIR="LTR">
+
+    <FONT SIZE=3><FONT SIZE=4><B>Лабораторная работа
+        №6</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western"  STYLE="margin-left: 0.04in; text-indent: 0.39in; line-height: 130%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.39in; page-break-after: avoid">
+    <B>Тема: Моделирование хеш-таблиц</B></P>
+<P LANG="ru-RU" CLASS="western"  STYLE="text-indent: 0.48in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><B>Цель работы: </B></FONT><FONT SIZE=4>освоение
+        навыков построения и проверки таблиц
+        хеширования.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.39in; line-height: 130%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.39in; line-height: 130%">
+    <FONT SIZE=4><B>Краткие теоретические сведения</B></FONT></P>
+<P LANG="ru-RU" CLASS="western"  STYLE="margin-left: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Теоретические сведения
+        , необходимые для выполнения лабораторной
+        работы №6 , включающие сведения об
+        основных особенностях программного
+        способа адресации по содержанию(хешированию),
+        методам и функциям хеширования , способам
+        перевода ключевых слов в числовые
+        значения (</FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>),
+        способам преобразования числовых
+        значений </FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>
+        в хеш-адрес(</FONT><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT><FONT SIZE=4>),
+        о понятии “Коллизия” , основным
+        методам(способам) обработки коллизии,
+        о понятии “пробинг” и видах пробинга,
+        структуре хеш-таблиц, приведены в
+        теоретической части ЭУМКД “АОИС”(тема
+        11, подразделы 7.1-7.3)</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><I>Назначение и применение
+        таблиц хеширования</I></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Таблицы хеширования
+        применяются для обеспечения программного
+        поиска информации по содержанию
+        специального ключевого слова или
+        фрагмента (части) самих данных. </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><I>Основные понятия</I></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Для формирования таблиц
+        хеширования используются следующие
+        компоненты и понятия:</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.55in; line-height: 130%">
+    <FONT SIZE=4>ID – ключевое слово (любое имя,
+        слово, сочетание любых символов и т.д.)
+        или  идентификатор;          </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>
+        – числовое значение ключевого слова;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT><FONT SIZE=4>
+        (</FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>)
+        – хеш-адрес, вычисленный по числовому
+        значению </FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>
+        ключевого слова;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>В – начальный адрес
+        таблицы (величина кратная размеру строки
+        таблицы);</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Н – общее количество
+        строк (ячеек) в таблице.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Способы перевода ключевых
+        слов в числовые значения и преобразование
+        их в хеш-адреса рассмотрены в [3].</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.48in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Напомним, что при совпадении
+        хеш-адресов, вычисленных по разным
+        ключевым словам, возникает коллизия
+        (конфликт). В этом случае для размещения
+        второй и последующих записей необходимо
+        использовать резервные ячейки памяти,
+        которые размещаются либо в самой таблице
+        хеширования (внутренняя адресация),
+        либо в специальной области памяти
+        (области переполнения).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Для поиска свободных
+        резервных ячеек при внутренней адресации
+        применяется процедура пробинга
+        (линейного, квадратичного или случайного).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><I>Структура ячейки
+        (строки) хеш-таблицы</I></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.51in; text-indent: -0.55in; line-height: 130%">
+    <FONT SIZE=4>В состав ячейки (строки)
+        хеш-таблицы должны входить:</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    – <FONT SIZE=4>ключевое слово (ID) или его
+    идентификатор;</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    – <FONT SIZE=4>соответствующие этому ключу
+    данные или указатели;</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    – <FONT SIZE=4>различные флажки (признаки).</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Формат ячейки (строки)
+        хеш-таблицы приведен на рисунке 1.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <BR>
+</P>
+<TABLE WIDTH=634 CELLPADDING=7 CELLSPACING=0>
+    <COL WIDTH=38>
+    <COL WIDTH=41>
+    <COL WIDTH=41>
+    <COL WIDTH=41>
+    <COL WIDTH=41>
+    <COL WIDTH=41>
+    <COL WIDTH=41>
+    <COL WIDTH=235>
+    <TR VALIGN=TOP>
+        <TD WIDTH=38 HEIGHT=11 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.07in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER><FONT SIZE=4>ID</FONT></P>
+        </TD>
+        <TD WIDTH=41 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.07in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER><FONT SIZE=4>C</FONT></P>
+        </TD>
+        <TD WIDTH=41 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.07in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER><FONT SIZE=4>U</FONT></P>
+        </TD>
+        <TD WIDTH=41 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.07in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER><FONT SIZE=4>T</FONT></P>
+        </TD>
+        <TD WIDTH=41 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.07in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER><FONT SIZE=4>L</FONT></P>
+        </TD>
+        <TD WIDTH=41 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.07in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER><FONT SIZE=4>D</FONT></P>
+        </TD>
+        <TD WIDTH=41 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.07in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER><FONT SIZE=4>Po</FONT></P>
+        </TD>
+        <TD WIDTH=235 STYLE="border: 1px solid #000000; padding: 0in 0.07in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>Данные
+                или указатели (Pi)</FONT></P>
+        </TD>
+    </TR>
+</TABLE>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Рисунок 1.
+        Формат ячейки (строки) хеш-таблицы</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Обозначения   на рисунке
+        1</FONT><FONT SIZE=4><SPAN LANG="en-US">[</SPAN></FONT><FONT SIZE=4>9</FONT><FONT SIZE=4><SPAN LANG="en-US">]</SPAN></FONT><FONT SIZE=4>:</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US">ID</SPAN></FONT><FONT SIZE=4>
+        – идентификатор ключевого слова или
+        само ключевое слово (К),</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US">C</SPAN></FONT><FONT SIZE=4>
+        – флажок коллизий,</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US">U</SPAN></FONT><FONT SIZE=4>
+        – флажок «занято», </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Т  – терминальный флажок,</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US">L</SPAN></FONT><FONT SIZE=4>
+        – флажок связи, указывающий, что находится
+        в поле </FONT><FONT SIZE=4><SPAN LANG="en-US">Pi</SPAN></FONT><FONT SIZE=4>
+        – данные или указатель(адрес), где
+        находятся данные;</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US">D</SPAN></FONT><FONT SIZE=4>
+        – флажок вычеркивания,</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=4>Ро – указатель области переполнения
+        (или следующей записи в цепочке),</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Pi  – данные или указатель
+        области данных</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.39in; line-height: 130%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=4><B>Контрольные вопросы:</B></FONT></P>
+<OL>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Для чего используются таблицы
+            хеширования?</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Что используется для
+            программного поиска информации по
+            содержанию?</FONT></FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Назовите основные функции
+            хеширования.</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Приведите структуру хеш-таблицы.</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Приведите способы перевода
+            ключевых слов в числовые значения.</FONT></FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Приведите способы преобразования
+            числового значения ключевого слова в
+            хеш-адрес.</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Что такое коллизия? В каких
+            случаях она возникает?</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Назовите способы обработки
+            коллизий.</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>В каких случаях производится
+            процедура пробинга?</FONT></P>
+</OL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><B>Задания</B></FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3>Вариант <I>1</I></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Построить хеш-таблицу
+        в соответствии с приведенными ниже
+        исходными данными.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=4>Справочные данные о группе или
+        подгруппе (не менее 10 человек):</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 150%">
+    <FONT SIZE=4>1) фамилия, инициалы (или
+        только имя);</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.3in; line-height: 150%">
+    <FONT SIZE=4>2) любые данные (например просто
+        буквы: ааа....или  ввв…).</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.3in; line-height: 150%">
+    <FONT SIZE=4>Ключевое слово   –   фамилия
+        студента, имя или инициалы.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.3in; line-height: 150%">
+    <FONT SIZE=3><FONT SIZE=4><U>Примечание</U></FONT><FONT SIZE=4><B>:
+    </B></FONT><FONT SIZE=4>могут быть использованы
+        другие ключевые слова, например, набор
+        слов, предметов, перечень специальностей
+        и т.д.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.48in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Способ  формирования
+        вычисленного значения ключевого слова
+        (</FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>)
+        – по первым двум буквам фамилии, имени
+        или по инициалам.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 135%">
+    <FONT SIZE=3><FONT SIZE=4>Может быть применен
+        следующий способ формирования вычисленного
+        значения адреса </FONT><FONT SIZE=4><SPAN LANG="en-US"><B>V</B></SPAN></FONT><FONT SIZE=4>
+        ключевого слова:</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.04in; line-height: 135%">
+    – <FONT SIZE=4>используется русский
+    алфавит; </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.04in; line-height: 135%">
+    – <FONT SIZE=4>буквам присваиваются
+    соответствующие номера:</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.04in; line-height: 135%">
+    <FONT SIZE=4>А = 0, Б = 1, ..... Я=32, т.е. всего 33
+        номера. Будем эту величину считать
+        основанием позиционной системы
+        счисления, тогда сочетание двух первых
+        букв фамилии, имени или инициалы можно
+        записать, например, следующим образом:
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.08in; line-height: 135%">
+    <FONT SIZE=3><FONT SIZE=4>а)  Вяткин
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>
+        [ Вя ] =  2 </FONT><FONT FACE="Symbol, serif"><FONT SIZE=4></FONT></FONT><FONT SIZE=4>
+        33</FONT><SUP><FONT SIZE=4>1</FONT></SUP><FONT SIZE=4> + 32 </FONT><FONT FACE="Symbol, serif"><FONT SIZE=4></FONT></FONT><FONT SIZE=4>
+        33</FONT><SUP><FONT SIZE=4>0</FONT></SUP><FONT SIZE=4> = 98</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.08in; line-height: 135%">
+    <FONT SIZE=3><FONT SIZE=4>б) Третьяк
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>
+        [ Тр ] = 19 </FONT><FONT FACE="Symbol, serif"><FONT SIZE=4></FONT></FONT><FONT SIZE=4>
+        33</FONT><SUP><FONT SIZE=4>1</FONT></SUP><FONT SIZE=4> + 17 </FONT><FONT FACE="Symbol, serif"><FONT SIZE=4></FONT></FONT><FONT SIZE=4>
+        33</FONT><SUP><FONT SIZE=4>0</FONT></SUP><FONT SIZE=4> = 644.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.08in; line-height: 135%">
+    <FONT SIZE=4>Аналогично может быть использован
+        латинский алфавит.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.12in; line-height: 135%">
+    <FONT SIZE=3><FONT SIZE=4>Структура ячейки
+        (строки) хеш-таблицы и ее размер
+        определяется в  соответствии с исходными
+        данными и форматом ячейки  (см. рисунок
+        1).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.44in; line-height: 135%">
+    <FONT SIZE=3><FONT SIZE=4>Способ формирования
+        хеш-адреса определяется размером ячейки
+        (строки) и вычисленным значением </FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>
+        (например, </FONT><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT><FONT SIZE=4>(</FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>)
+        = </FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>
+    </FONT><FONT FACE="Symbol, serif"><FONT SIZE=4></FONT></FONT><FONT SIZE=4>
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">mod</SPAN></FONT><FONT SIZE=4>
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">H</SPAN></FONT><FONT SIZE=4> +
+    </FONT><FONT SIZE=4><SPAN LANG="en-US">B</SPAN></FONT><FONT SIZE=4>,
+        где </FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT FACE="Symbol, serif"><FONT SIZE=4></FONT></FONT><FONT SIZE=4><SPAN LANG="en-US">modH</SPAN></FONT><FONT SIZE=4>
+        – остаток от деления </FONT><FONT SIZE=4><SPAN LANG="en-US">V</SPAN></FONT><FONT SIZE=4>
+        на </FONT><FONT SIZE=4><SPAN LANG="en-US">H</SPAN></FONT><FONT SIZE=4>).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.16in; line-height: 135%">
+    <FONT SIZE=4>Способы обработки коллизий:</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.16in; line-height: 135%">
+    – <FONT SIZE=4>размещение резервных ячеек
+    в хеш-таблице (внутренняя адресация);</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.16in; line-height: 135%">
+    – <FONT SIZE=4>использование области
+    переполнения.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.16in; line-height: 135%">
+    <FONT SIZE=3><FONT SIZE=4>Способ (вид) пробинга
+        при выборе резервных ячеек при
+        использовании внутренней адресации –
+        линейный.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.16in; line-height: 135%">
+    <FONT SIZE=4><U>Требования к программе:</U></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="line-height: 135%">
+    Разработанная программа должна уметь
+    выполнять следующие функции:</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: -0.04in; line-height: 135%">
+    – <FONT SIZE=4>определение числовых
+    значений ключевых слов (V);</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 135%">
+    – <FONT SIZE=4>формирование хеш-адресов
+    [ h (v)];</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 135%">
+    – <FONT SIZE=3><FONT SIZE=4>формирование
+    самой хеш-таблицы, в соответствии со
+    структурой, приведенной на рисунке 1.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 135%">
+    – <FONT SIZE=4>обработку   коллизии (то
+    есть обеспечение нахождения резервных
+    ячеек и запись в них);</FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="line-height: 135%">          –
+    выборку  из  хеш-таблицы  необходимой
+    информации по соответствующему ключевому
+    слову;</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.01in; text-indent: 0.52in; line-height: 135%">
+    – <FONT SIZE=4>занесение  в хеш- таблицу новых
+    записей по новым ключевым словам,</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.4in; text-indent: 0.13in; line-height: 135%">
+    –  <FONT SIZE=3><FONT SIZE=4>удаление из хеш-таблицы
+    отдельных записей</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.4in; text-indent: 0.13in; line-height: 135%">
+    <FONT SIZE=3><FONT SIZE=4>- контроль за попыткой
+        записи в хеш-таблицу информации по
+        ключевому слову, уже имеющемуся в
+        таблице.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 0.4in; text-indent: 0.13in; line-height: 135%">
+    <FONT SIZE=4>- расчет коэффициентов заполнения
+        хеш-таблицы.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.51in; line-height: 135%">
+    <FONT SIZE=3><FONT SIZE=4>Варианты  хеш-таблицы
+        приведены в таблице 1.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.39in; margin-bottom: 0.08in; line-height: 130%">
+    <FONT SIZE=4>Варианты хеш-таблицы</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0.39in; margin-bottom: 0.08in; line-height: 130%">
+    <FONT SIZE=4>Таблица 1</FONT></P>
+<TABLE WIDTH=647 CELLPADDING=2 CELLSPACING=0>
+    <COL WIDTH=82>
+    <COL WIDTH=83>
+    <COL WIDTH=35>
+    <COL WIDTH=141>
+    <COL WIDTH=92>
+    <COL WIDTH=189>
+    <TBODY>
+    <TR VALIGN=TOP>
+        <TD WIDTH=82 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER> №</P>
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER> <FONT SIZE=4>варианта</FONT></P>
+        </TD>
+        <TD WIDTH=83 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>Н,</FONT></P>
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>Строк</FONT></P>
+        </TD>
+        <TD WIDTH=35 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER> <FONT SIZE=4>L</FONT></P>
+        </TD>
+        <TD WIDTH=141 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>Способ
+                обработки коллизий</FONT></FONT></P>
+        </TD>
+        <TD WIDTH=92 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>Вид
+                пробинга</FONT></FONT></P>
+        </TD>
+        <TD WIDTH=189 STYLE="border: 1px solid #000000; padding: 0in 0.02in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><BR>
+            </P>
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>Примечания</FONT></P>
+        </TD>
+    </TR>
+    </TBODY>
+    <TBODY>
+    <TR VALIGN=TOP>
+        <TD WIDTH=82 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>1</FONT></P>
+        </TD>
+        <TD WIDTH=83 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>20-50</FONT></P>
+        </TD>
+        <TD WIDTH=35 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>0</FONT></P>
+        </TD>
+        <TD WIDTH=141 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>Внутренняя</FONT></P>
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>адресация</FONT></P>
+        </TD>
+        <TD WIDTH=92 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>Линейный</FONT></P>
+        </TD>
+        <TD WIDTH=189 STYLE="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0in 0.02in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=LEFT><FONT SIZE=4>Количество
+                записей в таблице (т.е. занятых ячеек)
+                – не менее 10</FONT></P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=82 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>2</FONT></P>
+        </TD>
+        <TD WIDTH=83 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>20-50</FONT></P>
+        </TD>
+        <TD WIDTH=35 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>1</FONT></P>
+        </TD>
+        <TD WIDTH=141 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>Внутренняя
+                адресация</FONT></FONT></P>
+        </TD>
+        <TD WIDTH=92 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>Линейный</FONT></P>
+        </TD>
+        <TD WIDTH=189 STYLE="border-top: none; border-bottom: none; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0in 0.02in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>Количество
+                коллизий – не менее 3-х</FONT></P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=82 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>3</FONT></P>
+        </TD>
+        <TD WIDTH=83 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>20-50</FONT></P>
+        </TD>
+        <TD WIDTH=35 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>0</FONT></P>
+        </TD>
+        <TD WIDTH=141 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>Использование
+                области переполнения</FONT></FONT></P>
+        </TD>
+        <TD WIDTH=92 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER>–</P>
+        </TD>
+        <TD ROWSPAN=2 WIDTH=189 STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0in 0.02in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=LEFT><BR>
+            </P>
+            <P LANG="ru-RU" CLASS="western" ALIGN=LEFT><BR>
+            </P>
+            <P LANG="ru-RU" CLASS="western" ALIGN=LEFT><FONT SIZE=3><FONT SIZE=4>Длина
+                цепочек резервных ячеек (при
+                коллизии)–2–4</FONT></FONT></P>
+        </TD>
+    </TR>
+    </TBODY>
+    <TBODY>
+    <TR VALIGN=TOP>
+        <TD WIDTH=82 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>4</FONT></P>
+        </TD>
+        <TD WIDTH=83 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>20-50</FONT></P>
+        </TD>
+        <TD WIDTH=35 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=4>1</FONT></P>
+        </TD>
+        <TD WIDTH=141 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER><FONT SIZE=3><FONT SIZE=4>Использование
+                области переполнения</FONT></FONT></P>
+        </TD>
+        <TD WIDTH=92 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.02in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER>–</P>
+        </TD>
+    </TR>
+    </TBODY>
+</TABLE>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Программа должна
+        обеспечивать индикацию (вывод на экран)
+        содерж</FONT><FONT SIZE=4>имого всех полей и
+        указателей всех строк хеш-таблицы,
+        вычисленных значений V(К) и h(V) для каждой
+        записи, коэффициента заполнения
+        хеш-таблицы.</FONT></FONT></P>
+<H2 LANG="ru-RU" CLASS="western" STYLE="line-height: 130%"> <FONT SIZE=4>Вариант
+</FONT><FONT SIZE=4><SPAN STYLE="font-style: normal">2</SPAN></FONT></H2>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Построить индексную
+        хеш-таблицу разреженной двоичной матрицы
+        в соответствии с приведенными ниже
+        исходными данными.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Сформировать разреженную
+        двоичную матрицу при помощи программы
+        генерации случайных чисел. Размер
+        матрицы (p x g), количество нулей в матрице
+        должно быть больше количества  единиц.
+    </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <FONT SIZE=4>В качестве ключевого слова (ID)
+        использовать пару индексов (i, j), где</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=4>i= (1, 2, ... p) – номер столбца,</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=4>j= (1, 2, ... g) – номер строки.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.52in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Для формирования
+        вычисленного значения ключевого слова
+        v использовать формулу</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4><SPAN LANG="en-US">v</SPAN></FONT><FONT SIZE=4>
+        = </FONT><FONT SIZE=4><SPAN LANG="en-US">j</SPAN></FONT><FONT SIZE=4>
+        + </FONT><FONT SIZE=4><SPAN LANG="en-US">p</SPAN></FONT><FONT SIZE=4>
+        ( </FONT><FONT SIZE=4><SPAN LANG="en-US">i</SPAN></FONT><FONT SIZE=4>
+        – 1) – 1.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=4>или</FONT></P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=4>v = i + q (j - 1) - 1</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.52in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Структура ячейки хеш-таблицы
+        и ее размер определяются в соотвествии
+        с исходными данными и форматом ячейки.</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.52in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Способ формирования
+        хеш-адреса определяется размером ячейки
+        памяти и вычисленным значением v при
+        помощи операции деления</FONT></FONT></P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=4>H (v) = v mod H + B,</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>где v </FONT><FONT FACE="Symbol, serif"><FONT SIZE=4></FONT></FONT><FONT SIZE=4>
+        mod H – остаток от деления v на H.</FONT></FONT></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.52in; line-height: 130%">
+    Способ обработки коллизий – размещение
+    резервных ячеек в ХЕШ-таблице (внутренняя
+    адресация) или в области переполнения.</P>
+<P LANG="ru-RU" ALIGN=CENTER STYLE="text-indent: 0.52in; line-height: 130%">
+    <U>Требование к программе:</U></P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.52in; line-height: 130%">
+    Разработанная программа должна
+    уметь выполнять следующие функции:</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    – <FONT SIZE=4>формирование разреженной
+    матрицы размером p x g;</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    – <FONT SIZE=4>определение v для элементов
+    матрицы ( по паре индексов ( i, j));</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    – <FONT SIZE=4>определение хеш-адресов [ h
+    (v)];</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    – <FONT SIZE=4>формирование хеш-таблицы для
+    ненулевых элементов матрицы;</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    – <FONT SIZE=4>обработку коллизий (т. е.
+    нахождение резервных ячеек и запись в
+    них);</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.52in; line-height: 130%">
+    – <FONT SIZE=3><FONT SIZE=4>выборку  из  хеш-таблицы
+    необходимых  ячеек  по  заданному
+    ключевому слову  ID = (i, j).</FONT></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.52in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>Для проверки правильности
+        выполнения всех вычислений необходимо
+        обеспечить обратное преобразование
+        индексной хеш-таблицы в исходную
+        разреженную матрицу и сравнить их
+        объемы.     </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%">
+    <FONT SIZE=4><U>Дополнительное задание к
+        варианту 2</U></FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.52in; line-height: 130%">
+    <FONT SIZE=4>1. Определить, при каком
+        соотношении p и g (p = g, p &gt; g  или p &lt; g)
+        возможны коллизии.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.52in; line-height: 130%">
+    <FONT SIZE=3><FONT SIZE=4>2. Определить, при каких
+        условиях хеш-таблица ненулевых элементов
+        разреженной матрицы занимает меньший
+        объем памяти, чем запись этой таблицы
+        в нормальном (обычном) виде. </FONT></FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.52in; line-height: 130%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.52in; line-height: 130%">
+    <FONT SIZE=4><B>Методика выполнения:</B></FONT></P>
+<OL>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Определяется структура и размер
+            таблицы.</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Выбираются вид ключевого
+            слова, способы формирования числового
+            значения ключевых слов и хеш-адресов.</FONT></FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Стоится программа, выполняющая:</FONT></P>
+</OL>
+<UL>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Формирование хеш-таблицы;</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Формирование хеш-адресов;</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Занесение(запись) в таблицу
+            записей(строк);</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Обработку коллизий;</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Поиск записей в хеш-таблице по
+            заданному ключевому слову;</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Удаление записей(строк) из
+            хеш-таблицы;</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=4>Контроль за корректностью
+            использования ключевых слов(каждое
+            ключевое слово может быть использовано
+            только для одной записи)</FONT></P>
+    <LI><P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%">
+        <FONT SIZE=3><FONT SIZE=4>Индикацию вычисленных
+            для каждого ключевого слова числового
+            значения и хеш-адреса.</FONT></FONT></P>
+</UL>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 130%"><FONT SIZE=4>Стандартная
+    процедура проверки разработанной
+    программы заключается в анализе
+    результатов выполнения предъявленных
+    к ней требований.</FONT></P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-left: -0.4in; text-indent: 0.51in; line-height: 130%; page-break-before: always">
+
+</P>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <BR>
+</P>
+<H3 LANG="en-US" CLASS="western" STYLE="margin-left: 0.69in"><SPAN ID="Frame1" DIR="LTR" STYLE="float: left; width: 0.55in; height: 0.79in; border: none; padding: 0in; background: #ffffff">
+	<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 100%">
+        <BR>
+    </P>
+</SPAN>
+</H3>
+<P LANG="ru-RU" ALIGN=JUSTIFY STYLE="text-indent: 0.39in; line-height: 130%">
+    <BR>
+</P>
+<DIV TYPE=FOOTER>
+    <P LANG="ru-RU" ALIGN=LEFT STYLE="margin-right: 0.25in; text-indent: 0.25in; margin-top: 0.17in; line-height: 100%">
+        <BR>
+    </P>
+</DIV>
+</BODY>
+</HTML>

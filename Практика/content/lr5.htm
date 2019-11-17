@@ -1,0 +1,1858 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+    <TITLE>Лабораторная работа 5</TITLE>
+    <META NAME="GENERATOR" CONTENT="LibreOffice 4.0.5.2 (Linux)">
+    <META NAME="AUTHOR" CONTENT="student">
+    <META NAME="CREATED" CONTENT="20140921;18260000">
+    <META NAME="CHANGEDBY" CONTENT="Константин Кожевников">
+    <META NAME="CHANGED" CONTENT="20140921;18290000">
+    <META NAME="AppVersion" CONTENT="15.0000">
+    <META NAME="Company" CONTENT="IIT">
+    <META NAME="DocSecurity" CONTENT="0">
+    <META NAME="HyperlinksChanged" CONTENT="false">
+    <META NAME="LinksUpToDate" CONTENT="false">
+    <META NAME="ScaleCrop" CONTENT="false">
+    <META NAME="ShareDoc" CONTENT="false">
+    <STYLE TYPE="text/css">
+        <!--
+        @page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+        P { margin-bottom: 0.08in; direction: ltr; line-height: 100%; widows: 2; orphans: 2 }
+        P.western { font-family: "Times New Roman", serif; font-size: 12pt }
+        P.cjk { font-size: 12pt; so-language: ru-RU }
+        P.ctl { font-size: 12pt }
+        -->
+    </STYLE>
+</HEAD>
+<BODY LANG="ru-RU" DIR="LTR">
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT SIZE=5><B>Практическое
+    занятие № 5</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <B>Тема:</B> Синтез цифровых автоматов</P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <B>Цель работы:</B> Повторение и закрепление
+    материала по синтезу схем с памятью –
+    цифровых автоматов, освоение навыков
+    по синтезу схем с памятью.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT SIZE=4><B>Краткие теоретические сведения</B></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    Теоретические сведения, необходимые
+    для выполнения лабораторной работы №
+    5, включающие сведения об особенностях
+    элементов памяти, способам описания
+    поведения элементов памяти и цифровых
+    автоматов, каноническому методу синтеза
+    цифровых автоматов, этапам синтеза
+    автоматов, особенностям составления
+    таблиц возбуждения элементов памяти
+    автомата, составлению логических функций
+    сигналов возбуждения, минимизации их
+    и переходу к графическому изображению
+    автомата (схеме), приведены в теоретической
+    части ЭУМКД дисциплины АОИС (тема 4
+    подраздел 2.5.3).</P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    Рассмотрим методику синтеза цифровых
+    автоматов (ЦА) на примере синтеза
+    накапливающего (суммирующего) счетчика
+    на 6 внутренних состояний в базисе
+    НЕ-И-ИЛИ и Т-триггер.</P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><B>Решение</B><SPAN LANG="en-US"><B>:</B></SPAN></P>
+<OL>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%">Отметим,
+        что в задании определен структурный
+        алфавит – двоичный и для реализации
+        элемента памяти – Т-триггер.
+    </P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%">Составим
+        таблицу переходов для синтезируемого
+        ЦА, для этого определим количество
+        элементов памяти n по формуле, приведенной
+        в [10]:
+    </P>
+</OL>
+<P CLASS="western" STYLE="margin-left: 0.25in; margin-bottom: 0in; line-height: 150%">
+    <SPAN LANG="en-US">n</SPAN> ≥
+    <IMG SRC="lr5/i_aacef2f9ccde51d8_html_47d2188c.gif" ALIGN=ABSMIDDLE HSPACE=8>=<IMG SRC="lr5/i_aacef2f9ccde51d8_html_2317ed9e.gif" ALIGN=ABSMIDDLE HSPACE=8>=4,
+</P>
+<P CLASS="western" STYLE="margin-left: 0.25in; margin-bottom: 0in; line-height: 150%">
+    где: 	                                  <SPAN LANG="en-US"><I>l</I></SPAN>
+    -  количество  внутренних состояний ЦА,
+</P>
+<P CLASS="western" STYLE="margin-left: 0.49in; text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <I>b – </I>основание
+    системы счисления (равной 2).</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%">Таблицу
+    переходов в данном случае удобнее
+    строить в виде таблицы истинности.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%">Определим
+    количество входных аргументов для ЦА,
+    содержащего 4 элемента памяти <SPAN LANG="en-US">q</SPAN><SUB>1</SUB>,
+    <SPAN LANG="en-US">q</SPAN><SUB>2</SUB>,  <SPAN LANG="en-US">q</SPAN><SUB>3</SUB>
+    и <SPAN LANG="en-US">q</SPAN><SUB>4</SUB>:
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%">1-й
+    аргумент – выходной сигнал 4-го триггера
+    <SPAN LANG="en-US">q</SPAN><SUB>4</SUB><SUP>*</SUP> (состояние
+    самого старшего разряда <SPAN LANG="en-US">q</SPAN><SUB>4</SUB><SUP>*</SUP>)
+    в предыдущем такте t-1;
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%">2-й
+    аргумент  - выходной сигнал 3-го триггера
+    <SPAN LANG="en-US">q</SPAN><SUB>3</SUB><SUP>*</SUP>;</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%">3-й
+    аргумент – выходной сигнал 2-го триггера
+    <SPAN LANG="en-US">q</SPAN><SUB>2</SUB><SUP>*</SUP>;</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%">4-й
+    аргумент  - выходной сигнал 1-го триггера
+    <SPAN LANG="en-US">q</SPAN><SUB>1</SUB><SUP>*</SUP>;</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%">5-й
+    аргумент – входной сигнал автомата –
+    <SPAN LANG="en-US">V</SPAN>.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    Выходными сигналами синтезирующего ЦА
+    будут состояния триггеров памяти <SPAN LANG="en-US">q</SPAN><SUB>4</SUB><SUP>
+</SUP>÷ <SPAN LANG="en-US">q</SPAN><SUB>1 </SUB>в такте t.</P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    Таблица переходов двоичного 4-х разрядного
+    суммирующего счетчика, построенная в
+    виде таблицы истинности, приведена ниже
+    (таблица 1).</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<TABLE WIDTH=688 CELLPADDING=7 CELLSPACING=0>
+    <COL WIDTH=22>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=6>
+    <COL WIDTH=5>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">q</SPAN><SUB>1</SUB><SUP>*</SUP></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">q</SPAN><SUB>2</SUB><SUP>*</SUP></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">q</SPAN><SUB>3</SUB><SUP>*</SUP></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">q</SPAN><SUB>4</SUB><SUP>*</SUP></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">V</SPAN></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">q</SPAN><SUB>1</SUB></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">q</SPAN><SUB>2</SUB></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">q</SPAN><SUB>3</SUB>
+            </P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">q</SPAN><SUB>4</SUB></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">3</SPAN></SUB></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+    </TR>
+    <TR VALIGN=TOP>
+        <TD WIDTH=22 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western"><SPAN LANG="en-US">h</SPAN><SUB>4</SUB></P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+        <TD WIDTH=6 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">0</P>
+        </TD>
+        <TD WIDTH=5 STYLE="border: 1px solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+            <P CLASS="western">1</P>
+        </TD>
+    </TR>
+</TABLE>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%">
+</P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <B>Примечание:</B> к таблице переходов
+    (таблице истинности) добавлена еще
+    таблица возбуждения (<SPAN LANG="en-US">h</SPAN><SUB>1,</SUB>
+    <SPAN LANG="en-US">h</SPAN><SUB>2,</SUB> <SPAN LANG="en-US">h</SPAN><SUB>3,</SUB>
+    <SPAN LANG="en-US">h</SPAN><SUB>4</SUB>), о которой будет
+    сказано позже.</P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    Напомним, что двоичное число Q<SUP>* </SUP>=
+    <SPAN LANG="en-US">q</SPAN><SUB>4</SUB><SUP>*</SUP> <SPAN LANG="en-US">q</SPAN><SUB>3</SUB><SUP>*</SUP>
+    <SPAN LANG="en-US">q</SPAN><SUB>2</SUB><SUP>*</SUP> <SPAN LANG="en-US">q</SPAN><SUB>1</SUB><SUP>*</SUP>
+    есть  не что иное, как содержимое
+    (внутренне состояние) счетчика в такте
+    t-1.</P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    Функции <SPAN LANG="en-US">q</SPAN><SUB>4</SUB>, <SPAN LANG="en-US">q</SPAN><SUB>3,</SUB>
+    <SPAN LANG="en-US">q</SPAN><SUB>2 и </SUB> <SPAN LANG="en-US">q</SPAN><SUB>1</SUB>
+    – это состояние Т-триггеров в такте t.</P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    Следовательно, двоичное число <SPAN LANG="en-US">Q</SPAN><SUP>
+</SUP>= <SPAN LANG="en-US">q</SPAN><SUB>4</SUB> <SPAN LANG="en-US">q</SPAN><SUB>3</SUB>
+    <SPAN LANG="en-US">q</SPAN><SUB>2</SUB> <SPAN LANG="en-US">q</SPAN><SUB>1</SUB>
+    есть содержимое счетчика в следующем
+    такте, причем:</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><IMG SRC="lr5/i_aacef2f9ccde51d8_html_1b866f9.gif" ALIGN=ABSMIDDLE HSPACE=8>,
+    если <SPAN LANG="en-US">V</SPAN>=0</P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><IMG SRC="lr5/i_aacef2f9ccde51d8_html_m3e3fea0b.gif" ALIGN=ABSMIDDLE HSPACE=8>
+    если <SPAN LANG="en-US">V</SPAN>=1</P>
+<P CLASS="western" STYLE="text-indent: 0.25in; margin-bottom: 0in; line-height: 150%">
+    В случае, если в такте t-1 в счетчике было
+    записано максимальное число (1111), то при
+    очередном <SPAN LANG="en-US">V</SPAN>=1 счетчик
+    обнуляется.</P>
+<OL START=3>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%">Составим
+        упрощенную схему ЦА в виде двухкомпонентного
+        структурного автомата (Рисунок 1).<IMG SRC="lr5/i_aacef2f9ccde51d8_html_454dae9b.png" NAME="Рисунок 0" ALIGN=LEFT HSPACE=12 WIDTH=440 HEIGHT=183 BORDER=0><BR CLEAR=LEFT></P>
+</OL>
+<P CLASS="western" STYLE="margin-left: 0.98in; margin-bottom: 0in; line-height: 150%">
+    Рисунок 1. Структурная схема счетчика
+    (ЦА)</P>
+<OL START=4>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%">Учитывая,
+        что количество входов у выбранного
+        элемента памяти (Т-триггера) равно 1,
+        находим количество выходных связей
+        (p), идущих на память по формуле
+    </P>
+</OL>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">p</SPAN>=e<SUB>эп
+</SUB>n = 4,
+</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">где:	e<SUB>эп</SUB>
+    – количество входов у элементов памяти;</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <SPAN LANG="en-US">n</SPAN> - количество элементов
+    памяти.</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">Количество
+    входных сигналов, идущих от памяти равно
+    n (в данном случае 4).</P>
+<P CLASS="western" STYLE="margin-left: 0.49in; text-indent: 0.03in; margin-bottom: 0in; line-height: 150%">
+    Следовательно, комбинационная схема
+    имеет общее количество входов</P>
+<P CLASS="western" STYLE="margin-left: 0.49in; text-indent: 0.03in; margin-bottom: 0in; line-height: 150%">
+    W<SUB>общ</SUB>= <SPAN LANG="en-US">w</SPAN>+<SPAN LANG="en-US">p</SPAN>=5,
+    так как Т-триггер является автоматом
+    Мура (<SPAN LANG="en-US">w</SPAN>=0).</P>
+<OL START=5>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%">Составим
+        таблицу возбуждения памяти.  Для удобства
+        ее составления, таблица формирования
+        сигналов возбуждения h<SUB>4</SUB>, h<SUB>3</SUB>,
+        h<SUB>2</SUB>, h<SUB>1</SUB> присоединена к таблице
+        переходов счетчика (см. таблицу 1).
+        Значения сигналов h<SUB>4</SUB> ÷ h<SUB>1 </SUB>можно<SUB>
+        </SUB>определить путем сопоставления
+        состояний триггеров счетчика в тактах
+        <SPAN LANG="en-US">t</SPAN>-1 и <SPAN LANG="en-US">t</SPAN>, то
+        есть сопоставления значений <SPAN LANG="en-US">q</SPAN><SUB><SPAN LANG="en-US">i</SPAN></SUB><SUP>*</SUP>
+        и <SPAN LANG="en-US">q</SPAN><SUB><SPAN LANG="en-US">i</SPAN></SUB>.
+    </P>
+</OL>
+<P CLASS="western" STYLE="margin-left: 0.25in; margin-bottom: 0in; line-height: 150%">
+    Если состояние триггеров не изменялось,
+    то есть <SPAN LANG="en-US">q</SPAN><SUB><SPAN LANG="en-US">i</SPAN></SUB><SUP>*</SUP>
+    =<SPAN LANG="en-US">q</SPAN><SUB><SPAN LANG="en-US">i</SPAN></SUB>,
+    то значение     соответствующего сигнала
+    возбуждения h<SUB><SPAN LANG="en-US">i</SPAN></SUB> =0, а
+    если состояние триггера изменялось на
+    противоположное, то устанавливается в
+    таблице возбуждения значение
+    соответствующего сигнала h<SUB><SPAN LANG="en-US">i</SPAN></SUB>
+    =1.</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">	Воспользовавшись
+    тем, что при входном сигнале <SPAN LANG="en-US">v</SPAN>=0
+    слова Q<SUP>* </SUP>= <SPAN LANG="en-US">q</SPAN><SUB>4</SUB><SUP>*</SUP>
+    <SPAN LANG="en-US">q</SPAN><SUB>3</SUB><SUP>*</SUP> <SPAN LANG="en-US">q</SPAN><SUB>2</SUB><SUP>*</SUP>
+    <SPAN LANG="en-US">q</SPAN><SUB>1</SUB><SUP>* </SUP>и <SPAN LANG="en-US">Q</SPAN><SUP>
+    </SUP>= <SPAN LANG="en-US">q</SPAN><SUB>4</SUB> <SPAN LANG="en-US">q</SPAN><SUB>3</SUB>
+    <SPAN LANG="en-US">q</SPAN><SUB>2</SUB> <SPAN LANG="en-US">q</SPAN><SUB>1</SUB>
+    равны между собой, во всех столбцах
+    таблицы возбуждения памяти, имеющих
+    <FONT COLOR="#000000">четные</FONT> номера (в том
+    числе и в нулевом столбце), во всех
+    строках проставляются нули (Н = <SPAN LANG="en-US">h</SPAN><SUB>1,</SUB>
+    <SPAN LANG="en-US">h</SPAN><SUB>2,</SUB> <SPAN LANG="en-US">h</SPAN><SUB>3,</SUB>
+    <SPAN LANG="en-US">h</SPAN><SUB>4 </SUB>= 0000).</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">В
+    связи с тем, что синтезирующий счетчик
+    является автоматом Мура, его комбинационная
+    схема описывается только одной единой
+    таблицей возбуждения памяти, которая
+    является в данном случае таблицей
+    истинности синтезируемой комбинационной
+    схемы автомата.</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">Основываясь
+    на данных таблицы возбуждения, проведем
+    синтез комбинационной  схемы автомата.</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">Построим
+    для каждой из функций возбуждения
+    h<SUB><SPAN LANG="en-US">i</SPAN></SUB>(<SPAN LANG="en-US">q</SPAN><SUB>4</SUB><SUP>*</SUP>,
+    <SPAN LANG="en-US">q</SPAN><SUB>3</SUB><SUP>*</SUP>, <SPAN LANG="en-US">q</SPAN><SUB>2</SUB><SUP>*</SUP>,
+    <SPAN LANG="en-US">q</SPAN><SUB>1</SUB><SUP>*</SUP>, <SPAN LANG="en-US">v</SPAN>)
+    диаграмму Вейча-Карно (рисунок 2).
+</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><IMG SRC="lr5/i_aacef2f9ccde51d8_html_6b83795a.png" NAME="Рисунок 4" ALIGN=BOTTOM WIDTH=464 HEIGHT=155 BORDER=0></P>
+<P LANG="en-US" STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <BR>
+</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><IMG SRC="lr5/i_aacef2f9ccde51d8_html_12b589c.png" NAME="Рисунок 3" ALIGN=BOTTOM WIDTH=458 HEIGHT=179 BORDER=0></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><IMG SRC="lr5/i_aacef2f9ccde51d8_html_m711994bb.png" NAME="Рисунок 2" ALIGN=BOTTOM WIDTH=442 HEIGHT=157 BORDER=0><IMG SRC="lr5/i_aacef2f9ccde51d8_html_2b77adcf.png" NAME="graphics1" ALIGN=BOTTOM WIDTH=432 HEIGHT=158 BORDER=0></P>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000">Рисунок
+        2</FONT></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">Построенные
+    таблицы Вейча-Карно позволяют представить
+    искомые функции возбуждения в <FONT COLOR="#000000">тупиковой
+        ДНФ:</FONT></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<IMG SRC="lr5/i_aacef2f9ccde51d8_html_m17d8d364.gif" ALIGN=LEFT>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">4</SPAN></SUB><SPAN LANG="en-US">=</SPAN><SPAN LANG="en-US">
+q</SPAN><SUB><SPAN LANG="en-US">3</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+q</SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+q</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+v</SPAN></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">3</SPAN></SUB><SPAN LANG="en-US">=</SPAN><SPAN LANG="en-US">
+q</SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+q</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+v		(1)</SPAN></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB><SPAN LANG="en-US">=</SPAN><SPAN LANG="en-US">
+q</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+v</SPAN></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">=</SPAN><SPAN LANG="en-US">
+v</SPAN></P>
+<OL START=6>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Функциональная
+        схема двоичного суммирующего счетчика
+        на 16 внутренних состояний, комбинационная
+        схема которого  построена в соответствии
+        с системой выражений (1), а память состоит
+        из 4-х триггеров Т-типа, приведена на
+        рисунке 3.</FONT></P>
+</OL>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><IMG SRC="lr5/i_aacef2f9ccde51d8_html_m580e3e19.png" NAME="Рисунок 12" ALIGN=BOTTOM WIDTH=521 HEIGHT=244 BORDER=0></P>
+<P LANG="en-US" STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000">Рисунок 3 (Схема счетчика
+        на 16 состояний)</FONT></P>
+<P ALIGN=CENTER STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <BR>
+</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Отметим,
+    что аналогично может быть построен
+    вычитающий счетчик и суммирующий с
+    количеством внутренних состояний &gt;16,
+    но при этом  усложнится использование
+    таблиц Вейча-Карно для минимизации.</FONT></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%">
+    <BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000"><FONT SIZE=4><B>Контрольные вопросы</B></FONT></FONT></P>
+<OL>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Чем
+        отличается цифровой автомат от
+        комбинационных схем?</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Дайте
+        определение и назовите типы элементов
+        памяти.</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Назовите
+        способы описания поведения элементов
+        памяти  и цифровых автоматов.</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">В
+        чем заключается особенность канонического
+        метода синтеза цифровых автоматов?</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Назовите
+        этапы синтеза цифровых автоматов.</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Чем
+        отличается схема абстрактного автомата
+        от схемы структурного автомата?</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Как
+        определяется количество элементов
+        памяти цифрового автомата?</FONT></P>
+    <LI><P STYLE="margin-top: 0.17in; margin-bottom: 0.17in; line-height: 150%">
+        <FONT COLOR="#000000">Как строится таблица
+            возбуждения цифрового автомата?</FONT></P>
+</OL>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000"><FONT SIZE=4><B>Задание</B></FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000">Разработать и проверить
+        программу, выполняющую синтез схемы
+        цифрового автомата.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000">Варианты синтезируемого
+        автомата</FONT><FONT COLOR="#000000"><SPAN LANG="en-US">:</SPAN></FONT></P>
+<OL>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Двоичный
+        счетчик накапливающего типа на 8
+        внутренних состояний в базисе НЕ-И-ИЛИ
+        и Т-триггер.</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Двоичный
+        счетчик вычитающего типа на 8 внутренних
+        состояний в базисе НЕ-И-ИЛИ и Т-триггер.</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Двоичный
+        счетчик вычитающего типа на 16 внутренних
+        состояний в базисе НЕ-И-ИЛИ и Т-триггер.</FONT></P>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000"><FONT SIZE=4><B>Требования к
+        программе</B></FONT></FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000">Разработанная программа
+        должна выполнять следующие функции:</FONT></P>
+<OL>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Анализ
+        варианта задания.</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Выполнение
+        всех действий, определяемых типом
+        задания. Определение количества
+        элементов памяти, входных аргументов
+        и выходных сигналов. Составление таблицы
+        переходов автомата и таблицы возбуждения,
+        определение аналитических выражений
+        для сигналов возбуждения автомата,
+        минимализация их и переход к графическому
+        изображению автомата.</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Вывод
+        результатов выполнения лабораторной
+        работы с указанием:</FONT></P>
+        <UL>
+            <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">номера
+                (типа) варианта</FONT></P>
+            <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">количества
+                элементов памяти, входных аргументов
+                и выходных сигналов</FONT></P>
+            <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">аналитических
+                выражений для сигналов возбуждения
+                (тупиковых форм </FONT><FONT COLOR="#000000"><SPAN LANG="en-US">h</SPAN></FONT><FONT COLOR="#000000">;
+                после минимализации)</FONT></P>
+            <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">схемы
+                синтезированного автомата (счетчика)</FONT></P>
+        </UL>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000"><FONT SIZE=4><B>Методика выполнения
+        работы</B></FONT></FONT></P>
+<OL>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Производится
+        ввод и анализ заданного варианта синтеза</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Выполняется
+        последовательность действий, определяемых
+        особенностями синтезируемого устройства
+        – определение количества элементов
+        памяти, входных и выходных сигналов и
+        т.д.</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Производится
+        вывод результатов выполнения работы</FONT></P>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Оформляется
+        отчет по лабораторной работе</FONT></P>
+</OL>
+<P CLASS="western" STYLE="text-indent: 0.25in; margin-bottom: 0in; line-height: 150%">
+    <FONT COLOR="#000000">Стандартная процедура
+        проверки разработанной программы
+        заключается в анализе результатов
+        синтеза цифрового автомата заданного
+        типа.</FONT></P>
+<P CLASS="western" STYLE="text-indent: 0.25in; margin-bottom: 0in; line-height: 150%">
+    <BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.17in; line-height: 150%">
+    <FONT COLOR="#000000"><FONT SIZE=4><B>Упражнения для
+        самостоятельного решения</B></FONT></FONT></P>
+<OL>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"><FONT COLOR="#000000">Синтезировать
+        схему двоичного счетчика накапливающего
+        (суммирующего) типа, имеющего 8 внутренних
+        состояний, в базисе НЕ-И-ИЛИ и Т-триггер.</FONT></P>
+    <LI><P STYLE="margin-bottom: 0.17in; line-height: 150%"><FONT COLOR="#000000">Синтезировать
+        схему двоичного счетчика вычитающего
+        типа, имеющего 16 внутренних состояний,
+        в базисе НЕ-И-ИЛИ и Т-триггер.</FONT></P>
+</OL>
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in; line-height: 150%"><A NAME="_GoBack"></A>
+    <FONT COLOR="#000000"><FONT SIZE=4><B>Ответы к упражнениям
+        по теме</B></FONT></FONT></P>
+<OL>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"></P>
+</OL>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB>3</SUB>=
+    <SPAN LANG="en-US">q</SPAN><SUB>2</SUB><SUP>*</SUP> <SPAN LANG="en-US">q</SPAN><SUB>1</SUB><SUP>*</SUP>
+    <SPAN LANG="en-US">v</SPAN></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB><SPAN LANG="en-US">=</SPAN><SPAN LANG="en-US">
+q</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+v</SPAN></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">=</SPAN><SPAN LANG="en-US">
+v</SPAN></P>
+<OL START=2>
+    <LI><P STYLE="margin-bottom: 0in; line-height: 150%"></P>
+</OL>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">4</SPAN></SUB><SPAN LANG="en-US">=</SPAN><SPAN LANG="en-US">
+<IMG SRC="lr5/i_aacef2f9ccde51d8_html_m6b58e2ec.gif" ALIGN=ABSMIDDLE HSPACE=8></SPAN><SUB><SPAN LANG="en-US">3</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+<IMG SRC="lr5/i_aacef2f9ccde51d8_html_m6b58e2ec.gif" ALIGN=ABSMIDDLE HSPACE=8></SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+<IMG SRC="lr5/i_aacef2f9ccde51d8_html_m6b58e2ec.gif" ALIGN=ABSMIDDLE HSPACE=8></SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+v</SPAN></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">3</SPAN></SUB><SPAN LANG="en-US">=</SPAN><SPAN LANG="en-US">
+<IMG SRC="lr5/i_aacef2f9ccde51d8_html_m6b58e2ec.gif" ALIGN=ABSMIDDLE HSPACE=8></SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+<IMG SRC="lr5/i_aacef2f9ccde51d8_html_m6b58e2ec.gif" ALIGN=ABSMIDDLE HSPACE=8></SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+v</SPAN></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">2</SPAN></SUB><SPAN LANG="en-US">=</SPAN><SPAN LANG="en-US">
+<IMG SRC="lr5/i_aacef2f9ccde51d8_html_m6b58e2ec.gif" ALIGN=ABSMIDDLE HSPACE=8></SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SUP><SPAN LANG="en-US">*</SPAN></SUP><SPAN LANG="en-US">
+v</SPAN></P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><SPAN LANG="en-US">h</SPAN><SUB><SPAN LANG="en-US">1</SPAN></SUB><SPAN LANG="en-US">=</SPAN><SPAN LANG="en-US">
+v</SPAN></P>
+<P CLASS="western" STYLE="text-indent: 0.25in; margin-bottom: 0in; line-height: 150%">
+    <BR>
+</P>
+<P STYLE="margin-left: 0.5in; margin-bottom: 0in; line-height: 150%"><BR>
+</P>
+</BODY>
+</HTML>

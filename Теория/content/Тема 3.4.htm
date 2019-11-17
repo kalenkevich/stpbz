@@ -1,0 +1,2658 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<title>3.4. Синтез комбинационных устройств в различных базисах</title>
+<p><a href="Тема 3.3.htm">Предыдущая</a>
+   <a href="Тема 3.5.htm">Следующая</a></p>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List href="Тема%203.4.files/filelist.xml">
+<link rel=Edit-Time-Data href="Тема%203.4.files/editdata.mso">
+<link rel=OLE-Object-Data href="Тема%203.4.files/oledata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Iodo</o:Author>
+  <o:LastAuthor>Iodo</o:LastAuthor>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2012-12-23T17:48:00Z</o:Created>
+  <o:LastSaved>2012-12-23T17:48:00Z</o:LastSaved>
+  <o:Pages>5</o:Pages>
+  <o:Words>1018</o:Words>
+  <o:Characters>6215</o:Characters>
+  <o:Company>SPecialiST RePack</o:Company>
+  <o:Lines>51</o:Lines>
+  <o:Paragraphs>14</o:Paragraphs>
+  <o:CharactersWithSpaces>7219</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="Тема%203.4.files/themedata.thmx">
+<link rel=colorSchemeMapping href="Тема%203.4.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:HyphenationZone>7</w:HyphenationZone>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>BE</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1107305727 0 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520092929 1073786111 9 0 415 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Текст выноски";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.0pt 842.0pt;
+	margin:53.85pt 42.55pt 53.85pt 3.0cm;
+	mso-header-margin:17.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+@page WordSection2
+	{size:595.0pt 842.0pt;
+	margin:53.85pt 1.0cm 53.85pt 1.0cm;
+	mso-header-margin:17.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.WordSection2
+	{page:WordSection2;}
+@page WordSection3
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection3
+	{page:WordSection3;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1030110074;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-772921074 68747287 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l0:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%1\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=BE style='tab-interval:35.4pt'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:3.0pt;margin-left:0cm;text-align:center;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><b
+style='mso-bidi-font-weight:normal'><span lang=RU style='font-size:14.0pt;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Тема 3.4. Синтез комбинационных
+устройств в различных базисах<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Как видно из таблицы 3.9, имеется
+возможность выбора ФПН (иногда говорят – логических базисов – ЛБ). Для выбора
+ЛБ для реализации ЭВМ необходимо проанализировать технические свойства
+логических функций (ЛФ), т.е. реализуемость ЛФ существующими техническими
+средствами. С этой точки зрения все ЛФ разделим на 3 группы: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>1) непосредственно <span
+class=GramE>реализуемые</span> на современных переключательных устройствах; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>2) непосредственно <span
+class=GramE>реализуемые</span> только на некоторых переключательных
+устройствах; <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>3) косвенно реализуемые через ЛФ
+первой и второй группы (т.е. непосредственно нереализуемые) <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Такое разделение относительно,
+так как современный уровень развития элементной базы позволяет реализовать
+непосредственно то, что вчера было невозможно или неэффективно. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span class=GramE><span lang=RU style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:RU;mso-fareast-language:RU'>В начале</span></span><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'> 80-х гг. к ЛФ 1-й группы относились: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>- константа 0 (<i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>0</span></sub>); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>- конъюнкция (<i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>1</span></sub>); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>- повторение (<i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>3</span></sub>, <i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>5</span></sub>); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>- дизъюнкция (<i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>7</span></sub>); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>- операция Пирса (<i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>8</span></sub>); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>- отрицание (<i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>10</span></sub>, <i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>12</span></sub>); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>- операция Шеффера (<i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>14</span></sub>); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>- константа 1 (<i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>15</span></sub>). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Из этих функций <i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>0</span></sub><span
+style='mso-spacerun:yes'> </span>и <i>f</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>15</span></sub>, повторение (<i>f</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>3</span></sub><span
+style='mso-spacerun:yes'> </span>и <i>f</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>5</span></sub>) являются <i>тривиальными,</i>
+т.е. реализуются простейшими техническими средствами, <span class=SpellE>конъюнкторы</span>
+и <span class=SpellE>дизъюнкторы</span> – более сложные схемы (примеры их
+реализации на транзисторах рассмотрены в [9]). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Можно показать, что операции
+Пирса и Шеффера (ИЛИ-НЕ и <span class=GramE>И-НЕ</span>) также могут быть
+реализованы непосредственно (рисунок 3.7). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+<span lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-bidi-language:AR-SA;mso-no-proof:yes'><br clear=all style='page-break-before:
+always;mso-break-type:section-break'>
+</span>
+
+<div class=WordSection2>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'>а) Элемент Шеффера</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU;mso-no-proof:
+yes'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:BE;mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Рисунок_x0020_22" o:spid="_x0000_i1047" type="#_x0000_t75"
+ style='width:181.5pt;height:204.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=242 height=273
+src="Тема%203.4.files/image002.jpg" v:shapes="Рисунок_x0020_22"><![endif]><!--[if gte vml 1]><v:shape
+ id="Рисунок_x0020_21" o:spid="_x0000_i1046" type="#_x0000_t75" style='width:348pt;
+ height:352.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=464 height=470
+src="Тема%203.4.files/image004.jpg" v:shapes="Рисунок_x0020_21"><![endif]></span><span
+lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+36.0pt;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'>б) элемент Пирса<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-fareast-language:BE;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Рисунок_x0020_20" o:spid="_x0000_i1045" type="#_x0000_t75" style='width:182.25pt;
+ height:171.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image005.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=243 height=229
+src="Тема%203.4.files/image006.jpg" v:shapes="Рисунок_x0020_20"><![endif]><!--[if gte vml 1]><v:shape
+ id="Рисунок_x0020_19" o:spid="_x0000_i1044" type="#_x0000_t75" style='width:343.5pt;
+ height:304.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=458 height=406
+src="Тема%203.4.files/image008.jpg" v:shapes="Рисунок_x0020_19"><![endif]></span><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+none;text-autospace:none'><span lang=RU style='font-size:14.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+RU;mso-fareast-language:RU;mso-no-proof:yes'>Рисунок 3.7.<o:p></o:p></span></p>
+
+</div>
+
+<span lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-bidi-language:AR-SA;mso-no-proof:yes'><br clear=all style='page-break-before:
+always;mso-break-type:section-break'>
+</span>
+
+<div class=WordSection3>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>В ЭВМ 1- 2 поколения эти функции
+практически не применялись, хотя требовали транзисторов по количеству не более<span
+class=GramE>,</span> чем схемы И <span class=SpellE>и</span> ИЛИ, скорее,
+просто &quot;не дошли&quot; до их применения. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Примеры реализации логических
+элементов косвенного исполнения приведены на рисунке 3.8. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:12.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:BE;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_18" o:spid="_x0000_i1043"
+ type="#_x0000_t75" style='width:471.75pt;height:335.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image009.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=629 height=447
+src="Тема%203.4.files/image010.jpg" v:shapes="Рисунок_x0020_18"><![endif]></span><span
+lang=RU style='font-size:12.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;mso-pagination:none;mso-layout-grid-align:none;text-autospace:
+none'><span lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-no-proof:yes'>Рисунок</span><span lang=RU style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:RU;mso-fareast-language:RU'> 3.8.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>В ЭВМ первого и второго поколений
+использовался логический базис –<span style='mso-spacerun:yes'>  </span><span
+class=GramE>НЕ-И-ИЛИ</span>, несколько избыточный (как видно из таблицы 3.9,
+достаточно было НЕ-И или НЕ–ИЛИ). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>С появлением интегральных схем
+(ЭВМ третьего поколения) начали применяться и другие базисы, в частности,
+базисы Шеффера и Пирса. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><i><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Синтез комбинационных устройств в
+базисах Шеффера и Пирса имеет некоторые особенности</span></i><span lang=RU
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>. Рассмотрим кратко возможную методику синтеза в этих базисах. Для этого
+необходимо ввести некоторые новые понятия и определения. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>В частности, будем трактовать
+операцию Шеффера как логическое умножение специального <span class=GramE>вида</span>
+и называть его <span class=SpellE>шефферовым</span> умножением. Для удобства
+записи заменим символ «штрих Шеффера<span class=GramE>» («/»). </span>значком
+«точка» («•»). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Тогда отрицание любого аргумента
+(или функции) можно трактовать как <span class=SpellE>шефферов</span> квадрат
+этого аргумента (или функции): <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+36.0pt;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>Y</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>1</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+ "Cambria Math","serif"'><m:r>=</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><m:acc><m:accPr><m:chr
+      m:val="&#773;"/><span style='font-size:14.0pt;mso-ansi-font-size:14.0pt;
+     mso-bidi-font-size:14.0pt;font-family:"Cambria Math","serif";mso-ascii-font-family:
+     "Cambria Math";mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+     font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:accPr><m:e><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;
+     font-family:"Cambria Math","serif"'><m:r>x</m:r></span></i></m:e></m:acc></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>i</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+ "Cambria Math","serif"'><m:r>=</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><m:acc><m:accPr><m:chr
+      m:val="&#773;"/><span style='font-size:14.0pt;mso-ansi-font-size:14.0pt;
+     mso-bidi-font-size:14.0pt;font-family:"Cambria Math","serif";mso-ascii-font-family:
+     "Cambria Math";mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+     font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:accPr><m:e><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;
+     font-family:"Cambria Math","serif"'><m:r>x</m:r></span></i></m:e></m:acc></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>i</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+ "Cambria Math","serif"'><m:r>+</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><m:acc><m:accPr><m:chr
+      m:val="&#773;"/><span style='font-size:14.0pt;mso-ansi-font-size:14.0pt;
+     mso-bidi-font-size:14.0pt;font-family:"Cambria Math","serif";mso-ascii-font-family:
+     "Cambria Math";mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+     font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:accPr><m:e><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;
+     font-family:"Cambria Math","serif"'><m:r>x</m:r></span></i></m:e></m:acc></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>i</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+ "Cambria Math","serif"'><m:r>=</m:r></span></i><m:acc><m:accPr><m:chr m:val="&#773;"/><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:accPr><m:e><m:sSub><m:sSubPr><span
+     style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+     font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+     mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+     font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;
+     font-family:"Cambria Math","serif"'><m:r>x</m:r></span></i></m:e><m:sub><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;
+     font-family:"Cambria Math","serif"'><m:r>i</m:r></span></i></m:sub></m:sSub><m:sSub><m:sSubPr><span
+     style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+     font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+     mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+     font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;
+     font-family:"Cambria Math","serif"'><m:r>&#8729;</m:r><m:r>x</m:r></span></i></m:e><m:sub><i
+     style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;
+     font-family:"Cambria Math","serif"'><m:r>i</m:r></span></i></m:sub></m:sSub></m:e></m:acc><i
+ style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+ "Cambria Math","serif"'><m:r>=</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>i</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+ "Cambria Math","serif"'><m:r>/</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>i</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+ "Cambria Math","serif"'><m:r>=</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>i</m:r></span></i></m:sub></m:sSub><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>&#8729;</m:r><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>i</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+ "Cambria Math","serif"'><m:r>=</m:r></span></i><m:sSubSup><m:sSubSupPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubSupPr><m:e><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>i</m:r></span></i></m:sub><m:sup><i
+   style='mso-bidi-font-style:normal'><span style='font-size:14.0pt;font-family:
+   "Cambria Math","serif"'><m:r>2</m:r></span></i></m:sup></m:sSubSup></m:oMath><![endif]--><![if !msEquation]><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif";
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;position:relative;top:6.0pt;mso-text-raise:-6.0pt;
+mso-ansi-language:BE;mso-fareast-language:EN-US;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1025" type="#_x0000_t75" style='width:284.25pt;height:20.25pt'>
+ <v:imagedata src="Тема%203.4.files/image011.png" o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=379 height=27
+src="Тема%203.4.files/image012.png" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><span style='mso-spacerun:yes'> </span>,<span style='mso-spacerun:yes'>  
+</span><span style='mso-spacerun:yes'>                      </span><span
+style='mso-spacerun:yes'> </span>(3.10) <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;text-align:justify;text-indent:
+36.0pt;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>где<span style='mso-spacerun:yes'>  </span></span><span class=SpellE><i><span
+lang=EN-US style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:
+RU'>i</span></i></span><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'> = 1, 2, ..., </span><i><span
+lang=EN-US style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:
+RU'>n</span></i><i><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>.</span></i><span lang=RU
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Любую элементарную конъюнкцию
+(например, с отрицаниями аргументов с четными индексами) в новых обозначениях
+можно представить следующим образом: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:BE;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_17" o:spid="_x0000_i1042"
+ type="#_x0000_t75" style='width:301.5pt;height:33pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image013.jpg" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=402 height=44
+src="Тема%203.4.files/image014.jpg" v:shapes="Рисунок_x0020_17"><![endif]></span><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><span style='mso-spacerun:yes'> </span>.<span
+style='mso-spacerun:yes'>                      </span>(3.11) <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Аналогично можно представить
+любую элементарную дизъюнкцию: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:14.0pt;line-height:115%;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";mso-fareast-language:
+BE;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_16" o:spid="_x0000_i1041"
+ type="#_x0000_t75" style='width:285.75pt;height:24.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image015.jpg" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=381 height=33
+src="Тема%203.4.files/image016.jpg" v:shapes="Рисунок_x0020_16"><![endif]></span><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><span style='mso-spacerun:yes'> </span>.<span
+style='mso-spacerun:yes'>       </span><span
+style='mso-spacerun:yes'>                    </span>(3.12) <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Можно ввести понятия:
+элементарного <span class=SpellE>шефферова</span> произведения, <span
+class=SpellE>шефферовой</span> <span class=SpellE>конституенты</span> единицы и
+соседних <span class=SpellE>шефферовых</span> произведений. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span class=SpellE><i><span lang=RU style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:RU;mso-fareast-language:RU'>Шефферово</span></i></span><i><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'> произведение</span></i><span lang=RU style='font-size:14.0pt;line-height:
+115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'> имеет следующие свойства: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><i><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>x</span></i><sub><span lang=RU
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";position:relative;top:5.0pt;
+mso-text-raise:-5.0pt;mso-ansi-language:RU;mso-fareast-language:RU'>i </span></sub><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>• 0 = 1;<span style='mso-spacerun:yes'>       </span><i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i </span></sub>• 1 = <i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub><sup><span
+style='position:relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup>;<span
+style='mso-spacerun:yes'>       </span><i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>i </span></sub>• <i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub><sup><span
+style='position:relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup><span
+style='mso-spacerun:yes'> </span>= 1;<span style='mso-spacerun:yes'>       
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><i><span lang=EN-US style='font-size:14.0pt;line-height:
+115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:EN-US;mso-fareast-language:RU'>x</span></i><span
+class=SpellE><sub><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+position:relative;top:5.0pt;mso-text-raise:-5.0pt;mso-ansi-language:EN-US;
+mso-fareast-language:RU'>i</span></sub></span><sup><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";position:relative;top:-5.0pt;
+mso-text-raise:5.0pt;mso-ansi-language:EN-US;mso-fareast-language:RU'>2</span></sup><span
+lang=EN-US style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:
+RU'>• 0 = 1;<span style='mso-spacerun:yes'>       </span><i>x</i><span
+class=SpellE><sub><span style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub></span><sup><span
+style='position:relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup>• 1 = <i>x</i><span
+class=SpellE><sub><span style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub></span>;<span
+style='mso-spacerun:yes'>       </span><i>x</i><span class=SpellE><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub></span><sup><span
+style='position:relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup>• <i>x</i><span
+class=SpellE><sub><span style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub></span><sup><span
+style='position:relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup><span
+style='mso-spacerun:yes'> </span>= <i>x</i><span class=SpellE><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub></span>.<span
+style='mso-spacerun:yes'>        </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Правильность этих свойств
+показана ниже.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid black .5pt;
+ mso-yfti-tbllook:160;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:
+ .5pt solid black;mso-border-insidev:.5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=177 valign=top style='width:133.0pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:14.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'>Запись свойства в нотации
+  Шеффера<o:p></o:p></span></p>
+  </td>
+  <td width=312 style='width:233.9pt;border:solid black 1.0pt;border-left:none;
+  mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:14.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'>Запись свойства в нотации ОФПН<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=177 valign=top style='width:133.0pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;mso-pagination:none;mso-layout-grid-align:none;text-autospace:
+  none'><span lang=RU style='font-size:14.0pt;line-height:115%;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  position:relative;top:6.0pt;mso-text-raise:-6.0pt;mso-ansi-language:RU;
+  mso-fareast-language:RU'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+   type="#_x0000_t75" style='width:42.75pt;height:18pt' o:ole="">
+   <v:imagedata src="Тема%203.4.files/image017.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=57 height=24
+  src="Тема%203.4.files/image018.png" v:shapes="_x0000_i1025"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1025"
+    DrawAspect="Content" ObjectID="_1417797361">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=312 valign=top style='width:233.9pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+  lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";position:relative;top:6.0pt;
+  mso-text-raise:-6.0pt;mso-ansi-language:RU;mso-fareast-language:RU'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1026" type="#_x0000_t75" style='width:122.25pt;height:20.25pt'
+   o:ole="">
+   <v:imagedata src="Тема%203.4.files/image019.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=163 height=27
+  src="Тема%203.4.files/image020.png" v:shapes="_x0000_i1026"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1026"
+    DrawAspect="Content" ObjectID="_1417797362">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'>&nbsp;</p></td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=177 valign=top style='width:133.0pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;mso-pagination:none;mso-layout-grid-align:none;text-autospace:
+  none'><span lang=RU style='font-size:14.0pt;line-height:115%;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  position:relative;top:6.0pt;mso-text-raise:-6.0pt;mso-ansi-language:RU;
+  mso-fareast-language:RU'><!--[if gte vml 1]><v:shape id="_x0000_i1027"
+   type="#_x0000_t75" style='width:47.25pt;height:18pt' o:ole="">
+   <v:imagedata src="Тема%203.4.files/image021.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=63 height=24
+  src="Тема%203.4.files/image022.png" v:shapes="_x0000_i1027"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1027"
+    DrawAspect="Content" ObjectID="_1417797363">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=312 valign=top style='width:233.9pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+  lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";position:relative;top:6.0pt;
+  mso-text-raise:-6.0pt;mso-ansi-language:RU;mso-fareast-language:RU'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1028" type="#_x0000_t75" style='width:126pt;height:20.25pt'
+   o:ole="">
+   <v:imagedata src="Тема%203.4.files/image023.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=168 height=27
+  src="Тема%203.4.files/image024.png" v:shapes="_x0000_i1028"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1028"
+    DrawAspect="Content" ObjectID="_1417797364">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'>&nbsp;</p></td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=177 valign=top style='width:133.0pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;mso-pagination:none;mso-layout-grid-align:none;text-autospace:
+  none'><span lang=RU style='font-size:14.0pt;line-height:115%;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  position:relative;top:6.0pt;mso-text-raise:-6.0pt;mso-ansi-language:RU;
+  mso-fareast-language:RU'><!--[if gte vml 1]><v:shape id="_x0000_i1029"
+   type="#_x0000_t75" style='width:48pt;height:18pt' o:ole="">
+   <v:imagedata src="Тема%203.4.files/image025.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=64 height=24
+  src="Тема%203.4.files/image026.png" v:shapes="_x0000_i1029"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1029"
+    DrawAspect="Content" ObjectID="_1417797365">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=312 valign=top style='width:233.9pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+  lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";position:relative;top:6.0pt;
+  mso-text-raise:-6.0pt;mso-ansi-language:RU;mso-fareast-language:RU'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1030" type="#_x0000_t75" style='width:89.25pt;height:20.25pt'
+   o:ole="">
+   <v:imagedata src="Тема%203.4.files/image027.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=119 height=27
+  src="Тема%203.4.files/image028.png" v:shapes="_x0000_i1030"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1030"
+    DrawAspect="Content" ObjectID="_1417797366">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'>&nbsp;</p></td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=177 valign=top style='width:133.0pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;mso-pagination:none;mso-layout-grid-align:none;text-autospace:
+  none'><span lang=RU style='font-size:14.0pt;line-height:115%;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  position:relative;top:6.0pt;mso-text-raise:-6.0pt;mso-ansi-language:RU;
+  mso-fareast-language:RU'><!--[if gte vml 1]><v:shape id="_x0000_i1031"
+   type="#_x0000_t75" style='width:45.75pt;height:18pt' o:ole="">
+   <v:imagedata src="Тема%203.4.files/image029.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=61 height=24
+  src="Тема%203.4.files/image030.png" v:shapes="_x0000_i1031"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1031"
+    DrawAspect="Content" ObjectID="_1417797367">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=312 valign=top style='width:233.9pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+  lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";position:relative;top:6.0pt;
+  mso-text-raise:-6.0pt;mso-ansi-language:RU;mso-fareast-language:RU'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1032" type="#_x0000_t75" style='width:122.25pt;height:20.25pt'
+   o:ole="">
+   <v:imagedata src="Тема%203.4.files/image031.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=163 height=27
+  src="Тема%203.4.files/image032.png" v:shapes="_x0000_i1032"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1032"
+    DrawAspect="Content" ObjectID="_1417797368">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'>&nbsp;</p></td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=177 valign=top style='width:133.0pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;mso-pagination:none;mso-layout-grid-align:none;text-autospace:
+  none'><span lang=RU style='font-size:14.0pt;line-height:115%;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  position:relative;top:6.0pt;mso-text-raise:-6.0pt;mso-ansi-language:RU;
+  mso-fareast-language:RU'><!--[if gte vml 1]><v:shape id="_x0000_i1033"
+   type="#_x0000_t75" style='width:48pt;height:18pt' o:ole="">
+   <v:imagedata src="Тема%203.4.files/image033.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=64 height=24
+  src="Тема%203.4.files/image034.png" v:shapes="_x0000_i1033"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1033"
+    DrawAspect="Content" ObjectID="_1417797369">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=312 valign=top style='width:233.9pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+  lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";position:relative;top:6.0pt;
+  mso-text-raise:-6.0pt;mso-ansi-language:RU;mso-fareast-language:RU'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1034" type="#_x0000_t75" style='width:126pt;height:20.25pt'
+   o:ole="">
+   <v:imagedata src="Тема%203.4.files/image035.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=168 height=27
+  src="Тема%203.4.files/image036.png" v:shapes="_x0000_i1034"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1034"
+    DrawAspect="Content" ObjectID="_1417797370">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'>&nbsp;</p></td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td width=177 valign=top style='width:133.0pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;mso-pagination:none;mso-layout-grid-align:none;text-autospace:
+  none'><span lang=RU style='font-size:14.0pt;line-height:115%;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  position:relative;top:6.0pt;mso-text-raise:-6.0pt;mso-ansi-language:RU;
+  mso-fareast-language:RU'><!--[if gte vml 1]><v:shape id="_x0000_i1035"
+   type="#_x0000_t75" style='width:56.25pt;height:18pt' o:ole="">
+   <v:imagedata src="Тема%203.4.files/image037.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=75 height=24
+  src="Тема%203.4.files/image038.png" v:shapes="_x0000_i1035"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1035"
+    DrawAspect="Content" ObjectID="_1417797371">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=312 valign=top style='width:233.9pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+  lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";position:relative;top:6.0pt;
+  mso-text-raise:-6.0pt;mso-ansi-language:RU;mso-fareast-language:RU'><!--[if gte vml 1]><v:shape
+   id="_x0000_i1036" type="#_x0000_t75" style='width:96pt;height:20.25pt'
+   o:ole="">
+   <v:imagedata src="Тема%203.4.files/image039.wmz" o:title=""/>
+  </v:shape><![endif]--><![if !vml]><img width=128 height=27
+  src="Тема%203.4.files/image040.png" v:shapes="_x0000_i1036"><![endif]><!--[if gte mso 9]><xml>
+   <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1036"
+    DrawAspect="Content" ObjectID="_1417797372">
+   </o:OLEObject>
+  </xml><![endif]--></span><span lang=RU style='font-size:14.0pt;line-height:
+  115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'>&nbsp;</p></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>К <span class=SpellE>шефферовым</span> произведениям можно применять
+правила склеивания и поглощения. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><i><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Правило склеивания </span></i><u><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>(теорема 1)</span></u><span lang=RU style='font-size:14.0pt;line-height:
+115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span class=SpellE><span lang=RU style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:RU;mso-fareast-language:RU'>Шефферово</span></span><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'> произведение двух соседних <span class=SpellE>шефферовых</span>
+произведений можно заменить общей частью исходных произведений,<span
+style='mso-spacerun:yes'>  </span>причем<span style='mso-spacerun:yes'> 
+</span>если результат склеивания получился одночленным,<span
+style='mso-spacerun:yes'>  </span>то он возводится в квадрат. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><b><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Пример</span></b><span lang=RU
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'> (для доказательства) <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Требуется упростить выражение <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+36.0pt;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><!--[if gte msEquation 12]><m:oMath><i style='mso-bidi-font-style:
+ normal'><span lang=EN-US style='font-size:14.0pt;font-family:"Cambria Math","serif";
+ mso-ansi-language:EN-US'><m:r>y</m:r></span></i><i style='mso-bidi-font-style:
+ normal'><span lang=RU style='font-size:14.0pt;font-family:"Cambria Math","serif";
+ mso-ansi-language:RU'><m:r>=(</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   mso-ansi-language:EN-US;font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:EN-US'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>1</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+ font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>&#8729;</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   mso-ansi-language:EN-US;font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:EN-US'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>2</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+ font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>&#8729;</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   mso-ansi-language:EN-US;font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:EN-US'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>3</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+ font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>&#8729;</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   mso-ansi-language:EN-US;font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:EN-US'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>4</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+ font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>)&times;(</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   mso-ansi-language:EN-US;font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:EN-US'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>1</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+ font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>&#8729;</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   mso-ansi-language:EN-US;font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:EN-US'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>2</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+ font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>&#8729;</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   mso-ansi-language:EN-US;font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:EN-US'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>3</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+ font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>&#8729;</m:r></span></i><m:sSubSup><m:sSubSupPr><span
+   style='font-size:14.0pt;mso-ansi-font-size:14.0pt;mso-bidi-font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ascii-font-family:"Cambria Math";
+   mso-fareast-font-family:Calibri;mso-hansi-font-family:"Cambria Math";
+   mso-ansi-language:EN-US;font-style:italic;mso-bidi-font-style:normal'><m:ctrlPr></m:ctrlPr></span></m:sSubSupPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:EN-US'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>4</m:r></span></i></m:sub><m:sup><i
+   style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+   font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>2</m:r></span></i></m:sup></m:sSubSup><i
+ style='mso-bidi-font-style:normal'><span lang=RU style='font-size:14.0pt;
+ font-family:"Cambria Math","serif";mso-ansi-language:RU'><m:r>)</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif";
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;position:relative;top:6.0pt;mso-text-raise:-6.0pt;
+mso-ansi-language:BE;mso-fareast-language:EN-US;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1025" type="#_x0000_t75" style='width:233.25pt;height:19.5pt'>
+ <v:imagedata src="Тема%203.4.files/image041.png" o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=311 height=26
+src="Тема%203.4.files/image042.png" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><span style='mso-spacerun:yes'> </span>. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>В соответствии с теоремой 1: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:14.0pt;line-height:115%;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";mso-fareast-language:
+BE;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_15" o:spid="_x0000_i1040"
+ type="#_x0000_t75" style='width:86.25pt;height:32.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image043.jpg" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=115 height=43
+src="Тема%203.4.files/image044.jpg" v:shapes="Рисунок_x0020_15"><![endif]></span><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><span style='mso-spacerun:yes'> </span>. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Проверка: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:14.0pt;line-height:115%;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";mso-fareast-language:
+BE;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_14" o:spid="_x0000_i1039"
+ type="#_x0000_t75" style='width:253.5pt;height:71.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image045.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=338 height=95
+src="Тема%203.4.files/image046.jpg" v:shapes="Рисунок_x0020_14"><![endif]></span><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><i><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>Правило поглощения </span></i><u><span lang=RU style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:RU;mso-fareast-language:RU'>(теорема 2)</span></u><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span class=SpellE><span lang=RU style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:RU;mso-fareast-language:RU'>Шефферово</span></span><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'> произведение двух<span style='mso-spacerun:yes'>  </span>элементарных <span
+class=SpellE>шефферовых</span> произведений, из которых одно является
+собственной частью другого и имеет ранг больше 1, можно заменить одним меньшим
+сомножителем, причем если результат получится одночленным, то его следует
+возвести в квадрат (<span class=SpellE>шефферов</span>). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Подробнее об особенностях алгебры
+Шеффера можно посмотреть в [9]. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Синтез комбинационных схем в
+базисе Шеффера, как и в случае с ОФПН, проводится в 4 этапа (на примере
+одноразрядного двоичного сумматора ОДС-3). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><b><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>1-й этап. </span></b><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>Составление таблицы истинности (не зависит от логического базиса). <o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+none;text-autospace:none'><span lang=RU style='font-size:14.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";color:black;
+mso-ansi-language:RU;mso-fareast-language:RU'>Таблица истинности ОДС-3<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid black .5pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;
+ mso-border-insidev:.5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:32.7pt'>
+  <td width=158 valign=top style='width:118.8pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:32.7pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><i><span lang=RU style='font-size:14.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>i</span></i><span
+  lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+  mso-fareast-language:RU'>-й разряд<o:p></o:p></span></p>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:14.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>первого операнда<o:p></o:p></span></p>
+  </td>
+  <td width=49 valign=top style='width:36.8pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:32.7pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><i><span lang=RU style='font-size:14.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>x</span></i><sub><span
+  lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";color:black;position:relative;
+  top:5.0pt;mso-text-raise:-5.0pt;mso-ansi-language:RU;mso-fareast-language:
+  RU'>1<i>i</i></span></sub><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:32.7pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:32.7pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:32.7pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:32.7pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:32.7pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:32.7pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:32.7pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:32.7pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:35.65pt'>
+  <td width=158 valign=top style='width:118.8pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.65pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><i><span lang=RU style='font-size:14.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>i</span></i><span
+  lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+  mso-fareast-language:RU'>-я разряд<o:p></o:p></span></p>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:14.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>второго операнда<o:p></o:p></span></p>
+  </td>
+  <td width=49 valign=top style='width:36.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.65pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><i style='mso-bidi-font-style:normal'><span
+  lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+  mso-fareast-language:RU'>x</span></i><sub><span lang=RU style='font-size:
+  14.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;position:relative;top:6.0pt;mso-text-raise:-6.0pt;mso-ansi-language:
+  RU;mso-fareast-language:RU'>2<i>i</i></span></sub><span lang=RU
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman";color:black;mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.65pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.65pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.65pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.65pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.65pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.65pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.65pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.65pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:35.5pt'>
+  <td width=158 valign=top style='width:118.8pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:14.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>Перенос из <i>i</i>–1
+  разряда<o:p></o:p></span></p>
+  </td>
+  <td width=49 valign=top style='width:36.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><i style='mso-bidi-font-style:normal'><span
+  lang=RU style='font-size:14.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+  mso-fareast-language:RU'>x</span></i><sub><span lang=RU style='font-size:
+  14.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;position:relative;top:6.0pt;mso-text-raise:-6.0pt;mso-ansi-language:
+  RU;mso-fareast-language:RU'>3<i>i</i></span></sub><span lang=RU
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman";color:black;mso-ansi-language:RU;mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:35.5pt'>
+  <td width=158 valign=top style='width:118.8pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:14.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>Перенос в <i>i</i>+1<span
+  style='mso-spacerun:yes'>  </span>разряд<o:p></o:p></span></p>
+  </td>
+  <td width=49 valign=top style='width:36.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><i><span lang=RU style='font-size:14.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>P<sub><span
+  style='position:relative;top:6.0pt;mso-text-raise:-6.0pt'>i</span></sub></span></i><span
+  lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+  mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes;height:29.85pt'>
+  <td width=158 valign=top style='width:118.8pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.85pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><i><span lang=RU style='font-size:14.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>Сумма i-</span></i><span
+  lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:EN-US;
+  mso-fareast-language:RU'>x</span><span lang=RU style='font-size:14.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'> разрядов<o:p></o:p></span></p>
+  </td>
+  <td width=49 valign=top style='width:36.8pt;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.85pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><i><span lang=RU style='font-size:14.0pt;
+  font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>S <sub><span
+  style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub></span></i><span
+  lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+  mso-fareast-language:RU'><o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.85pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.85pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.85pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.85pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.85pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.85pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.85pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>0 <o:p></o:p></span></p>
+  </td>
+  <td width=38 valign=top style='width:1.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black .5pt;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.85pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'>1 <o:p></o:p></span></p>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=RU style='font-size:12.0pt;font-family:
+  "Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+  color:black;mso-ansi-language:RU;mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:EN-US;
+mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><b><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>2-й</span></b><b><span lang=AR-SA style='font-size:14.0pt;line-height:115%;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+RU;mso-fareast-language:RU'>&#8206;&#8206;<span dir=RTL></span><span dir=RTL><span
+dir=RTL></span>&#8207; </span></span></b><b><span lang=RU style='font-size:
+14.0pt;line-height:115%;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:RU;mso-fareast-language:RU'>этап. </span></b><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>Составление логико-математического выражения синтезируемого узла по таблице
+истинности. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Переход (к формуле) возможен как
+по условиям истинности (канонический вид), так и по условиям ложности – получим
+<span class=SpellE>шефферовы</span> <span class=SpellE>конституенты</span>.
+Будем называть такую форму<span style='mso-spacerun:yes'>  </span>совершенной <span
+class=SpellE>шефферовой</span> нормальной формой (СШНФ). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><b><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:36.0pt;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><b><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>Правило перехода от таблицы истинности к СШНФ</span></b><span lang=RU
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span class=GramE><span lang=RU style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:RU;mso-fareast-language:RU'>Для того чтобы
+перейти от таблицы истинности к СШНФ логической функции, <span
+style='mso-bidi-font-weight:bold'>необходимо </span>для тех наборов значений
+аргументов, которым в таблице истинности соответствуют единичные значения
+функции, составить <span class=SpellE>шефферовы</span> <span class=SpellE>конституенты</span>
+единицы таким образом, чтобы символ некоторого <i style='mso-bidi-font-style:
+normal'>i-</i><span class=SpellE>го</span> аргумента в <i style='mso-bidi-font-style:
+normal'>j</i>-й <span class=SpellE>конституенте</span> имел бы знак возведения
+в квадрат, если значение рассматриваемого аргумента в <i style='mso-bidi-font-style:
+normal'>j</i>-м наборе равно 0, после чего полученные <span class=SpellE>конституенты</span>
+следует заключить</span></span><span lang=RU style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:RU;mso-fareast-language:RU'> в скобки и
+соединить между собой знаком <span class=SpellE>шефферова</span> произведения. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Если в СШНФ некоторой функции
+имеется только одна <span class=SpellE>шефферова</span> <span class=SpellE>конституента</span>,
+то последняя возводится в квадрат. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Воспользовавшись этим правилом,
+можем записать функции <i>P<sub><span style='position:relative;top:5.0pt;
+mso-text-raise:-5.0pt'>i</span></sub></i><span
+style='mso-spacerun:yes'> </span>и <i>S<sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub></i><span
+style='mso-spacerun:yes'> </span>одноразрядного сумматора: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><i><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Р</span></i><span class=SpellE><span
+class=GramE><i><sub><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+position:relative;top:5.0pt;mso-text-raise:-5.0pt;mso-ansi-language:EN-US;
+mso-fareast-language:RU'>i</span></sub></i></span></span><i><sub><span lang=RU
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";position:relative;top:5.0pt;
+mso-text-raise:-5.0pt;mso-ansi-language:RU;mso-fareast-language:RU'>СШНФ</span></sub></i><span
+lang=EN-US style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:
+RU'><span style='mso-spacerun:yes'> </span>= (<i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>1i</span></sub><sup><span
+style='position:relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>2i </span></sub><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>3i</span></sub>) • (<i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>1i</span></sub><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>2i</span></sub><sup><span style='position:
+relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>3i</span></sub>)• (<i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>1i</span></sub><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>2i </span></sub><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>3i</span></sub><sup><span style='position:
+relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup>)• (<i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>1i</span></sub><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>2i </span></sub><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>3i</span></sub>); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><i><span lang=EN-US style='font-size:14.0pt;line-height:
+115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:EN-US;mso-fareast-language:RU'>S<span class=SpellE><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub></span></span></i><i><sub><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";position:relative;top:5.0pt;
+mso-text-raise:-5.0pt;mso-ansi-language:RU;mso-fareast-language:RU'>СШНФ</span></sub></i><span
+lang=EN-US style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:
+RU'>= (<i>x</i><sub><span style='position:relative;top:5.0pt;mso-text-raise:
+-5.0pt'>1i</span></sub><span style='mso-spacerun:yes'> </span>• <i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>2i</span></sub><sup><span
+style='position:relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup><span
+style='mso-spacerun:yes'> </span>•<i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>3i</span></sub><sup><span style='position:
+relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup>) • (<i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>1i</span></sub><sup><span
+style='position:relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>2i </span></sub>• <i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>3i</span></sub><sup><span
+style='position:relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup><span
+class=GramE>)•</span> (<i>x</i><sub><span style='position:relative;top:5.0pt;
+mso-text-raise:-5.0pt'>1i</span></sub><sup><span style='position:relative;
+top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>2i</span></sub><sup><span style='position:
+relative;top:-5.0pt;mso-text-raise:5.0pt'>2</span></sup><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>3i</span></sub>) •(<i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>1i</span></sub><span
+style='mso-spacerun:yes'> </span>• <i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>2i </span></sub>• <i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>3i</span></sub>). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:EN-US;mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><b><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>3-й этап. </span></b><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>Оптимизация <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Построим таблицы Вейча–Карно для
+функций <i>P<sub><span style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub></i><span
+style='mso-spacerun:yes'> </span>и<i> S<sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>i</span></sub></i>. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:12.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-fareast-language:BE;mso-no-proof:
+yes'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_13" o:spid="_x0000_i1038"
+ type="#_x0000_t75" style='width:475.5pt;height:139.5pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image047.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=634 height=186
+src="Тема%203.4.files/image048.jpg" v:shapes="Рисунок_x0020_13"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:
+RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>В результате минимизации
+получим<span style='mso-spacerun:yes'>  </span>тупиковые <span class=SpellE>шефферовы</span>
+нормальные формы (ТШНФ) исходных функций: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+36.0pt;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><i><span
+lang=EN-US style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:
+RU'>P<span class=SpellE><sub><span style='position:relative;top:5.0pt;
+mso-text-raise:-5.0pt'>i</span></sub></span></span></i><i><sub><span lang=RU
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";position:relative;top:5.0pt;
+mso-text-raise:-5.0pt;mso-ansi-language:RU;mso-fareast-language:RU'>ТШНФ</span></sub></i><i><span
+lang=EN-US style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:
+RU'>= (x</span></i><sub><span lang=EN-US style='font-size:14.0pt;line-height:
+115%;font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+position:relative;top:5.0pt;mso-text-raise:-5.0pt;mso-ansi-language:EN-US;
+mso-fareast-language:RU'>1i</span></sub><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU'>•<i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>2i</span></sub>) <span
+class=GramE>•(</span><i>x</i><sub><span style='position:relative;top:5.0pt;
+mso-text-raise:-5.0pt'>1i</span></sub>•<i>x</i><sub><span style='position:relative;
+top:5.0pt;mso-text-raise:-5.0pt'>3i</span></sub>) •(<i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>2i</span></sub>•<i>x</i><sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>3i</span></sub>); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+36.0pt;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><i><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>S<sub><span style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i
+ТШНФ</span></sub><span style='mso-spacerun:yes'> </span>= S<sub><span
+style='position:relative;top:5.0pt;mso-text-raise:-5.0pt'>i СШНФ.<span
+style='mso-spacerun:yes'>   </span></span></sub></span></i><span lang=RU
+style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Отметим, что может быть применен
+любой из трех методов минимизации. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><b><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>4-й этап. </span></b><span
+lang=RU style='font-size:14.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU'>Построение схемы (рисунок 3.9)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Как видно из рисунка 3.9, схема
+на элементах базиса Шеффера будет состоять из элементов одного типа – элемента
+Шеффера. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Аналогично можно проводить синтез
+узлов в базисе Пирса, введя понятия логического <span class=SpellE>пирсова</span>
+умножения, <span class=SpellE>пирсова</span> квадрата, элементарного <span
+class=SpellE>пирсова</span> произведения, <span class=SpellE>пирсовой</span> <span
+class=SpellE>конституенты</span> нуля (ПК 0), совершенной <span class=SpellE>пирсовой</span>
+нормальной формы (СПНФ)<span style='mso-spacerun:yes'>  </span>и тупиковой <span
+class=SpellE>пирсовой</span> нормальной формы (ТПНФ). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:36.0pt;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none'><span lang=RU style='font-size:14.0pt;line-height:115%;
+font-family:"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:RU;mso-fareast-language:RU'>Отметим, что функции (P и S в
+частности), представленные в СПНФ, будут иметь такой же вид, как в СШНФ, но
+базис здесь разный. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:BE;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Рисунок_x0020_12" o:spid="_x0000_i1037" type="#_x0000_t75" style='width:462.75pt;
+ height:498.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Тема%203.4.files/image049.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=617 height=665
+src="Тема%203.4.files/image050.jpg" v:shapes="Рисунок_x0020_12"><![endif]></span><span
+lang=RU style='font-size:12.0pt;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal;mso-pagination:none;mso-layout-grid-align:
+none;text-autospace:none'><span lang=RU style='font-size:14.0pt;font-family:
+"Times New Roman","serif";mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+RU;mso-fareast-language:RU'>Рисунок 3.9.<o:p></o:p></span></p>
+
+<span lang=RU style='font-size:12.0pt;line-height:115%;font-family:"Times New Roman","serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+page-break-before:always'>
+</span>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+<p><a href="Тема 3.3.htm">Предыдущая</a>
+   <a href="Тема 3.5.htm">Следующая</a></p>
+</div>
+
+</body>
+
+</html>
