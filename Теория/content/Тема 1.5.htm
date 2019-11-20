@@ -1,0 +1,1066 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+      xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+    <title>1.5. Архитектура машины обработки знаний</title>
+    <p>
+        <a href="Тема 1.4.htm">Предыдущая</a>
+        <a href="Тема 1.6.htm"> Следующая</a>
+    </p>
+    <meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+    <meta name=ProgId content=Word.Document>
+    <meta name=Generator content="Microsoft Word 14">
+    <meta name=Originator content="Microsoft Word 14">
+    <link rel=File-List href="Тема%201.1.files/filelist.xml">
+    <!--[if gte mso 9]>
+    <xml>
+        <o:DocumentProperties>
+            <o:Author>Iodo</o:Author>
+            <o:LastAuthor>Iodo</o:LastAuthor>
+            <o:Revision>2</o:Revision>
+            <o:TotalTime>1</o:TotalTime>
+            <o:Created>2012-12-23T17:38:00Z</o:Created>
+            <o:LastSaved>2012-12-23T17:38:00Z</o:LastSaved>
+            <o:Pages>4</o:Pages>
+            <o:Words>1479</o:Words>
+            <o:Characters>9028</o:Characters>
+            <o:Company>SPecialiST RePack</o:Company>
+            <o:Lines>75</o:Lines>
+            <o:Paragraphs>20</o:Paragraphs>
+            <o:CharactersWithSpaces>10487</o:CharactersWithSpaces>
+            <o:Version>14.00</o:Version>
+        </o:DocumentProperties>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+    <link rel=themeData href="Тема%201.1.files/themedata.thmx">
+    <link rel=colorSchemeMapping href="Тема%201.1.files/colorschememapping.xml">
+    <!--[if gte mso 9]>
+    <xml>
+        <w:WordDocument>
+            <w:SpellingState>Clean</w:SpellingState>
+            <w:GrammarState>Clean</w:GrammarState>
+            <w:TrackMoves>false</w:TrackMoves>
+            <w:TrackFormatting/>
+            <w:HyphenationZone>7</w:HyphenationZone>
+            <w:PunctuationKerning/>
+            <w:ValidateAgainstSchemas/>
+            <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+            <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+            <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+            <w:DoNotPromoteQF/>
+            <w:LidThemeOther>BE</w:LidThemeOther>
+            <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+            <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+            <w:Compatibility>
+                <w:BreakWrappedTables/>
+                <w:SnapToGridInCell/>
+                <w:WrapTextWithPunct/>
+                <w:UseAsianBreakRules/>
+                <w:DontGrowAutofit/>
+                <w:SplitPgBreakAndParaMark/>
+                <w:EnableOpenTypeKerning/>
+                <w:DontFlipMirrorIndents/>
+                <w:OverrideTableStyleHps/>
+            </w:Compatibility>
+            <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+            <m:mathPr>
+                <m:mathFont m:val="Cambria Math"/>
+                <m:brkBin m:val="before"/>
+                <m:brkBinSub m:val="&#45;-"/>
+                <m:smallFrac m:val="off"/>
+                <m:dispDef/>
+                <m:lMargin m:val="0"/>
+                <m:rMargin m:val="0"/>
+                <m:defJc m:val="centerGroup"/>
+                <m:wrapIndent m:val="1440"/>
+                <m:intLim m:val="subSup"/>
+                <m:naryLim m:val="undOvr"/>
+            </m:mathPr>
+        </w:WordDocument>
+    </xml><![endif]--><!--[if gte mso 9]>
+    <xml>
+        <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+                        DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+                        LatentStyleCount="267">
+            <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+            <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+            <w:LsdException Locked="false" QFormat="true" Name="heading 5"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+            <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+            <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+            <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+            <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+            <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+            <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+            <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Table Grid"/>
+            <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+            <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 1"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+            <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+            <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+            <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+            <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 2"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 3"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 4"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 5"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 6"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+            <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+            <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+            <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+            <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+            <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+            <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+            <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+        </w:LatentStyles>
+    </xml><![endif]-->
+    <style>
+        <!--
+        /* Font Definitions */
+        @font-face {
+            font-family: "Cambria Math";
+            panose-1: 2 4 5 3 5 4 6 3 2 4;
+            mso-font-charset: 204;
+            mso-generic-font-family: roman;
+            mso-font-pitch: variable;
+            mso-font-signature: -536870145 1107305727 0 0 415 0;
+        }
+
+        @font-face {
+            font-family: Calibri;
+            panose-1: 2 15 5 2 2 2 4 3 2 4;
+            mso-font-charset: 204;
+            mso-generic-font-family: swiss;
+            mso-font-pitch: variable;
+            mso-font-signature: -520092929 1073786111 9 0 415 0;
+        }
+
+        /* Style Definitions */
+        p.MsoNormal, li.MsoNormal, div.MsoNormal {
+            mso-style-unhide: no;
+            mso-style-qformat: yes;
+            mso-style-parent: "";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        h5 {
+            mso-style-priority: 99;
+            mso-style-qformat: yes;
+            mso-style-parent: Default;
+            mso-style-link: "Заголовок 5 Знак";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-outline-level: 5;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 13.0pt;
+            font-family: "Calibri", "sans-serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-bidi-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+            font-style: italic;
+        }
+
+        p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2 {
+            mso-style-priority: 99;
+            mso-style-parent: Default;
+            mso-style-link: "Основной текст 2 Знак";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2 {
+            mso-style-noshow: yes;
+            mso-style-priority: 99;
+            mso-style-parent: Default;
+            mso-style-link: "Основной текст с отступом 2 Знак";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        p.Default, li.Default, div.Default {
+            mso-style-name: Default;
+            mso-style-priority: 99;
+            mso-style-unhide: no;
+            mso-style-parent: "";
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            color: black;
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        span
+
+        .5
+        {
+            mso-style-name: "Заголовок 5 Знак"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-locked: yes
+        ;
+            mso-style-link: "Заголовок 5"
+        ;
+            mso-ansi-font-size: 13.0pt
+        ;
+            mso-bidi-font-size: 13.0pt
+        ;
+            font-family: "Calibri", "sans-serif"
+        ;
+            mso-ascii-font-family: Calibri
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-hansi-font-family: Calibri
+        ;
+            mso-bidi-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+            font-weight: bold
+        ;
+            font-style: italic
+        ;
+        }
+        span
+
+        .2
+        {
+            mso-style-name: "Основной текст 2 Знак"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-locked: yes
+        ;
+            mso-style-link: "Основной текст 2"
+        ;
+            mso-ansi-font-size: 12.0pt
+        ;
+            mso-bidi-font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-ascii-font-family: "Times New Roman"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-hansi-font-family: "Times New Roman"
+        ;
+            mso-bidi-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        span
+
+        .20
+        {
+            mso-style-name: "Основной текст с отступом 2 Знак"
+        ;
+            mso-style-noshow: yes
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-locked: yes
+        ;
+            mso-style-link: "Основной текст с отступом 2"
+        ;
+            mso-ansi-font-size: 12.0pt
+        ;
+            mso-bidi-font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-ascii-font-family: "Times New Roman"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-hansi-font-family: "Times New Roman"
+        ;
+            mso-bidi-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        p
+
+        .3
+        ,
+        li
+
+        .3
+        ,
+        div
+
+        .3
+        {
+            mso-style-name: Обычный+3
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-parent: Default
+        ;
+            mso-style-next: Default
+        ;
+            margin: 0cm
+        ;
+            margin-bottom: .0001pt
+        ;
+            mso-pagination: none
+        ;
+            mso-layout-grid-align: none
+        ;
+            text-autospace: none
+        ;
+            font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        p
+
+        .12
+        ,
+        li
+
+        .12
+        ,
+        div
+
+        .12
+        {
+            mso-style-name: "Заголовок 1+2"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-parent: Default
+        ;
+            mso-style-next: Default
+        ;
+            margin: 0cm
+        ;
+            margin-bottom: .0001pt
+        ;
+            mso-pagination: none
+        ;
+            mso-layout-grid-align: none
+        ;
+            text-autospace: none
+        ;
+            font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        p
+
+        .32
+        ,
+        li
+
+        .32
+        ,
+        div
+
+        .32
+        {
+            mso-style-name: "Заголовок 3+2"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-parent: Default
+        ;
+            mso-style-next: Default
+        ;
+            margin-top: 12.0pt
+        ;
+            margin-right: 0cm
+        ;
+            margin-bottom: 3.0pt
+        ;
+            margin-left: 0cm
+        ;
+            mso-pagination: none
+        ;
+            mso-layout-grid-align: none
+        ;
+            text-autospace: none
+        ;
+            font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        span.SpellE {
+            mso-style-name: "";
+            mso-spl-e: yes;
+        }
+
+        span.GramE {
+            mso-style-name: "";
+            mso-gram-e: yes;
+        }
+
+        .MsoChpDefault {
+            mso-style-type: export-only;
+            mso-default-props: yes;
+            font-size: 10.0pt;
+            mso-ansi-font-size: 10.0pt;
+            mso-bidi-font-size: 10.0pt;
+            font-family: "Calibri", "sans-serif";
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-fareast-font-family: Calibri;
+            mso-fareast-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+            mso-fareast-language: EN-US;
+        }
+
+        @page WordSection1 {
+            size: 595.3pt 841.9pt;
+            margin: 70.85pt 70.85pt 70.85pt 70.85pt;
+            mso-header-margin: 35.4pt;
+            mso-footer-margin: 35.4pt;
+            mso-paper-source: 0;
+        }
+
+        div.WordSection1 {
+            page: WordSection1;
+        }
+
+        -->
+    </style>
+    <!--[if gte mso 10]>
+    <style>
+        /* Style Definitions */
+        table.MsoNormalTable {
+            mso-style-name: "Обычная таблица";
+            mso-tstyle-rowband-size: 0;
+            mso-tstyle-colband-size: 0;
+            mso-style-noshow: yes;
+            mso-style-priority: 99;
+            mso-style-parent: "";
+            mso-padding-alt: 0cm 5.4pt 0cm 5.4pt;
+            mso-para-margin: 0cm;
+            mso-para-margin-bottom: .0001pt;
+            mso-pagination: widow-orphan;
+            font-size: 10.0pt;
+            font-family: "Calibri", "sans-serif";
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+            mso-fareast-language: EN-US;
+        }
+    </style>
+    <![endif]--><!--[if gte mso 9]>
+    <xml>
+        <o:shapedefaults v:ext="edit" spidmax="1026"/>
+    </xml><![endif]--><!--[if gte mso 9]>
+    <xml>
+        <o:shapelayout v:ext="edit">
+            <o:idmap v:ext="edit" data="1"/>
+        </o:shapelayout>
+    </xml><![endif]-->
+</head>
+
+<body>
+<div lang=BE style='tab-interval:35.4pt'>
+    <div class=WordSection1>
+        <p class=32 align=center style='text-align:center'>
+            <b style='mso-bidi-font-weight:
+                normal'>
+                <span lang=RU style='font-size:14.0pt'>
+                    Раздел 1. Модели обработки знаний и архитектура решателей задач
+                </span>
+            </b>
+        </p>
+        <p class=32 align=center style='text-align:center'>
+            <b style='mso-bidi-font-weight:
+                normal'>
+                <span lang=RU style='font-size:14.0pt'>
+                    Тема 5. Базовая машина обработки знаний
+                </span>
+            </b>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Для описания процедур, реализующих принципы работы того или иного агента (т.е. программ агента) используется специализированный язык SCP, построенный на базе SC-кода, как и в случае с представлением знаний, предназначенных для обработки. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Язык SCP – это графовый язык процедурного программирования, предназначенный для эффективной обработки однородных семантических сетей с теоретико-множественной интерпретацией, закодированных с помощью SC-кода. Язык SCP является языком параллельного асинхронного программирования.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Языком представления данных для текстов языка SCP (scp-программ) является SC-код. Данный факт позволяет обеспечить независимость программ, реализованных на языке SCP, от платформы интерпретации sc-моделей, в связи с чем программы большинства sc-агентов предполагается реализовывать именно на указанном языке. Однако очевидно, что в таком случае в системе должны также существовать реализованные на платформенно-зависимом уровне sc-агенты, осуществляющие интерпретацию scp-программ.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Такой подход имеет ряд преимуществ:
+                <ul>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        И программа агента, и обрабатываемые знания, по сути, представлены на одном и том же языке. В связи с этим преобразование восприятий агента в его действия, описываемое функцией агента [Рассел, Норвиг 2006], значительно упрощается, т.к. отсутствует необходимость дополнительных преобразований во внутреннее представление агента;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        Так как алгоритм работы агента описан на том же языке, что и другие знания в системе, то появляется возможность модифицировать сам алгоритм того или иного агента прямо в процессе его работы. Это предоставляет широкие возможности для построения принципиально нового класса программ и, соответственно, агентов, способных к самоконфигурированию в процессе работы.
+                    </li>
+                </ul>
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                SCP (Semantic Code Programming) - это базовый язык программирования, ориентированный на обработку однородных семантических сетей, имеющих базовую теоретико-множественную интерпретацию. Для представления таких семантических сетей используется SC-код. Язык SCP является sc-языком, т.е. тексты языка (scp-программы) представляются в виде sc-конструкций. Программы языка SCP и перерабатываемые ими информационные структуры (sc-конструкции) могут храниться в одной базе знаний. Тест языка SCP с формальной точки зрения есть определенным образом устроенная sc-конструкция, хранимая в sc-памяти и описывающая некоторую систему параллельных взаимодействующих процессов переработки другой sc-конструкции, хранимой в той же sc-памяти. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Особенностями языка SCP являются:
+                <ul>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        ориентация на использование структурно перестраиваемой	(графодинамической) ассоциативной памяти;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        хорошая приспособленность к переработке нечисловых структур, что обеспечивает описание сложно структурированных предметных областей;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        ориентация на переработку непосредственно семантических сетей;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        возможность описания механизмов решения задач различного уровня сложности;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        возможность через понятие sc-узла интеграции scp-программ с программами, написанными на других языках программирования и описывающими переработку информационных структур;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        высокий потенциал распараллеливания процессов переработки информации в графовой структурно перестраиваемой ассоциативной памяти [Голенков, В.В. и др., 2001b].
+                    </li>
+                </ul>
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Язык SCP обладает мощной типологией операторов, позволяющей производить различные виды операций с информационными структурами, представленными в виде семантических сетей.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Типология операторов языка SCP:
+                <ul>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        операторы генерации sc-конструкций;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        операторы удаления sc-конструкций;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        операторы 	ассоциативного  	поиска  	sc-конструкций;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        операторы выборки;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        операторы проверки условий;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        операторы изменения свойств sc-элемента;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        операторы управления scp-процессом;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        операторы вывода.
+                    </li>
+                </ul>
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Каждая scp-программа представляет собой обобщенную структуру, описывающую один из вариантов декомпозиции действий некоторого класса, выполняемых в sc-памяти. Знак sc-переменной, соответствующей конкретному декомпозируемому действию, является в рамках scp-программы ключевым sc-элементом’. Также явно указывается принадлежность данного знака множеству scp-процессов.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Таким образом, каждая scp-программа описывает в обобщенном виде декомпозицию некоторого scp-процесса на взаимосвязанные scp-операторы с указанием аргументов для данного scp-процесса при их наличии. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                По сути каждая scp-программа представляет собой описание последовательности элементарных операций, которые необходимо выполнить над семантической сетью, чтобы выполнить более сложное действие некоторого класса. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Частным случаем scp-программ являются агентные scp-программы. Scp-программы данного класса представляют собой реализации программ агентов обработки знаний и имеют жестко фиксированный набор параметров. Каждая такая программа имеет ровно два in-параметра’ (данное понятие описано ниже). Значение первого параметра является знаком бинарной ориентированной пары, являющееся вторым компонентом связки отношения первичное условие инициирования* для абстрактного sc-агента, в множество программ sc-агента* которого входит рассматриваемая агентная scp-программа.    
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Значением второго параметра является sc-элемент, с которым непосредственно связано событие, в результате возникновения которого был инициирован соответствующий sc-агент, т. е., например, сгенерированная либо удаляемая sc-дуга или sc-ребро. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                В свою очередь, под scp-процессом понимается некоторое действие в sc-памяти, однозначно описывающее конкретный акт выполнения некоторой scp-программы для заданных исходных данных. Если scp-программа описывает алгоритм решения какой-либо задачи в общем виде, то scp-процесс обозначает конкретное действие, реализующее данный алгоритм для заданных входных параметров. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                По сути scp-процесс представляет собой копию, созданную на основе scp-программы, в которой каждой sc-переменной, за исключением scp-переменных’, соответствует сгенерированная sc-константа.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Принадлежность некоторого действия множеству scp-процессов по определению гарантирует тот факт, что в декомпозиции данного действия будут присутствовать только знаки элементарных действий (scp-операторов), которые может интерпретировать scp-интерпретатор.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Операционная семантика языка программирования SCP задается соответствующей абстрактной машиной. Абстрактная машина задается абстрактной памятью, в которой хранятся перерабатываемые конструкции, и множеством операций. Все вспомогательные данные, необходимые  абстрактной scp-машине для реализации хранимых в памяти scp-программ, также представляются в виде sc-конструкций. Абстрактная память является динамической информационной конструкцией. Структура памяти определяется синтаксисом языка, принципы изменения памяти определяются операциями.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Большинство достоинств базовой модели обработки текстов SC-кода имеют место благодаря следующим основным ее особенностям:
+                <ul>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        тексты scp-программ записываются при помощи тех же унифицированных семантических сетей, что и обрабатываемая информация; 
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        подход к описанию и интерпретации scp-программ основан на общих принципах описания деятельности различных субъектов, в частности, предполагается создание при каждом вызове scp-программы независимого scp-процесса. 
+                    </li>
+                </ul>
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Перечислим эти достоинства:
+                <ul>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        одновременно в общей памяти могут выполняться несколько независимых процессов, при этом процессы, соответствующие одной и той же scp-программе, могут выполняться на разных серверах в случае распределенной реализации платформы интерпретации sc-моделей; 
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        язык SCP позволяет осуществлять параллельные асинхронные вызовы подпрограмм (создания подпроцессов в рамках scp-процессов), а также параллельно выполнять scp-операторы в рамках одного scp-процесса; 
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        поскольку scp-программы записываются при помощи SC-кода, то перенос реализованного на основе языка SCP sc-агента из одной системы в другую заключается в простом переносе фрагмента базы знаний, без каких-либо дополнительных операций, зависящих от платформы интерпретации sc-моделей; 
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        тот факт, что спецификации sc-агентов и их программы могут быть записаны на том же языке, что и обрабатываемые знания, существенно сокращает перечень специализированных средств, предназначенных для построения и модификации решателей задач, и упрощает их разработку за счет использования более универсальных компонентов;
+                    </li>
+                     <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        тот факт, что для интерпретации scp-программы создается соответствующий ей уникальный scp-процесс, позволяет по возможности оптимизировать план выполнения перед его реализацией и даже непосредственно в процессе выполнения без потенциальной опасности испортить общий универсальный алгоритм всей программы. Более того, такой подход к проектированию и интерпретации программ позволяет говорить о возможности создания самореконфигурируемых программ. 
+                    </li>
+                </ul>
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Язык SCP разрабатывается и реализуется в нескольких модификациях, имеющих одинаковый набор непосредственно выполняемых операций, но различный синтаксис. Система операций языка SCP описана в [Голенков В.В. и др., 1994a], [Голенков В.В. и др., 1994b]. Реализован интерпретатор, обеспечивающий выполнение всех операций, включенных в текущую версию языка SCP. Для каждой из модификаций языка SCP дополнительно к указанному интерпретатору требуется реализовать конвертор  	 из соответствующей      	формы представления scp-процедур в форму, поддерживаемую интерпретатором. Средства разработки программ, ориентированных на обработку семантических сетей.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Декомпозиция Абстрактной scp-машины, представленная в SCn-коде:
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0051.png">
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Задачей Абстрактного sc-агента создания scp-процессов является создание scp-процессов, соответствующих заданной scp-программе. Данный sc-агент активируется при появлении в sc-памяти инициированного действия, принадлежащего классу действие интерпретации scp-программы.     
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                После проверки sc-агентом условия инициирования выполняется создание scp-процесса с учетов конкретных параметров интерпретации scp-программы, после чего осуществляется поиск начального оператора’ scp-процесса и добавление его во множество настоящих сущностей.    
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Задачей Абстрактного sc-агента интерпретации scp-операторов является собственно интерпретация операторов scp-программы, то есть выполнение в sc-памяти действий, описываемых конкретным scp-оператором. Данный sc-агент активируется при появлении в sc-памяти scp-оператора, принадлежащего классу настоящих сущностей. После выполнения действия, описываемого scp-оператором, scp-оператор добавляется во множество прошлых сущностей. В случае когда семантика действия, описываемого scp-оператором, предполагает возможность ветвления scp-программы после выполнения данного scp-оператора, то используется одно из подмножеств класса выполненных действий – безуспешно выполненное действие или успешно выполненное действие. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                В текущей реализации Абстрактный sc-агент интерпретации scp-операторов декомпозируется на более частные абстрактные sc-агенты, каждый из которых однозначно соответствует атомарному классу scp-операторов, в связи с чем не будем приводить перечень таких агентов.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Задачей Абстрактного sc-агента синхронизации процесса интерпретации scp-программ является обеспечение переходов между scp-операторами в рамках одного scp-процесса. Данный sc-агент активизируется при добавлении некоторого scp-оператора во множество прошлых сущностей. Далее осуществляется переход по sc-дуге, принадлежащей отношению последовательность действий* (или более частным отношениям, в случае, если scp-оператор был добавлен во множество успешно выполненных действий или безуспешно выполненных действий). При этом очередной scp-оператор становится настоящей сущностью (активным scp-оператором) в том случае, если хотя бы один scp-оператор, связанный с ним входящими sc-дугами, принадлежащими отношению последовательность действий* (или более частным отношениям), стал прошлой сущностью (или, соответственно, подмножеством прошлых сущностей). В случае, когда необходимо дождаться завершения выполнения всех предыдущих операторов, для синхронизации используется оператор класса конъюнкция предшествующих операторов. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Задачей Абстрактного sc-агента уничтожения scp-процессов является уничтожение scp-процесса, т. е. удаление из sc-памяти всех sc-элементов, его составляющих. Данный sc-агент активируется при появлении в sc-памяти scp-процесса, принадлежащего множеству прошлых сущностей. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                При этом уничтожаемый scp-процесс необязательно должен быть полностью сформирован. Необходимость уничтожения не до конца сформированного scp-процесса может возникнуть в случае, если при создании scp-процесса возникли проблемы, не позволяющие продолжить создание scp-процесса и его выполнение.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Задачей Абстрактного sc-агента синхронизации событий в sc-памяти и ее реализации является обеспечение работы неатомарных sc-агентов, реализованных на языке SCP.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                В свою очередь Абстрактный sc-агент синхронизации событий в sc-памяти и ее реализации декомпозируется следующим образом:
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0052.png">
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Задачей Абстрактного sc-агента сформированной спецификации sc-события во внутреннее представление является трансляция ориентированных пар, описывающих первичное условие инициирования* некоторого sc-агента во внутреннее представление элементарных событий на уровне sc-хранилища, при условии, что этот sc-агент реализован на платформенно-независимом уровне (с использованием языка SCP). Условием инициирования данного sc-агента является появление в sc-памяти нового элемента множества активных sc-агентов, для которого будет найдена и протранслирована соответствующая ориентированная пара. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Задачей Абстрактного sc-агента обработки sc-события, инициирующего агентную scp-программу, является поиск агентной scp-программы, входящей во множество программ sc-агента* для каждого sc-агента, первичное условие инициирования которого соответствует событию, произошедшему в sc-памяти, а также генерация и инициирование действия, направленного на интерпретацию этой программы. В результате работы данного sc-агента в sc-памяти появляется инициированное действие, принадлежащее классу действие интерпретации scp-программы.
+            </span>
+        </p>
+        <p class="block_14">___________________________________________________________________________</p>
+        <p class="block_56">Шункевич Д.В.Агентно-ориентированные решатели задач интеллектуальных систем . Часть 2: Унифицированные семантические модели обработки знаний// Диссертация ктн.  2017.</p>
+        <p class="block_56">Гулякина Н.А., Пивоварчик О.В., Лазуркин Д.А. Языки и технологии программирования, ориентированные на обработку семантических сетей. Часть 3: Язык программирования SCP. // OSTIS-2012.</p>
+        <p class=MsoNormal>
+            <a href="Тема 1.4.htm">Предыдущая</a>
+            <a href="Тема 1.6.htm"> Следующая</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

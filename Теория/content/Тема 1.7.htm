@@ -1,0 +1,964 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+      xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+    <title>1.7. Механизм синхронизации выполнения параллельных процессов</title>
+    <p>
+        <a href="Тема 1.6.htm">Предыдущая</a>
+        <a href="Тема 2.1.htm"> Следующая</a>
+    </p>
+    <meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+    <meta name=ProgId content=Word.Document>
+    <meta name=Generator content="Microsoft Word 14">
+    <meta name=Originator content="Microsoft Word 14">
+    <link rel=File-List href="Тема%201.1.files/filelist.xml">
+    <!--[if gte mso 9]>
+    <xml>
+        <o:DocumentProperties>
+            <o:Author>Iodo</o:Author>
+            <o:LastAuthor>Iodo</o:LastAuthor>
+            <o:Revision>2</o:Revision>
+            <o:TotalTime>1</o:TotalTime>
+            <o:Created>2012-12-23T17:38:00Z</o:Created>
+            <o:LastSaved>2012-12-23T17:38:00Z</o:LastSaved>
+            <o:Pages>4</o:Pages>
+            <o:Words>1479</o:Words>
+            <o:Characters>9028</o:Characters>
+            <o:Company>SPecialiST RePack</o:Company>
+            <o:Lines>75</o:Lines>
+            <o:Paragraphs>20</o:Paragraphs>
+            <o:CharactersWithSpaces>10487</o:CharactersWithSpaces>
+            <o:Version>14.00</o:Version>
+        </o:DocumentProperties>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+    <link rel=themeData href="Тема%201.1.files/themedata.thmx">
+    <link rel=colorSchemeMapping href="Тема%201.1.files/colorschememapping.xml">
+    <!--[if gte mso 9]>
+    <xml>
+        <w:WordDocument>
+            <w:SpellingState>Clean</w:SpellingState>
+            <w:GrammarState>Clean</w:GrammarState>
+            <w:TrackMoves>false</w:TrackMoves>
+            <w:TrackFormatting/>
+            <w:HyphenationZone>7</w:HyphenationZone>
+            <w:PunctuationKerning/>
+            <w:ValidateAgainstSchemas/>
+            <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+            <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+            <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+            <w:DoNotPromoteQF/>
+            <w:LidThemeOther>BE</w:LidThemeOther>
+            <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+            <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+            <w:Compatibility>
+                <w:BreakWrappedTables/>
+                <w:SnapToGridInCell/>
+                <w:WrapTextWithPunct/>
+                <w:UseAsianBreakRules/>
+                <w:DontGrowAutofit/>
+                <w:SplitPgBreakAndParaMark/>
+                <w:EnableOpenTypeKerning/>
+                <w:DontFlipMirrorIndents/>
+                <w:OverrideTableStyleHps/>
+            </w:Compatibility>
+            <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+            <m:mathPr>
+                <m:mathFont m:val="Cambria Math"/>
+                <m:brkBin m:val="before"/>
+                <m:brkBinSub m:val="&#45;-"/>
+                <m:smallFrac m:val="off"/>
+                <m:dispDef/>
+                <m:lMargin m:val="0"/>
+                <m:rMargin m:val="0"/>
+                <m:defJc m:val="centerGroup"/>
+                <m:wrapIndent m:val="1440"/>
+                <m:intLim m:val="subSup"/>
+                <m:naryLim m:val="undOvr"/>
+            </m:mathPr>
+        </w:WordDocument>
+    </xml><![endif]--><!--[if gte mso 9]>
+    <xml>
+        <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+                        DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+                        LatentStyleCount="267">
+            <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+            <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+            <w:LsdException Locked="false" QFormat="true" Name="heading 5"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+            <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+            <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+            <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+            <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+            <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+            <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+            <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Table Grid"/>
+            <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+            <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 1"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+            <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+            <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+            <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+            <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 2"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 3"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 4"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 5"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 6"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+            <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+            <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+            <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+            <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+            <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+            <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+            <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+        </w:LatentStyles>
+    </xml><![endif]-->
+    <style>
+        <!--
+        /* Font Definitions */
+        @font-face {
+            font-family: "Cambria Math";
+            panose-1: 2 4 5 3 5 4 6 3 2 4;
+            mso-font-charset: 204;
+            mso-generic-font-family: roman;
+            mso-font-pitch: variable;
+            mso-font-signature: -536870145 1107305727 0 0 415 0;
+        }
+
+        @font-face {
+            font-family: Calibri;
+            panose-1: 2 15 5 2 2 2 4 3 2 4;
+            mso-font-charset: 204;
+            mso-generic-font-family: swiss;
+            mso-font-pitch: variable;
+            mso-font-signature: -520092929 1073786111 9 0 415 0;
+        }
+
+        /* Style Definitions */
+        p.MsoNormal, li.MsoNormal, div.MsoNormal {
+            mso-style-unhide: no;
+            mso-style-qformat: yes;
+            mso-style-parent: "";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        h5 {
+            mso-style-priority: 99;
+            mso-style-qformat: yes;
+            mso-style-parent: Default;
+            mso-style-link: "Заголовок 5 Знак";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-outline-level: 5;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 13.0pt;
+            font-family: "Calibri", "sans-serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-bidi-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+            font-style: italic;
+        }
+
+        p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2 {
+            mso-style-priority: 99;
+            mso-style-parent: Default;
+            mso-style-link: "Основной текст 2 Знак";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2 {
+            mso-style-noshow: yes;
+            mso-style-priority: 99;
+            mso-style-parent: Default;
+            mso-style-link: "Основной текст с отступом 2 Знак";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        p.Default, li.Default, div.Default {
+            mso-style-name: Default;
+            mso-style-priority: 99;
+            mso-style-unhide: no;
+            mso-style-parent: "";
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            color: black;
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        span
+
+        .5
+        {
+            mso-style-name: "Заголовок 5 Знак"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-locked: yes
+        ;
+            mso-style-link: "Заголовок 5"
+        ;
+            mso-ansi-font-size: 13.0pt
+        ;
+            mso-bidi-font-size: 13.0pt
+        ;
+            font-family: "Calibri", "sans-serif"
+        ;
+            mso-ascii-font-family: Calibri
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-hansi-font-family: Calibri
+        ;
+            mso-bidi-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+            font-weight: bold
+        ;
+            font-style: italic
+        ;
+        }
+        span
+
+        .2
+        {
+            mso-style-name: "Основной текст 2 Знак"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-locked: yes
+        ;
+            mso-style-link: "Основной текст 2"
+        ;
+            mso-ansi-font-size: 12.0pt
+        ;
+            mso-bidi-font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-ascii-font-family: "Times New Roman"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-hansi-font-family: "Times New Roman"
+        ;
+            mso-bidi-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        span
+
+        .20
+        {
+            mso-style-name: "Основной текст с отступом 2 Знак"
+        ;
+            mso-style-noshow: yes
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-locked: yes
+        ;
+            mso-style-link: "Основной текст с отступом 2"
+        ;
+            mso-ansi-font-size: 12.0pt
+        ;
+            mso-bidi-font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-ascii-font-family: "Times New Roman"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-hansi-font-family: "Times New Roman"
+        ;
+            mso-bidi-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        p
+
+        .3
+        ,
+        li
+
+        .3
+        ,
+        div
+
+        .3
+        {
+            mso-style-name: Обычный+3
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-parent: Default
+        ;
+            mso-style-next: Default
+        ;
+            margin: 0cm
+        ;
+            margin-bottom: .0001pt
+        ;
+            mso-pagination: none
+        ;
+            mso-layout-grid-align: none
+        ;
+            text-autospace: none
+        ;
+            font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        p
+
+        .12
+        ,
+        li
+
+        .12
+        ,
+        div
+
+        .12
+        {
+            mso-style-name: "Заголовок 1+2"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-parent: Default
+        ;
+            mso-style-next: Default
+        ;
+            margin: 0cm
+        ;
+            margin-bottom: .0001pt
+        ;
+            mso-pagination: none
+        ;
+            mso-layout-grid-align: none
+        ;
+            text-autospace: none
+        ;
+            font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        p
+
+        .32
+        ,
+        li
+
+        .32
+        ,
+        div
+
+        .32
+        {
+            mso-style-name: "Заголовок 3+2"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-parent: Default
+        ;
+            mso-style-next: Default
+        ;
+            margin-top: 12.0pt
+        ;
+            margin-right: 0cm
+        ;
+            margin-bottom: 3.0pt
+        ;
+            margin-left: 0cm
+        ;
+            mso-pagination: none
+        ;
+            mso-layout-grid-align: none
+        ;
+            text-autospace: none
+        ;
+            font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        span.SpellE {
+            mso-style-name: "";
+            mso-spl-e: yes;
+        }
+
+        span.GramE {
+            mso-style-name: "";
+            mso-gram-e: yes;
+        }
+
+        .MsoChpDefault {
+            mso-style-type: export-only;
+            mso-default-props: yes;
+            font-size: 10.0pt;
+            mso-ansi-font-size: 10.0pt;
+            mso-bidi-font-size: 10.0pt;
+            font-family: "Calibri", "sans-serif";
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-fareast-font-family: Calibri;
+            mso-fareast-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+            mso-fareast-language: EN-US;
+        }
+
+        @page WordSection1 {
+            size: 595.3pt 841.9pt;
+            margin: 70.85pt 70.85pt 70.85pt 70.85pt;
+            mso-header-margin: 35.4pt;
+            mso-footer-margin: 35.4pt;
+            mso-paper-source: 0;
+        }
+
+        div.WordSection1 {
+            page: WordSection1;
+        }
+
+        -->
+    </style>
+    <!--[if gte mso 10]>
+    <style>
+        /* Style Definitions */
+        table.MsoNormalTable {
+            mso-style-name: "Обычная таблица";
+            mso-tstyle-rowband-size: 0;
+            mso-tstyle-colband-size: 0;
+            mso-style-noshow: yes;
+            mso-style-priority: 99;
+            mso-style-parent: "";
+            mso-padding-alt: 0cm 5.4pt 0cm 5.4pt;
+            mso-para-margin: 0cm;
+            mso-para-margin-bottom: .0001pt;
+            mso-pagination: widow-orphan;
+            font-size: 10.0pt;
+            font-family: "Calibri", "sans-serif";
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+            mso-fareast-language: EN-US;
+        }
+    </style>
+    <![endif]--><!--[if gte mso 9]>
+    <xml>
+        <o:shapedefaults v:ext="edit" spidmax="1026"/>
+    </xml><![endif]--><!--[if gte mso 9]>
+    <xml>
+        <o:shapelayout v:ext="edit">
+            <o:idmap v:ext="edit" data="1"/>
+        </o:shapelayout>
+    </xml><![endif]-->
+</head>
+
+<body>
+<div lang=BE style='tab-interval:35.4pt'>
+    <div class=WordSection1>
+        <p class=32 align=center style='text-align:center'>
+            <b style='mso-bidi-font-weight:
+                normal'>
+                <span lang=RU style='font-size:14.0pt'>
+                    Раздел 1. Модели обработки знаний и архитектура решателей задач
+                </span>
+            </b>
+        </p>
+        <p class=32 align=center style='text-align:center'>
+            <b style='mso-bidi-font-weight:
+                normal'>
+                <span lang=RU style='font-size:14.0pt'>
+                    Тема 7. Механизм синхронизации выполнения параллельных процессов
+                </span>
+            </b>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Бинарное отношение блокировка* связывает знаки действий в sc-памяти со знаками структур (ситуативных), которые содержат элементы, заблокированные на время выполнения данного действия или на какую-то часть этого периода. Каждая такая структура принадлежит какому-либо из типов блокировки.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Первым компонентом связок отношения блокировка* является знак действия в sc-памяти, вторым – знак заблокированной структуры.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0071.png">
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Множество тип блокировки содержит все возможные классы блокировок, т.е. структуры, содержащие sc-элементы, заблокированные каким-либо sc-агентом на время выполнения им некоторого действия в sc-памяти. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0072.png">
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Каждая структура, принадлежащая множеству полная блокировка содержит sc-элементы, просмотр и изменение (удаление, добавление инцидентных sc-коннекторов, удаление самих sc-элементов, изменение содержимого в случае файла) которых запрещены всем sc-агентам, кроме собственно sc-агента, выполняющего соответствующее данной структуре действие в sc-памяти, связанное с ней отношением блокировка*. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Для того, чтобы исключить возможность реализации sc-агентов, которые могут внести изменения в конструкции, описывающие блокировки других sc-агентов, все элементы этих конструкций, в том числе, сам знак структуры, содержащей заблокированные sc-элементы (принадлежащей как множеству полная блокировка, так и любому другому типу блокировки) и связки отношения блокировка*, связывающие эту структуру и конкретное действие в sc-памяти, добавляются в полную блокировку, соответствующую данному действию в sc-памяти. Таким образом, каждой полной блокировке соответствует петля принадлежности, связывающая ее знак с самим собой. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Каждая структура, принадлежащая множеству блокировка на любое изменение содержит sc-элементы, изменение (физическое удаление, добавление инцидентных sc-коннекторов, физическое удаление самих sc-элементов, изменение содержимого в случае файла) которых запрещено всем sc-агентам, кроме собственно sc-агента, выполняющего соответствующее данной структуре действие в sc-памяти, связанное с ней отношением блокировка*. Однако не запрещен просмотр (чтение) этих sc-элементов любым sc-агентом. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Каждая структура, принадлежащая множеству блокировка на удаление содержит sc-элементы, физическое удаление которых запрещено всем sc-агентам, кроме собственно sc-агента, выполняющего соответствующее данной структуре действие в sc-памяти, связанное с ней отношением блокировка*. Однако не запрещен просмотр (чтение) этих sc-элементов любым sc-агентом, добавление инцидентных sc-коннекторов.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Рассмотрим пример работы механизма блокировок, в котором с одним и тем же sc-элементом пытаются работать одновременно несколько процессов в sc-памяти в SCg-коде:
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0073.png">
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                В данном примере Процесс1 непосредственно работает с sc-элементом e1, Процесс2 и Процесс3 планируют установить блокировку на любое изменение и блокировку на удаление соответственно, причем Процесс2 попытался установить свою блокировку раньше, чем Процесс3, поэтому согласно направлению связки отношения приоритет блокировки*, его блокировка будет установлена раньше. Процесс4 и Процесс5 ожидают снятия всех блокировок и планируемых блокировок, после чего e1 будет удален и Процесс1 и Процесс2 продолжат свое выполнение. Никакие другие планируемые блокировки установлены быть уже не могут, поскольку e1 попал во множество удаляемых sc-элементов как минимум одного процесса и, в соответствии с изложенными выше правилами, все остальные процессы кроме Процесс1-Процесс5, уже не смогут получить доступ к этому sc-элементу. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Выполняемый процесс принадлежит множеству настоящая сущность, приостановленные – множеству отложенное действие. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                После того как Процесс1 разблокировал sc-элемент e1, этот элемент будет заблокирован Процессом2, и Процесс2 продолжит выполнение:
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0074.png">
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Как видно из рисунка, планируемая блокировка*, установленная Процессом2, становится обычной блокировкой*. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Далее, после того как Процесс2 разблокировал sc-элемент e1, этот элемент будет заблокирован Процессом3, и Процесс3 продолжит выполнение: 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0075.png">
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Наконец, когда все процессы снимут блокировки с sc-элемента e1, он может быть физически удален и Процесс4 и Процесс5 продолжат выполнение:
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0076.png">
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Рассмотрим пример взаимоблокировок. Пусть в некоторый момент времени в sc-памяти выполняются (являются настоящими сущностями) два процесса – Процесс1 и Процесс2. Существуют также sc-элементы e1 и e2, при этом Процесс1 имеет возможность найти sc-элемент e1, а Процесс2 имеет возможность найти sc-элемент e2. По фразой «имеет возможность найти» будем иметь в виду, что искомый sc-элемент не попадает в полную блокировку какого-либо другого процесса и ищущему процессу известны какие-либо sc-элементы, опираясь на которые и действуя по известной программе, процесс сможет путем перехода по связям в sc-памяти за конечное число шагов прийти к искомому sc-элементу. В SCg-коде такая ситуация может выглядеть следующим образом:
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0077.png">
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Далее предположим, что Процесс1 заблокировал sc-элемент e1 блокировкой b1, а Процесс2 заблокировал sc-элемент e1 блокировкой b2, после чего Процесс1 пытается получить доступ к sc-элементу e2, а Процесс2 пытается получить доступ к sc-элементу e1 (сформированы соответствующие планируемые блокировки*). В зависимости от конкретных типов блокировок b1 и b2 и того, какие конкретно действия с sc-элементами предполагается выполнить далее в рамках Процесса1 и Процесса2, возможны ситуации взаимоблокировки, когда каждый из указанных процессов будет ожидать снятия блокировки вторым процессом с нужного sc-элемента, не снимая при этом установленной им самим блокировки с sc-элемента, доступ к которому необходим второму процессу. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                В случае когда хотя бы одна из блокировок b1 и b2 является полной блокировкой, ситуация взаимоблокировки возникнуть не может, поскольку sc-элементы, попавшие в полную блокировку некоторого scp-процесса, не доступны другим scp-процессам даже для чтения и, таким образом, остальные scp-процессы будут работать так, как будто заблокированные sc-элементы просто отсутствуют в текущем состоянии sc-памяти.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                В случаях, когда ни b1 ни b2 не являются полной блокировкой, возможно появление взаимоблокировок. Для того чтобы показать, в каких случаях это возможно, воспользуемся таблицей М.1, в которой указаны типы блокировок b1 и b2 и дополнительные условия, при которых возникает взаимоблокировка:
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0078.png">
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Рассмотрим пример конкретной взаимоблокировки, возникшей в sc-памяти. Для этого положим, что b1 является блокировкой на изменение, а b2 является блокировкой на удаление. При этом Процесс1 пытается установить на sc-элемент e2, заблокированный Процессом2, блокировку на любое изменение, а Процесс2 в свою очередь, пытается установить такую же блокировку на sc-элемент e1, заблокированный Процессом1. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                В SCg-коде такая ситуация будет выглядеть:
+
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt; line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+               <img src="assets/custom_image0079.png">
+            </span>
+        </p>
+        <p class="block_14">___________________________________________________________________________</p>
+        <p class="block_56">Шункевич Д.В. Агентно-ориентированные решатели задач интеллектуальных систем. // Диссертация ктн. 2018.</p>
+        <p class="block_56">Шункевич Д.В. Взаимодействие асинхронных параллельных процессов обработки знаний в общей семантической сети. Часть 3.2: Средства спецификации блокировок в sc-памяти// OSTIS 2016.</p>
+        <p class=MsoNormal>
+            <a href="Тема 1.6.htm">Предыдущая</a>
+            <a href="Тема 2.1.htm"> Следующая</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

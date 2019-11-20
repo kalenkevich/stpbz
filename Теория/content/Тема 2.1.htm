@@ -1,0 +1,951 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+      xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+    <title>2.1. Методика построения решателей задач</title>
+    <p>
+        <a href="Тема 1.7.htm">Предыдущая</a>
+        <a href="Тема 2.2.htm"> Следующая</a>
+    </p>
+    <meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+    <meta name=ProgId content=Word.Document>
+    <meta name=Generator content="Microsoft Word 14">
+    <meta name=Originator content="Microsoft Word 14">
+    <link rel=File-List href="Тема%201.1.files/filelist.xml">
+    <!--[if gte mso 9]>
+    <xml>
+        <o:DocumentProperties>
+            <o:Author>Iodo</o:Author>
+            <o:LastAuthor>Iodo</o:LastAuthor>
+            <o:Revision>2</o:Revision>
+            <o:TotalTime>1</o:TotalTime>
+            <o:Created>2012-12-23T17:38:00Z</o:Created>
+            <o:LastSaved>2012-12-23T17:38:00Z</o:LastSaved>
+            <o:Pages>4</o:Pages>
+            <o:Words>1479</o:Words>
+            <o:Characters>9028</o:Characters>
+            <o:Company>SPecialiST RePack</o:Company>
+            <o:Lines>75</o:Lines>
+            <o:Paragraphs>20</o:Paragraphs>
+            <o:CharactersWithSpaces>10487</o:CharactersWithSpaces>
+            <o:Version>14.00</o:Version>
+        </o:DocumentProperties>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+    <link rel=themeData href="Тема%201.1.files/themedata.thmx">
+    <link rel=colorSchemeMapping href="Тема%201.1.files/colorschememapping.xml">
+    <!--[if gte mso 9]>
+    <xml>
+        <w:WordDocument>
+            <w:SpellingState>Clean</w:SpellingState>
+            <w:GrammarState>Clean</w:GrammarState>
+            <w:TrackMoves>false</w:TrackMoves>
+            <w:TrackFormatting/>
+            <w:HyphenationZone>7</w:HyphenationZone>
+            <w:PunctuationKerning/>
+            <w:ValidateAgainstSchemas/>
+            <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+            <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+            <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+            <w:DoNotPromoteQF/>
+            <w:LidThemeOther>BE</w:LidThemeOther>
+            <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+            <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+            <w:Compatibility>
+                <w:BreakWrappedTables/>
+                <w:SnapToGridInCell/>
+                <w:WrapTextWithPunct/>
+                <w:UseAsianBreakRules/>
+                <w:DontGrowAutofit/>
+                <w:SplitPgBreakAndParaMark/>
+                <w:EnableOpenTypeKerning/>
+                <w:DontFlipMirrorIndents/>
+                <w:OverrideTableStyleHps/>
+            </w:Compatibility>
+            <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+            <m:mathPr>
+                <m:mathFont m:val="Cambria Math"/>
+                <m:brkBin m:val="before"/>
+                <m:brkBinSub m:val="&#45;-"/>
+                <m:smallFrac m:val="off"/>
+                <m:dispDef/>
+                <m:lMargin m:val="0"/>
+                <m:rMargin m:val="0"/>
+                <m:defJc m:val="centerGroup"/>
+                <m:wrapIndent m:val="1440"/>
+                <m:intLim m:val="subSup"/>
+                <m:naryLim m:val="undOvr"/>
+            </m:mathPr>
+        </w:WordDocument>
+    </xml><![endif]--><!--[if gte mso 9]>
+    <xml>
+        <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+                        DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+                        LatentStyleCount="267">
+            <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+            <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+            <w:LsdException Locked="false" QFormat="true" Name="heading 5"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+            <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+            <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+            <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+            <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+            <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+            <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+            <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+            <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Table Grid"/>
+            <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+            <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 1"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+            <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+            <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+            <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+            <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 2"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 3"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 4"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 5"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light List Accent 6"/>
+            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                            UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+            <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+            <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+            <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+            <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+            <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+                            UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+            <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+            <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+        </w:LatentStyles>
+    </xml><![endif]-->
+    <style>
+        <!--
+        /* Font Definitions */
+        @font-face {
+            font-family: "Cambria Math";
+            panose-1: 2 4 5 3 5 4 6 3 2 4;
+            mso-font-charset: 204;
+            mso-generic-font-family: roman;
+            mso-font-pitch: variable;
+            mso-font-signature: -536870145 1107305727 0 0 415 0;
+        }
+
+        @font-face {
+            font-family: Calibri;
+            panose-1: 2 15 5 2 2 2 4 3 2 4;
+            mso-font-charset: 204;
+            mso-generic-font-family: swiss;
+            mso-font-pitch: variable;
+            mso-font-signature: -520092929 1073786111 9 0 415 0;
+        }
+
+        /* Style Definitions */
+        p.MsoNormal, li.MsoNormal, div.MsoNormal {
+            mso-style-unhide: no;
+            mso-style-qformat: yes;
+            mso-style-parent: "";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        h5 {
+            mso-style-priority: 99;
+            mso-style-qformat: yes;
+            mso-style-parent: Default;
+            mso-style-link: "Заголовок 5 Знак";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-outline-level: 5;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 13.0pt;
+            font-family: "Calibri", "sans-serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-bidi-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+            font-style: italic;
+        }
+
+        p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2 {
+            mso-style-priority: 99;
+            mso-style-parent: Default;
+            mso-style-link: "Основной текст 2 Знак";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2 {
+            mso-style-noshow: yes;
+            mso-style-priority: 99;
+            mso-style-parent: Default;
+            mso-style-link: "Основной текст с отступом 2 Знак";
+            mso-style-next: Default;
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        p.Default, li.Default, div.Default {
+            mso-style-name: Default;
+            mso-style-priority: 99;
+            mso-style-unhide: no;
+            mso-style-parent: "";
+            margin: 0cm;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            mso-layout-grid-align: none;
+            text-autospace: none;
+            font-size: 12.0pt;
+            font-family: "Times New Roman", "serif";
+            mso-fareast-font-family: "Times New Roman";
+            color: black;
+            mso-ansi-language: RU;
+            mso-fareast-language: RU;
+        }
+
+        span
+
+        .5
+        {
+            mso-style-name: "Заголовок 5 Знак"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-locked: yes
+        ;
+            mso-style-link: "Заголовок 5"
+        ;
+            mso-ansi-font-size: 13.0pt
+        ;
+            mso-bidi-font-size: 13.0pt
+        ;
+            font-family: "Calibri", "sans-serif"
+        ;
+            mso-ascii-font-family: Calibri
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-hansi-font-family: Calibri
+        ;
+            mso-bidi-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+            font-weight: bold
+        ;
+            font-style: italic
+        ;
+        }
+        span
+
+        .2
+        {
+            mso-style-name: "Основной текст 2 Знак"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-locked: yes
+        ;
+            mso-style-link: "Основной текст 2"
+        ;
+            mso-ansi-font-size: 12.0pt
+        ;
+            mso-bidi-font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-ascii-font-family: "Times New Roman"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-hansi-font-family: "Times New Roman"
+        ;
+            mso-bidi-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        span
+
+        .20
+        {
+            mso-style-name: "Основной текст с отступом 2 Знак"
+        ;
+            mso-style-noshow: yes
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-locked: yes
+        ;
+            mso-style-link: "Основной текст с отступом 2"
+        ;
+            mso-ansi-font-size: 12.0pt
+        ;
+            mso-bidi-font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-ascii-font-family: "Times New Roman"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-hansi-font-family: "Times New Roman"
+        ;
+            mso-bidi-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        p
+
+        .3
+        ,
+        li
+
+        .3
+        ,
+        div
+
+        .3
+        {
+            mso-style-name: Обычный+3
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-parent: Default
+        ;
+            mso-style-next: Default
+        ;
+            margin: 0cm
+        ;
+            margin-bottom: .0001pt
+        ;
+            mso-pagination: none
+        ;
+            mso-layout-grid-align: none
+        ;
+            text-autospace: none
+        ;
+            font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        p
+
+        .12
+        ,
+        li
+
+        .12
+        ,
+        div
+
+        .12
+        {
+            mso-style-name: "Заголовок 1+2"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-parent: Default
+        ;
+            mso-style-next: Default
+        ;
+            margin: 0cm
+        ;
+            margin-bottom: .0001pt
+        ;
+            mso-pagination: none
+        ;
+            mso-layout-grid-align: none
+        ;
+            text-autospace: none
+        ;
+            font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        p
+
+        .32
+        ,
+        li
+
+        .32
+        ,
+        div
+
+        .32
+        {
+            mso-style-name: "Заголовок 3+2"
+        ;
+            mso-style-priority: 99
+        ;
+            mso-style-unhide: no
+        ;
+            mso-style-parent: Default
+        ;
+            mso-style-next: Default
+        ;
+            margin-top: 12.0pt
+        ;
+            margin-right: 0cm
+        ;
+            margin-bottom: 3.0pt
+        ;
+            margin-left: 0cm
+        ;
+            mso-pagination: none
+        ;
+            mso-layout-grid-align: none
+        ;
+            text-autospace: none
+        ;
+            font-size: 12.0pt
+        ;
+            font-family: "Times New Roman", "serif"
+        ;
+            mso-fareast-font-family: "Times New Roman"
+        ;
+            mso-ansi-language: RU
+        ;
+            mso-fareast-language: RU
+        ;
+        }
+        span.SpellE {
+            mso-style-name: "";
+            mso-spl-e: yes;
+        }
+
+        span.GramE {
+            mso-style-name: "";
+            mso-gram-e: yes;
+        }
+
+        .MsoChpDefault {
+            mso-style-type: export-only;
+            mso-default-props: yes;
+            font-size: 10.0pt;
+            mso-ansi-font-size: 10.0pt;
+            mso-bidi-font-size: 10.0pt;
+            font-family: "Calibri", "sans-serif";
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-fareast-font-family: Calibri;
+            mso-fareast-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+            mso-fareast-language: EN-US;
+        }
+
+        @page WordSection1 {
+            size: 595.3pt 841.9pt;
+            margin: 70.85pt 70.85pt 70.85pt 70.85pt;
+            mso-header-margin: 35.4pt;
+            mso-footer-margin: 35.4pt;
+            mso-paper-source: 0;
+        }
+
+        div.WordSection1 {
+            page: WordSection1;
+        }
+
+        -->
+    </style>
+    <!--[if gte mso 10]>
+    <style>
+        /* Style Definitions */
+        table.MsoNormalTable {
+            mso-style-name: "Обычная таблица";
+            mso-tstyle-rowband-size: 0;
+            mso-tstyle-colband-size: 0;
+            mso-style-noshow: yes;
+            mso-style-priority: 99;
+            mso-style-parent: "";
+            mso-padding-alt: 0cm 5.4pt 0cm 5.4pt;
+            mso-para-margin: 0cm;
+            mso-para-margin-bottom: .0001pt;
+            mso-pagination: widow-orphan;
+            font-size: 10.0pt;
+            font-family: "Calibri", "sans-serif";
+            mso-ascii-font-family: Calibri;
+            mso-ascii-theme-font: minor-latin;
+            mso-hansi-font-family: Calibri;
+            mso-hansi-theme-font: minor-latin;
+            mso-bidi-font-family: "Times New Roman";
+            mso-bidi-theme-font: minor-bidi;
+            mso-fareast-language: EN-US;
+        }
+    </style>
+    <![endif]--><!--[if gte mso 9]>
+    <xml>
+        <o:shapedefaults v:ext="edit" spidmax="1026"/>
+    </xml><![endif]--><!--[if gte mso 9]>
+    <xml>
+        <o:shapelayout v:ext="edit">
+            <o:idmap v:ext="edit" data="1"/>
+        </o:shapelayout>
+    </xml><![endif]-->
+</head>
+
+<body>
+<div lang=BE style='tab-interval:35.4pt'>
+    <div class=WordSection1>
+        <p class=32 align=center style='text-align:center'>
+            <b style='mso-bidi-font-weight:
+                normal'>
+                <span lang=RU style='font-size:14.0pt'>
+                    Раздел 2. Методика и средства разработки решателей задач
+                </span>
+            </b>
+        </p>
+        <p class=32 align=center style='text-align:center'>
+            <b style='mso-bidi-font-weight:
+                normal'>
+                <span lang=RU style='font-size:14.0pt'>
+                    Тема 1. Методика построения решателей задач
+                </span>
+            </b>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Этап 1. Формирование требований и спецификация машины обработки знаний. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                На данном этапе необходимо четко выделить задачи, решение которых должен обеспечивать решатель задач, продумать предполагаемые способы их решения и на основе данного анализа определить место будущего решателя в общей иерархии решателей, рассмотренной выше. Важность данного этапа заключается с в том, что при правильной классификации существует вероятность того, что в составе библиотеки компонентов уже есть реализованный вариант требуемого решателя. В противном случае, тем не менее, у разработчика появляется возможность включить разработанный решатель в библиотеку компонентов для последующего использования. Данные факты обусловлены тем, что структура библиотеки компонентов решателей задач основана на семантической классификации таких решателей и, соответственно, их компонентов.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                При недостаточно четкой спецификации и классификации разрабатываемого решателя повышается вероятность того, что подходящий решатель не будет найден в библиотеке компонентов даже в случае, если он там есть, а вновь разработанный решатель не сможет быть включен в библиотеку. Таким образом, идея многократного использования уже разработанных компонентов будет нарушена, что существенно повысит затраты на разработку такого решателя.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Этап 2. Формирование коллектива sc-агентов, входящих в состав разрабатываемой машины.  
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                В случае, когда найти в библиотеке готовый решатель, удовлетворяющий всем предъявляемым требованиям, не представляется возможным, необходимо выделить и специфицировать все компоненты такого решателя.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Результатом данного этапа является перечень полностью специфицированных sc-агентов, которые войдут в состав разрабатываемого решателя, с их иерархией вплоть до атомарных sc-агентов. В рамках данного этапа очень важно проектировать коллектив агентов таким образом, чтобы максимально задействовать уже имеющиеся в библиотеке многократно используемые компоненты, а при отсутствии нужного компонента – иметь возможность включить его в библиотеку после реализации. В качестве таких компонентов, в зависимости от сложности разрабатываемого решателя, могут выступать как атомарные sc-агенты, так и целые коллективы sc-агентов (неатомарные sc-агенты). 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                При разработке перечня агентов (в том числе их спецификаций) необходимо соблюдать ряд принципов:
+                <ul>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        каждый разрабатываемый sc-агент должен быть по возможности предметно независим, т. е. во множество ключевых узлов данного sc-агента не должны входить понятия, имеющие отношение непосредственно к рассматриваемой предметной области. Исключение составляют понятия из общих предметных областей, которые носят междисциплинарный характер (например, отношение включение* или понятие действие). Данное правило также может быть нарушено в случае, если sc-агент является вспомогательным и ориентирован на обработку какого-либо конкретного класса объектов (например, sc-агенты, выполняющие арифметические вычисления, могут напрямую работать с конкретными отношениями сложение* и умножение* и т. п.). Всю необходимую для решения задачи информацию sc-агент должен извлекать из семантической окрестности соответствующего инициированного действия. Очевидно, что sc-агент, разработанный с учетом указанных требований, может быть использован при проектировании большего числа ostis-систем, чем в случае, если бы он был реализован с ориентацией на конкретную частную предметную область. После завершения разработки и отладки такой sc-агент должен быть включен в Библиотеку многократно используемых абстрактных sc-агентов; 
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        не стоит путать понятия sc-агент и агентная программа (в том числе агентная scp-программа). Взаимодействие sc-агентов осуществляется исключительно посредством спецификации информационных процессов в общей памяти, каждый sc-агент реагирует на некоторый класс событий в sc-памяти. Таким образом, каждому sc-агенту соответствует некоторое условие инициирования и одна агентная программа, которая запускается автоматически при возникновении в sc-памяти соответствующего условия инициирования. При этом в рамках данной программы могут сколько угодно раз вызываться различные подпрограммы. Однако не стоит путать инициирование sc-агента, которое осуществляется при появлении в sc-памяти соответствующей конструкции, и вызов подпрограммы другой программой, который предполагает явное указание вызываемой подпрограммы и перечня ее параметров;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        каждый sc-агент должен самостоятельно проверять полноту соответствия своего условия инициирования текущему состоянию sc-памяти. В процессе решения какой-либо задачи может возникнуть ситуация, когда на появление одной и той же структуры среагировали несколько sc-агентов. В таком случае выполнение продолжают только те из них, условие инициирования которых полностью соответствует сложившейся ситуации. Остальные sc-агенты в данном случае прекращают выполнение и возвращаются в режим ожидания. Выполнение данного принципа достигается за счет тщательного уточнения спецификаций разрабатываемых sc-агентов. В общем случае условия инициирования у нескольких sc-агентов могут совпадать, например, в случае, когда одна и та же задача может быть решена разными способами и заранее неизвестно, какой из них приведет к желаемому результату;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        необходимо помнить, что неатомарный sc-агент с точки зрения других sc-агентов, не входящих в его состав, должен функционировать как целостный sc-агент (выполнять логически атомарные действия), что накладывает определенные требования на спецификации атомарных sc-агентов, входящих в его состав: как минимум, необходимо, чтобы в составе неатомарного sc-агента присутствовал хотя бы один атомарный sc-агент, условие инициирования которого полностью совпадает с условием инициирования данного неатомарного sc-агента; 
+                    </li>
+                </ul>
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                При необходимости реализации нового sc-агента следует руководствоваться следующими принципами выделения атомарных абстрактных sc-агентов: 
+                <ul>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        проектируемый sc-агент должен быть максимально независим от предметной области, что позволит в дальшейшем использовать его при разработке решателей максимально возможного числа ostis-систем. При этом универсальность предполагает не только минимизацию числа ключевых узлов sc-агента, но и выделение класса действий, выполняемых данным sc-агентом таким образом, чтобы имело смысл включить данный sc-агент в Библиотеку многократно используемых абстрактных sc-агентов и использовать его при разработке решателей других ostis-систем. Не следует искусственно увязывать ряд действий в один sc-агент и, наоборот, расчленять одно самодостаточное действие на поддействия: это вызовет сложности восприятия принципов работы sc-агента разработчиками и не позволит использовать sc-агент в ряде систем (например, в обучающих системах, которые должны объяснять ход решения пользователю); 
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        акт деятельности каждого sc-агента (выполняемое данным sc-агентом действие) должен быть логически целостным и завершенным. Следует помнить, что все sc-агенты взаимодействуют исключительно через общую память и избегать ситуаций, в которых инициирование одного sc-агента осуществляется путем явной генерации известного условия инициирования другим sc-агентом (т. е., по сути, явным непосредственным вызовом одного sc-агента другим);
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        имеет смысл выделять в отдельные sc-агенты те относительно крупные фрагменты реализации некоторого общего алгоритма, которые могут выполняться независимо друг от друга;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        при объединении sc-агентов в коллективы рекомендуется проектировать их таким образом, чтобы они могли быть использованы не только как часть рассматриваемого неатомарного абстрактного sc-агента. В случае, если это не представляется возможным и некоторые sc-агенты, будучи отделенными от коллектива, теряют смысл, необходимо указать данный факт при документировании рассматриваемых sc-агентов; 
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        фактическим инициатором запуска sc-агента посредством общей памяти (автором соответствующей конструкции) может быть как непосредственно пользователь системы, так и другой sc-агент, что никак не должно отражаться в работе самого sc-агента.
+                    </li>
+                </ul>
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Этап 3. Разработка алгоритмов атомарных sc-агентов.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                В рамках данного этапа необходимо продумать алгоритм работы каждого разрабатываемого атомарного sc-агента. Разработка алгоритма подразумевает выделение в нем логически целостных фрагментов, которые могут быть реализованы как отдельные scp-программы, в том числе выполняемые параллельно. Таким образом, появляется необходимость говорить не только о Библиотеке многократно используемых абстрактных sc-агентов, но и о Библиотеке многократно используемых программ обработки sc-текстов на различных языках программирования, в том числе Библиотеке многократно используемых scp-программ. Благодаря этому часть scp-программ, реализующих алгоритм работы некоторого sc-агента, может быть заимствована из соответствующей библиотеки. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Важно помнить, что если в процессе работы sc-агент генерирует в памяти какие-либо временные структуры, то при завершении работы он обязан удалять всю информацию, использование которой в системе более нецелесообразно (убрать за собой информационный мусор). Исключение составляют ситуации, когда подобная информация необходима нескольким sc-агентам для решения одной задачи, однако после решения задачи информация становится бесполезной или избыточной и требует удаления. В данном случае может возникнуть ситуация, когда ни один из sc-агентов не в состоянии удалить информационный мусор. В таком случае возникает необходимость говорить о включении в состав решателя специализированных sc-агентов, задачей которых является выявление и уничтожение информационного мусора. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Этап 4. Разработка scp-программ. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Конечным этапом непосредственно разработки является реализация специфицированных ранее scp-программ или при необходимости программ, реализуемых на уровне платформы.
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Этап 5. Верификация разработанных компонентов. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Верификация разработанных компонентов может осуществляться как вручную, так и с использованием специфицированных средств, входящих в состав системы автоматизации процесса построения и модификации гибридных решателей задач по технологии OSTIS. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Этап 6. Отладка разработанных компонентов. Исправление ошибок. 
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Этап отладки разработанных компонентов, в свою очередь, можно также условно  разделить на более частные этапы:
+                <ul>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        отладка отдельных scp-программ или программ, реализуемых на уровне платформы; 
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        отладка отдельных атомарных sc-агентов; 
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        отладка неатомарных sc-агентов, входящих в состав решателя задач;
+                    </li>
+                    <li lang=RU style='font-size:14.0pt;line-height:115%'>
+                        отладка всего решателя задач.
+                    </li>
+                </ul>
+            </span>
+        </p>
+        <p class=MsoBodyTextIndent2 style='text-align:justify;text-indent:42.55pt;
+                line-height:115%'>
+            <span lang=RU style='font-size:14.0pt;line-height:115%'>
+                Заметим, что Этап5 и Этап6 могут выполняться параллельно и повторяются до тех пор, пока разработанные компоненты не будут удовлетворять необходимым требованиям.
+            </span>
+        </p>
+        <p class="block_14">___________________________________________________________________________</p>
+        <p class="block_56">Шункевич Д.В. Агентно-ориентированные решатели задач интеллектуальных систем. // Диссертация ктн. 2018.</p>
+        <p class="block_56">Шункевич Д.В., Фоминых  И.Б., Моросин О.В. Унифицированная семантическая модель процесса проектирования машин обработки знаний. Часть 1: Унифицированная семантическая модель процесса проектирования машин обработки знаний // ИТС 2016.</p>
+        <p class=MsoNormal>
+            <a href="Тема 1.7.htm">Предыдущая</a>
+            <a href="Тема 2.2.htm"> Следующая</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
