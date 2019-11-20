@@ -1,0 +1,1490 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+      xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+    <title>2.2 Библиотека компонентов решателей задач</title>
+    <p>
+        <a href="Тема 1.4.htm">Предыдущая</a>
+        <a href="Тема 2.3.htm"> Следующая</a>
+    </p>
+    <meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+    <meta name=ProgId content=Word.Document>
+    <meta name=Generator content="Microsoft Word 14">
+    <meta name=Originator content="Microsoft Word 14">
+    <style>
+        .block_ {
+            background-color: green;
+            display: block;
+            font-size: 1.125em;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+            text-align: left
+        }
+        .block_1 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 36pt
+        }
+        .block_2 {
+            display: list-item;
+            line-height: 1.2;
+            margin-left: 36pt;
+            padding-bottom: 0;
+            padding-top: 0
+        }
+        .block_3 {
+            display: list-item;
+            line-height: 1.2;
+            margin-left: 72pt;
+            padding-bottom: 0;
+            padding-top: 0
+        }
+        .block_4 {
+            display: block;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 36pt
+        }
+        .block_5 {
+            display: block;
+            font-size: 0.75em;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_6 {
+            display: block;
+            font-size: 1.125em;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+            text-align: left
+        }
+        .block_7 {
+            display: block;
+            font-size: 1.125em;
+            font-weight: normal;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+            text-align: left;
+            text-indent: 36pt
+        }
+        .block_8 {
+            display: block;
+            font-size: 1.125em;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+            text-align: left;
+            text-indent: 36pt
+        }
+        .block_9 {
+            display: block;
+            font-size: 1.125em;
+            font-weight: normal;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+            text-align: left
+        }
+        .block_10 {
+            display: list-item;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 36pt;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-top: 0;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+            text-align: left
+        }
+        .block_11 {
+            display: list-item;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 36pt;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-top: 0;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+            text-align: left
+        }
+        .block_12 {
+            display: table-row;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+            text-align: left
+        }
+        .block_13 {
+            display: table-row;
+            font-size: 0.75em;
+            line-height: 1.15;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+            text-align: left
+        }
+        .block_14 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_15 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_16 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: center;
+            text-indent: 0
+        }
+        .block_17 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 36pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 36pt
+        }
+        .block_18 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: center;
+            text-indent: 36pt
+        }
+        .block_19 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: center
+        }
+        .block_20 {
+            display: block;
+            margin-bottom: 5pt;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_21 {
+            display: table-row;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_22 {
+            display: table-row;
+            margin-bottom: 12pt;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_23 {
+            display: block;
+            margin-bottom: 3pt;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_24 {
+            display: block;
+            margin-bottom: 4pt;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_25 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            page-break-after: always;
+            text-indent: 36pt
+        }
+        .block_26 {
+            display: block;
+            margin-bottom: 4pt;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: 32pt
+        }
+        .block_27 {
+            display: table-row;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify
+        }
+        .block_28 {
+            display: table-row;
+            margin-bottom: 12pt;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify
+        }
+        .block_29 {
+            display: block;
+            margin-bottom: 12pt;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: 36pt
+        }
+        .block_30 {
+            display: list-item;
+            margin-bottom: 0;
+            margin-left: 72pt;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-top: 0;
+            text-align: justify
+        }
+        .block_31 {
+            display: list-item;
+            margin-bottom: 0;
+            margin-left: 72pt;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-top: 0;
+            text-align: justify
+        }
+        .block_32 {
+            display: list-item;
+            margin-bottom: 12pt;
+            margin-left: 72pt;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-top: 0;
+            text-align: justify
+        }
+        .block_33 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 48pt;
+            margin-right: 0;
+            margin-top: 4pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: -14pt
+        }
+        .block_34 {
+            display: block;
+            margin-bottom: 0;
+            margin-left: 6pt;
+            margin-right: 2pt;
+            margin-top: 6pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: 30pt
+        }
+        .block_35 {
+            display: block;
+            margin-bottom: 0;
+            margin-left: 6pt;
+            margin-right: 2pt;
+            margin-top: 6pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: 14pt
+        }
+        .block_36 {
+            display: block;
+            font-family: "Times New Roman", serif;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_37 {
+            display: block;
+            font-size: 0.75em;
+            line-height: 1.15;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_38 {
+            display: block;
+            font-size: 1em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_39 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: 32pt
+        }
+        .block_40 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 32pt
+        }
+        .block_41 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_42 {
+            display: block;
+            margin-bottom: 5pt;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: 32pt
+        }
+        .block_43 {
+            display: block;
+            margin-bottom: 5pt;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 32pt
+        }
+        .block_44 {
+            display: block;
+            margin-bottom: 5pt;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: 0
+        }
+        .block_45 {
+            display: block;
+            margin-bottom: 5pt;
+            margin-left: 4pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: 36pt
+        }
+        .block_46 {
+            display: block;
+            margin-bottom: 4pt;
+            margin-left: 36pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: 0
+        }
+        .block_47 {
+            display: block;
+            margin-bottom: 5pt;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_48 {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4pt;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_49 {
+            display: block;
+            margin-bottom: 4pt;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-align: justify;
+            text-indent: 36pt
+        }
+        .block_50 {
+            display: block;
+            margin-bottom: 4pt;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_51 {
+            display: block;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_52 {
+            display: table-row;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_53 {
+            display: block;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 36pt
+        }
+        .block_54 {
+            display: block;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_55 {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 36pt
+        }
+        .block_56 {
+            color: #333;
+            display: block;
+            font-size: 1em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_57 {
+            display: block;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_58 {
+            color: #333;
+            display: block;
+            font-size: 1em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_59 {
+            display: list-item;
+            font-family: "Times New Roman", serif;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-left: 36pt;
+            padding-bottom: 0;
+            padding-top: 0
+        }
+        .block_60 {
+            display: block;
+            font-family: "Times New Roman", serif;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 36pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_61 {
+            display: block;
+            font-family: "Times New Roman", serif;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-bottom: 12pt;
+            margin-left: 6pt;
+            margin-right: 2pt;
+            margin-top: 6pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_62 {
+            display: list-item;
+            font-family: "Times New Roman", serif;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 36pt;
+            margin-right: 2pt;
+            margin-top: 6pt;
+            padding-bottom: 0;
+            padding-top: 0
+        }
+        .block_63 {
+            display: list-item;
+            font-family: "Times New Roman", serif;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-bottom: 12pt;
+            margin-left: 36pt;
+            margin-right: 2pt;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-top: 0
+        }
+        .block_64 {
+            display: block;
+            font-family: "Times New Roman", serif;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-bottom: 12pt;
+            margin-left: 0;
+            margin-right: 2pt;
+            margin-top: 6pt;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_65 {
+            display: list-item;
+            font-family: "Times New Roman", serif;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 36pt;
+            margin-right: 2pt;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-top: 0
+        }
+        .block_66 {
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 36pt;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_67 {
+            display: block;
+            font-family: "Times New Roman", serif;
+            font-size: 1.125em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_68 {
+            display: block;
+            font-size: 1em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            text-indent: 0
+        }
+        .block_69 {
+            color: #333;
+            display: block;
+            font-size: 1em;
+            line-height: 1.42;
+            margin-bottom: 15pt;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_70 {
+            display: block;
+            font-size: 1.41667em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_71 {
+            display: table-row;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .block_72 {
+            display: list-item;
+            margin-bottom: 0;
+            margin-left: 36pt;
+            margin-top: 12pt;
+            padding-bottom: 0;
+            padding-top: 0
+        }
+        .block_73 {
+            display: list-item;
+            margin-bottom: 0;
+            margin-left: 36pt;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-top: 0
+        }
+        .block_74 {
+            background-color: white;
+            color: #333;
+            display: block;
+            font-size: 1em;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .bullet_ {
+            display: table-cell;
+            font-size: 1em;
+            line-height: 1.2;
+            text-decoration: none
+        }
+        .bullet_1 {
+            display: table-cell;
+            font-size: 1.33333em;
+            line-height: 1.2;
+            text-decoration: none
+        }
+        .bullet_2 {
+            display: table-cell;
+            font-weight: bold;
+            text-decoration: none
+        }
+        .bullet_3 {
+            display: table-cell;
+            font-weight: bold;
+            line-height: 1.2;
+            text-decoration: none
+        }
+        .calibre {
+            color: black;
+            display: block;
+            font-family: "Arial", serif;
+            font-size: 1em;
+            margin-bottom: 0;
+            margin-left: 5pt;
+            margin-right: 5pt;
+            margin-top: 0;
+            padding-left: 0;
+            padding-right: 0
+        }
+        .calibre1 {
+            line-height: 1.2;
+            white-space: pre-wrap
+        }
+        .calibre2 {
+            display: block;
+            page-break-after: always
+        }
+        .calibre3 {
+            height: 263pt;
+            line-height: 1.2;
+            width: 459pt
+        }
+        .calibre4 {
+            display: table;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 72pt;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .calibre5 {
+            display: table-cell;
+            line-height: 1.2
+        }
+        .calibre6 {
+            display: block;
+            line-height: 1.2;
+            page-break-after: always
+        }
+        .calibre7 {
+            height: 544pt;
+            line-height: 1.2;
+            width: 263pt
+        }
+        .calibre8 {
+            height: 118pt;
+            line-height: 1.2;
+            width: 197pt
+        }
+        .calibre9 {
+            height: 243pt;
+            line-height: 1.2;
+            width: 240pt
+        }
+        .calibre10 {
+            display: table-cell
+        }
+        .calibre11 {
+            height: 397pt;
+            line-height: 1.2;
+            width: 270pt
+        }
+        .calibre12 {
+            white-space: pre-wrap
+        }
+        .calibre13 {
+            font-weight: bold
+        }
+        .calibre14 {
+            height: 202pt;
+            width: 468pt
+        }
+        .calibre15 {
+            height: 172pt;
+            width: 468pt
+        }
+        .calibre16 {
+            height: 326pt;
+            width: 468pt
+        }
+        .calibre17 {
+            height: 47.2pt;
+            width: 205pt
+        }
+        .calibre18 {
+            height: 226pt;
+            width: 468pt
+        }
+        .calibre19 {
+            font-style: italic
+        }
+        .calibre20 {
+            height: 187pt;
+            width: 468pt
+        }
+        .calibre21 {
+            height: 158pt;
+            width: 468pt
+        }
+        .calibre22 {
+            height: 223pt;
+            width: 454pt
+        }
+        .calibre23 {
+            height: 157pt;
+            width: 464pt
+        }
+        .calibre24 {
+            height: 248pt;
+            width: 468pt
+        }
+        .calibre25 {
+            height: 167pt;
+            width: 468pt
+        }
+        .calibre26 {
+            display: table;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-left: 36pt;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .calibre27 {
+            height: 340pt;
+            width: 468pt
+        }
+        .calibre28 {
+            height: 183pt;
+            width: 468pt
+        }
+        .calibre29 {
+            height: 233pt;
+            width: 468pt
+        }
+        .calibre30 {
+            display: block;
+            height: 120pt;
+            margin-left: auto;
+            margin-right: auto;
+            width: 468pt
+        }
+        .calibre31 {
+            height: 88pt;
+            width: 468pt
+        }
+        .calibre32 {
+            height: 220pt;
+            width: 468pt
+        }
+        .calibre33 {
+            display: block;
+            height: 514pt;
+            line-height: 1.2;
+            margin-left: auto;
+            margin-right: auto;
+            width: 342pt
+        }
+        .calibre34 {
+            height: 169pt;
+            line-height: 1.2;
+            width: 468pt
+        }
+        .calibre35 {
+            height: 33pt;
+            line-height: 1.2;
+            width: 206pt
+        }
+        .calibre36 {
+            height: 28.5pt;
+            line-height: 1.2;
+            width: 298pt
+        }
+        .calibre37 {
+            height: 45.8pt;
+            line-height: 1.2;
+            width: 371pt
+        }
+        .calibre38 {
+            height: 465pt;
+            line-height: 1.2;
+            width: 468pt
+        }
+        .calibre39 {
+            height: 136pt;
+            line-height: 1.2;
+            width: 460pt
+        }
+        .calibre40 {
+            height: 46.5pt;
+            line-height: 1.2;
+            width: 214pt
+        }
+        .calibre41 {
+            height: 65.2pt;
+            line-height: 1.2;
+            width: 148pt
+        }
+        .calibre42 {
+            height: 158pt;
+            line-height: 1.2;
+            width: 276pt
+        }
+        .calibre43 {
+            height: 268pt;
+            line-height: 1.2;
+            width: 443pt
+        }
+        .calibre44 {
+            height: 128pt;
+            line-height: 1.2;
+            width: 468pt
+        }
+        .calibre45 {
+            height: 119pt;
+            line-height: 1.2;
+            width: 418pt
+        }
+        .calibre46 {
+            height: 251pt;
+            line-height: 1.2;
+            width: 468pt
+        }
+        .calibre47 {
+            height: 286pt;
+            line-height: 1.2;
+            width: 451pt
+        }
+        .calibre48 {
+            height: 125pt;
+            line-height: 1.2;
+            width: 468pt
+        }
+        .calibre49 {
+            height: 202pt;
+            line-height: 1.2;
+            width: 397pt
+        }
+        .calibre50 {
+            font-weight: bold;
+            line-height: 1.2
+        }
+        .calibre51 {
+            height: 318pt;
+            line-height: 1.2;
+            width: 310pt
+        }
+        .calibre52 {
+            height: 343pt;
+            line-height: 1.2;
+            width: 468pt
+        }
+        .calibre53 {
+            height: 116pt;
+            line-height: 1.2;
+            width: 468pt
+        }
+        .calibre54 {
+            height: 181pt;
+            line-height: 1.2;
+            width: 340pt
+        }
+        .calibre55 {
+            height: 214pt;
+            line-height: 1.2;
+            width: 386pt
+        }
+        .calibre56 {
+            height: 364pt;
+            line-height: 1.2;
+            width: 468pt
+        }
+        .calibre57 {
+            height: 233pt;
+            line-height: 1.2;
+            width: 388pt
+        }
+        .calibre58 {
+            display: table-row-group;
+            vertical-align: middle
+        }
+        .list_ {
+            display: block;
+            list-style-type: disc;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .list_1 {
+            display: block;
+            list-style-type: decimal;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            padding-bottom: 0;
+            padding-right: 0;
+            padding-top: 0
+        }
+        .tab {
+            line-height: 1.2;
+            white-space: pre
+        }
+        .tab1 {
+            white-space: pre
+        }
+        .table_ {
+            border-collapse: collapse;
+            border-spacing: 2px;
+            border-top-color: #DDD;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            display: table;
+            margin-bottom: 0;
+            margin-left: 0.6pt;
+            margin-right: auto;
+            margin-top: 0;
+            padding-top: 0;
+            text-indent: 0;
+            width: 468pt
+        }
+        .td_ {
+            background-color: transparent;
+            border-top-color: #DDD;
+            border-top-style: solid;
+            border-top-width: 1pt;
+            display: table-cell;
+            padding-bottom: 6pt;
+            padding-left: 6pt;
+            padding-right: 6pt;
+            padding-top: 0;
+            text-align: inherit;
+            vertical-align: top;
+            width: 468pt
+        }
+        .text_ {
+            font-style: italic;
+            font-weight: bold;
+            line-height: 1.2
+        }
+        .text_1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 1.2
+        }
+        .text_2 {
+            font-size: 1.33333em
+        }
+        .text_3 {
+            font-size: 1.33333em;
+            line-height: 1.2
+        }
+        .text_4 {
+            background-color: white;
+            color: black;
+            font-size: 1.33333em;
+            line-height: 1.2
+        }
+        .text_5 {
+            color: black;
+            font-size: 1.33333em;
+            line-height: 1.2
+        }
+        .text_6 {
+            background-color: white;
+            color: #333;
+            font-size: 1.33333em;
+            line-height: 1.2
+        }
+        .text_7 {
+            background-color: white;
+            font-size: 1.33333em;
+            line-height: 1.2
+        }
+        .tr_ {
+            display: table-row;
+            min-height: 55pt;
+            vertical-align: inherit
+        }
+
+        @page {
+            margin-bottom: 5pt;
+            margin-top: 5pt
+        }
+    </style>
+</head>
+
+<body>
+<div lang=BE style='tab-interval:35.4pt'>
+    <div>
+        <html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><link href="style.css" rel="stylesheet" type="text/css" /><title>Unknown</title></head><body><div class="calibre" id="calibre_link-0">
+            <h1 id="calibre_link-22" class="block_6">Библиотека компонентов решателей задач</h1>
+            <p class=32 align=center style='text-align:center'>
+                <b style='mso-bidi-font-weight:
+        normal'>
+                    <span lang=RU style='font-size:14.0pt'>
+                        Раздел 2. Методика и средства разработки решателей задач
+                    </span>
+                </b>
+            </p>
+            <p class=32 align=center style='text-align:center'>
+                <b style='mso-bidi-font-weight:
+        normal'>
+                    <span lang=RU style='font-size:14.0pt'>
+                        Библиотека компонентов решателей задач
+                    </span>
+                </b>
+            </p>
+            <p class="block_51">Библиотека многократно используемых компонентов решателей задач является важнейшим фрагментом метасистемы IMS, обеспечивающим надежность проектируемых решателей и повышение скорости их разработки.</p>
+            <p class="block_51">Библиотека включает: </p>
+            <div class="calibre26">
+                <div class="block_21"><span class="bullet_2">-&nbsp;</span><span class="calibre10">собственно множество компонентов решателей задач; </span></div>
+                <div class="block_52"><span class="bullet_2">-&nbsp;</span><span class="calibre10">средства спецификации компонентов решателей задач; </span></div>
+                <div class="block_52"><span class="bullet_2">-&nbsp;</span><span class="calibre10">средства поиска компонентов решателей задач на основе их спецификации.</span></div>
+            </div>
+            <p class="block_51">Под<i class="calibre19"> многократно используемым компонентом OSTIS </i>вообще понимается компонент некоторой ostis-системы, который может быть использован в другой ostis-системе. Для этого необходимо выполнение как минимум двух условий: </p>
+            <p class="block_53">&ndash; есть техническая возможность встроить компонент в дочернюю ostis систему путем либо физического копирования, переноса и встраивания его в проектируемую систему, либо использования компонента, размещенного в исходной системе наподобие сервиса, т. е. без явного копирования и переноса компонента. Трудоемкость встраивания зависит, в том числе, от реализации компонента; </p>
+            <p class="block_53">&ndash; использование компонента в каких-либо ostis-системах, кроме метасистемы IMS, является целесообразным, т. е. компонентом не может быть частное решение, ориентированное на узкий круг задач. Стоит, однако, отметить, что в общем случае практически каждое решение может быть использовано в каких-либо других системах, круг которых определяется степенью общности и предметной зависимостью такого решения. </p>
+            <p class="block_53">С формальной точки зрения каждый многократно используемый компонент OSTIS представляет собой структуру, которая содержит все те (и только те) sc-элементы, которые необходимы для функционирования компонента в дочерней ostis-системе и, соответственно, должны быть в нее скопированы при включении компонента в одну из таких систем. Конкретный состав данной структуры зависит от типа компонента и уточняется для каждого типа отдельно. По сути, данная структура представляет собой эталон (или образец), который копируется при включении соответствующего компонента в дочернюю систему. </p>
+            <p class="block_53">Каждый <i class="calibre19">многократно используемый компонент OSTIS</i> может быть атомарным либо неатомарным, т. е. состоять из более простых самодостаточных компонентов.</p>
+            <p class="block_53">В зависимости от типа компонента в его составе, т. е. в составе соответствующей структуры, могут дополнительно вводиться роли некоторых sc-элементов, если это необходимо. Например, в случае многократно используемого sc-агента сам sc-узел, обозначающий sc-агент, будет являться ключевым sc-элементом’ в рамках компонента. </p>
+            <p class="block_53">В каждый момент времени в текущем состоянии sc-памяти каждый многократно используемый компонент может быть представлен полностью, т. е. в памяти явно присутствуют все sc-дуги принадлежности, соединяющие соответствующую компоненту структуру и все ее элементы, или может быть представлен неявно, например, при помощи указания ключевых sc-элементов’ данного компонента или путем задания декомпозиции данного компонента на более частные. </p>
+            <p class="block_53">Рассмотрим общую классификацию многократно используемых компонентов OSTIS в SCn-коде: </p>
+            <p class="block_53"><img src="assets/000004.png" alt="Image" class="calibre27" /></p>
+            <p class="block_53">Формально Библиотека многократно используемых компонентов решателей задач является фрагментом предметной области абстрактных агентов, работающих над унифицированной семантической памятью.</p>
+            <p class="block_53">Если многократно используемый компонент решателей задач является платформенно-зависимым многократно используемым компонентом OSTIS, то его интеграция производится в соответствии с инструкцией, предоставляемой разработчиком в зависимости от платформы, как и для любого компонента такого рода. В противном случае процесс интеграции можно конкретизировать в зависимости от подклассов данного типа компонентов. </p>
+            <p class="block_53">Классификация многократно используемых компонентов решателей задач в SCn-коде: </p>
+            <p class="block_53"><img src="assets/000019.png" alt="Image" class="calibre28" /></p>
+            <p class="block_53">Под <i class="calibre19">многократно используемым абстрактным sc-агентом</i> подразумевается компонент, соответствующий некоторому абстрактному sc-агенту, который может быть использован в других системах, возможно, в составе более сложных неатомарных абстрактных sc-агентов. Указанный абстрактный sc-агент входит в соответствующую компоненту структуру под атрибутом ключевой sc-элемент’. Каждый многократно используемый абстрактный sc-агент должен содержать всю информацию, необходимую для функционирования соответствующего sc-агента в дочерней системе. </p>
+            <p class="block_53">Таким образом, соответствующая многократно используемому абстрактному sc-агенту структура формируется следующим образом: </p>
+            <p class="block_53">1) В нее включается sc-узел, обозначающий соответствующий абстрактный sc-агент, и вся его спецификация, т. е., как минимум, указание ключевых sc-элементов sc-агента*, условия инициирования и результат*, первичного условия инициирования*, sc-описание поведения sc-агента и класса решаемых им задач;</p>
+            <p class="block_53">2) В случае, если входящий в многократно используемый sc-агент абстрактный sc-агент рассматривается как неатомарный абстрактный sc-агент, то многократно используемый sc-агент будет содержать sc-узлы, обозначающие все более частные абстрактные sc-агенты, а также все их спецификации согласно пункту 1. Для каждого включенного в многократно используемый sc-агент абстрактного sc-агента необходимо выполнить пункт 2 и пункт 3;</p>
+            <p class="block_53">3) Для каждого атомарного абстрактного sc-агента, знак которого вошел в многократно используемый абстрактный sc-агент, необходимо выбрать вариант его реализации (т. е. элемент класса платформенно-независимый абстрактный sc-агент или платформенно-зависимый абстрактный sc-агент, связанный с исходным атомарным абстрактным sc-агентом связкой отношения включение*) и включить в многократно используемый абстрактный sc-агент sc-узел, обозначающий указанную реализацию, а также знаки всех программ, входящие во множество, связанное с указанной реализацией отношением программа sc-агента*. Выбранная реализация включается в многократно используемый абстрактный sc-агент под атрибутом ключевой sc-элемент’; </p>
+            <p class="block_53">4) В многократно используемый абстрактный sc-агент включаются также все связки отношений, указанных в пунктах 1&ndash;3, связывающие уже включенные в его состав sc-элементы, а также сами знаки этих отношений (например, включение*, программа sc-агента* и т. д.); </p>
+            <p class="block_53">После того как многократно используемый абстрактный sc-агент был скопирован в дочернюю систему, необходимо сгенерировать sc-узел, обозначающий конкретный sc-агент, работающий в данной системе и принадлежащий выбранной реализации абстрактного sc-агента, и добавить его во множество активных sc-агентов при необходимости. </p>
+            <p class="block_53">Также каждую scp-программу, попавшую в дочернюю ostis-систему при копировании многократно используемого абстрактного sc-агента, необходимо добавить во множество корректных scp-программ (корректность верифицируется при попадании в библиотеку компонентов в рамках IMS). </p>
+            <p class="block_53">Классификация многократно используемых sc-агентов в SCn-коде: </p>
+            <p class="block_54"><img src="assets/000028.png" alt="Image" class="calibre29" /></p>
+            <p class="block_53"><img src="assets/000011.png" alt="Image" class="calibre30" /></p>
+            <p class="block_53">Под <i class="calibre19">многократно используемой программой обработки sc-текстов </i>подразумевается компонент, соответствующий программе, записанной на произвольном языке программирования, которая ориентирована на обработку структур, хранящихся в памяти ostis-системы. Приоритетным в данном случае является использование scp-программ по причине их платформенной независимости, за исключением случаев проектирования некоторых компонентов интерфейса, когда полная платформенная независимость невозможна (например, при проектировании эффекторных sc-агентов и рецепторных sc-агентов). </p>
+            <p class="block_53">В свою очередь, под многократно используемой scp-программой понимается компонент, соответствующий некоторой достаточно универсальной scp-программе, которая может быть использована в составе сразу нескольких sc-агентов. </p>
+            <p class="block_53">В многократно используемую scp-программу включается полный текст scp-программы, т. е. все sc-элементы, принадлежащие структуре, являющейся scp-программой, а также все пары принадлежности между этой структурой и ее элементами и знак самой структуры. При этом sc-узел, обозначающий scp-программу, входит в соответствующий компонент под атрибутом ключевой sc-элемент’. </p>
+            <p class="block_53">После того как многократно используемая scp-программа была скопирована в дочернюю систему, необходимо добавить ее во множество корректных scp-программ (корректность верифицируется при попадании в библиотеку компонентов в рамках IMS).</p>
+            <p class="block_53">Для удобства работы с библиотекой многократно используемых компонентов были также разработаны средства автоматизации поиска компонентов на основе заданной спецификации, представляющие собой неатомарный sc-агент, который декомпозируется на более частные. </p>
+            <p class="block_53">Ниже представлена структура такого агента на языке SCn: </p>
+            <p class="block_53"><img src="assets/000003.png" alt="Image" class="calibre31" /></p>
+            <p class="block_53"><img src="assets/000008.png" alt="Image" class="calibre32" /></p>
+            <p class="block_53">Под неатомарным компонентом решателей задач понимается такой компонент, в составе которого можно выделить другие компоненты, которые могут использоваться самостоятельно, отдельно от исходного компонента. Чаще всего в роли таких неатомарных компонентов выступают неатомарные scагенты, в составе которых могут быть выделены самодостаточные sc-агенты, которые могут быть использованы отдельно от исходного неатомарного, или scp-программы, которые являются общими для нескольких агентов и могут быть использованы не только в составе неатомарного sc-агента. Таким образом, задачей Абстрактного sc-агента формирования неатомарного компонента из атомарных является формирование структуры, содержащей в себе полный sc-текст неатомарного компонента, включая спецификации всех sc-агентов в его составе, а также тексты всех необходимых scp-программ. Формирование такой структуры необходимо для того, чтобы упростить процесс копирования указанного компонента в другие ostis-системы. </p>
+            <p class="block_53">Под сопутствующим компонентом понимается компонент, который часто используется в ostis-системе одновременно с некоторым другим компонентом. Такая связь между компонентами задается явно при помощи отношения сопутствующий компонент*. Примерами таких компонентов являются некоторый sc-агент и команда пользовательского интерфейса, позволяющая пользователю инициировать выполнение указанного агента с заданными аргументами. При этом sc-агент будет функционировать и без наличия в системе такой команды, однако для его инициирования придется сформировать соответствующую конструкцию в sc-памяти вручную. </p>
+            <p class="block_53">Абстрактный sc-агент поиска sc-агентов, для которых элементы заданного множества являются ключевыми sc-элементами играет важную роль при внесении изменений в базу знаний, в частности, при переопределении каких-либо понятий. Указанный sc-агент позволяет выявить те sc-агенты, для которых могут потребоваться изменения в алгоритме работы в связи с изменением семантической трактовки каких-либо понятий</p>
+            <p class="block_53"></p>
+            <p class="block_55">Формальные средства спецификации абстрактных sc-агентов</p>
+            <p class="block_53">Связки отношения ключевые sc-элементы sc-агента* связывают между собой sc-узел, обозначающий абстрактный sc-агент, и sc-узел, обозначающий множество sc-элементов, которые являются ключевыми для данного абстрактного sc-агента, т. е. данные sc-элементы являются элементами программ, реализующих данный абстрактный sc-агент.</p>
+            <p class="block_53">Связки отношения программа sc-агента* связывают между собой sc-узел, обозначающий атомарный абстрактный sc-агент, и sc-узел, обозначающий множество программ, реализующих указанный атомарный абстрактный sc-агент. </p>
+            <p class="block_53">В случае платформенно-независимого абстрактного sc-агента каждая связка отношения программа sc-агента* связывает sc-узел, обозначающий указанный абстрактный sc-агент, с множеством scp-программ, описывающих деятельность данного абстрактного sc-агента. Данное множество содержит одну агентную scp-программу и произвольное количество (может быть, и ни одной) scp-программ, которые необходимы для выполнения указанной агентной scp-программы. Понятие агентной scp-программы будет подробнее рассмотрено ниже.</p>
+            <p class="block_53"> В случае платформенно-зависимого абстрактного sc-агента каждая связка отношения программа sc-агента* связывает sc-узел, обозначающий указанный абстрактный sc-агент с множеством файлов, содержащих исходные тексты программы на некотором внешнем языке программирования, реализующей деятельность данного абстрактного sc-агента. </p>
+            <p class="block_53">Связки отношения первичное условие инициирования* связывают между собой sc-узел, обозначающий абстрактный sc-агент, и бинарную ориентированную пару, описывающую первичное условие инициирования данного абстрактного sc-агента, т. е. такую спецификацию ситуации в sc-памяти, возникновение которой побуждает sc-агента перейти в активное состояние и начать проверку наличия своего полного условия инициирования. </p>
+            <p class="block_53">После того как в sc-памяти происходит некоторое событие, активизируются все активные sc-агенты, первичное условие инициирования* которых соответствует произошедшему событию. </p>
+            <p class="block_53">Связки отношения условие инициирования и результат* связывают между собой sc-узел, обозначающий абстрактный sc-агент, и бинарную ориентированную пару, связывающую условие инициирования данного абстрактного sc-агента и результаты выполнения экземпляров данного sc-агента в какойлибо конкретной системе. </p>
+            <p class="block_53">Указанную ориентированную пару можно рассматривать как логическую связку импликации, при этом на sc-переменные, присутствующие в обеих частях связки, неявно накладывается квантор всеобщности, на sc-переменные, присутствующие либо только в посылке, либо только в заключении, неявно накладывается квантор существования. </p>
+            <p class="block_53">Кроме описанных отношений спецификация абстрактного sc-агента также включает описание поведения sc-агента, которое представляет собой семантическую окрестность [72], описывающую деятельность sc-агента до какой-либо степени детализации, однако такое описание должно быть строгим, полным и однозначно понимаемым. Как любая другая семантическая окрестность, описание поведения sc-агента может быть протранслировано на какие-либо понятные, общепринятые средства, не требующие специального изучения, например, на естественный язык.</p>
+            <p class="block_53">Описываемый абстрактный sc-агент входит в соответствующее описание поведения sc-агента под атрибутом ключевой sc-элемент’. </p>
+            <p class="block_53">Строго говоря, для того чтобы элементы некоторого абстрактного sc-агента (конкретные sc-агенты) могли работать (реагировать на соответствующие события в sc-памяти и выполнять соответствующую программу), достаточно описать первичное условие инициирования* и программу sc-агента* для данного абстрактного sc-агента. Остальные фрагменты спецификации могут быть использованы для дополнительного анализа соответствующего агента другими агентами, для дидактических целей и т. д. </p>
+            <p class="block_53">Пример формальной спецификации абстрактного sc-агента на примере абстрактного sc-агента поиска структуры, изоморфной заданному образцу:</p>
+            <p class="block_14"><img src="assets/000009.png" alt="Image" class="calibre33" /></p>
+            <p class="block_14">___________________________________________________________________________</p>
+            <p class="block_56">Шункевич, Д. В. Агентно-ориентированные решатели задач интеллектуальных систем : автореф. дисс. ... кандидата технических наук : 05.13.17 / Д. В. Шункевич ; науч. рук. В. В. Голенков. - Минск : БГУИР, 2018. </p>
+
+        </div>
+
+        </body></html>
+        <p class=MsoNormal>
+            <a href="Тема 1.4.htm">Предыдущая</a>
+            <a href="Тема 2.3.htm"> Следующая</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
